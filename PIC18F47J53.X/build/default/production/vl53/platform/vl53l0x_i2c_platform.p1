@@ -1,0 +1,251 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"70 vl53/platform/vl53l0x_i2c_platform.c
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 70: extern int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count);
+[v _i2c_writeMulti `(l ~T0 @X0 0 ef4`uc`uc`*uc`uc ]
+"69
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 69: extern int32_t i2c_readMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count);
+[v _i2c_readMulti `(l ~T0 @X0 0 ef4`uc`uc`*uc`uc ]
+"52 vl53/platform/vl53l0x_i2c_platform.c
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 52: char debug_string[256];
+[v _debug_string `uc ~T0 @X0 -> 256 `i e ]
+"76
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 76: int32_t VL53L0X_write_word(uint8_t address, uint8_t index, uint16_t data)
+[v _VL53L0X_write_word `(l ~T0 @X0 1 ef3`uc`uc`us ]
+"77
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 77: {
+{
+[e :U _VL53L0X_write_word ]
+"76
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 76: int32_t VL53L0X_write_word(uint8_t address, uint8_t index, uint16_t data)
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _index `uc ~T0 @X0 1 r2 ]
+[v _data `us ~T0 @X0 1 r3 ]
+"77
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 77: {
+[f ]
+"78
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 78:     int32_t status = 0x00;
+[v _status `l ~T0 @X0 1 a ]
+[e = _status -> -> 0 `i `l ]
+"80
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 80:     uint8_t buffer[2];
+[v _buffer `uc ~T0 @X0 -> 2 `i a ]
+"83
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 83:     buffer[0] = (uint8_t)(data >> 8);
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> >> -> _data `ui -> 8 `i `uc ]
+"84
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 84:     buffer[1] = (uint8_t)(data & 0x00FF);
+[e = *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> & -> _data `ui -> -> 255 `i `ui `uc ]
+"87
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 87:     status = i2c_writeMulti(address, index, buffer, 2);
+[e = _status ( _i2c_writeMulti (4 , , , _address _index &U _buffer -> -> 2 `i `uc ]
+"89
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 89:     return status;
+[e ) _status ]
+[e $UE 13  ]
+"91
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 91: }
+[e :UE 13 ]
+}
+"92
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 92: int32_t VL53L0X_write_byte(uint8_t address, uint8_t index, uint8_t data)
+[v _VL53L0X_write_byte `(l ~T0 @X0 1 ef3`uc`uc`uc ]
+"93
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 93: {
+{
+[e :U _VL53L0X_write_byte ]
+"92
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 92: int32_t VL53L0X_write_byte(uint8_t address, uint8_t index, uint8_t data)
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _index `uc ~T0 @X0 1 r2 ]
+[v _data `uc ~T0 @X0 1 r3 ]
+"93
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 93: {
+[f ]
+"94
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 94:     int32_t status = 0x00;
+[v _status `l ~T0 @X0 1 a ]
+[e = _status -> -> 0 `i `l ]
+"95
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 95:     const int32_t cbyte_count = 1;
+[v _cbyte_count `Cl ~T0 @X0 1 a ]
+[e = _cbyte_count -> -> 1 `i `l ]
+"98
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 98:     status = i2c_writeMulti(address, index, &data, cbyte_count);
+[e = _status ( _i2c_writeMulti (4 , , , _address _index &U _data -> _cbyte_count `uc ]
+"100
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 100:     return status;
+[e ) _status ]
+[e $UE 14  ]
+"102
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 102: }
+[e :UE 14 ]
+}
+"105
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 105: int32_t VL53L0X_write_multi(uint8_t address, uint8_t index, uint8_t *pdata, int32_t count)
+[v _VL53L0X_write_multi `(l ~T0 @X0 1 ef4`uc`uc`*uc`l ]
+"106
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 106: {
+{
+[e :U _VL53L0X_write_multi ]
+"105
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 105: int32_t VL53L0X_write_multi(uint8_t address, uint8_t index, uint8_t *pdata, int32_t count)
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _index `uc ~T0 @X0 1 r2 ]
+[v _pdata `*uc ~T0 @X0 1 r3 ]
+[v _count `l ~T0 @X0 1 r4 ]
+"106
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 106: {
+[f ]
+"107
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 107:     int32_t status = 0x00;
+[v _status `l ~T0 @X0 1 a ]
+[e = _status -> -> 0 `i `l ]
+"125
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 125:     status = i2c_writeMulti(address, index, pdata, count);
+[e = _status ( _i2c_writeMulti (4 , , , _address _index _pdata -> _count `uc ]
+"137
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 137:     return status;
+[e ) _status ]
+[e $UE 15  ]
+"138
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 138: }
+[e :UE 15 ]
+}
+"142
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 142: int32_t VL53L0X_read_byte(uint8_t address, uint8_t index, uint8_t *pdata)
+[v _VL53L0X_read_byte `(l ~T0 @X0 1 ef3`uc`uc`*uc ]
+"143
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 143: {
+{
+[e :U _VL53L0X_read_byte ]
+"142
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 142: int32_t VL53L0X_read_byte(uint8_t address, uint8_t index, uint8_t *pdata)
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _index `uc ~T0 @X0 1 r2 ]
+[v _pdata `*uc ~T0 @X0 1 r3 ]
+"143
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 143: {
+[f ]
+"144
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 144:     int32_t status = 0x00;
+[v _status `l ~T0 @X0 1 a ]
+[e = _status -> -> 0 `i `l ]
+"145
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 145:     int32_t cbyte_count = 1;
+[v _cbyte_count `l ~T0 @X0 1 a ]
+[e = _cbyte_count -> -> 1 `i `l ]
+"148
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 148:     status = i2c_readMulti( address, index, pdata, cbyte_count);
+[e = _status ( _i2c_readMulti (4 , , , _address _index _pdata -> _cbyte_count `uc ]
+"150
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 150:     return status;
+[e ) _status ]
+[e $UE 16  ]
+"152
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 152: }
+[e :UE 16 ]
+}
+"154
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 154: int32_t VL53L0X_read_multi(uint8_t address, uint8_t index, uint8_t *pdata, int32_t count)
+[v _VL53L0X_read_multi `(l ~T0 @X0 1 ef4`uc`uc`*uc`l ]
+"155
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 155: {
+{
+[e :U _VL53L0X_read_multi ]
+"154
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 154: int32_t VL53L0X_read_multi(uint8_t address, uint8_t index, uint8_t *pdata, int32_t count)
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _index `uc ~T0 @X0 1 r2 ]
+[v _pdata `*uc ~T0 @X0 1 r3 ]
+[v _count `l ~T0 @X0 1 r4 ]
+"155
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 155: {
+[f ]
+"156
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 156:     int32_t status = 0x00;
+[v _status `l ~T0 @X0 1 a ]
+[e = _status -> -> 0 `i `l ]
+"167
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 167:     status = i2c_readMulti( address, index, pdata, count);
+[e = _status ( _i2c_readMulti (4 , , , _address _index _pdata -> _count `uc ]
+"194
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 194:     return status;
+[e ) _status ]
+[e $UE 17  ]
+"195
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 195: }
+[e :UE 17 ]
+}
+"198
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 198: int32_t VL53L0X_read_dword(uint8_t address, uint8_t index, uint32_t *pdata)
+[v _VL53L0X_read_dword `(l ~T0 @X0 1 ef3`uc`uc`*ul ]
+"199
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 199: {
+{
+[e :U _VL53L0X_read_dword ]
+"198
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 198: int32_t VL53L0X_read_dword(uint8_t address, uint8_t index, uint32_t *pdata)
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _index `uc ~T0 @X0 1 r2 ]
+[v _pdata `*ul ~T0 @X0 1 r3 ]
+"199
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 199: {
+[f ]
+"200
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 200:     int32_t status = 0x00;
+[v _status `l ~T0 @X0 1 a ]
+[e = _status -> -> 0 `i `l ]
+"201
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 201:  uint8_t buffer[4];
+[v _buffer `uc ~T0 @X0 -> 4 `i a ]
+"203
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 203:     status = VL53L0X_read_multi(address, index, buffer, 4);
+[e = _status ( _VL53L0X_read_multi (4 , , , _address _index &U _buffer -> -> 4 `i `l ]
+"204
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 204:     *pdata = ((uint32_t)buffer[0]<<24) + ((uint32_t)buffer[1]<<16) + ((uint32_t)buffer[2]<<8) + (uint32_t)buffer[3];
+[e = *U _pdata + + + << -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ul -> 24 `i << -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ul -> 16 `i << -> *U + &U _buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ul -> 8 `i -> *U + &U _buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ul ]
+"206
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 206:     return status;
+[e ) _status ]
+[e $UE 18  ]
+"208
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 208: }
+[e :UE 18 ]
+}
+"211
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 211: int32_t VL53L0X_read_word(uint8_t address, uint8_t index, uint16_t *pdata)
+[v _VL53L0X_read_word `(l ~T0 @X0 1 ef3`uc`uc`*us ]
+"212
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 212: {
+{
+[e :U _VL53L0X_read_word ]
+"211
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 211: int32_t VL53L0X_read_word(uint8_t address, uint8_t index, uint16_t *pdata)
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _index `uc ~T0 @X0 1 r2 ]
+[v _pdata `*us ~T0 @X0 1 r3 ]
+"212
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 212: {
+[f ]
+"213
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 213:     int32_t status = 0x00;
+[v _status `l ~T0 @X0 1 a ]
+[e = _status -> -> 0 `i `l ]
+"214
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 214:  uint8_t buffer[2];
+[v _buffer `uc ~T0 @X0 -> 2 `i a ]
+"216
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 216:     status = VL53L0X_read_multi(address, index, buffer, 2);
+[e = _status ( _VL53L0X_read_multi (4 , , , _address _index &U _buffer -> -> 2 `i `l ]
+"217
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 217:  *pdata = ((uint16_t)buffer[0]<<8) + (uint16_t)buffer[1];
+[e = *U _pdata -> + << -> -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `us `ui -> 8 `i -> -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `us `ui `us ]
+"219
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 219:     return status;
+[e ) _status ]
+[e $UE 19  ]
+"221
+[; ;vl53/platform/vl53l0x_i2c_platform.c: 221: }
+[e :UE 19 ]
+}
