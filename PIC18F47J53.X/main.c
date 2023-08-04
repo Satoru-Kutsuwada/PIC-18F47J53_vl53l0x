@@ -61,6 +61,7 @@ extern bool Check1secTask(void);
 extern void log_init(void);
 void rs485_com_task(void);
 
+void    rs485_init(void);
 
 /** Local ProtoType *******************************************************/
 
@@ -251,6 +252,9 @@ MAIN_RETURN main(void)
 
     printf("main_loop_disp()\r\n");
     
+    rs485_init();
+
+        
     main_loop_disp();
     while(1)
     {

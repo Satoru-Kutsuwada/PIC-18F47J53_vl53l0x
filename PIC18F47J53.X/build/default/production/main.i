@@ -12931,6 +12931,7 @@ extern _Bool Check1secTask(void);
 extern void log_init(void);
 void rs485_com_task(void);
 
+void rs485_init(void);
 
 
 
@@ -13004,7 +13005,7 @@ void T100msecMainTask(void)
     }
 
 }
-# 154 "main.c"
+# 155 "main.c"
 void main(void)
 {
 
@@ -13049,19 +13050,22 @@ void main(void)
 
     printf("i2c_init()\r\n");
     i2c_init(1);
-# 227 "main.c"
+# 228 "main.c"
     rtc_data_init();
     printf("Timer_init()\r\n");
     Timer0_init();
     Timer1_init();
 
     Init_Timer();
-# 248 "main.c"
+# 249 "main.c"
     printf("  SSPADD=%x\r\n",SSP2ADD);
     printf("  true=%x\r\n",1);
     printf("  false=%x\r\n",0);
 
     printf("main_loop_disp()\r\n");
+
+    rs485_init();
+
 
     main_loop_disp();
     while(1)
@@ -13097,10 +13101,10 @@ void main(void)
 
 
          rs485_com_task();
-# 325 "main.c"
+# 329 "main.c"
     }
 }
-# 475 "main.c"
+# 479 "main.c"
 void Wait(uint16_t num)
 {
      int i ;

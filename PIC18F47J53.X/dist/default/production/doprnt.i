@@ -1033,14 +1033,34 @@ static void efgtoa(FILE *fp, long double f, char c)
  mode = c;
 
     nmode = mode;
-# 639 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+    if (mode == 'g') {
+  if (prec == 0) {
+   prec = 1;
+  }
+        p = (0 < prec) ? prec : 6;
+    }
+ else
+
  {
         p = (prec < 0) ? 6 : prec;
     }
-# 655 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+
+
+    if (mode == 'g') {
+        if (!(e < -4) && !((p - 1) < e)) {
+            nmode = 'f';
+        } else {
+            nmode = 'e';
+        }
+    }
+
+
+
     m = p;
 
-
+    if (!(mode == 'g') || ((nmode == 'f') && (e < 0)))
 
  {
         ++m;
@@ -1099,9 +1119,9 @@ static void efgtoa(FILE *fp, long double f, char c)
 
     u = ou;
 
+    ne = (nmode == 'e') ? 0 : e;
 
 
- ne = e;
 
     pp = 0;
     t = 0;
@@ -1109,7 +1129,16 @@ static void efgtoa(FILE *fp, long double f, char c)
     while ((i < m) && (n < (80 - 5))) {
         l = floorf(h/u.f);
         d = (int)l > 9 ? 9 : (int)l;
-# 736 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+        if (!d && (mode == 'g') && (ne < 0)
+
+
+
+    ) {
+            ++t;
+        }
+  else
+
   {
             if (!pp && (ne < 0)) {
                 dbuf[n++] = '.';
@@ -1136,7 +1165,36 @@ static void efgtoa(FILE *fp, long double f, char c)
 
  i = sizeof(dbuf) - 1;
     dbuf[i] = '\0';
-# 792 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+
+
+    if (nmode == 'e') {
+        esign = 0;
+        if (e < 0) {
+            esign = 1;
+            e = -e;
+        }
+        p = 2;
+        while (e || (0 < p)) {
+            --i;
+            dbuf[i] = '0' + (e % 10);
+            e = e / 10;
+            --p;
+            --w;
+        }
+        --i;
+        dbuf[i] = esign ? '-' : '+';
+        --w;
+        --i;
+
+
+
+  dbuf[i] = 'e';
+
+        --w;
+    }
+
+
  memcpy(&dbuf[i-n], &dbuf[0], (size_t)n);
  n = i-n;
  i = sign == 0 ? 0 : 1;
@@ -1425,9 +1483,30 @@ vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
    case 'L':
     cp++;
     break;
-# 1439 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+
+
+
+
+
+
+   case 'e':
+
+
+
+
+
    case 'f':
-# 1450 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+
+
+
+
+   case 'g':
+
+
+
+
     c = 'l';
     break;
    default:
@@ -1436,9 +1515,30 @@ vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
   }
 
   if (0
-# 1471 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+
+
+
+
+
+
+    || *cp == 'e'
+
+
+
+
+
     || *cp == 'f'
-# 1482 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+
+
+
+
+    || *cp == 'g'
+
+
+
+
     ) {
    switch (c) {
     case 'l':
@@ -1450,9 +1550,24 @@ vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
    }
    *fmt = cp+1;
    switch (*cp) {
-# 1508 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+# 1502 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+    case 'e':
+
+
+
+
+
     case 'f':
-# 1519 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
+
+
+
+
+
+    case 'g':
+
+
+
+
      return (void) efgtoa(fp, convarg.f, *cp);
 
    }
