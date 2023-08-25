@@ -48,11 +48,18 @@ extern void putch485(char c);
 extern void print485(char *string);
 
 extern void vl53data_disp(void);
-extern void vl53l0x_Racing_test(RASING_MODE sel);
+//extern void vl53l0x_Racing_test(RASING_MODE sel);
 
 void DispLogData(void);
 void SetLogData(uint8_t type, char *string, uint8_t dt1, uint8_t dt2, uint8_t dt3,uint8_t dt4);
 void SetSubStringData( char *cpt, uint16_t *dpt );
+
+
+//=============================================================================
+// 変数宣言
+//=============================================================================
+extern VL53_MAIN_STRUCT    vl53handle;
+extern VL53_MAIN_STRUCT    Prevl53handle;
 
 //=============================================================================
 // 変数宣言
@@ -116,7 +123,7 @@ int input_pos;
  };
  
 #define CHAR_1_RECORD_MAX 20
-#define LOG_SIZE 20
+#define LOG_SIZE 5
  
  typedef struct{
      uint8_t type;
@@ -161,6 +168,8 @@ const MENUE Deb_menue00[] = {
      " 5.SINGLE RANGING HS",
      " 6.SINGLE RANGING LR",
      " 7.VL53 Data DISPLAY",
+     " 8.STOP",
+     
 
      " r.EXIT"
  };   
@@ -345,6 +354,7 @@ void log_init(void)
 //-----------------------------------------------------------------------------
 // 
 //-----------------------------------------------------------------------------
+#ifdef  ___NOP
 void uint2string(char *buf, uint16_t data, uint8_t flg,uint8_t keta)
 {
     uint16_t dt;
@@ -415,7 +425,6 @@ void uint2string(char *buf, uint16_t data, uint8_t flg,uint8_t keta)
     
     
 }
-#ifdef ___NOP
 
 
  //-----------------------------------------------------------------------------
@@ -559,7 +568,7 @@ void uart_start_dispg(void)
 //==============================================================================
 //
 //==============================================================================
-
+#ifdef ___NOP
 void uart485_start_dispg(void)
 {
 #ifdef _____NOP
@@ -578,6 +587,7 @@ void uart485_start_dispg(void)
 
                     
 }
+#endif  // ___NOP
 //==============================================================================
 //
 //==============================================================================
@@ -848,7 +858,9 @@ void SetSubStringData( char *cpt, uint16_t *dpt )
  //==============================================================================
 //
 //==============================================================================
- void debug_main485(void)
+
+#ifdef ___NOP
+void debug_main485(void)
  {
      char c;
 
@@ -864,6 +876,7 @@ void SetSubStringData( char *cpt, uint16_t *dpt )
      }
 
  }           
+#endif  // ___NOP
 
 //==============================================================================
 //
@@ -881,32 +894,38 @@ void SetSubStringData( char *cpt, uint16_t *dpt )
                 if( dev_menue_type == DEB_VL53_MENUE ){
                     switch( input_string.main[0] ){
                         case '1':
-                            VL53_init();
+                            //VL53_init();
                             break;
                         case '2':
                             //vl53l0x_test();
-                            vl53l0x_Racing_test( RASING_MODE_CONTINUE );
+                            //vl53l0x_Racing_test( RASING_MODE_CONTINUE );
+                            vl53handle.command = VL53_COM_MESURRING_CONTI;
                             break;
                         case '3':
                             //vl53l0x_Single_test();
-                            vl53l0x_Racing_test( RASING_MODE_SINGLE );
+                            //vl53l0x_Racing_test( RASING_MODE_SINGLE );
+                            vl53handle.command = VL53_COM_MESURRING_SINGL;
                             break;
                         case '4':
                             //vl53l0x_SingleHA_test();
-                            vl53l0x_Racing_test( RASING_MODE_SINGLE_HA );
+                            //vl53l0x_Racing_test( RASING_MODE_SINGLE_HA );
+                            vl53handle.command = VL53_COM_MESURRING_SINGL_HA;
                             break;
                         case '5':
                             //vl53l0x_SingleHS_test();
-                            vl53l0x_Racing_test( RASING_MODE_SINGLE_HS );
+                            //vl53l0x_Racing_test( RASING_MODE_SINGLE_HS );
+                            vl53handle.command = VL53_COM_MESURRING_SINGL_HS;
                             break;
                         case '6':
                             //vl53l0x_SingleLR_test();
-                            vl53l0x_Racing_test( RASING_MODE_SINGLE_LR );
+                            //vl53l0x_Racing_test( RASING_MODE_SINGLE_LR );
+                            vl53handle.command = VL53_COM_MESURRING_SINGL_LR;
                             break;
                         case '7':
                             vl53data_disp();
                               break;
                         case '8':
+                            vl53handle.command = VL53_COM_STOP;
                             break;
                         case '9':
                             break;
@@ -925,7 +944,7 @@ void SetSubStringData( char *cpt, uint16_t *dpt )
                         case '1':
                             break;
                         case '2':
-                            vl53l0x_Racing_test( RASING_MODE_CONTINUE );
+                            //vl53l0x_Racing_test( RASING_MODE_CONTINUE );
                             break;
                         case 'r':
                         case 'R':

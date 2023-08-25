@@ -11837,7 +11837,43 @@ typedef enum{
 
     RASING_MODE_MAX
 }RASING_MODE;
-# 316 "./system.h"
+# 311 "./system.h"
+typedef enum{
+    VL53_STATE_STOP = 0,
+    VL53_STATE_MESURRING_INIT,
+    VL53_STATE_INIT_ERROR,
+    VL53_STATE_MESURRING_CONTI,
+    VL53_STATE_MESURRING_SINGL,
+    VL53_STATE_MESURWE_ERROR,
+
+    VL53_STATE_MAX
+}VL53_STATE;
+
+typedef enum{
+
+    VL53_COM_NON = 0,
+    VL53_COM_STOP,
+    VL53_COM_MESURRING_CONTI,
+    VL53_COM_MESURRING_SINGL,
+    VL53_COM_MESURRING_SINGL_HA,
+    VL53_COM_MESURRING_SINGL_HS,
+    VL53_COM_MESURRING_SINGL_LR,
+    VL53_COM_MESURRING_DATA,
+
+
+    VL53_COM_MAX
+} VL53_COMMAND;
+
+
+typedef struct{
+    VL53_STATE state;
+    VL53_COMMAND command;
+    uint16_t mesur_data[16];
+    uint8_t msr_wpt;
+    uint8_t msr_rpt;
+
+}VL53_MAIN_STRUCT;
+# 358 "./system.h"
 void SYSTEM_Initialize( SYSTEM_STATE state );
 
 uint16_t Get_Timer(int sel);
@@ -12933,6 +12969,10 @@ void rs485_com_task(void);
 
 void rs485_init(void);
 
+void vl53_main_task(void);
+
+void vl53_task_init(void);
+
 
 
 
@@ -13005,7 +13045,7 @@ void T100msecMainTask(void)
     }
 
 }
-# 155 "main.c"
+# 159 "main.c"
 void main(void)
 {
 
@@ -13050,14 +13090,14 @@ void main(void)
 
     printf("i2c_init()\r\n");
     i2c_init(1);
-# 228 "main.c"
+# 232 "main.c"
     rtc_data_init();
     printf("Timer_init()\r\n");
     Timer0_init();
     Timer1_init();
 
     Init_Timer();
-# 249 "main.c"
+# 253 "main.c"
     printf("  SSPADD=%x\r\n",SSP2ADD);
     printf("  true=%x\r\n",1);
     printf("  false=%x\r\n",0);
@@ -13065,7 +13105,7 @@ void main(void)
     printf("main_loop_disp()\r\n");
 
     rs485_init();
-
+    vl53_task_init();
 
     main_loop_disp();
     while(1)
@@ -13101,10 +13141,12 @@ void main(void)
 
 
          rs485_com_task();
-# 329 "main.c"
+
+         vl53_main_task();
+# 336 "main.c"
     }
 }
-# 479 "main.c"
+# 486 "main.c"
 void Wait(uint16_t num)
 {
      int i ;

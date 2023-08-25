@@ -11839,7 +11839,43 @@ typedef enum{
 
     RASING_MODE_MAX
 }RASING_MODE;
-# 316 "./system.h"
+# 311 "./system.h"
+typedef enum{
+    VL53_STATE_STOP = 0,
+    VL53_STATE_MESURRING_INIT,
+    VL53_STATE_INIT_ERROR,
+    VL53_STATE_MESURRING_CONTI,
+    VL53_STATE_MESURRING_SINGL,
+    VL53_STATE_MESURWE_ERROR,
+
+    VL53_STATE_MAX
+}VL53_STATE;
+
+typedef enum{
+
+    VL53_COM_NON = 0,
+    VL53_COM_STOP,
+    VL53_COM_MESURRING_CONTI,
+    VL53_COM_MESURRING_SINGL,
+    VL53_COM_MESURRING_SINGL_HA,
+    VL53_COM_MESURRING_SINGL_HS,
+    VL53_COM_MESURRING_SINGL_LR,
+    VL53_COM_MESURRING_DATA,
+
+
+    VL53_COM_MAX
+} VL53_COMMAND;
+
+
+typedef struct{
+    VL53_STATE state;
+    VL53_COMMAND command;
+    uint16_t mesur_data[16];
+    uint8_t msr_wpt;
+    uint8_t msr_rpt;
+
+}VL53_MAIN_STRUCT;
+# 358 "./system.h"
 void SYSTEM_Initialize( SYSTEM_STATE state );
 
 uint16_t Get_Timer(int sel);
@@ -12037,11 +12073,18 @@ extern void putch485(char c);
 extern void print485(char *string);
 
 extern void vl53data_disp(void);
-extern void vl53l0x_Racing_test(RASING_MODE sel);
+
 
 void DispLogData(void);
 void SetLogData(uint8_t type, char *string, uint8_t dt1, uint8_t dt2, uint8_t dt3,uint8_t dt4);
 void SetSubStringData( char *cpt, uint16_t *dpt );
+
+
+
+
+
+extern VL53_MAIN_STRUCT vl53handle;
+extern VL53_MAIN_STRUCT Prevl53handle;
 
 
 
@@ -12117,7 +12160,7 @@ int input_pos;
  }LOG_RECORD;
 
  typedef struct{
-     LOG_RECORD log_data[20];
+     LOG_RECORD log_data[5];
      uint16_t wpt;
      uint16_t rpt;
  }LOG_DATA;
@@ -12150,6 +12193,8 @@ const MENUE Deb_menue00[] = {
      " 5.SINGLE RANGING HS",
      " 6.SINGLE RANGING LR",
      " 7.VL53 Data DISPLAY",
+     " 8.STOP",
+
 
      " r.EXIT"
  };
@@ -12171,7 +12216,7 @@ typedef struct
     Deb_menue00, (uint8_t)(sizeof(Deb_menue00 )/sizeof(MENUE)),
     Deb_menue01, (uint8_t)(sizeof(Deb_menue01 )/sizeof(MENUE))
 };
-# 194 "debug_main.c"
+# 203 "debug_main.c"
 void log_init(void)
 {
     log_dt.wpt =0;
@@ -12243,13 +12288,13 @@ void log_init(void)
     log_dt.log_data[log_dt.wpt].string[i] = '\0';
 
     log_dt.wpt ++;
-    if( log_dt.wpt > 20 ){
+    if( log_dt.wpt > 5 ){
         log_dt.wpt = 0;
     }
 
     if( log_dt.wpt == log_dt.rpt ){
         log_dt.rpt ++;
-        if( log_dt.rpt > 20 ){
+        if( log_dt.rpt > 5 ){
             log_dt.rpt = 0;
         }
     }
@@ -12272,7 +12317,7 @@ void log_init(void)
     printf("WPT=%d,RPT=%d\r\n",log_dt.wpt,log_dt.rpt);
 
     rpt = log_dt.rpt;
-    for(i=0; i< 20; i++ ){
+    for(i=0; i< 5; i++ ){
 
 
         if( log_dt.log_data[rpt].usec == 10 )
@@ -12311,7 +12356,7 @@ void log_init(void)
 
 
         rpt ++;
-        if( rpt > 20 ){
+        if( rpt > 5 ){
             rpt = 0;
         }
         if( rpt == log_dt.wpt ){
@@ -12320,83 +12365,7 @@ void log_init(void)
     }
 
  }
-
-
-
-
-
-
-void uint2string(char *buf, uint16_t data, uint8_t flg,uint8_t keta)
-{
-    uint16_t dt;
-    uint16_t i;
-    uint16_t sw;
-    uint16_t kdt = 1;
-
-    sw = 0;
-
-
-    dt = data;
-    if( flg == 10){
-        if( keta == 0 ){
-            kdt = 10000;
-        }
-        else if( keta > 5 ){
-                kdt = 10000;
-        }
-        else {
-            for( i=1; i< keta; i++ ){
-                kdt = kdt * 10;
-            }
-        }
-
-        for(i=10000; i>0; i/=10){
-            if( i == kdt )
-                sw = 1;
-
-            dt = dt/i;
-            if(sw==0){
-                if(dt != 0){
-                    *buf = CharConv[dt];
-                    sw=1;
-                }
-            }
-            else{
-                    *buf = CharConv[dt];
-            }
-            dt = data - dt*i;
-            buf ++;
-        }
-    }
-    else{
-        *buf = '0';
-        buf ++;
-        *buf = 'x';
-        buf ++;
-
-        dt = (data >> 12)& 0x0f;
-        *buf = CharConv[dt];
-        buf ++;
-
-        dt = (data >> 8)& 0x0f;
-        *buf = CharConv[dt];
-        buf ++;
-
-        dt = (data >> 4)& 0x0f;
-        *buf = CharConv[dt];
-        buf ++;
-
-        dt = data & 0x0f;
-        *buf = CharConv[dt];
-        buf ++;
-
-    }
-
-    *buf =(char) '\0';
-
-
-}
-# 490 "debug_main.c"
+# 499 "debug_main.c"
  COMMAND_MENUE input2menu(void)
  {
      uint16_t i = 0;
@@ -12416,7 +12385,7 @@ void uint2string(char *buf, uint16_t data, uint8_t flg,uint8_t keta)
 
     return rtn;
 }
-# 541 "debug_main.c"
+# 550 "debug_main.c"
 void uart_start_dispg(void)
 {
 
@@ -12435,31 +12404,7 @@ void uart_start_dispg(void)
 
 
 }
-
-
-
-
-void uart485_start_dispg(void)
-{
-
-
-
-
-
-
-
-    print485("*** USART485 Setup ***\r\n");
-
-
-
-
-
-
-
-}
-
-
-
+# 594 "debug_main.c"
 void main_loop_disp(void)
 {
 
@@ -12724,29 +12669,7 @@ void SetSubStringData( char *cpt, uint16_t *dpt )
 
     }
 }
-
-
-
- void debug_main485(void)
- {
-     char c;
-
-     c = (char )getch485();
-     if( c != 0 ){
-         printf("RS485 C=0x%x\r\n",c);
-         if( c == '9'){
-            putch485('O');
-            putch485('K');
-            putch485('\r');
-            putch485('\n');
-         }
-     }
-
- }
-
-
-
-
+# 884 "debug_main.c"
  void debug_main(void)
  {
      uint8_t i;
@@ -12760,32 +12683,38 @@ void SetSubStringData( char *cpt, uint16_t *dpt )
                 if( dev_menue_type == DEB_VL53_MENUE ){
                     switch( input_string.main[0] ){
                         case '1':
-                            VL53_init();
+
                             break;
                         case '2':
 
-                            vl53l0x_Racing_test( RASING_MODE_CONTINUE );
+
+                            vl53handle.command = VL53_COM_MESURRING_CONTI;
                             break;
                         case '3':
 
-                            vl53l0x_Racing_test( RASING_MODE_SINGLE );
+
+                            vl53handle.command = VL53_COM_MESURRING_SINGL;
                             break;
                         case '4':
 
-                            vl53l0x_Racing_test( RASING_MODE_SINGLE_HA );
+
+                            vl53handle.command = VL53_COM_MESURRING_SINGL_HA;
                             break;
                         case '5':
 
-                            vl53l0x_Racing_test( RASING_MODE_SINGLE_HS );
+
+                            vl53handle.command = VL53_COM_MESURRING_SINGL_HS;
                             break;
                         case '6':
 
-                            vl53l0x_Racing_test( RASING_MODE_SINGLE_LR );
+
+                            vl53handle.command = VL53_COM_MESURRING_SINGL_LR;
                             break;
                         case '7':
                             vl53data_disp();
                               break;
                         case '8':
+                            vl53handle.command = VL53_COM_STOP;
                             break;
                         case '9':
                             break;
@@ -12804,7 +12733,7 @@ void SetSubStringData( char *cpt, uint16_t *dpt )
                         case '1':
                             break;
                         case '2':
-                            vl53l0x_Racing_test( RASING_MODE_CONTINUE );
+
                             break;
                         case 'r':
                         case 'R':
@@ -12945,5 +12874,5 @@ printf(" TXSTA2    = 0x%02x\r\n", TXSTA2 );
 printf(" RCSTA3    = 0x%02x\r\n", RCSTA2 );
 printf(" BAUDCON2  = 0x%02x\r\n", BAUDCON2 );
 printf(" SPBRG2    = 0x%02x%02x\r\n", SPBRGH2,SPBRG2 );
-# 1133 "debug_main.c"
+# 1152 "debug_main.c"
 }

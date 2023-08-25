@@ -43,18 +43,422 @@ please contact mla_licensing@microchip.com
 //void VL53_init(void);
 VL53L0X_Error rangingTest(VL53L0X_Dev_t *pMyDevice);
 void vl53l0x_Single_test(void);
-void vl53l0x_Racing_test(RASING_MODE sel);
+//void vl53l0x_Racing_test(RASING_MODE sel);
 
+void VL53_Stop( VL53_MAIN_STRUCT	*handle );
+void VL53_StopConti( VL53_MAIN_STRUCT	*handle );
+void VL53_StopSingle( VL53_MAIN_STRUCT	*handle );
+void VL53_nop( VL53_MAIN_STRUCT	*handle );
+void VL53_StartConti( VL53_MAIN_STRUCT	*handle );
+void VL53_MsrConti( VL53_MAIN_STRUCT	*handle );
+void set_MsrData(VL53_MAIN_STRUCT	*handle,uint16_t   dt);
+void VL53_MsrSingle( VL53_MAIN_STRUCT	*handle );
+void VL53_StartSingle( VL53_MAIN_STRUCT	*handle );
+void VL53_StartSingleHA( VL53_MAIN_STRUCT	*handle );
+void VL53_StartSingleHS( VL53_MAIN_STRUCT	*handle );
+void VL53_StartSingleLR( VL53_MAIN_STRUCT	*handle );
+void VL53_DataReq( VL53_MAIN_STRUCT	*handle );
+
+void print_pal_error(VL53L0X_Error Status);
+void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementData);
+
+VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) ;
+VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) ;
+void vl53l0x_Racing_init(RASING_MODE sel);
 
 /** enum *******************************************************/
 
 /** 変数　 *******************************************************/
 VL53L0X_Dev_t   MyDevice;
+VL53L0X_RangingMeasurementData_t    RangingMeasurementData;
+VL53L0X_Version_t                   Version;
+VL53L0X_DeviceInfo_t                DeviceInfo;
+
+
+
+
+
+
+VL53_MAIN_STRUCT    vl53handle;
+VL53_MAIN_STRUCT    Prevl53handle;
 
 //==============================================================================
 //
 //==============================================================================
-void print_pal_error(VL53L0X_Error Status){
+const void (*vl53_func_table[VL53_COM_MAX][VL53_STATE_MAX])( VL53_MAIN_STRUCT	*handle )={
+
+//        _STOP                 _INIT           _CONTI          _SINGL          
+     
+		{ VL53_nop,             VL53_nop,       VL53_nop,       VL53_nop        },      // _NON
+		{ VL53_nop,             VL53_Stop,      VL53_StopConti, VL53_StopSingle },     // _STOP
+		{ VL53_StartConti,      VL53_MsrConti,  VL53_MsrConti,       VL53_nop        },      // _MESURRING_CONTI
+		{ VL53_StartSingle,     VL53_MsrSingle, VL53_MsrSingle,       VL53_nop        },      // _MESURRING_SINGL
+		{ VL53_StartSingleHA,	VL53_MsrSingle, VL53_MsrSingle,       VL53_nop        },      // _MESURRING_SINGL_HA
+		{ VL53_StartSingleHS,	VL53_MsrSingle, VL53_MsrSingle,       VL53_nop        },      // _MESURRING_SINGL_HS
+		{ VL53_StartSingleLR,	VL53_MsrSingle, VL53_MsrSingle,       VL53_nop        },      // _MESURRING_SINGL_LR
+		{ VL53_DataReq,         VL53_DataReq,   VL53_DataReq,	VL53_DataReq    }	// _MESURRING_DATA
+};
+
+ 
+//==============================================================================
+//
+//==============================================================================
+void vl53_task_init(void)
+{
+    vl53handle.state = VL53_STATE_STOP; 
+    vl53handle.command = VL53_COM_NON; 
+    vl53handle.msr_rpt = 0; 
+    vl53handle.msr_wpt = 0; 
+    
+    Prevl53handle = vl53handle;
+}
+
+
+//==============================================================================
+//
+//==============================================================================
+void vl53_main_task(void)
+{
+    uint8_t     state;
+    uint8_t     command;
+    
+    state = vl53handle.state;
+    command = vl53handle.command;
+ 
+    (*vl53_func_table[command][state])( &vl53handle );
+
+    
+}
+
+//==============================================================================
+//
+//==============================================================================
+void VL53_Stop( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_Stop(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+}
+
+//==============================================================================
+//
+//==============================================================================
+void VL53_StopConti( VL53_MAIN_STRUCT	*handle )
+{
+    VL53L0X_Error Status = VL53L0X_ERROR_NONE;
+    VL53L0X_Dev_t *pMyDevice = &MyDevice;
+
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StopConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    if(Status == VL53L0X_ERROR_NONE){
+        /*
+         * <VL53L0X_StopMeasurement()>
+         * デバイスの測定を停止します。
+         * 電流測定の終了時にデバイスをスタンバイモードに設定します
+         * シングルモードでは、測定終了時にデバイスが自動的にスタンバイモードに
+         * 戻るため、必要ありません。 この関数は、VL53L0X_State を 
+         * VL53L0X_STATE_RUNNING から VL53L0X_STATE_IDLE に変更します。
+         */
+        printf ("Call of VL53L0X_StopMeasurement\r\n");
+        Status = VL53L0X_StopMeasurement(pMyDevice);
+    }
+
+    if(Status == VL53L0X_ERROR_NONE){
+        printf ("Wait Stop to be competed\r\n");
+        Status = WaitStopCompleted(pMyDevice);
+    }
+
+    if(Status == VL53L0X_ERROR_NONE){
+        /*
+         * <VL53L0X_ClearInterruptMask()>
+         * 指定されたシステム割り込み条件をクリアします。
+         * 指定された割り込みをクリアします。
+         */
+        Status = VL53L0X_ClearInterruptMask(pMyDevice,VL53L0X_REG_SYSTEM_INTERRUPT_GPIO_NEW_SAMPLE_READY);
+    }
+    
+    vl53handle.state = VL53_STATE_STOP; 
+    vl53handle.command = VL53_COM_NON; 
+}
+
+//==============================================================================
+//
+//==============================================================================
+void VL53_StopSingle( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StopSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    vl53handle.state = VL53_STATE_STOP; 
+    vl53handle.command = VL53_COM_NON; 
+}
+//==============================================================================
+//
+//==============================================================================
+void VL53_nop( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_nop(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    vl53handle.state = VL53_STATE_STOP; 
+    vl53handle.command = VL53_COM_NON; 
+}
+
+//==============================================================================
+//
+//==============================================================================
+void VL53_StartConti( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0; 
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_CONTINUE );
+}
+
+//==============================================================================
+//
+//==============================================================================
+void VL53_MsrConti( VL53_MAIN_STRUCT	*handle )
+{
+    VL53L0X_Error Status = VL53L0X_ERROR_NONE;
+    VL53L0X_RangingMeasurementData_t   *pRangingMeasurementData    = &RangingMeasurementData;
+    VL53L0X_Dev_t *pMyDevice = &MyDevice;
+
+    
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_MsrConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }    
+
+    
+    Status = WaitMeasurementDataReady(pMyDevice);
+
+    if(Status == VL53L0X_ERROR_NONE){
+        /*
+         * < VL53L0X_GetRangingMeasurementData() >
+         * 特定のセットアップのデバイスから測定値を取得します。
+         * 機能の説明
+         * 最後に成功したレンジング測定からデータを取得する
+         * 
+         * 警告：
+         * USER はデータを取得する前に VL53L0X_GetNumberOfROIZones() に
+         * 注意する必要があります。 PAL は、測定関数で使用される
+         * 対応するデータ構造に NumberOfROIZones を掛けた値を埋めます。
+         */
+        Status = VL53L0X_GetRangingMeasurementData(pMyDevice, pRangingMeasurementData);
+
+        set_MsrData( handle, pRangingMeasurementData->RangeMilliMeter);
+        
+        printf("In loop measurement= %d\r\n", pRangingMeasurementData->RangeMilliMeter);
+        //printf("In loop measurement %d: %d : %d\r\n", measurement, pRangingMeasurementData->RangeMilliMeter, pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
+
+        /*
+         * <VL53L0X_ClearInterruptMask()>
+         * 指定されたシステム割り込み条件をクリアします。
+         * 指定された割り込みをクリアします。
+         */
+        VL53L0X_ClearInterruptMask(pMyDevice, VL53L0X_REG_SYSTEM_INTERRUPT_GPIO_NEW_SAMPLE_READY);
+        VL53L0X_PollingDelay(pMyDevice);
+    } 
+    
+    if(Status == VL53L0X_ERROR_NONE){
+       vl53handle.state = VL53_COM_MESURRING_CONTI;
+    }
+    else{
+        vl53handle.state = VL53_COM_MESURRING_CONTI;
+        vl53handle.command = VL53_COM_STOP;
+    }
+}
+
+
+//==============================================================================
+//
+//==============================================================================
+void set_MsrData(VL53_MAIN_STRUCT	*handle,uint16_t   dt)
+{
+        handle->mesur_data[handle->msr_wpt] = dt;
+        handle->msr_wpt++;
+        if( handle->msr_wpt++ > MESURE_DATA_MAX ){
+            handle->msr_wpt = 0;
+            if( handle->msr_wpt == handle->msr_rpt ){
+                handle->msr_rpt++;
+                if( handle->msr_rpt++ > MESURE_DATA_MAX ){
+                    handle->msr_rpt = 0;
+                }
+            }
+        }
+    
+}
+//==============================================================================
+//
+//==============================================================================
+void VL53_MsrSingle( VL53_MAIN_STRUCT	*handle )
+{
+    
+    VL53L0X_Error Status = VL53L0X_ERROR_NONE;
+    VL53L0X_RangingMeasurementData_t   *pRangingMeasurementData    = &RangingMeasurementData;
+    VL53L0X_Dev_t *pMyDevice = &MyDevice;
+    FixPoint1616_t LimitCheckCurrent;
+    
+
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_MsrSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+
+        /*
+         * <VL53L0X_PerformSingleRangingMeasurement()>
+         * 単一の測距測定を実行し、測距測定データを取得します。
+         * 機能の説明
+         * この関数は、 VL53L0X_SetDeviceMode() でデバイス モードを 
+         * VL53L0X_DEVICEMODE_SINGLE_RANGING に変更します。 
+         * VL53L0X_PerformSingleMeasurement() で測定を実行します。 
+         * VL53L0X_GetRangingMeasurementData で最後に成功したレンジング
+         * 測定からデータを取得します。 
+         * 最後に、 VL53L0X_ClearInterruptMask() で割り込みをクリアします。
+         * 
+         * ノート：
+         * この機能はデバイスへのアクセスです
+         * この関数はデバイス モードを VL53L0X_DEVICEMODE_SINGLE_RANGING に変更します。
+         * 
+         */
+        printf ("Call of VL53L0X_PerformSingleRangingMeasurement\r\n");
+        Status = VL53L0X_PerformSingleRangingMeasurement(pMyDevice, &RangingMeasurementData);
+
+        set_MsrData( handle, pRangingMeasurementData->RangeMilliMeter);
+        
+        printf("002 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);    
+
+        print_pal_error(Status);
+        print_range_status(&RangingMeasurementData);
+
+        /*
+         * <VL53L0X_GetLimitCheckCurrent()>
+         * リミットチェックに使用される信号の現在値を取得します。
+         * 機能の説明
+         * この関数は、リミットチェックに使用される信号の現在値を取得します。 
+         * 最新の値を取得するには、事前にレンジングを実行する必要があります。 
+         * 報告される値は、LimitCheckId で識別される制限チェックにリンクされます。
+         * ノート：
+         * この機能はデバイスへのアクセスです
+         */
+        
+        switch(handle->command){
+        case VL53_COM_MESURRING_SINGL:
+        case VL53_COM_MESURRING_SINGL_HA:
+        case VL53_COM_MESURRING_SINGL_HS:
+            VL53L0X_GetLimitCheckCurrent(pMyDevice, VL53L0X_CHECKENABLE_RANGE_IGNORE_THRESHOLD, &LimitCheckCurrent);
+            printf("RANGE IGNORE THRESHOLD: %f\r\n", (float)LimitCheckCurrent/65536.0);
+            break;
+        case VL53_COM_MESURRING_SINGL_LR:
+        case VL53_COM_MESURRING_CONTI:
+        default:
+            break;
+        }
+
+        printf("003 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter) ;   
+        printf("Measured distance: %i\r\n", RangingMeasurementData.RangeMilliMeter);
+
+    if(Status == VL53L0X_ERROR_NONE){
+       vl53handle.state = VL53_STATE_MESURRING_SINGL;
+    }
+    else{
+        vl53handle.state = VL53_STATE_MESURRING_SINGL;
+        vl53handle.command = VL53_COM_STOP;
+    }
+}
+//==============================================================================
+//
+//==============================================================================
+void VL53_StartSingle( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0; 
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_SINGLE );
+}
+
+//==============================================================================
+//
+//==============================================================================
+void VL53_StartSingleHA( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartSingleHA(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0; 
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_SINGLE_HA );
+}
+
+//==============================================================================
+//
+//==============================================================================
+void VL53_StartSingleHS( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartSingleHS(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0; 
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_SINGLE_HS );
+}
+//==============================================================================
+//
+//==============================================================================
+void VL53_StartSingleLR( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartSingleLR(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0; 
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_SINGLE_LR );
+}
+
+//==============================================================================
+//
+//==============================================================================
+void VL53_DataReq( VL53_MAIN_STRUCT	*handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("VL53_DataReq(S=%d,E=%d)",vl53handle.state, vl53handle.command);
+    }
+}
+
+
+//==============================================================================
+//
+//==============================================================================
+void print_pal_error(VL53L0X_Error Status)
+{
     char buf[VL53L0X_MAX_STRING_LENGTH];
     VL53L0X_GetPalErrorString(Status, buf);
     printf("API Status: %i : %s\r\n", Status, buf);
@@ -62,7 +466,6 @@ void print_pal_error(VL53L0X_Error Status){
 //==============================================================================
 //
 //==============================================================================
-
 void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementData)
 {
     char buf[VL53L0X_MAX_STRING_LENGTH];
@@ -94,6 +497,7 @@ void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementDat
  *
  * Note:            None
  *******************************************************************/
+#ifdef ___NOP   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 void VL53_init(void)
 {
 #ifdef  __VL53L_MASTER  //++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -211,8 +615,10 @@ void VL53_init(void)
 #endif  //__VL53L_MASTER +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 }
+#endif // ___NOP  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 
-VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) {
+VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) 
+{
     VL53L0X_Error Status = VL53L0X_ERROR_NONE;
     uint32_t StopCompleted=0;
     uint32_t LoopNb;
@@ -240,7 +646,8 @@ VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) {
 }
     
 
-VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) {
+VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) 
+{
     VL53L0X_Error Status = VL53L0X_ERROR_NONE;
     uint8_t NewDatReady=0;
     uint32_t LoopNb;
@@ -1679,6 +2086,9 @@ void vl53l0x_SingleLR_test(void)
 }
 #endif  // ___NOP
 
+
+
+#ifdef ___NOP
 //==============================================================================
 //
 // sel : 0 SINGLE RACING
@@ -1701,6 +2111,7 @@ VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
     uint8_t isApertureSpads;
     uint8_t VhvSettings;
     uint8_t PhaseCal;
+
 
     /*
      * <VL53L0X_StaticInit()>
@@ -1761,6 +2172,7 @@ VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
             //Status = VL53L0X_SetSequenceStepEnable(pMyDevice,VL53L0X_SEQUENCESTEP_DSS, 1);
         }    
     }
+
 
     
     if(sel == RASING_MODE_CONTINUE ){
@@ -2150,6 +2562,314 @@ void vl53l0x_Racing_test(RASING_MODE sel)
     print_pal_error(Status);
 }
 
+#endif  // ___NOP
+
+
+//==============================================================================
+//
+// sel : 0 SINGLE RACING
+//       1 SINGLE RACING HA
+//       2 SINGLE RACING HS
+//       3 SINGLE RACING LR
+//
+//==============================================================================
+void vl53l0x_Racing_init(RASING_MODE sel)
+{
+    VL53L0X_Error Status = VL53L0X_ERROR_NONE;
+    VL53L0X_Dev_t *pMyDevice = &MyDevice;
+    VL53L0X_Version_t                  *pVersion   = &Version;
+
+    int32_t status_int;
+    int32_t init_done = 0;
+    int NecleoComStatus = 0;
+    int NecleoAutoCom = 1;
+    uint8_t VhvSettings;
+    uint8_t PhaseCal;
+    uint32_t refSpadCount;
+    uint8_t isApertureSpads;
+    
+    if(sel == RASING_MODE_CONTINUE){
+        printf ("VL53L0X PAL Continuous Ranging example\r\n");
+    }
+    else{
+        printf ("VL53L0X API Simple Ranging example\r\n\n");
+    }
+ 
+    pMyDevice->I2cDevAddr      = 0x52;
+
+    /*
+     *  Get the version of the VL53L0X API running in the firmware
+     */
+
+    if(Status == VL53L0X_ERROR_NONE){
+        status_int = VL53L0X_GetVersion(pVersion);
+        if (status_int != 0){
+            Status = VL53L0X_ERROR_CONTROL_INTERFACE;    
+        }
+        else{
+            //  Verify the version of the VL53L0X API running in the firmware
+            if( pVersion->major != VERSION_REQUIRED_MAJOR ||
+                pVersion->minor != VERSION_REQUIRED_MINOR ||
+                pVersion->build != VERSION_REQUIRED_BUILD )
+            {
+                printf("VL53L0X API Version Error: Your firmware has %d.%d.%d (revision %d). This example requires %d.%d.%d.\n",
+                    pVersion->major, pVersion->minor, pVersion->build, pVersion->revision,
+                    VERSION_REQUIRED_MAJOR, VERSION_REQUIRED_MINOR, VERSION_REQUIRED_BUILD);
+            }
+        }
+    }
+
+    /*
+     * 機能の説明
+     * 新しいデバイスの「電源投入」またはリセット後に使用されていない場合、
+     * VL53L0X_ERROR_CALIBRATION_WARNING が返される場合があります。
+     * これは、間違ったキャリブレーション データがデバイスからフェッチされた
+     * 可能性があり、レンジング オフセット エラーが発生する可能性があります。
+     * 
+     * アプリケーションがデバイスリセットを実行できない場合、または VL53L0X_DataInitを
+     * 複数回実行する必要がある場合は、最初の電源投入時に 
+     * VL53L0X_GetOffsetCalibrationData() を使用し、その後すべての初期化で 
+     * VL53L0X_SetOffsetCalibrationData() を使用して、適切なオフセットキャリブレーションの保存と
+     * 復元を独自に行う必要があります。
+     * この関数は VL53L0X_State を変更します。 
+     * VL53L0X_STATE_POWERDOWN から VL53L0X_STATE_WAIT_STATICINIT まで。
+     */
+    if(Status == VL53L0X_ERROR_NONE){
+        printf ("Call of VL53L0X_DataInit\r\n");
+        Status = VL53L0X_DataInit(&MyDevice); // Data initialization
+        print_pal_error(Status);
+    }
+
+    if(Status == VL53L0X_ERROR_NONE){
+        Status = VL53L0X_GetDeviceInfo(&MyDevice, &DeviceInfo);
+        
+        if(Status == VL53L0X_ERROR_NONE){
+            printf("VL53L0X_GetDeviceInfo:\r\n");
+            printf("Device Name : %s\r\n", DeviceInfo.Name);
+            printf("Device Type : %s\r\n", DeviceInfo.Type);
+            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+            printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+
+            if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+            	printf("Error expected cut 1.1 but found cut %d.%d\r\n",DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+                Status = VL53L0X_ERROR_NOT_SUPPORTED;
+            }
+        }
+        print_pal_error(Status);
+    }
+
+    
+    
+    /*
+     * <VL53L0X_StaticInit()>
+     * 基本的なデバイスの初期化 (最終的にはパッチのロード) を実行します。
+     * この関数は、VL53L0X_State を VL53L0X_STATE_WAIT_STATICINIT から VL53L0X_STATE_IDLE に変更します。
+     * この段階では、すべてのデフォルト設定が適用されます。
+     */
+    if(Status == VL53L0X_ERROR_NONE)
+    {
+        printf ("Call of VL53L0X_StaticInit\r\n");
+        Status = VL53L0X_StaticInit(pMyDevice); // Device Initialization
+        print_pal_error(Status);
+    }
+    
+    
+    if(Status == VL53L0X_ERROR_NONE)
+    {
+        printf ("Call of VL53L0X_PerformRefCalibration\r\n");
+        Status = VL53L0X_PerformRefCalibration(pMyDevice, &VhvSettings, &PhaseCal); // Device Initialization
+        print_pal_error(Status);
+    }
+
+    if(Status == VL53L0X_ERROR_NONE)
+    {
+        printf ("Call of VL53L0X_PerformRefSpadManagement\r\n");
+        Status = VL53L0X_PerformRefSpadManagement(pMyDevice, &refSpadCount, &isApertureSpads); // Device Initialization
+
+        print_pal_error(Status);
+    }
+
+    if(Status == VL53L0X_ERROR_NONE)
+    {
+        printf ("Call of VL53L0X_SetDeviceMode\r\n");
+        if(sel == RASING_MODE_CONTINUE ){
+            Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_CONTINUOUS_RANGING); // Setup in single ranging mode
+        }
+        else{
+            Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+        }
+        
+        print_pal_error(Status);
+    }
+
+    /*
+     * <VL53L0X_SetSequenceStepEnable()>
+     * 要求されたシーケンス ステップの (オン/オフ) 状態を設定します。
+     * 機能の説明
+     * この機能は、要求されたシーケンス ステップを有効または無効にします。
+     * ノート：
+     * この機能はデバイスにアクセスします
+     * パラメーター：
+     *   Device Handle
+     *   Sequence step identifier.
+     *   Demanded state {0=Off,1=On} is enabled.     * 
+     */
+    if (Status == VL53L0X_ERROR_NONE) {
+        if(sel == RASING_MODE_SINGLE_LR){
+            //Status = VL53L0X_SetSequenceStepEnable(pMyDevice,VL53L0X_SEQUENCESTEP_DSS, 1);
+        }    
+    }
+
+    
+    if(sel == RASING_MODE_CONTINUE ){
+        if(Status == VL53L0X_ERROR_NONE){
+            /*
+             * < VL53L0X_StartMeasurement() >
+             * デバイスの測定を開始します。
+             * 開始される測定は、VL53L0X_SetParameters() で設定されたデバイスパラメータに依存します。
+             * これはノンブロッキング関数です。 
+             * この関数は、VL53L0X_State を VL53L0X_STATE_IDLE から VL53L0X_STATE_RUNNING に変更します。
+             */
+            printf ("Call of VL53L0X_StartMeasurement\r\n");
+            Status = VL53L0X_StartMeasurement(pMyDevice);
+            // print_pal_error(Status);
+        }
+    }
+    else{
+         /*
+         * < VL53L0X_SetLimitCheckEnable() >
+         * Enable/Disable Sigma and Signal check
+         * 特定の制限チェックを有効/無効にします。
+         * 機能の説明
+         * この機能は、特定の制限チェックを有効/無効にします。 
+         * 制限チェックは LimitCheckId で識別されます。
+         */
+        
+        if (Status == VL53L0X_ERROR_NONE) {
+            Status = VL53L0X_SetLimitCheckEnable(pMyDevice, VL53L0X_CHECKENABLE_SIGMA_FINAL_RANGE, 1);
+        }
+
+        if (Status == VL53L0X_ERROR_NONE) {
+            Status = VL53L0X_SetLimitCheckEnable(pMyDevice, VL53L0X_CHECKENABLE_SIGNAL_RATE_FINAL_RANGE, 1);
+        }
+
+        if (Status == VL53L0X_ERROR_NONE) {
+            if(sel == RASING_MODE_SINGLE){
+                Status = VL53L0X_SetLimitCheckEnable(pMyDevice, VL53L0X_CHECKENABLE_RANGE_IGNORE_THRESHOLD, 1);
+            }
+        }
+        
+        /*
+         * < VL53L0X_SetLimitCheckValue() >
+         * 特定の制限チェック値を設定します。
+         * 機能の説明
+         * この関数は、特定の制限チェック値を設定します。 
+         * 制限チェックは LimitCheckId で識別されます。
+         */
+        switch(sel){
+        case RASING_MODE_SINGLE:
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetLimitCheckValue(pMyDevice, VL53L0X_CHECKENABLE_RANGE_IGNORE_THRESHOLD, (FixPoint1616_t)(1.5*0.023*65536));
+            }
+             break;
+        case RASING_MODE_SINGLE_HA:
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetLimitCheckValue(pMyDevice, VL53L0X_CHECKENABLE_SIGNAL_RATE_FINAL_RANGE, (FixPoint1616_t)(0.25*65536));
+            }            
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetLimitCheckValue(pMyDevice, VL53L0X_CHECKENABLE_SIGMA_FINAL_RANGE, (FixPoint1616_t)(18*65536));            
+            }
+            break;
+        case RASING_MODE_SINGLE_HS:
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetLimitCheckValue(pMyDevice, VL53L0X_CHECKENABLE_SIGNAL_RATE_FINAL_RANGE, (FixPoint1616_t)(0.25*65536));
+            }            
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetLimitCheckValue(pMyDevice, VL53L0X_CHECKENABLE_SIGMA_FINAL_RANGE, (FixPoint1616_t)(32*65536));            
+            }
+
+            break;
+        case RASING_MODE_SINGLE_LR:
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetLimitCheckValue(pMyDevice, VL53L0X_CHECKENABLE_SIGNAL_RATE_FINAL_RANGE, (FixPoint1616_t)(0.1*65536));
+            }            
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetLimitCheckValue(pMyDevice, VL53L0X_CHECKENABLE_SIGMA_FINAL_RANGE, (FixPoint1616_t)(60*65536));            
+            }
+
+            break;
+        default:
+            break;
+        }
+        
+        /*
+         * <>
+         * レンジング タイミング バジェットをマイクロ秒単位で設定します。
+         * 機能の説明
+         * 現在のモード (レンジング、ヒストグラム、ASL ...) のフルレンジング シーケンスを
+         * 実行するためにユーザーがデバイスに許可する最大時間を定義します。
+         */
+        switch(sel){
+        case RASING_MODE_SINGLE:
+             break;
+        case RASING_MODE_SINGLE_HA:
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 200000);
+            }
+            break;
+        case RASING_MODE_SINGLE_HS:
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 30000);
+            }
+            break;
+       case RASING_MODE_SINGLE_LR:
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 33000);
+            }
+            break;
+        default:
+            break;
+        }
+        
+        /*
+         * < VL53L0X_SetVcselPulsePeriod() >
+         * VCSEL パルス周期を設定します。
+         * 機能の説明
+         * この関数は、指定された周期タイプの VCSEL パルス周期を取得します。
+         */
+        switch(sel){
+        case RASING_MODE_SINGLE:
+             break;
+        case RASING_MODE_SINGLE_HA:
+            break;
+        case RASING_MODE_SINGLE_HS:
+            break;
+       case RASING_MODE_SINGLE_LR:
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetVcselPulsePeriod(pMyDevice, VL53L0X_VCSEL_PERIOD_PRE_RANGE, 18);
+            }
+            if (Status == VL53L0X_ERROR_NONE) {
+                Status = VL53L0X_SetVcselPulsePeriod(pMyDevice, VL53L0X_VCSEL_PERIOD_FINAL_RANGE, 14);
+            }
+            break;
+        default:
+            break;
+        }
+        
+    }
+    
+    if (Status == VL53L0X_ERROR_NONE) {
+        vl53handle.state = VL53_STATE_MESURRING_INIT;
+    }
+    else{
+        vl53handle.state = VL53_STATE_INIT_ERROR;
+    }
+
+
+   
+    print_pal_error(Status);
+}
 //==============================================================================
 //
 //==============================================================================

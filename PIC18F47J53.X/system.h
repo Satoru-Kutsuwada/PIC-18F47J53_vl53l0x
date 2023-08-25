@@ -301,6 +301,48 @@ typedef enum{
 }RASING_MODE;
 
 
+
+
+
+
+
+
+
+typedef enum{
+    VL53_STATE_STOP = 0,
+    VL53_STATE_MESURRING_INIT,
+    VL53_STATE_INIT_ERROR,
+    VL53_STATE_MESURRING_CONTI,
+    VL53_STATE_MESURRING_SINGL,
+    VL53_STATE_MESURWE_ERROR,
+            
+    VL53_STATE_MAX
+}VL53_STATE;
+
+typedef enum{
+    
+    VL53_COM_NON = 0,
+    VL53_COM_STOP,
+    VL53_COM_MESURRING_CONTI,
+    VL53_COM_MESURRING_SINGL,
+    VL53_COM_MESURRING_SINGL_HA,
+    VL53_COM_MESURRING_SINGL_HS,
+    VL53_COM_MESURRING_SINGL_LR,
+    VL53_COM_MESURRING_DATA,
+            
+            
+    VL53_COM_MAX
+} VL53_COMMAND;
+
+#define MESURE_DATA_MAX     16
+typedef struct{
+    VL53_STATE     state;
+    VL53_COMMAND     command;
+    uint16_t    mesur_data[MESURE_DATA_MAX];
+    uint8_t    msr_wpt;
+    uint8_t    msr_rpt;
+    
+}VL53_MAIN_STRUCT;
 /*********************************************************************
 * Function: void SYSTEM_Initialize( SYSTEM_STATE state )
 *

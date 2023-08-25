@@ -1,0 +1,42 @@
+git checkout PIC18F47J53.X/app_device_cdc_basic.c
+git checkout PIC18F47J53.X/app_device_cdc_basic.h
+git checkout PIC18F47J53.X/app_led_usb_status.c
+git checkout PIC18F47J53.X/app_led_usb_status.h
+git checkout PIC18F47J53.X/debug_main.c
+git checkout PIC18F47J53.X/debug_main.h
+git checkout PIC18F47J53.X/i2c_main.c
+git checkout PIC18F47J53.X/i2c_main.h
+git checkout PIC18F47J53.X/io_mapping.h
+git checkout PIC18F47J53.X/main.c
+git checkout PIC18F47J53.X/main.h
+git checkout PIC18F47J53.X/rtc_main.c
+git checkout PIC18F47J53.X/rtc_main.h
+git checkout PIC18F47J53.X/system.c
+git checkout PIC18F47J53.X/system.h
+git checkout PIC18F47J53.X/uart_main.c
+git checkout PIC18F47J53.X/usr_rs485_main.c
+git checkout PIC18F47J53.X/vl53_st_main.c
+
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api.c
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api_calibration.c
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api_core.c
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api_strings.c
+
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_def.h
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api.h
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api_calibration.h
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api_core.h
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api_ranging.h
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_api_strings.h
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_device.h
+git checkout PIC18F47J53.X/vl53/core/vl53l0x_tuning.h
+
+git checkout PIC18F47J53.X/vl53/platform/vl53l0x_i2c_platform.h
+git checkout PIC18F47J53.X/vl53/platform/vl53l0x_i2c_platform.c
+git checkout PIC18F47J53.X/vl53/platform/vl53l0x_platform.c
+git checkout PIC18F47J53.X/vl53/platform/vl53l0x_i2c_win_serial_comms.c
+git checkout PIC18F47J53.X/vl53/platform/vl53l0x_platform_log.c
+git checkout PIC18F47J53.X/vl53/platform/vl53l0x_platform_log.h
+git checkout PIC18F47J53.X/vl53/platform/vl53l0x_types.h
+git checkout PIC18F47J53.X/vl53/platform/vl53l0x_platform.h
+

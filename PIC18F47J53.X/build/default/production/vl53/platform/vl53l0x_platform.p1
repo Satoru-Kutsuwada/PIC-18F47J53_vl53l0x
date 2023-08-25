@@ -1,28 +1,28 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "240 ./vl53/core/vl53l0x_def.h
-[s S921 `ul -> 7 `i `ul -> 7 `i ]
-[n S921 . ambRate_mcps dmax_mm ]
+[s S922 `ul -> 7 `i `ul -> 7 `i ]
+[n S922 . ambRate_mcps dmax_mm ]
 "249
-[s S922 `uc 1 `uc 1 `ul 1 `ul 1 `uc 1 `us 1 `ul 1 `l 1 `uc -> 6 `i `uc -> 6 `i `ul -> 6 `i `S921 1 `uc 1 ]
-[n S922 . DeviceMode HistogramMode MeasurementTimingBudgetMicroSeconds InterMeasurementPeriodMilliSeconds XTalkCompensationEnable XTalkCompensationRangeMilliMeter XTalkCompensationRateMegaCps RangeOffsetMicroMeters LimitChecksEnable LimitChecksStatus LimitChecksValue dmax_lut WrapAroundCheckEnable ]
+[s S923 `uc 1 `uc 1 `ul 1 `ul 1 `uc 1 `us 1 `ul 1 `l 1 `uc -> 6 `i `uc -> 6 `i `ul -> 6 `i `S922 1 `uc 1 ]
+[n S923 . DeviceMode HistogramMode MeasurementTimingBudgetMicroSeconds InterMeasurementPeriodMilliSeconds XTalkCompensationEnable XTalkCompensationRangeMilliMeter XTalkCompensationRateMegaCps RangeOffsetMicroMeters LimitChecksEnable LimitChecksStatus LimitChecksValue dmax_lut WrapAroundCheckEnable ]
 "322
-[s S923 `ul 1 `ul 1 `us 1 `us 1 `ul 1 `ul 1 `us 1 `uc 1 `uc 1 `uc 1 ]
-[n S923 . TimeStamp MeasurementTimeUsec RangeMilliMeter RangeDMaxMilliMeter SignalRateRtnMegaCps AmbientRateRtnMegaCps EffectiveSpadRtnCount ZoneId RangeFractionalPart RangeStatus ]
+[s S924 `ul 1 `ul 1 `us 1 `us 1 `ul 1 `ul 1 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S924 . TimeStamp MeasurementTimeUsec RangeMilliMeter RangeDMaxMilliMeter SignalRateRtnMegaCps AmbientRateRtnMegaCps EffectiveSpadRtnCount ZoneId RangeFractionalPart RangeStatus ]
 "376
-[s S924 `ul -> 24 `i `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S924 . HistogramData FirstBin BufferSize NumberOfBins ErrorStatus ]
+[s S925 `ul -> 24 `i `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S925 . HistogramData FirstBin BufferSize NumberOfBins ErrorStatus ]
 "407
-[s S926 `ul 1 `us 1 `uc 1 `ul 1 `uc 1 `ul 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 `uc 1 `uc -> 32 `i `uc 1 `uc 1 `uc 1 `ul 1 `ul 1 `ul 1 ]
-[n S926 . OscFrequencyMHz LastEncodedTimeout Pin0GpioFunctionality FinalRangeTimeoutMicroSecs FinalRangeVcselPulsePeriod PreRangeTimeoutMicroSecs PreRangeVcselPulsePeriod SigmaEstRefArray SigmaEstEffPulseWidth SigmaEstEffAmbWidth ReadDataFromDeviceDone ModuleId Revision ProductId ReferenceSpadCount ReferenceSpadType RefSpadsInitialised PartUIDUpper PartUIDLower SignalRateMeasFixed400mm ]
+[s S927 `ul 1 `us 1 `uc 1 `ul 1 `uc 1 `ul 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 `uc 1 `uc -> 32 `i `uc 1 `uc 1 `uc 1 `ul 1 `ul 1 `ul 1 ]
+[n S927 . OscFrequencyMHz LastEncodedTimeout Pin0GpioFunctionality FinalRangeTimeoutMicroSecs FinalRangeVcselPulsePeriod PreRangeTimeoutMicroSecs PreRangeVcselPulsePeriod SigmaEstRefArray SigmaEstEffPulseWidth SigmaEstEffAmbWidth ReadDataFromDeviceDone ModuleId Revision ProductId ReferenceSpadCount ReferenceSpadType RefSpadsInitialised PartUIDUpper PartUIDLower SignalRateMeasFixed400mm ]
 "400
-[s S925 `uc -> 6 `i `uc -> 6 `i ]
-[n S925 . RefSpadEnables RefGoodSpadMap ]
+[s S926 `uc -> 6 `i `uc -> 6 `i ]
+[n S926 . RefSpadEnables RefGoodSpadMap ]
 "461
-[s S927 `l 1 `l 1 `S922 1 `S923 1 `S924 1 `S926 1 `S925 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `ul 1 `ul 1 `ul 1 `*uc 1 `uc 1 `us 1 ]
-[n S927 . Part2PartOffsetNVMMicroMeter Part2PartOffsetAdjustmentNVMMicroMeter CurrentParameters LastRangeMeasure LastHistogramMeasure DeviceSpecificParameters SpadData SequenceConfig RangeFractionalEnable PalState PowerMode SigmaEstRefArray SigmaEstEffPulseWidth SigmaEstEffAmbWidth StopVariable targetRefRate SigmaEstimate SignalEstimate LastSignalRefMcps pTuningSettingsPointer UseInternalTuningSettings LinearityCorrectiveGain ]
+[s S928 `l 1 `l 1 `S923 1 `S924 1 `S925 1 `S927 1 `S926 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `ul 1 `ul 1 `ul 1 `*uc 1 `uc 1 `us 1 ]
+[n S928 . Part2PartOffsetNVMMicroMeter Part2PartOffsetAdjustmentNVMMicroMeter CurrentParameters LastRangeMeasure LastHistogramMeasure DeviceSpecificParameters SpadData SequenceConfig RangeFractionalEnable PalState PowerMode SigmaEstRefArray SigmaEstEffPulseWidth SigmaEstEffAmbWidth StopVariable targetRefRate SigmaEstimate SignalEstimate LastSignalRefMcps pTuningSettingsPointer UseInternalTuningSettings LinearityCorrectiveGain ]
 "58 ./vl53/platform\vl53l0x_platform.h
-[s S930 `S927 1 `uc 1 ]
-[n S930 . Data I2cDevAddr ]
+[s S931 `S928 1 `uc 1 ]
+[n S931 . Data I2cDevAddr ]
 "255 ./vl53/platform/vl53l0x_i2c_platform.h
 [; ;./vl53/platform/vl53l0x_i2c_platform.h: 255: int32_t VL53L0X_read_byte(uint8_t address, uint8_t index, uint8_t *pdata);
 [v _VL53L0X_read_byte `(l ~T0 @X0 0 ef3`uc`uc`*uc ]
@@ -38,8 +38,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "309
 [; ;./vl53/platform/vl53l0x_i2c_platform.h: 309: int32_t VL53L0X_read_dword(uint8_t address, uint8_t index, uint32_t *pdata);
 [v _VL53L0X_read_dword `(l ~T0 @X0 0 ef3`uc`uc`*ul ]
-"324 ./system.h
-[; ;./system.h: 324: void Wait(uint16_t num);
+"366 ./system.h
+[; ;./system.h: 366: void Wait(uint16_t num);
 [v _Wait `(v ~T0 @X0 0 ef1`us ]
 "148 ./vl53/platform/vl53l0x_i2c_platform.h
 [; ;./vl53/platform/vl53l0x_i2c_platform.h: 148: int32_t VL53L0X_read_multi(uint8_t address, uint8_t index, uint8_t *pdata, int32_t count);
@@ -1081,10 +1081,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "97 vl53/platform/vl53l0x_platform.c
 [; ;vl53/platform/vl53l0x_platform.c: 97: VL53L0X_Error VL53L0X_RdByte(VL53L0X_DEV Dev, uint8_t index, uint8_t *data){
-[v _VL53L0X_RdByte `(c ~T0 @X0 1 ef3`*S930`uc`*uc ]
+[v _VL53L0X_RdByte `(c ~T0 @X0 1 ef3`*S931`uc`*uc ]
 {
 [e :U _VL53L0X_RdByte ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 [v _index `uc ~T0 @X0 1 r2 ]
 [v _data `*uc ~T0 @X0 1 r3 ]
 [f ]
@@ -1106,25 +1106,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_read_byte (3 , , _deviceAddress _index _data ]
 "106
 [; ;vl53/platform/vl53l0x_platform.c: 106:     if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 932  ]
+[e $ ! != _status_int -> -> 0 `i `l 933  ]
 "107
 [; ;vl53/platform/vl53l0x_platform.c: 107:         Status = ((VL53L0X_Error) - 20);
 [e = _Status -> -U -> 20 `i `c ]
-[e :U 932 ]
+[e :U 933 ]
 "112
 [; ;vl53/platform/vl53l0x_platform.c: 112:     return Status;
 [e ) _Status ]
-[e $UE 931  ]
+[e $UE 932  ]
 "113
 [; ;vl53/platform/vl53l0x_platform.c: 113: }
-[e :UE 931 ]
+[e :UE 932 ]
 }
 "115
 [; ;vl53/platform/vl53l0x_platform.c: 115: VL53L0X_Error VL53L0X_WrByte(VL53L0X_DEV Dev, uint8_t index, uint8_t data){
-[v _VL53L0X_WrByte `(c ~T0 @X0 1 ef3`*S930`uc`uc ]
+[v _VL53L0X_WrByte `(c ~T0 @X0 1 ef3`*S931`uc`uc ]
 {
 [e :U _VL53L0X_WrByte ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 [v _index `uc ~T0 @X0 1 r2 ]
 [v _data `uc ~T0 @X0 1 r3 ]
 [f ]
@@ -1146,7 +1146,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_write_byte (3 , , _deviceAddress _index _data ]
 "124
 [; ;vl53/platform/vl53l0x_platform.c: 124:  if (status_int != 0){
-[e $ ! != _status_int -> -> 0 `i `l 934  ]
+[e $ ! != _status_int -> -> 0 `i `l 935  ]
 {
 "126
 [; ;vl53/platform/vl53l0x_platform.c: 126:         Status = ((VL53L0X_Error) - 20);
@@ -1154,21 +1154,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "127
 [; ;vl53/platform/vl53l0x_platform.c: 127:     }
 }
-[e :U 934 ]
+[e :U 935 ]
 "133
 [; ;vl53/platform/vl53l0x_platform.c: 133:     return Status;
 [e ) _Status ]
-[e $UE 933  ]
+[e $UE 934  ]
 "134
 [; ;vl53/platform/vl53l0x_platform.c: 134: }
-[e :UE 933 ]
+[e :UE 934 ]
 }
 "136
 [; ;vl53/platform/vl53l0x_platform.c: 136: VL53L0X_Error VL53L0X_WrWord(VL53L0X_DEV Dev, uint8_t index, uint16_t data){
-[v _VL53L0X_WrWord `(c ~T0 @X0 1 ef3`*S930`uc`us ]
+[v _VL53L0X_WrWord `(c ~T0 @X0 1 ef3`*S931`uc`us ]
 {
 [e :U _VL53L0X_WrWord ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 [v _index `uc ~T0 @X0 1 r2 ]
 [v _data `us ~T0 @X0 1 r3 ]
 [f ]
@@ -1190,25 +1190,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_write_word (3 , , _deviceAddress _index _data ]
 "145
 [; ;vl53/platform/vl53l0x_platform.c: 145:  if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 936  ]
+[e $ ! != _status_int -> -> 0 `i `l 937  ]
 "146
 [; ;vl53/platform/vl53l0x_platform.c: 146:   Status = ((VL53L0X_Error) - 20);
 [e = _Status -> -U -> 20 `i `c ]
-[e :U 936 ]
+[e :U 937 ]
 "151
 [; ;vl53/platform/vl53l0x_platform.c: 151:     return Status;
 [e ) _Status ]
-[e $UE 935  ]
+[e $UE 936  ]
 "152
 [; ;vl53/platform/vl53l0x_platform.c: 152: }
-[e :UE 935 ]
+[e :UE 936 ]
 }
 "155
 [; ;vl53/platform/vl53l0x_platform.c: 155: VL53L0X_Error VL53L0X_UpdateByte(VL53L0X_DEV Dev, uint8_t index, uint8_t AndData, uint8_t OrData){
-[v _VL53L0X_UpdateByte `(c ~T0 @X0 1 ef4`*S930`uc`uc`uc ]
+[v _VL53L0X_UpdateByte `(c ~T0 @X0 1 ef4`*S931`uc`uc`uc ]
 {
 [e :U _VL53L0X_UpdateByte ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 [v _index `uc ~T0 @X0 1 r2 ]
 [v _AndData `uc ~T0 @X0 1 r3 ]
 [v _OrData `uc ~T0 @X0 1 r4 ]
@@ -1234,14 +1234,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_read_byte (3 , , _deviceAddress _index &U _data ]
 "165
 [; ;vl53/platform/vl53l0x_platform.c: 165:     if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 938  ]
+[e $ ! != _status_int -> -> 0 `i `l 939  ]
 "166
 [; ;vl53/platform/vl53l0x_platform.c: 166:         Status = ((VL53L0X_Error) - 20);
 [e = _Status -> -U -> 20 `i `c ]
-[e :U 938 ]
+[e :U 939 ]
 "168
 [; ;vl53/platform/vl53l0x_platform.c: 168:     if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 939  ]
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 940  ]
 {
 "169
 [; ;vl53/platform/vl53l0x_platform.c: 169:         data = (data & AndData) | OrData;
@@ -1251,29 +1251,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_write_byte (3 , , _deviceAddress _index _data ]
 "172
 [; ;vl53/platform/vl53l0x_platform.c: 172:         if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 940  ]
+[e $ ! != _status_int -> -> 0 `i `l 941  ]
 "173
 [; ;vl53/platform/vl53l0x_platform.c: 173:             Status = ((VL53L0X_Error) - 20);
 [e = _Status -> -U -> 20 `i `c ]
-[e :U 940 ]
+[e :U 941 ]
 "174
 [; ;vl53/platform/vl53l0x_platform.c: 174:     }
 }
-[e :U 939 ]
+[e :U 940 ]
 "180
 [; ;vl53/platform/vl53l0x_platform.c: 180:     return Status;
 [e ) _Status ]
-[e $UE 937  ]
+[e $UE 938  ]
 "181
 [; ;vl53/platform/vl53l0x_platform.c: 181: }
-[e :UE 937 ]
+[e :UE 938 ]
 }
 "184
 [; ;vl53/platform/vl53l0x_platform.c: 184: VL53L0X_Error VL53L0X_RdWord(VL53L0X_DEV Dev, uint8_t index, uint16_t *data){
-[v _VL53L0X_RdWord `(c ~T0 @X0 1 ef3`*S930`uc`*us ]
+[v _VL53L0X_RdWord `(c ~T0 @X0 1 ef3`*S931`uc`*us ]
 {
 [e :U _VL53L0X_RdWord ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 [v _index `uc ~T0 @X0 1 r2 ]
 [v _data `*us ~T0 @X0 1 r3 ]
 [f ]
@@ -1295,25 +1295,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_read_word (3 , , _deviceAddress _index _data ]
 "193
 [; ;vl53/platform/vl53l0x_platform.c: 193:     if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 942  ]
+[e $ ! != _status_int -> -> 0 `i `l 943  ]
 "194
 [; ;vl53/platform/vl53l0x_platform.c: 194:         Status = ((VL53L0X_Error) - 20);
 [e = _Status -> -U -> 20 `i `c ]
-[e :U 942 ]
+[e :U 943 ]
 "199
 [; ;vl53/platform/vl53l0x_platform.c: 199:     return Status;
 [e ) _Status ]
-[e $UE 941  ]
+[e $UE 942  ]
 "200
 [; ;vl53/platform/vl53l0x_platform.c: 200: }
-[e :UE 941 ]
+[e :UE 942 ]
 }
 "204
 [; ;vl53/platform/vl53l0x_platform.c: 204: VL53L0X_Error VL53L0X_RdDWord(VL53L0X_DEV Dev, uint8_t index, uint32_t *data){
-[v _VL53L0X_RdDWord `(c ~T0 @X0 1 ef3`*S930`uc`*ul ]
+[v _VL53L0X_RdDWord `(c ~T0 @X0 1 ef3`*S931`uc`*ul ]
 {
 [e :U _VL53L0X_RdDWord ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 [v _index `uc ~T0 @X0 1 r2 ]
 [v _data `*ul ~T0 @X0 1 r3 ]
 [f ]
@@ -1335,29 +1335,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_read_dword (3 , , _deviceAddress _index _data ]
 "213
 [; ;vl53/platform/vl53l0x_platform.c: 213:     if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 944  ]
+[e $ ! != _status_int -> -> 0 `i `l 945  ]
 "214
 [; ;vl53/platform/vl53l0x_platform.c: 214:         Status = ((VL53L0X_Error) - 20);
 [e = _Status -> -U -> 20 `i `c ]
-[e :U 944 ]
+[e :U 945 ]
 "221
 [; ;vl53/platform/vl53l0x_platform.c: 221:     return Status;
 [e ) _Status ]
-[e $UE 943  ]
+[e $UE 944  ]
 "222
 [; ;vl53/platform/vl53l0x_platform.c: 222: }
-[e :UE 943 ]
+[e :UE 944 ]
 }
 "225
 [; ;vl53/platform/vl53l0x_platform.c: 225: VL53L0X_Error VL53L0X_PollingDelay(VL53L0X_DEV Dev)
-[v _VL53L0X_PollingDelay `(c ~T0 @X0 1 ef1`*S930 ]
+[v _VL53L0X_PollingDelay `(c ~T0 @X0 1 ef1`*S931 ]
 "226
 [; ;vl53/platform/vl53l0x_platform.c: 226: {
 {
 [e :U _VL53L0X_PollingDelay ]
 "225
 [; ;vl53/platform/vl53l0x_platform.c: 225: VL53L0X_Error VL53L0X_PollingDelay(VL53L0X_DEV Dev)
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 "226
 [; ;vl53/platform/vl53l0x_platform.c: 226: {
 [f ]
@@ -1371,17 +1371,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "245
 [; ;vl53/platform/vl53l0x_platform.c: 245:     return status;
 [e ) _status ]
-[e $UE 945  ]
+[e $UE 946  ]
 "246
 [; ;vl53/platform/vl53l0x_platform.c: 246: }
-[e :UE 945 ]
+[e :UE 946 ]
 }
 "250
 [; ;vl53/platform/vl53l0x_platform.c: 250: VL53L0X_Error VL53L0X_ReadMulti(VL53L0X_DEV Dev, uint8_t index, uint8_t *pdata, uint32_t count){
-[v _VL53L0X_ReadMulti `(c ~T0 @X0 1 ef4`*S930`uc`*uc`ul ]
+[v _VL53L0X_ReadMulti `(c ~T0 @X0 1 ef4`*S931`uc`*uc`ul ]
 {
 [e :U _VL53L0X_ReadMulti ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 [v _index `uc ~T0 @X0 1 r2 ]
 [v _pdata `*uc ~T0 @X0 1 r3 ]
 [v _count `ul ~T0 @X0 1 r4 ]
@@ -1398,7 +1398,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _deviceAddress `uc ~T0 @X0 1 a ]
 "256
 [; ;vl53/platform/vl53l0x_platform.c: 256:     if (count>=64){
-[e $ ! >= _count -> -> -> 64 `i `l `ul 947  ]
+[e $ ! >= _count -> -> -> 64 `i `l `ul 948  ]
 {
 "257
 [; ;vl53/platform/vl53l0x_platform.c: 257:         Status = ((VL53L0X_Error) - 4);
@@ -1406,7 +1406,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "258
 [; ;vl53/platform/vl53l0x_platform.c: 258:     }
 }
-[e :U 947 ]
+[e :U 948 ]
 "260
 [; ;vl53/platform/vl53l0x_platform.c: 260:     deviceAddress = Dev->I2cDevAddr;
 [e = _deviceAddress . *U _Dev 1 ]
@@ -1415,25 +1415,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_read_multi (4 , , , _deviceAddress _index _pdata -> _count `l ]
 "264
 [; ;vl53/platform/vl53l0x_platform.c: 264:  if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 948  ]
+[e $ ! != _status_int -> -> 0 `i `l 949  ]
 "265
 [; ;vl53/platform/vl53l0x_platform.c: 265:   Status = ((VL53L0X_Error) - 20);
 [e = _Status -> -U -> 20 `i `c ]
-[e :U 948 ]
+[e :U 949 ]
 "272
 [; ;vl53/platform/vl53l0x_platform.c: 272:     return Status;
 [e ) _Status ]
-[e $UE 946  ]
+[e $UE 947  ]
 "273
 [; ;vl53/platform/vl53l0x_platform.c: 273: }
-[e :UE 946 ]
+[e :UE 947 ]
 }
 "277
 [; ;vl53/platform/vl53l0x_platform.c: 277: VL53L0X_Error VL53L0X_WriteMulti(VL53L0X_DEV Dev, uint8_t index, uint8_t *pdata, uint32_t count){
-[v _VL53L0X_WriteMulti `(c ~T0 @X0 1 ef4`*S930`uc`*uc`ul ]
+[v _VL53L0X_WriteMulti `(c ~T0 @X0 1 ef4`*S931`uc`*uc`ul ]
 {
 [e :U _VL53L0X_WriteMulti ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
 [v _index `uc ~T0 @X0 1 r2 ]
 [v _pdata `*uc ~T0 @X0 1 r3 ]
 [v _count `ul ~T0 @X0 1 r4 ]
@@ -1451,7 +1451,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _deviceAddress `uc ~T0 @X0 1 a ]
 "283
 [; ;vl53/platform/vl53l0x_platform.c: 283:     if (count>=64){
-[e $ ! >= _count -> -> -> 64 `i `l `ul 950  ]
+[e $ ! >= _count -> -> -> 64 `i `l `ul 951  ]
 {
 "284
 [; ;vl53/platform/vl53l0x_platform.c: 284:         Status = ((VL53L0X_Error) - 4);
@@ -1459,7 +1459,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "285
 [; ;vl53/platform/vl53l0x_platform.c: 285:     }
 }
-[e :U 950 ]
+[e :U 951 ]
 "287
 [; ;vl53/platform/vl53l0x_platform.c: 287:  deviceAddress = Dev->I2cDevAddr;
 [e = _deviceAddress . *U _Dev 1 ]
@@ -1468,16 +1468,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status_int ( _VL53L0X_write_multi (4 , , , _deviceAddress _index _pdata -> _count `l ]
 "291
 [; ;vl53/platform/vl53l0x_platform.c: 291:  if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 951  ]
+[e $ ! != _status_int -> -> 0 `i `l 952  ]
 "292
 [; ;vl53/platform/vl53l0x_platform.c: 292:   Status = ((VL53L0X_Error) - 20);
 [e = _Status -> -U -> 20 `i `c ]
-[e :U 951 ]
+[e :U 952 ]
 "294
 [; ;vl53/platform/vl53l0x_platform.c: 294:     return Status;
 [e ) _Status ]
-[e $UE 949  ]
+[e $UE 950  ]
 "295
 [; ;vl53/platform/vl53l0x_platform.c: 295: }
-[e :UE 949 ]
+[e :UE 950 ]
 }

@@ -417,7 +417,7 @@ uint8_t i2c_CheckIdleWait(uint8_t mask)
     index = Set_Timer(100);
     while ((I2C_SSPSTAT & mask) || (I2C_SSPCON2 & 0x1F)){
         if( Get_Timer(index) == 0 ){
-            SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): CheckIdle",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+            //SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): CheckIdle",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
             i2c_data.error = I2C_ERR_STAT_TIMEOUT;        
             status = STATUS_FAIL;    
             break;   
@@ -444,7 +444,7 @@ uint8_t i2c_start(void)
     status = i2c_CheckIdleWait(0x05);
 
     if( status == STATUS_OK ){
-        SetLogDataM( LOG_DISP_I2C, "START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         
 
         I2C_SSPIF = 0;
@@ -455,19 +455,19 @@ uint8_t i2c_start(void)
         index = Set_Timer(100);
         while( I2C_SSPIF == 0 ){
             if(bcl_error_chk){
-                SetLogDataM( LOG_DISP_I2C, "ERR(BCL): START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(BCL): START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.error = I2C_ERR_STAT_BCL;      
                 status = STATUS_FAIL;    
             }
             if(I2C_WCOL){
-                SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 I2C_WCOL = 0;
                 i2c_data.error = I2C_ERR_STAT_WCOL;        
                 status = STATUS_FAIL;    
                 break         ;   
             }
             if( Get_Timer(index) == 0 ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.error = I2C_ERR_STAT_TIMEOUT;        
                 status = STATUS_FAIL;    
                 break         ;   
@@ -494,7 +494,7 @@ uint8_t i2c_stop(void)
     status = i2c_CheckIdleWait(0x05);
 
     if( status == STATUS_OK ){
-        SetLogDataM( LOG_DISP_I2C, "STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
 
         I2C_SSPIF = 0;
         I2C_BCLIF = 0;
@@ -505,19 +505,19 @@ uint8_t i2c_stop(void)
         while(I2C_SSPIF == 0 )
         {
             if(bcl_error_chk){
-                SetLogDataM( LOG_DISP_I2C, "ERR(BCL): STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(BCL): STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.error = I2C_ERR_STAT_BCL;      
                 status = STATUS_FAIL;    
             }
             if(I2C_WCOL){
-                SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 I2C_WCOL = 0;
                 i2c_data.error = I2C_ERR_STAT_WCOL;        
                 status = STATUS_FAIL;    
                 break;           
             }
             if( Get_Timer(index) == 0 ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.error = I2C_ERR_STAT_TIMEOUT;        
                 status = STATUS_FAIL;    
                 break;   
@@ -545,7 +545,7 @@ uint8_t i2c_write( uint8_t dt )
 
     if( status == STATUS_OK ){
         if( i2c_data.status < I2C_STAT_MAX ){
-            SetLogDataM( LOG_DISP_I2C, &i2c_list[i2c_data.status].string[0],I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,dt);
+            //SetLogDataM( LOG_DISP_I2C, &i2c_list[i2c_data.status].string[0],I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,dt);
         }
         else{
             printf("ERROR STATUS = %d\r\n",i2c_data.status);
@@ -558,19 +558,19 @@ uint8_t i2c_write( uint8_t dt )
         index = Set_Timer(100);
         while( I2C_SSPIF == 0 ) {
             if(bcl_error_chk){
-                SetLogDataM( LOG_DISP_I2C, "ERR(BCL): WRITE",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(BCL): WRITE",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.error = I2C_ERR_STAT_BCL;      
                 status = STATUS_FAIL;    
             }
             if(I2C_WCOL){
-                SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): WRITE",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): WRITE",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 I2C_WCOL = 0;
                 i2c_data.error = I2C_ERR_STAT_WCOL;        
                 status = STATUS_FAIL;    
                 break;           
             }
             if( Get_Timer(index) == 0 ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): WRITE",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): WRITE",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.error = I2C_ERR_STAT_TIMEOUT;        
                 status = STATUS_FAIL;    
                 break;   
@@ -580,12 +580,12 @@ uint8_t i2c_write( uint8_t dt )
     
         if( status == STATUS_OK ){
             if( I2C_ACKSTAT ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(NACK): WRITE",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,dt);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(NACK): WRITE",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,dt);
                 i2c_data.error = I2C_ERR_STAT_NACK;
                 status = STATUS_FAIL;    
             }
             else{
-                SetLogDataM( LOG_DISP_I2C, "WRITE ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,dt);
+                //SetLogDataM( LOG_DISP_I2C, "WRITE ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,dt);
             }
         }
     }
@@ -607,7 +607,7 @@ uint8_t i2c_read( uint8_t acknNak, uint8_t *dt )
     status = i2c_CheckIdleWait(0x05);
 
     if( status == STATUS_OK ){
-        SetLogDataM( LOG_DISP_I2C, "READ START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "READ START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
 
         I2C_SSPIF = 0;
         I2C_BCLIF = 0;
@@ -617,19 +617,19 @@ uint8_t i2c_read( uint8_t acknNak, uint8_t *dt )
         index = Set_Timer(100);
         while(I2C_SSPIF == 0 ){
             if(bcl_error_chk){
-                SetLogDataM( LOG_DISP_I2C, "ERR(BCL): READ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(BCL): READ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.error = I2C_ERR_STAT_BCL;      
                 status = STATUS_FAIL;    
             }
             if(I2C_WCOL){
-                SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): READ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): READ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 I2C_WCOL = 0;
                 i2c_data.error = I2C_ERR_STAT_WCOL;        
                 status = STATUS_FAIL;    
                 break;           
             }
             if( Get_Timer(index) == 0 ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): READ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): READ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.error = I2C_ERR_STAT_TIMEOUT;        
                 status = STATUS_FAIL;    
                 break;   
@@ -647,7 +647,7 @@ uint8_t i2c_read( uint8_t acknNak, uint8_t *dt )
             I2C_ACKDT = acknNak ;        // ACKデータのセット
             I2C_ACKEN = 1 ;          // ACKデータを返す
         }
-        SetLogDataM( LOG_DISP_I2C, "READ END",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,*dt);
+        //SetLogDataM( LOG_DISP_I2C, "READ END",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,*dt);
     }
 
     return  status;
@@ -709,7 +709,7 @@ int32_t i2c_readMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
         // 処理
         //++++++++++++++++++++++++++++++++++++++++++++++++++
         while( status == STATUS_OK ){
-            //SetLogDataM( LOG_DISP_I2C_STAT, "STATUS",i2c_data.status,0,0,0);
+            ////SetLogDataM( LOG_DISP_I2C_STAT, "STATUS",i2c_data.status,0,0,0);
             switch( i2c_data.status ){
                 case I2C_STAT_START:
                     status = i2c_start();
@@ -781,7 +781,7 @@ int32_t i2c_readMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
             if( status == STATUS_OK ){
                 if( i2c_data.status == I2C_STAT_END ){
                     // 正常終了
-                    SetLogDataM( LOG_DISP_NO_DATA, "I2C END",0,0,0,0);
+                    //SetLogDataM( LOG_DISP_NO_DATA, "I2C END",0,0,0,0);
                     
 
                     for( i=0; i<i2c_data.count ; i++ ){
@@ -825,10 +825,10 @@ int32_t i2c_readMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
                     I2C_SSPIE = 0;
                     I2C_BCLIE = 1; 
 
-                    SetLogDataM( LOG_DISP_I2C, "RESTART",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                    //SetLogDataM( LOG_DISP_I2C, "RESTART",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 }
                 else{
-                    SetLogDataM( LOG_DISP_I2C, "ERROR_END",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                    //SetLogDataM( LOG_DISP_I2C, "ERROR_END",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 }
             }
         }
@@ -974,7 +974,7 @@ int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
             if( status == STATUS_OK ){
                 if( i2c_data.status == I2C_STAT_END ){
                     // 正常終了
-                    SetLogDataM( LOG_DISP_NO_DATA, "I2C END",0,0,0,0);
+                    //SetLogDataM( LOG_DISP_NO_DATA, "I2C END",0,0,0,0);
                     break;
                 }
             }
@@ -1012,10 +1012,10 @@ int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
                     I2C_SSPIE = 0;
                     I2C_BCLIE = 1; 
                     
-                    SetLogDataM( LOG_DISP_I2C, "RESTART",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                    //SetLogDataM( LOG_DISP_I2C, "RESTART",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 }
                 else{
-                    SetLogDataM( LOG_DISP_I2C, "ERROR_END",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                    //SetLogDataM( LOG_DISP_I2C, "ERROR_END",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 }
             }
         }
@@ -1416,7 +1416,7 @@ void Newi2c_write(uint8_t dt)
 uint8_t i2c_main_start(void)
 {
     if( I2C_SSPIF == 0 ){
-        SetLogDataM( LOG_DISP_I2C, "START_REQ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "START_REQ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_START_REQ;
         I2C_SEN = 1;
     }   
@@ -1433,11 +1433,11 @@ uint8_t i2c_main_start_resp(void)
 
     if( I2C_SSPIF == 1 ){       //if( I2C_SEN == 0){
         I2C_SSPIF = 0;
-        SetLogDataM( LOG_DISP_I2C, "START_OK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "START_OK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_ADDRESS_TX;
     }
     else if( Get_Timer(index) == 0 ){
-        SetLogDataM( LOG_DISP_I2C, "START TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "START TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         status = STATUS_FAIL;  
         i2c_data.status = I2C_STAT_START_TOUT;
     }
@@ -1453,7 +1453,7 @@ uint8_t i2c_main_address_tx(void)
     status = STATUS_OK ;    
 
     if( I2C_SSPIF == 0 ){
-        SetLogDataM( LOG_DISP_I2C, "ADDRESS TX",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.address);
+        //SetLogDataM( LOG_DISP_I2C, "ADDRESS TX",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.address);
         i2c_data.status = I2C_STAT_ADDRESS_RESPONS;
         I2C_SSPBUF = i2c_data.address; 
     }
@@ -1471,18 +1471,18 @@ uint8_t i2c_main_address_resp(void)
     if( I2C_SSPIF == 1 ){
         I2C_SSPIF = 0;
         if( I2C_ACKSTAT ){
-            SetLogDataM( LOG_DISP_I2C, "ADDRESS_NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+            //SetLogDataM( LOG_DISP_I2C, "ADDRESS_NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
             status = STATUS_FAIL;  
             i2c_data.status = I2C_STAT_ADDRESS_NACK;
             // エラー
         }
         else{
-            SetLogDataM( LOG_DISP_I2C, "ADDRESS_ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+            //SetLogDataM( LOG_DISP_I2C, "ADDRESS_ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
             i2c_data.status = I2C_STAT_INDEX_TX;
         }
     }
     else if( Get_Timer(index) == 0 ){
-        SetLogDataM( LOG_DISP_I2C, "ADDRESS_RESS TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "ADDRESS_RESS TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_ADDRESS_TOUT;
         status = STATUS_FAIL;  
     }
@@ -1497,7 +1497,7 @@ uint8_t i2c_main_index_tx(void)
     uint8_t status;
     status = STATUS_OK ;    
 
-    SetLogDataM( LOG_DISP_I2C, "INDEX TX",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
+    //SetLogDataM( LOG_DISP_I2C, "INDEX TX",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
     i2c_data.status = I2C_STAT_INDEX_RESPONS;
     I2C_SSPBUF = i2c_data.index;
 
@@ -1514,18 +1514,18 @@ uint8_t i2c_main_index_resp(void)
     if( I2C_SSPIF == 1 ){
         I2C_SSPIF = 0;
         if( I2C_ACKSTAT ){
-            SetLogDataM( LOG_DISP_I2C, "INDEX_NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+            //SetLogDataM( LOG_DISP_I2C, "INDEX_NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
             status = STATUS_FAIL;  
             i2c_data.status = I2C_STAT_INDEX_NACK;
             // エラー
         }
         else{
-            SetLogDataM( LOG_DISP_I2C, "INDEX_ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+            //SetLogDataM( LOG_DISP_I2C, "INDEX_ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
             i2c_data.status = I2C_STAT_DATA_TX;
         }
     }
     else if( Get_Timer(index) == 0 ){
-        SetLogDataM( LOG_DISP_I2C, "INDEX_RESS TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "INDEX_RESS TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         status = STATUS_FAIL;  
         i2c_data.status = I2C_STAT_INDEX_RESS_TOUT;
 
@@ -1543,14 +1543,14 @@ uint8_t i2c_main_data_tx(void)
     status = STATUS_OK ;    
 
     if( i2c_data.count_step < i2c_data.count ){
-        SetLogDataM( LOG_DISP_I2C, "DATA TX",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "DATA TX",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_DATA_RESPONS;
         i2c_data.count_step ++;
         I2C_SSPIF = 0;
         I2C_SSPBUF = i2c_data.dt[i2c_data.count_step];
     }
     else{
-        SetLogDataM( LOG_DISP_I2C, "DATA END",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "DATA END",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_STOP_REQ;
     }
 
@@ -1568,19 +1568,19 @@ uint8_t i2c_main_data_res(void)
     if( I2C_SSPIF == 1 ){
         I2C_SSPIF = 0;
         if( I2C_ACKSTAT ){
-            SetLogDataM( LOG_DISP_I2C, "INDEX_NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+            //SetLogDataM( LOG_DISP_I2C, "INDEX_NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
             status = STATUS_FAIL;  
             i2c_data.status = I2C_STAT_DATA_NACK;
             // エラー
         }
         else{
-            SetLogDataM( LOG_DISP_I2C, "INDEX_ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+            //SetLogDataM( LOG_DISP_I2C, "INDEX_ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
             i2c_data.status = I2C_STAT_DATA_TX;
         }
     }
     else if( Get_Timer(index) == 0 ){
         Rel_Timer(index);
-        SetLogDataM( LOG_DISP_I2C, "DATA_RESS TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "DATA_RESS TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         status = STATUS_FAIL;  
         i2c_data.status = I2C_STAT_DATA_RESS_TOUT;
     }
@@ -1596,7 +1596,7 @@ uint8_t i2c_main_stop_req(void)
     uint8_t status;
     status = STATUS_OK ;    
 
-    SetLogDataM( LOG_DISP_I2C, "STOP REQ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+    //SetLogDataM( LOG_DISP_I2C, "STOP REQ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
     i2c_data.status = I2C_STAT_STOP;
     I2C_SSPIF = 0;
     I2C_PEN = 1;
@@ -1614,12 +1614,12 @@ uint8_t i2c_main_stop(void)
 
     if( I2C_SSPIF == 1 ){
         // 正常終了
-        SetLogDataM( LOG_DISP_I2C, "STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_END;
 
     }
     else if( Get_Timer(index) == 0 ){
-        SetLogDataM( LOG_DISP_I2C, "STOP_RESS TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogDataM( LOG_DISP_I2C, "STOP_RESS TOUT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         status = STATUS_FAIL;  
         i2c_data.status = I2C_STAT_STOP_RESS_TOUT;
     }
@@ -1696,7 +1696,7 @@ int32_t i2c_readMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
                 }
                 break;
             case I2C_STAT_ADDRESS_TX_RETRY:
-                    SetLogDataM( LOG_DISP_I2C, "ADDRESS_TX_RETRY",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                    //SetLogDataM( LOG_DISP_I2C, "ADDRESS_TX_RETRY",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                     Rel_Timer(index);
                     i2c_data.status = I2C_STAT_ADDRESS_TX;
                 break;
@@ -1777,7 +1777,7 @@ int32_t i2c_readMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
                 break;
             default:
                 printf("Status= %d\r\n",i2c_data.status);
-                SetLogDataM( LOG_DISP_I2C, "Error default",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "Error default",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.status = I2C_STAT_UNKWON_ERROR;
 
                     
@@ -1871,7 +1871,7 @@ int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
                 }
                 break;
             case I2C_STAT_ADDRESS_TX_RETRY:
-                    SetLogDataM( LOG_DISP_I2C, "ADDRESS_TX_RETRY",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                    //SetLogDataM( LOG_DISP_I2C, "ADDRESS_TX_RETRY",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                     Rel_Timer(index);
                     i2c_data.status = I2C_STAT_ADDRESS_TX;
                 break;
@@ -1952,7 +1952,7 @@ int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
                 break;
             default:
                 printf("Status= %d\r\n",i2c_data.status);
-                SetLogDataM( LOG_DISP_I2C, "Error default",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+                //SetLogDataM( LOG_DISP_I2C, "Error default",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
                 i2c_data.status = I2C_STAT_UNKWON_ERROR;
 
                     
@@ -1994,7 +1994,7 @@ int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
     else{
         I2C_SSPEN = 1;
         
-        SetLogData( LOG_DISP_I2C, "ISR START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogData( LOG_DISP_I2C, "ISR START",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
 
         while( i2c_CheckIdle() != true );
 
@@ -2078,7 +2078,7 @@ int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
         //printf("write_multi() 0002\r\n");
     
         if(status = STATUS_FAIL){
-            SetLogData( LOG_DISP_I2C, "ERROR _writeMulti()",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+            //SetLogData( LOG_DISP_I2C, "ERROR _writeMulti()",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
             // 割込みイネーブル
             I2C_SSPIE = 0;
             I2C_BCLIE = 0; 
@@ -2103,7 +2103,7 @@ void interrupt_i2c_bcl(void)
     
         //print_string("int_bcl()\r\n");
 
-        SetLogData( LOG_DISP_I2C, "ISR COLLISION ERR",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogData( LOG_DISP_I2C, "ISR COLLISION ERR",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         //i2c_data.status = I2C_COL_ERROR;
         I2C_SSPIE = 0;
         I2C_BCLIE = 0;
@@ -2113,11 +2113,11 @@ void interrupt_i2c_bcl(void)
     
     if( i2c_data.status == I2C_STAT_ADDRESS_RESPONS ){
         // 再送
-        SetLogData( LOG_DISP_I2C, "ISR COLLISION_RETRY",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogData( LOG_DISP_I2C, "ISR COLLISION_RETRY",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_ADDRESS_TX_RETRY;
     }
     else{
-        SetLogData( LOG_DISP_I2C, "ISR COLLISION ERR",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogData( LOG_DISP_I2C, "ISR COLLISION ERR",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         //i2c_data.status = I2C_COL_ERROR;
         I2C_SSPIE = 0;
         I2C_BCLIE = 0;
@@ -2148,7 +2148,7 @@ void interrupt_i2c_ssp(void)
 
 void i2c_int_start_condition(void)
 {
-    SetLogData( LOG_DISP_I2C, "ISR START RES",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.address);
+    //SetLogData( LOG_DISP_I2C, "ISR START RES",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.address);
     i2c_data.status = I2C_STAT_ADDRESS_RESPONS;
     //LATBbits.LATB2 = 1;     // for debug
     I2C_SSPBUF = i2c_data.address;
@@ -2160,7 +2160,7 @@ void i2c_int_address_tx(void)
 {
     //LATBbits.LATB2 = 0;     // for debug
     if( I2C_ACKSTAT ){
-        SetLogData( LOG_DISP_I2C, "ISR ADD NACKT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
+        //SetLogData( LOG_DISP_I2C, "ISR ADD NACKT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
         i2c_data.status = I2C_STAT_ADDRESS_NACK;
         I2C_SSPIE = 0;
         I2C_BCLIE = 0;
@@ -2168,14 +2168,14 @@ void i2c_int_address_tx(void)
 #ifdef ___NOP            
             if( i2c_data.restart_cnt < RESTART_CNT_MAX){
                 // NACKのためリスタートする
-                SetLogData( LOG_DISP_I2C, "ISR ADD NACKT RESTART",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
+                //SetLogData( LOG_DISP_I2C, "ISR ADD NACKT RESTART",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
                 i2c_data.status = I2C_STAT_RESTART;
                 i2c_data.restart_cnt ++;
                 //while(I2C_SSPSTAT_RW );
                 I2C_RSEN = 1;
             }
             else{
-                SetLogData( LOG_DISP_I2C, "ISR ADD NACKT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
+                //SetLogData( LOG_DISP_I2C, "ISR ADD NACKT",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
                 i2c_data.status = I2C_STAT_ADDRESS_NACK;
                 I2C_SSPIE = 0;
                 I2C_BCLIE = 0;
@@ -2183,7 +2183,7 @@ void i2c_int_address_tx(void)
 #endif  // ___NOP            
     }
     else {
-        SetLogData( LOG_DISP_I2C, "ISR ADD RES ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
+        //SetLogData( LOG_DISP_I2C, "ISR ADD RES ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.index);
         i2c_data.status = I2C_STAT_INDEX_RESPONS;
         I2C_SSPBUF = i2c_data.index;
     }
@@ -2193,10 +2193,10 @@ void i2c_int_address_tx(void)
 //=============================================================================
 void i2c_int_index_tx(void)
 {
-    SetLogData( LOG_DISP_I2C, "ISR INDEX",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2, i2c_data.dt[i2c_data.count_step]);
+    //SetLogData( LOG_DISP_I2C, "ISR INDEX",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2, i2c_data.dt[i2c_data.count_step]);
     if( I2C_ACKSTAT )
     {
-        SetLogData( LOG_DISP_I2C, "ISR INDEX_NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2, i2c_data.dt[i2c_data.count_step]);
+        //SetLogData( LOG_DISP_I2C, "ISR INDEX_NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2, i2c_data.dt[i2c_data.count_step]);
         i2c_data.status = I2C_STAT_INDEX_NACK;
         I2C_SSPIE = 0;
         I2C_BCLIE = 0;
@@ -2209,7 +2209,7 @@ void i2c_int_index_tx(void)
     }
     else
     {
-        SetLogData( LOG_DISP_I2C, "ISR STOP REQ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogData( LOG_DISP_I2C, "ISR STOP REQ",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_STOP;
         I2C_PEN = 1;
         I2C_SSPIF = 0;
@@ -2221,20 +2221,20 @@ void i2c_int_index_tx(void)
 void i2c_int_data_tx(void)
 {
     if( I2C_ACKSTAT ) {
-        SetLogData( LOG_DISP_I2C, "ISR DATA NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.dt[i2c_data.count_step]);
+        //SetLogData( LOG_DISP_I2C, "ISR DATA NACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.dt[i2c_data.count_step]);
         i2c_data.status = I2C_STAT_DATA_NACK;
         I2C_SSPIE = 0;
         I2C_BCLIE = 0;
     }
     else if( i2c_data.count_step < i2c_data.count ){
-        SetLogData( LOG_DISP_I2C, "ISR DATA ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.dt[i2c_data.count_step]);
+        //SetLogData( LOG_DISP_I2C, "ISR DATA ACK",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,i2c_data.dt[i2c_data.count_step]);
         i2c_data.status = I2C_STAT_DATA_RESPONS;
         I2C_SSPBUF = i2c_data.dt[i2c_data.count_step];
         I2C_SSPIF = 0;
         i2c_data.count_step ++;
     }
     else {
-        SetLogData( LOG_DISP_I2C, "ISR STOP REQ2",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+        //SetLogData( LOG_DISP_I2C, "ISR STOP REQ2",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
         i2c_data.status = I2C_STAT_STOP;
         I2C_PEN = 1;
         I2C_SSPIF = 0;
@@ -2245,7 +2245,7 @@ void i2c_int_data_tx(void)
 //=============================================================================
 void i2c_int_stop_condition(void)
 {
-    SetLogData( LOG_DISP_I2C, "ISR STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
+    //SetLogData( LOG_DISP_I2C, "ISR STOP",I2C_SSPSTAT,I2C_SSPCON1,I2C_SSPCON2,0);
     i2c_data.status = I2C_STAT_END;
     I2C_SSPIE = 0;
     I2C_BCLIE = 0;
@@ -2283,7 +2283,7 @@ void i2c_interrupt_write(void)
         i2c_int_stop_condition();
         break;
     default:
-        SetLogData(LOG_DISP_I2C_STAT, "ERROR status",i2c_data.status,0,0,0);
+        //SetLogData(LOG_DISP_I2C_STAT, "ERROR status",i2c_data.status,0,0,0);
         break;
          
     }

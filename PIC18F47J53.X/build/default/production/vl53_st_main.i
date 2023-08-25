@@ -11837,7 +11837,43 @@ typedef enum{
 
     RASING_MODE_MAX
 }RASING_MODE;
-# 316 "./system.h"
+# 311 "./system.h"
+typedef enum{
+    VL53_STATE_STOP = 0,
+    VL53_STATE_MESURRING_INIT,
+    VL53_STATE_INIT_ERROR,
+    VL53_STATE_MESURRING_CONTI,
+    VL53_STATE_MESURRING_SINGL,
+    VL53_STATE_MESURWE_ERROR,
+
+    VL53_STATE_MAX
+}VL53_STATE;
+
+typedef enum{
+
+    VL53_COM_NON = 0,
+    VL53_COM_STOP,
+    VL53_COM_MESURRING_CONTI,
+    VL53_COM_MESURRING_SINGL,
+    VL53_COM_MESURRING_SINGL_HA,
+    VL53_COM_MESURRING_SINGL_HS,
+    VL53_COM_MESURRING_SINGL_LR,
+    VL53_COM_MESURRING_DATA,
+
+
+    VL53_COM_MAX
+} VL53_COMMAND;
+
+
+typedef struct{
+    VL53_STATE state;
+    VL53_COMMAND command;
+    uint16_t mesur_data[16];
+    uint8_t msr_wpt;
+    uint8_t msr_rpt;
+
+}VL53_MAIN_STRUCT;
+# 358 "./system.h"
 void SYSTEM_Initialize( SYSTEM_STATE state );
 
 uint16_t Get_Timer(int sel);
@@ -12804,23 +12840,382 @@ uint8_t DefaultTuningSettings[] = {
 
 VL53L0X_Error rangingTest(VL53L0X_Dev_t *pMyDevice);
 void vl53l0x_Single_test(void);
-void vl53l0x_Racing_test(RASING_MODE sel);
 
+
+void VL53_Stop( VL53_MAIN_STRUCT *handle );
+void VL53_StopConti( VL53_MAIN_STRUCT *handle );
+void VL53_StopSingle( VL53_MAIN_STRUCT *handle );
+void VL53_nop( VL53_MAIN_STRUCT *handle );
+void VL53_StartConti( VL53_MAIN_STRUCT *handle );
+void VL53_MsrConti( VL53_MAIN_STRUCT *handle );
+void set_MsrData(VL53_MAIN_STRUCT *handle,uint16_t dt);
+void VL53_MsrSingle( VL53_MAIN_STRUCT *handle );
+void VL53_StartSingle( VL53_MAIN_STRUCT *handle );
+void VL53_StartSingleHA( VL53_MAIN_STRUCT *handle );
+void VL53_StartSingleHS( VL53_MAIN_STRUCT *handle );
+void VL53_StartSingleLR( VL53_MAIN_STRUCT *handle );
+void VL53_DataReq( VL53_MAIN_STRUCT *handle );
+
+void print_pal_error(VL53L0X_Error Status);
+void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementData);
+
+VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) ;
+VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) ;
+void vl53l0x_Racing_init(RASING_MODE sel);
 
 
 
 
 VL53L0X_Dev_t MyDevice;
+VL53L0X_RangingMeasurementData_t RangingMeasurementData;
+VL53L0X_Version_t Version;
+VL53L0X_DeviceInfo_t DeviceInfo;
 
 
 
 
-void print_pal_error(VL53L0X_Error Status){
+
+
+VL53_MAIN_STRUCT vl53handle;
+VL53_MAIN_STRUCT Prevl53handle;
+
+
+
+
+const void (*vl53_func_table[VL53_COM_MAX][VL53_STATE_MAX])( VL53_MAIN_STRUCT *handle )={
+
+
+
+  { VL53_nop, VL53_nop, VL53_nop, VL53_nop },
+  { VL53_nop, VL53_Stop, VL53_StopConti, VL53_StopSingle },
+  { VL53_StartConti, VL53_MsrConti, VL53_MsrConti, VL53_nop },
+  { VL53_StartSingle, VL53_MsrSingle, VL53_MsrSingle, VL53_nop },
+  { VL53_StartSingleHA, VL53_MsrSingle, VL53_MsrSingle, VL53_nop },
+  { VL53_StartSingleHS, VL53_MsrSingle, VL53_MsrSingle, VL53_nop },
+  { VL53_StartSingleLR, VL53_MsrSingle, VL53_MsrSingle, VL53_nop },
+  { VL53_DataReq, VL53_DataReq, VL53_DataReq, VL53_DataReq }
+};
+
+
+
+
+
+void vl53_task_init(void)
+{
+    vl53handle.state = VL53_STATE_STOP;
+    vl53handle.command = VL53_COM_NON;
+    vl53handle.msr_rpt = 0;
+    vl53handle.msr_wpt = 0;
+
+    Prevl53handle = vl53handle;
+}
+
+
+
+
+
+void vl53_main_task(void)
+{
+    uint8_t state;
+    uint8_t command;
+
+    state = vl53handle.state;
+    command = vl53handle.command;
+
+    (*vl53_func_table[command][state])( &vl53handle );
+
+
+}
+
+
+
+
+void VL53_Stop( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_Stop(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+}
+
+
+
+
+void VL53_StopConti( VL53_MAIN_STRUCT *handle )
+{
+    VL53L0X_Error Status = ((VL53L0X_Error) 0);
+    VL53L0X_Dev_t *pMyDevice = &MyDevice;
+
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StopConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    if(Status == ((VL53L0X_Error) 0)){
+# 167 "vl53_st_main.c"
+        printf ("Call of VL53L0X_StopMeasurement\r\n");
+        Status = VL53L0X_StopMeasurement(pMyDevice);
+    }
+
+    if(Status == ((VL53L0X_Error) 0)){
+        printf ("Wait Stop to be competed\r\n");
+        Status = WaitStopCompleted(pMyDevice);
+    }
+
+    if(Status == ((VL53L0X_Error) 0)){
+
+
+
+
+
+        Status = VL53L0X_ClearInterruptMask(pMyDevice,0x04);
+    }
+
+    vl53handle.state = VL53_STATE_STOP;
+    vl53handle.command = VL53_COM_NON;
+}
+
+
+
+
+void VL53_StopSingle( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StopSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    vl53handle.state = VL53_STATE_STOP;
+    vl53handle.command = VL53_COM_NON;
+}
+
+
+
+void VL53_nop( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_nop(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    vl53handle.state = VL53_STATE_STOP;
+    vl53handle.command = VL53_COM_NON;
+}
+
+
+
+
+void VL53_StartConti( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0;
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_CONTINUE );
+}
+
+
+
+
+void VL53_MsrConti( VL53_MAIN_STRUCT *handle )
+{
+    VL53L0X_Error Status = ((VL53L0X_Error) 0);
+    VL53L0X_RangingMeasurementData_t *pRangingMeasurementData = &RangingMeasurementData;
+    VL53L0X_Dev_t *pMyDevice = &MyDevice;
+
+
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_MsrConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+
+
+    Status = WaitMeasurementDataReady(pMyDevice);
+
+    if(Status == ((VL53L0X_Error) 0)){
+# 262 "vl53_st_main.c"
+        Status = VL53L0X_GetRangingMeasurementData(pMyDevice, pRangingMeasurementData);
+
+        set_MsrData( handle, pRangingMeasurementData->RangeMilliMeter);
+
+        printf("In loop measurement= %d\r\n", pRangingMeasurementData->RangeMilliMeter);
+
+
+
+
+
+
+
+        VL53L0X_ClearInterruptMask(pMyDevice, 0x04);
+        VL53L0X_PollingDelay(pMyDevice);
+    }
+
+    if(Status == ((VL53L0X_Error) 0)){
+       vl53handle.state = VL53_COM_MESURRING_CONTI;
+    }
+    else{
+        vl53handle.state = VL53_COM_MESURRING_CONTI;
+        vl53handle.command = VL53_COM_STOP;
+    }
+}
+
+
+
+
+
+void set_MsrData(VL53_MAIN_STRUCT *handle,uint16_t dt)
+{
+        handle->mesur_data[handle->msr_wpt] = dt;
+        handle->msr_wpt++;
+        if( handle->msr_wpt++ > 16 ){
+            handle->msr_wpt = 0;
+            if( handle->msr_wpt == handle->msr_rpt ){
+                handle->msr_rpt++;
+                if( handle->msr_rpt++ > 16 ){
+                    handle->msr_rpt = 0;
+                }
+            }
+        }
+
+}
+
+
+
+void VL53_MsrSingle( VL53_MAIN_STRUCT *handle )
+{
+
+    VL53L0X_Error Status = ((VL53L0X_Error) 0);
+    VL53L0X_RangingMeasurementData_t *pRangingMeasurementData = &RangingMeasurementData;
+    VL53L0X_Dev_t *pMyDevice = &MyDevice;
+    FixPoint1616_t LimitCheckCurrent;
+
+
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_MsrSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+# 340 "vl53_st_main.c"
+        printf ("Call of VL53L0X_PerformSingleRangingMeasurement\r\n");
+        Status = VL53L0X_PerformSingleRangingMeasurement(pMyDevice, &RangingMeasurementData);
+
+        set_MsrData( handle, pRangingMeasurementData->RangeMilliMeter);
+
+        printf("002 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
+
+        print_pal_error(Status);
+        print_range_status(&RangingMeasurementData);
+# 361 "vl53_st_main.c"
+        switch(handle->command){
+        case VL53_COM_MESURRING_SINGL:
+        case VL53_COM_MESURRING_SINGL_HA:
+        case VL53_COM_MESURRING_SINGL_HS:
+            VL53L0X_GetLimitCheckCurrent(pMyDevice, 3, &LimitCheckCurrent);
+            printf("RANGE IGNORE THRESHOLD: %f\r\n", (float)LimitCheckCurrent/65536.0);
+            break;
+        case VL53_COM_MESURRING_SINGL_LR:
+        case VL53_COM_MESURRING_CONTI:
+        default:
+            break;
+        }
+
+        printf("003 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter) ;
+        printf("Measured distance: %i\r\n", RangingMeasurementData.RangeMilliMeter);
+
+    if(Status == ((VL53L0X_Error) 0)){
+       vl53handle.state = VL53_STATE_MESURRING_SINGL;
+    }
+    else{
+        vl53handle.state = VL53_STATE_MESURRING_SINGL;
+        vl53handle.command = VL53_COM_STOP;
+    }
+}
+
+
+
+void VL53_StartSingle( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0;
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_SINGLE );
+}
+
+
+
+
+void VL53_StartSingleHA( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartSingleHA(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0;
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_SINGLE_HA );
+}
+
+
+
+
+void VL53_StartSingleHS( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartSingleHS(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0;
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_SINGLE_HS );
+}
+
+
+
+void VL53_StartSingleLR( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("★VL53_StartSingleLR(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+    }
+    handle->msr_wpt = 0;
+    handle->msr_rpt = 0;
+    vl53l0x_Racing_init( RASING_MODE_SINGLE_LR );
+}
+
+
+
+
+void VL53_DataReq( VL53_MAIN_STRUCT *handle )
+{
+    if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+        Prevl53handle.command = vl53handle.command;
+        Prevl53handle.state = vl53handle.state;
+        printf("VL53_DataReq(S=%d,E=%d)",vl53handle.state, vl53handle.command);
+    }
+}
+
+
+
+
+
+void print_pal_error(VL53L0X_Error Status)
+{
     char buf[32];
     VL53L0X_GetPalErrorString(Status, buf);
     printf("API Status: %i : %s\r\n", Status, buf);
 }
-
 
 
 
@@ -12839,45 +13234,9 @@ void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementDat
     printf("Range Status: %i : %s\r\n", RangeStatus, buf);
 
 }
-# 97 "vl53_st_main.c"
-void VL53_init(void)
+# 620 "vl53_st_main.c"
+VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev)
 {
-
-
-    VL53L0X_Error Status = ((VL53L0X_Error) 0);
-    VL53L0X_Dev_t *pMyDevice = &MyDevice;
-    VL53L0X_Version_t Version;
-    VL53L0X_Version_t *pVersion = &Version;
-
-
-    int32_t status_int;
-
-    int NecleoComStatus = 0;
-    int NecleoAutoCom = 1;
-# 129 "vl53_st_main.c"
-    printf ("VL53L0X PAL Continuous Ranging example\r\n");
-# 154 "vl53_st_main.c"
-    pMyDevice->I2cDevAddr = 0x52;
-# 178 "vl53_st_main.c"
-    if(Status == ((VL53L0X_Error) 0))
-    {
-        status_int = VL53L0X_GetVersion(pVersion);
-        if (status_int != 0)
-            Status = ((VL53L0X_Error) - 20);
-    }
-# 204 "vl53_st_main.c"
-    if(Status == ((VL53L0X_Error) 0))
-    {
-        printf ("Call of VL53L0X_DataInit\r\n");
-        Status = VL53L0X_DataInit(&MyDevice);
-        print_pal_error(Status);
-    }
-
-
-
-}
-
-VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) {
     VL53L0X_Error Status = ((VL53L0X_Error) 0);
     uint32_t StopCompleted=0;
     uint32_t LoopNb;
@@ -12905,7 +13264,8 @@ VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) {
 }
 
 
-VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) {
+VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev)
+{
     VL53L0X_Error Status = ((VL53L0X_Error) 0);
     uint8_t NewDatReady=0;
     uint32_t LoopNb;
@@ -12916,7 +13276,7 @@ VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) {
     if (Status == ((VL53L0X_Error) 0)) {
         LoopNb = 0;
         do {
-# 274 "vl53_st_main.c"
+# 681 "vl53_st_main.c"
             Status = VL53L0X_GetMeasurementDataReady(Dev, &NewDatReady);
             if ((NewDatReady == 0x01) || Status != ((VL53L0X_Error) 0)) {
                 break;
@@ -12940,27 +13300,78 @@ void vl53_LogDisp(char *string,int8_t status)
 
 
 }
-# 1691 "vl53_st_main.c"
-VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
+# 2576 "vl53_st_main.c"
+void vl53l0x_Racing_init(RASING_MODE sel)
 {
     VL53L0X_Error Status = ((VL53L0X_Error) 0);
-    VL53L0X_RangingMeasurementData_t RangingMeasurementData;
-    VL53L0X_RangingMeasurementData_t *pRangingMeasurementData = &RangingMeasurementData;
-    int i;
-    int max;
-    FixPoint1616_t LimitCheckCurrent;
+    VL53L0X_Dev_t *pMyDevice = &MyDevice;
+    VL53L0X_Version_t *pVersion = &Version;
 
-    uint32_t refSpadCount;
-    uint8_t isApertureSpads;
+    int32_t status_int;
+    int32_t init_done = 0;
+    int NecleoComStatus = 0;
+    int NecleoAutoCom = 1;
     uint8_t VhvSettings;
     uint8_t PhaseCal;
+    uint32_t refSpadCount;
+    uint8_t isApertureSpads;
+
+    if(sel == RASING_MODE_CONTINUE){
+        printf ("VL53L0X PAL Continuous Ranging example\r\n");
+    }
+    else{
+        printf ("VL53L0X API Simple Ranging example\r\n\n");
+    }
+
+    pMyDevice->I2cDevAddr = 0x52;
 
 
 
 
 
+    if(Status == ((VL53L0X_Error) 0)){
+        status_int = VL53L0X_GetVersion(pVersion);
+        if (status_int != 0){
+            Status = ((VL53L0X_Error) - 20);
+        }
+        else{
 
+            if( pVersion->major != 1 ||
+                pVersion->minor != 0 ||
+                pVersion->build != 4 )
+            {
+                printf("VL53L0X API Version Error: Your firmware has %d.%d.%d (revision %d). This example requires %d.%d.%d.\n",
+                    pVersion->major, pVersion->minor, pVersion->build, pVersion->revision,
+                    1, 0, 4);
+            }
+        }
+    }
+# 2637 "vl53_st_main.c"
+    if(Status == ((VL53L0X_Error) 0)){
+        printf ("Call of VL53L0X_DataInit\r\n");
+        Status = VL53L0X_DataInit(&MyDevice);
+        print_pal_error(Status);
+    }
 
+    if(Status == ((VL53L0X_Error) 0)){
+        Status = VL53L0X_GetDeviceInfo(&MyDevice, &DeviceInfo);
+
+        if(Status == ((VL53L0X_Error) 0)){
+            printf("VL53L0X_GetDeviceInfo:\r\n");
+            printf("Device Name : %s\r\n", DeviceInfo.Name);
+            printf("Device Type : %s\r\n", DeviceInfo.Type);
+            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+            printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+
+            if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+             printf("Error expected cut 1.1 but found cut %d.%d\r\n",DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+                Status = ((VL53L0X_Error) - 5);
+            }
+        }
+        print_pal_error(Status);
+    }
+# 2670 "vl53_st_main.c"
     if(Status == ((VL53L0X_Error) 0))
     {
         printf ("Call of VL53L0X_StaticInit\r\n");
@@ -12996,7 +13407,7 @@ VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
 
         print_pal_error(Status);
     }
-# 1759 "vl53_st_main.c"
+# 2718 "vl53_st_main.c"
     if (Status == ((VL53L0X_Error) 0)) {
         if(sel == RASING_MODE_SINGLE_LR){
 
@@ -13015,72 +13426,11 @@ VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
 
             printf ("Call of VL53L0X_StartMeasurement\r\n");
             Status = VL53L0X_StartMeasurement(pMyDevice);
-            print_pal_error(Status);
-        }
 
-        if(Status == ((VL53L0X_Error) 0)){
-            uint32_t measurement;
-            uint32_t no_of_measurements = 32;
-
-            uint16_t* pResults = (uint16_t*)malloc(sizeof(uint16_t) * no_of_measurements);
-
-            for(measurement=0; measurement<no_of_measurements; measurement++){
-
-                Status = WaitMeasurementDataReady(pMyDevice);
-
-                if(Status == ((VL53L0X_Error) 0)){
-# 1802 "vl53_st_main.c"
-                    Status = VL53L0X_GetRangingMeasurementData(pMyDevice, pRangingMeasurementData);
-
-                    *(pResults + measurement) = pRangingMeasurementData->RangeMilliMeter;
-                    printf("In loop measurement %d: %d\r\n", measurement, pRangingMeasurementData->RangeMilliMeter);
-
-
-
-
-
-
-
-                    VL53L0X_ClearInterruptMask(pMyDevice, 0x04);
-                    VL53L0X_PollingDelay(pMyDevice);
-                }
-                else {
-                    break;
-                }
-            }
-
-            if(Status == ((VL53L0X_Error) 0)){
-                for(measurement=0; measurement<no_of_measurements; measurement++){
-                    printf("measurement %d: %d\r\n", measurement, *(pResults + measurement));
-
-                }
-            }
-
-            free(pResults);
-        }
-
-        if(Status == ((VL53L0X_Error) 0)){
-# 1840 "vl53_st_main.c"
-            printf ("Call of VL53L0X_StopMeasurement\r\n");
-            Status = VL53L0X_StopMeasurement(pMyDevice);
-        }
-
-        if(Status == ((VL53L0X_Error) 0)){
-            printf ("Wait Stop to be competed\r\n");
-            Status = WaitStopCompleted(pMyDevice);
-        }
-
-        if(Status == ((VL53L0X_Error) 0)){
-
-
-
-
-
-            Status = VL53L0X_ClearInterruptMask(pMyDevice,0x04);
         }
     }
     else{
-# 1868 "vl53_st_main.c"
+# 2749 "vl53_st_main.c"
         if (Status == ((VL53L0X_Error) 0)) {
             Status = VL53L0X_SetLimitCheckEnable(pMyDevice, 0, 1);
         }
@@ -13094,7 +13444,7 @@ VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
                 Status = VL53L0X_SetLimitCheckEnable(pMyDevice, 3, 1);
             }
         }
-# 1889 "vl53_st_main.c"
+# 2770 "vl53_st_main.c"
         switch(sel){
         case RASING_MODE_SINGLE:
             if (Status == ((VL53L0X_Error) 0)) {
@@ -13130,7 +13480,7 @@ VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
         default:
             break;
         }
-# 1932 "vl53_st_main.c"
+# 2813 "vl53_st_main.c"
         switch(sel){
         case RASING_MODE_SINGLE:
              break;
@@ -13178,131 +13528,19 @@ VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
             break;
         }
 
-        if(sel==RASING_MODE_SINGLE_LR){
-            max = 50;
-        }
-        else{
-            max = 10;
-        }
-printf("001 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
-
-        if(Status == ((VL53L0X_Error) 0)){
-            for( i=0; i<max; i++ ){
-# 2006 "vl53_st_main.c"
-                printf ("Call of VL53L0X_PerformSingleRangingMeasurement\r\n");
-                Status = VL53L0X_PerformSingleRangingMeasurement(pMyDevice, &RangingMeasurementData);
-printf("002 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
-
-                print_pal_error(Status);
-                print_range_status(&RangingMeasurementData);
-# 2023 "vl53_st_main.c"
-                switch(sel){
-                case RASING_MODE_SINGLE:
-                case RASING_MODE_SINGLE_HA:
-                case RASING_MODE_SINGLE_HS:
-                    VL53L0X_GetLimitCheckCurrent(pMyDevice, 3, &LimitCheckCurrent);
-                    printf("RANGE IGNORE THRESHOLD: %f\r\n", (float)LimitCheckCurrent/65536.0);
-                    break;
-               case RASING_MODE_SINGLE_LR:
-                default:
-                    break;
-                }
-printf("003 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter) ;
-
-
-                if (Status != ((VL53L0X_Error) 0)){
-                    break;
-                }
-
-                printf("Measured distance: %i\r\n", RangingMeasurementData.RangeMilliMeter);
-            }
-
-        }
     }
 
-
-    return Status;
-
-}
-# 2060 "vl53_st_main.c"
-void vl53l0x_Racing_test(RASING_MODE sel)
-{
-    VL53L0X_Error Status = ((VL53L0X_Error) 0);
-
-    VL53L0X_Dev_t *pMyDevice = &MyDevice;
-    VL53L0X_Version_t Version;
-    VL53L0X_Version_t *pVersion = &Version;
-    VL53L0X_DeviceInfo_t DeviceInfo;
-
-    int32_t status_int;
-    int32_t init_done = 0;
-    int NecleoComStatus = 0;
-    int NecleoAutoCom = 1;
-
-
-    if(sel == RASING_MODE_CONTINUE){
-        printf ("VL53L0X PAL Continuous Ranging example\r\n");
+    if (Status == ((VL53L0X_Error) 0)) {
+        vl53handle.state = VL53_STATE_MESURRING_INIT;
     }
     else{
-        printf ("VL53L0X API Simple Ranging example\r\n\n");
+        vl53handle.state = VL53_STATE_INIT_ERROR;
     }
 
-    pMyDevice->I2cDevAddr = 0x52;
 
-
-
-
-
-    if(Status == ((VL53L0X_Error) 0)){
-        status_int = VL53L0X_GetVersion(pVersion);
-        if (status_int != 0){
-            Status = ((VL53L0X_Error) - 20);
-        }
-        else{
-
-            if( pVersion->major != 1 ||
-                pVersion->minor != 0 ||
-                pVersion->build != 4 )
-            {
-                printf("VL53L0X API Version Error: Your firmware has %d.%d.%d (revision %d). This example requires %d.%d.%d.\n",
-                    pVersion->major, pVersion->minor, pVersion->build, pVersion->revision,
-                    1, 0, 4);
-            }
-        }
-    }
-# 2121 "vl53_st_main.c"
-    if(Status == ((VL53L0X_Error) 0)){
-        printf ("Call of VL53L0X_DataInit\r\n");
-        Status = VL53L0X_DataInit(&MyDevice);
-        print_pal_error(Status);
-    }
-
-    if(Status == ((VL53L0X_Error) 0)){
-        Status = VL53L0X_GetDeviceInfo(&MyDevice, &DeviceInfo);
-
-        if(Status == ((VL53L0X_Error) 0)){
-            printf("VL53L0X_GetDeviceInfo:\r\n");
-            printf("Device Name : %s\r\n", DeviceInfo.Name);
-            printf("Device Type : %s\r\n", DeviceInfo.Type);
-            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
-            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
-            printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
-
-            if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
-             printf("Error expected cut 1.1 but found cut %d.%d\r\n",DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
-                Status = ((VL53L0X_Error) - 5);
-            }
-        }
-        print_pal_error(Status);
-    }
-
-    if(Status == ((VL53L0X_Error) 0)){
-        Status = SK_RangingTest( pMyDevice,sel);
-    }
 
     print_pal_error(Status);
 }
-
 
 
 

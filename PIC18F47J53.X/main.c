@@ -63,6 +63,10 @@ void rs485_com_task(void);
 
 void    rs485_init(void);
 
+void vl53_main_task(void);
+
+void vl53_task_init(void);
+
 /** Local ProtoType *******************************************************/
 
 //void Wait(uint16_t num);
@@ -253,7 +257,7 @@ MAIN_RETURN main(void)
     printf("main_loop_disp()\r\n");
     
     rs485_init();
-
+    vl53_task_init();
         
     main_loop_disp();
     while(1)
@@ -290,6 +294,9 @@ MAIN_RETURN main(void)
         //printf("main()003 \r\n");
          rs485_com_task();
          
+         vl53_main_task();
+         
+
 
        //vl53l0x_test();
 

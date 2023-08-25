@@ -1,0 +1,135 @@
+echo "  Part2PartOffsetNVMMicroMeter --------------------------------------------------------------------------------" >grep.txt
+find  ./  -type f |xargs grep --  Part2PartOffsetNVMMicroMeter |grep -v dist|grep -v build >>grep.txt
+echo "  Part2PartOffsetAdjustmentNVMMicroMeter --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep --  Part2PartOffsetAdjustmentNVMMicroMeter |grep -v dist|grep -v build >>grep.txt
+echo " DeviceMode --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- DeviceMode |grep -v dist|grep -v build >>grep.txt
+echo " HistogramMode --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- HistogramMode |grep -v dist|grep -v build >>grep.txt
+echo " MeasurementTimingBudgetMicroSeconds --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- MeasurementTimingBudgetMicroSeconds |grep -v dist|grep -v build >>grep.txt
+echo " InterMeasurementPeriodMilliSeconds --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- InterMeasurementPeriodMilliSeconds |grep -v dist|grep -v build >>grep.txt
+echo " XTalkCompensationEnable --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- XTalkCompensationEnable |grep -v dist|grep -v build >>grep.txt
+echo " XTalkCompensationRangeMilliMeter --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- XTalkCompensationRangeMilliMeter |grep -v dist|grep -v build >>grep.txt
+echo " XTalkCompensationRateMegaCps --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- XTalkCompensationRateMegaCps |grep -v dist|grep -v build >>grep.txt
+echo " RangeOffsetMicroMeters --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RangeOffsetMicroMeters |grep -v dist|grep -v build >>grep.txt
+echo " LimitChecksEnable[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- LimitChecksEnable |grep -v dist|grep -v build >>grep.txt
+echo " LimitChecksStatus[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- LimitChecksStatus |grep -v dist|grep -v build >>grep.txt
+echo " LimitChecksValue[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- LimitChecksValue |grep -v dist|grep -v build >>grep.txt
+echo " dmax_lut --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- dmax_lut |grep -v dist|grep -v build >>grep.txt
+echo " WrapAroundCheckEnable --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- WrapAroundCheckEnable |grep -v dist|grep -v build >>grep.txt
+echo " TimeStamp --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- TimeStamp |grep -v dist|grep -v build >>grep.txt
+echo " MeasurementTimeUsec --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- MeasurementTimeUsec |grep -v dist|grep -v build >>grep.txt
+echo " RangeMilliMeter --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RangeMilliMeter |grep -v dist|grep -v build >>grep.txt
+echo " RangeDMaxMilliMeter --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RangeDMaxMilliMeter |grep -v dist|grep -v build >>grep.txt
+echo " SignalRateRtnMegaCps --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SignalRateRtnMegaCps |grep -v dist|grep -v build >>grep.txt
+echo " AmbientRateRtnMegaCps --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- AmbientRateRtnMegaCps |grep -v dist|grep -v build >>grep.txt
+echo " EffectiveSpadRtnCount --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- EffectiveSpadRtnCount |grep -v dist|grep -v build >>grep.txt
+echo " ZoneId --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- ZoneId |grep -v dist|grep -v build >>grep.txt
+echo " RangeFractionalPart --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RangeFractionalPart |grep -v dist|grep -v build >>grep.txt
+echo " RangeStatus --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RangeStatus |grep -v dist|grep -v build >>grep.txt
+echo " HistogramData[VL53L0X_HISTOGRAM_BUFFER_SIZE] --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- HistogramData |grep -v dist|grep -v build >>grep.txt
+echo " FirstBin --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- FirstBin |grep -v dist|grep -v build >>grep.txt
+echo " BufferSize --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- BufferSize |grep -v dist|grep -v build >>grep.txt
+echo " NumberOfBins --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- NumberOfBins |grep -v dist|grep -v build >>grep.txt
+echo " ErrorStatus --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- ErrorStatus |grep -v dist|grep -v build >>grep.txt
+echo " OscFrequencyMHz --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- OscFrequencyMHz |grep -v dist|grep -v build >>grep.txt
+echo " LastEncodedTimeout --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- LastEncodedTimeout |grep -v dist|grep -v build >>grep.txt
+echo " Pin0GpioFunctionality --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- Pin0GpioFunctionality |grep -v dist|grep -v build >>grep.txt
+echo " FinalRangeTimeoutMicroSecs --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- FinalRangeTimeoutMicroSecs |grep -v dist|grep -v build >>grep.txt
+echo " FinalRangeVcselPulsePeriod --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- FinalRangeVcselPulsePeriod |grep -v dist|grep -v build >>grep.txt
+echo " PreRangeTimeoutMicroSecs --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- PreRangeTimeoutMicroSecs |grep -v dist|grep -v build >>grep.txt
+echo " PreRangeVcselPulsePeriod --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- PreRangeVcselPulsePeriod |grep -v dist|grep -v build >>grep.txt
+echo " SigmaEstRefArray --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SigmaEstRefArray |grep -v dist|grep -v build >>grep.txt
+echo " SigmaEstEffPulseWidth --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SigmaEstEffPulseWidth |grep -v dist|grep -v build >>grep.txt
+echo " SigmaEstEffAmbWidth --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SigmaEstEffAmbWidth |grep -v dist|grep -v build >>grep.txt
+echo " ReadDataFromDeviceDone --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- ReadDataFromDeviceDone |grep -v dist|grep -v build >>grep.txt
+echo " ModuleId --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- ModuleId |grep -v dist|grep -v build >>grep.txt
+echo " Revision --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- Revision |grep -v dist|grep -v build >>grep.txt
+echo " ProductId[VL53L0X_MAX_STRING_LENGTH] --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- ProductId |grep -v dist|grep -v build >>grep.txt
+echo " ReferenceSpadCount --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- ReferenceSpadCount |grep -v dist|grep -v build >>grep.txt
+echo " ReferenceSpadType --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- ReferenceSpadType |grep -v dist|grep -v build >>grep.txt
+echo " RefSpadsInitialised --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RefSpadsInitialised |grep -v dist|grep -v build >>grep.txt
+echo " PartUIDUpper --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- PartUIDUpper |grep -v dist|grep -v build >>grep.txt
+echo " PartUIDLower --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- PartUIDLower |grep -v dist|grep -v build >>grep.txt
+echo " SignalRateMeasFixed400mm --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SignalRateMeasFixed400mm |grep -v dist|grep -v build >>grep.txt
+echo " RefSpadEnables[VL53L0X_REF_SPAD_BUFFER_SIZE] --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RefSpadEnables |grep -v dist|grep -v build >>grep.txt
+echo " RefGoodSpadMap[VL53L0X_REF_SPAD_BUFFER_SIZE] --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RefGoodSpadMap |grep -v dist|grep -v build >>grep.txt
+echo " SequenceConfig --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SequenceConfig |grep -v dist|grep -v build >>grep.txt
+echo " RangeFractionalEnable --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- RangeFractionalEnable |grep -v dist|grep -v build >>grep.txt
+echo " PalState --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- PalState |grep -v dist|grep -v build >>grep.txt
+echo " PowerMode --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- PowerMode |grep -v dist|grep -v build >>grep.txt
+echo " SigmaEstRefArray --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SigmaEstRefArray |grep -v dist|grep -v build >>grep.txt
+echo " SigmaEstEffPulseWidth --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SigmaEstEffPulseWidth |grep -v dist|grep -v build >>grep.txt
+echo " SigmaEstEffAmbWidth --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SigmaEstEffAmbWidth |grep -v dist|grep -v build >>grep.txt
+echo " StopVariable --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- StopVariable |grep -v dist|grep -v build >>grep.txt
+echo " targetRefRate --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- targetRefRate |grep -v dist|grep -v build >>grep.txt
+echo " SigmaEstimate --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SigmaEstimate |grep -v dist|grep -v build >>grep.txt
+echo " SignalEstimate --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- SignalEstimate |grep -v dist|grep -v build >>grep.txt
+echo " LastSignalRefMcps --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- LastSignalRefMcps |grep -v dist|grep -v build >>grep.txt
+echo " *pTuningSettingsPointer --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- pTuningSettingsPointer |grep -v dist|grep -v build >>grep.txt
+echo " UseInternalTuningSettings --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- UseInternalTuningSettings |grep -v dist|grep -v build >>grep.txt
+echo " LinearityCorrectiveGain --------------------------------------------------------------------------------" >>grep.txt
+find  ./  -type f |xargs grep -- LinearityCorrectiveGain |grep -v dist|grep -v build >>grep.txt
+

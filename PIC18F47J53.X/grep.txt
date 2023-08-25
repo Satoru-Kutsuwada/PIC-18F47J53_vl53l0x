@@ -1,0 +1,1223 @@
+  Part2PartOffsetNVMMicroMeter --------------------------------------------------------------------------------
+./bbb:echo "  Part2PartOffsetNVMMicroMeter --------------------------------------------------------------------------------" >grep.txt
+./grep.txt:  Part2PartOffsetNVMMicroMeter --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_def.h:	int32_t	 Part2PartOffsetNVMMicroMeter;
+./vl53_st_main.c:    printf("Part2PartOffsetNVMMicroMeter = %d\r\n", 	MyDevice.Data.Part2PartOffsetNVMMicroMeter	);
+  Part2PartOffsetAdjustmentNVMMicroMeter --------------------------------------------------------------------------------
+./bbb:echo "  Part2PartOffsetAdjustmentNVMMicroMeter --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt:  Part2PartOffsetAdjustmentNVMMicroMeter --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_core.c:				Part2PartOffsetAdjustmentNVMMicroMeter,
+./vl53/core/vl53l0x_def.h:	int32_t	 Part2PartOffsetAdjustmentNVMMicroMeter;
+./vl53_st_main.c:    printf("Part2PartOffsetAdjustmentNVMMicroMeter = %d\r\n",	MyDevice.Data.Part2PartOffsetAdjustmentNVMMicroMeter	);
+ DeviceMode --------------------------------------------------------------------------------
+./bbb:echo " DeviceMode --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: DeviceMode --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		CurrentParameters.DeviceMode =  VL53L0X_DEVICEMODE_SINGLE_RANGING;
+./vl53/core/vl53l0x_api.c:	Status = VL53L0X_GetDeviceMode(Dev, &(pDeviceParameters->DeviceMode));
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_SetDeviceMode(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.c:				    VL53L0X_DeviceModes DeviceMode)
+./vl53/core/vl53l0x_api.c:	LOG_FUNCTION_START("%d", (int)DeviceMode);
+./vl53/core/vl53l0x_api.c:	switch (DeviceMode) {
+./vl53/core/vl53l0x_api.c:		VL53L0X_SETPARAMETERFIELD(Dev, DeviceMode, DeviceMode);
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_GetDeviceMode(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.c:	VL53L0X_DeviceModes *pDeviceMode)
+./vl53/core/vl53l0x_api.c:	VL53L0X_GETPARAMETERFIELD(Dev, DeviceMode, *pDeviceMode);
+./vl53/core/vl53l0x_api.c:	VL53L0X_DeviceModes DeviceMode;
+./vl53/core/vl53l0x_api.c:	/* Get Current DeviceMode */
+./vl53/core/vl53l0x_api.c:	Status = VL53L0X_GetDeviceMode(Dev, &DeviceMode);
+./vl53/core/vl53l0x_api.c:		&& DeviceMode == VL53L0X_DEVICEMODE_SINGLE_RANGING)
+./vl53/core/vl53l0x_api.c:		&& DeviceMode == VL53L0X_DEVICEMODE_SINGLE_RANGING)
+./vl53/core/vl53l0x_api.c:	VL53L0X_DeviceModes DeviceMode;
+./vl53/core/vl53l0x_api.c:	/* Get Current DeviceMode */
+./vl53/core/vl53l0x_api.c:	VL53L0X_GetDeviceMode(Dev, &DeviceMode);
+./vl53/core/vl53l0x_api.c:	switch (DeviceMode) {
+./vl53/core/vl53l0x_api.c:	Status = VL53L0X_SetDeviceMode(Dev, VL53L0X_DEVICEMODE_SINGLE_RANGING);
+./vl53/core/vl53l0x_api.c:	VL53L0X_DeviceModes DeviceMode, VL53L0X_GpioFunctionality Functionality,
+./vl53/core/vl53l0x_api.c:	} else if (DeviceMode == VL53L0X_DEVICEMODE_GPIO_DRIVE) {
+./vl53/core/vl53l0x_api.c:	} else if (DeviceMode == VL53L0X_DEVICEMODE_GPIO_OSC) {
+./vl53/core/vl53l0x_api.c:	VL53L0X_DeviceModes DeviceMode, FixPoint1616_t *pThresholdLow,
+./vl53/core/vl53l0x_api.c:	/* no dependency on DeviceMode for Ewok */
+./vl53/core/vl53l0x_api.h: * @param   DeviceMode            New device mode to apply
+./vl53/core/vl53l0x_api.h: * @return  VL53L0X_ERROR_MODE_NOT_SUPPORTED This error occurs when DeviceMode
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetDeviceMode(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	VL53L0X_DeviceModes DeviceMode);
+./vl53/core/vl53l0x_api.h: * @param   pDeviceMode           Pointer to current apply mode value
+./vl53/core/vl53l0x_api.h: * DeviceMode is not in the supported list
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetDeviceMode(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	VL53L0X_DeviceModes * pDeviceMode);
+./vl53/core/vl53l0x_api.h: * DeviceMode programmed with @a VL53L0X_SetDeviceMode is not in the supported
+./vl53/core/vl53l0x_api.h: * VL53L0X_DEVICEMODE_SINGLE_RANGING with @a VL53L0X_SetDeviceMode(),
+./vl53/core/vl53l0x_api.h: * @param   DeviceMode            Device Mode associated to the Gpio.
+./vl53/core/vl53l0x_api.h:	VL53L0X_DeviceModes DeviceMode, VL53L0X_GpioFunctionality Functionality,
+./vl53/core/vl53l0x_api.h: * @param   pDeviceMode           Pointer to Device Mode associated to the Gpio.
+./vl53/core/vl53l0x_api.h:	VL53L0X_DeviceModes * pDeviceMode,
+./vl53/core/vl53l0x_api.h: * @note DeviceMode is ignored for the current device
+./vl53/core/vl53l0x_api.h: * @param   DeviceMode       Device Mode for which change thresholds
+./vl53/core/vl53l0x_api.h:	VL53L0X_DeviceModes DeviceMode, FixPoint1616_t ThresholdLow,
+./vl53/core/vl53l0x_api.h: * @note DeviceMode is ignored for the current device
+./vl53/core/vl53l0x_api.h: * @param   DeviceMode       Device Mode from which read thresholds
+./vl53/core/vl53l0x_api.h:	VL53L0X_DeviceModes DeviceMode, FixPoint1616_t *pThresholdLow,
+./vl53/core/vl53l0x_def.h:/** @defgroup VL53L0X_define_DeviceModes_group Defines Device modes
+./vl53/core/vl53l0x_def.h:typedef uint8_t VL53L0X_DeviceModes;
+./vl53/core/vl53l0x_def.h:#define VL53L0X_DEVICEMODE_SINGLE_RANGING	   ((VL53L0X_DeviceModes)  0)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_DEVICEMODE_CONTINUOUS_RANGING	   ((VL53L0X_DeviceModes)  1)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_DEVICEMODE_SINGLE_HISTOGRAM	   ((VL53L0X_DeviceModes)  2)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_DEVICEMODE_CONTINUOUS_TIMED_RANGING ((VL53L0X_DeviceModes)  3)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_DEVICEMODE_SINGLE_ALS		   ((VL53L0X_DeviceModes) 10)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_DEVICEMODE_GPIO_DRIVE		   ((VL53L0X_DeviceModes) 20)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_DEVICEMODE_GPIO_OSC		   ((VL53L0X_DeviceModes) 21)
+./vl53/core/vl53l0x_def.h:/** @} VL53L0X_define_DeviceModes_group */
+./vl53/core/vl53l0x_def.h:	VL53L0X_DeviceModes DeviceMode;
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:        printf ("Call of VL53L0X_SetDeviceMode\n");
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_CONTINUOUS_RANGING); // Setup in single ranging mode
+./vl53/sample/vl53l0x_SingleRanging_Example.c:        printf ("Call of VL53L0X_SetDeviceMode\n");
+./vl53/sample/vl53l0x_SingleRanging_Example.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:        printf ("Call of VL53L0X_SetDeviceMode\n");
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:        printf ("Call of VL53L0X_SetDeviceMode\n");
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:        printf ("Call of VL53L0X_SetDeviceMode\n");
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:         * この関数は、 VL53L0X_SetDeviceMode() でデバイス モードを 
+./vl53_st_main.c:        printf ("Call of VL53L0X_SetDeviceMode\r\n");
+./vl53_st_main.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_CONTINUOUS_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:        printf ("Call of VL53L0X_SetDeviceMode\r\n");
+./vl53_st_main.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:        printf ("Call of VL53L0X_SetDeviceMode\r\n");
+./vl53_st_main.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:        printf ("Call of VL53L0X_SetDeviceMode\r\n");
+./vl53_st_main.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:        printf ("Call of VL53L0X_SetDeviceMode\r\n");
+./vl53_st_main.c:        Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:        printf ("Call of VL53L0X_SetDeviceMode\r\n");
+./vl53_st_main.c:            Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_CONTINUOUS_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:            Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:                 * この関数は、 VL53L0X_SetDeviceMode() でデバイス モードを 
+./vl53_st_main.c:        printf ("Call of VL53L0X_SetDeviceMode\r\n");
+./vl53_st_main.c:            Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_CONTINUOUS_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:            Status = VL53L0X_SetDeviceMode(pMyDevice, VL53L0X_DEVICEMODE_SINGLE_RANGING); // Setup in single ranging mode
+./vl53_st_main.c:            printf("Error:%d  VL53L0X_SetDeviceMode()\r\n",Status);
+./vl53_st_main.c:    printf("  DeviceMode = 0x%x\r\n",	MyDevice.Data.CurrentParameters.DeviceMode	);
+ HistogramMode --------------------------------------------------------------------------------
+./bbb:echo " HistogramMode --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: HistogramMode --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		CurrentParameters.HistogramMode = VL53L0X_HISTOGRAMMODE_DISABLED;
+./vl53/core/vl53l0x_api.h: * @param   HistogramMode         New device mode to apply
+./vl53/core/vl53l0x_api.h: * HistogramMode is not in the supported list
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetHistogramMode(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	VL53L0X_HistogramModes HistogramMode);
+./vl53/core/vl53l0x_api.h: * @param   pHistogramMode        Pointer to current Histogram Mode value
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetHistogramMode(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	VL53L0X_HistogramModes * pHistogramMode);
+./vl53/core/vl53l0x_def.h:/** @defgroup VL53L0X_define_HistogramModes_group Defines Histogram modes
+./vl53/core/vl53l0x_def.h:typedef uint8_t VL53L0X_HistogramModes;
+./vl53/core/vl53l0x_def.h:#define VL53L0X_HISTOGRAMMODE_DISABLED		((VL53L0X_HistogramModes) 0)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_HISTOGRAMMODE_REFERENCE_ONLY	((VL53L0X_HistogramModes) 1)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_HISTOGRAMMODE_RETURN_ONLY	((VL53L0X_HistogramModes) 2)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_HISTOGRAMMODE_BOTH		 ((VL53L0X_HistogramModes) 3)
+./vl53/core/vl53l0x_def.h:/** @} VL53L0X_define_HistogramModes_group */
+./vl53/core/vl53l0x_def.h:	VL53L0X_HistogramModes HistogramMode;
+./vl53_st_main.c:    printf("  HistogramMode = 0x%x\r\n",	MyDevice.Data.CurrentParameters.HistogramMode	);
+ MeasurementTimingBudgetMicroSeconds --------------------------------------------------------------------------------
+./bbb:echo " MeasurementTimingBudgetMicroSeconds --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: MeasurementTimingBudgetMicroSeconds --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		Status = VL53L0X_GetMeasurementTimingBudgetMicroSeconds(Dev,
+./vl53/core/vl53l0x_api.c:		&(pDeviceParameters->MeasurementTimingBudgetMicroSeconds));
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_SetMeasurementTimingBudgetMicroSeconds(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.c:	uint32_t MeasurementTimingBudgetMicroSeconds)
+./vl53/core/vl53l0x_api.c:		MeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_GetMeasurementTimingBudgetMicroSeconds(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.c:	uint32_t *pMeasurementTimingBudgetMicroSeconds)
+./vl53/core/vl53l0x_api.c:		pMeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api.c:	uint32_t MeasurementTimingBudgetMicroSeconds;
+./vl53/core/vl53l0x_api.c:				MeasurementTimingBudgetMicroSeconds,
+./vl53/core/vl53l0x_api.c:				MeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api.c:			VL53L0X_SetMeasurementTimingBudgetMicroSeconds(Dev,
+./vl53/core/vl53l0x_api.c:				MeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api.h: * @param MeasurementTimingBudgetMicroSeconds  Max measurement time in
+./vl53/core/vl53l0x_api.h: MeasurementTimingBudgetMicroSeconds out of range
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetMeasurementTimingBudgetMicroSeconds(
+./vl53/core/vl53l0x_api.h:	VL53L0X_DEV Dev, uint32_t MeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api.h: * @param   pMeasurementTimingBudgetMicroSeconds   Max measurement time in
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetMeasurementTimingBudgetMicroSeconds(
+./vl53/core/vl53l0x_api.h:	VL53L0X_DEV Dev, uint32_t *pMeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api_core.c:	uint32_t MeasurementTimingBudgetMicroSeconds;
+./vl53/core/vl53l0x_api_core.c:			MeasurementTimingBudgetMicroSeconds,
+./vl53/core/vl53l0x_api_core.c:			MeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api_core.c:		Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(Dev,
+./vl53/core/vl53l0x_api_core.c:				MeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api_core.c:		uint32_t MeasurementTimingBudgetMicroSeconds)
+./vl53/core/vl53l0x_api_core.c:		MeasurementTimingBudgetMicroSeconds -
+./vl53/core/vl53l0x_api_core.c:			MeasurementTimingBudgetMicroSeconds,
+./vl53/core/vl53l0x_api_core.c:			MeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api_core.c:		uint32_t *pMeasurementTimingBudgetMicroSeconds)
+./vl53/core/vl53l0x_api_core.c:	*pMeasurementTimingBudgetMicroSeconds
+./vl53/core/vl53l0x_api_core.c:				*pMeasurementTimingBudgetMicroSeconds +=
+./vl53/core/vl53l0x_api_core.c:				*pMeasurementTimingBudgetMicroSeconds +=
+./vl53/core/vl53l0x_api_core.c:				*pMeasurementTimingBudgetMicroSeconds +=
+./vl53/core/vl53l0x_api_core.c:			*pMeasurementTimingBudgetMicroSeconds +=
+./vl53/core/vl53l0x_api_core.c:			*pMeasurementTimingBudgetMicroSeconds +=
+./vl53/core/vl53l0x_api_core.c:			MeasurementTimingBudgetMicroSeconds,
+./vl53/core/vl53l0x_api_core.c:			*pMeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api_core.h:	uint32_t MeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_api_core.h:		uint32_t *pMeasurementTimingBudgetMicroSeconds);
+./vl53/core/vl53l0x_def.h:	uint32_t MeasurementTimingBudgetMicroSeconds;
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:        Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice,
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:        Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice,
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:        Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice,
+./vl53_st_main.c:        Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice,
+./vl53_st_main.c:        Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice,
+./vl53_st_main.c:        Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice,
+./vl53_st_main.c:                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 200000);
+./vl53_st_main.c:                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 30000);
+./vl53_st_main.c:                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 33000);
+./vl53_st_main.c:                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 200000);
+./vl53_st_main.c:                    printf("Error:%d  VL53L0X_SetMeasurementTimingBudgetMicroSeconds(1)\r\n",Status);
+./vl53_st_main.c:                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 30000);
+./vl53_st_main.c:                    printf("Error:%d  VL53L0X_SetMeasurementTimingBudgetMicroSeconds(2)\r\n",Status);
+./vl53_st_main.c:                Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 33000);
+./vl53_st_main.c:                    printf("Error:%d  VL53L0X_SetMeasurementTimingBudgetMicroSeconds(3)\r\n",Status);
+./vl53_st_main.c:    printf("  MeasurementTimingBudgetMicroSeconds = 0x%u\r\n",	MyDevice.Data.CurrentParameters.MeasurementTimingBudgetMicroSeconds	);
+ InterMeasurementPeriodMilliSeconds --------------------------------------------------------------------------------
+./bbb:echo " InterMeasurementPeriodMilliSeconds --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: InterMeasurementPeriodMilliSeconds --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		Status = VL53L0X_GetInterMeasurementPeriodMilliSeconds(Dev,
+./vl53/core/vl53l0x_api.c:		&(pDeviceParameters->InterMeasurementPeriodMilliSeconds));
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_GetInterMeasurementPeriodMilliSeconds(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.c:	uint32_t *pInterMeasurementPeriodMilliSeconds)
+./vl53/core/vl53l0x_api.c:			*pInterMeasurementPeriodMilliSeconds =
+./vl53/core/vl53l0x_api.c:			InterMeasurementPeriodMilliSeconds,
+./vl53/core/vl53l0x_api.c:			*pInterMeasurementPeriodMilliSeconds);
+./vl53/core/vl53l0x_api.h: * @param   InterMeasurementPeriodMilliSeconds   Inter-Measurement Period in ms.
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetInterMeasurementPeriodMilliSeconds(
+./vl53/core/vl53l0x_api.h:	VL53L0X_DEV Dev, uint32_t InterMeasurementPeriodMilliSeconds);
+./vl53/core/vl53l0x_api.h: * @param   pInterMeasurementPeriodMilliSeconds  Pointer to programmed
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetInterMeasurementPeriodMilliSeconds(
+./vl53/core/vl53l0x_api.h:	VL53L0X_DEV Dev, uint32_t *pInterMeasurementPeriodMilliSeconds);
+./vl53/core/vl53l0x_def.h:	uint32_t InterMeasurementPeriodMilliSeconds;
+./vl53_st_main.c:    printf("  InterMeasurementPeriodMilliSeconds = 0x%u\r\n",	MyDevice.Data.CurrentParameters.InterMeasurementPeriodMilliSeconds	);
+ XTalkCompensationEnable --------------------------------------------------------------------------------
+./bbb:echo " XTalkCompensationEnable --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: XTalkCompensationEnable --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		pDeviceParameters->XTalkCompensationEnable = 0;
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_GetXTalkCompensationEnable(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.c:	uint8_t *pXTalkCompensationEnable)
+./vl53/core/vl53l0x_api.c:	VL53L0X_GETPARAMETERFIELD(Dev, XTalkCompensationEnable, Temp8);
+./vl53/core/vl53l0x_api.c:	*pXTalkCompensationEnable = Temp8;
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETPARAMETERFIELD(Dev, XTalkCompensationEnable,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETPARAMETERFIELD(Dev, XTalkCompensationEnable,
+./vl53/core/vl53l0x_api.c:	uint8_t XTalkCompensationEnable;
+./vl53/core/vl53l0x_api.c:			VL53L0X_GETPARAMETERFIELD(Dev, XTalkCompensationEnable,
+./vl53/core/vl53l0x_api.c:				XTalkCompensationEnable);
+./vl53/core/vl53l0x_api.c:			if (XTalkCompensationEnable) {
+./vl53/core/vl53l0x_api.h: * @param   XTalkCompensationEnable   Cross talk compensation
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetXTalkCompensationEnable(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	uint8_t XTalkCompensationEnable);
+./vl53/core/vl53l0x_api.h: * @param   pXTalkCompensationEnable   Pointer to the Cross talk compensation
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetXTalkCompensationEnable(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	uint8_t *pXTalkCompensationEnable);
+./vl53/core/vl53l0x_api_core.c:	Status = VL53L0X_GetXTalkCompensationEnable(Dev, &xtalkCompEnable);
+./vl53/core/vl53l0x_def.h:	uint8_t XTalkCompensationEnable;
+./vl53_st_main.c:    printf("  XTalkCompensationEnable = 0x%x\r\n",	MyDevice.Data.CurrentParameters.XTalkCompensationEnable	);
+ XTalkCompensationRangeMilliMeter --------------------------------------------------------------------------------
+./bbb:echo " XTalkCompensationRangeMilliMeter --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: XTalkCompensationRangeMilliMeter --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_def.h:	uint16_t XTalkCompensationRangeMilliMeter;
+./vl53_st_main.c:    printf("  XTalkCompensationRangeMilliMeter = 0x%x\r\n",	MyDevice.Data.CurrentParameters.XTalkCompensationRangeMilliMeter	);
+ XTalkCompensationRateMegaCps --------------------------------------------------------------------------------
+./bbb:echo " XTalkCompensationRateMegaCps --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: XTalkCompensationRateMegaCps --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	/* Set Default XTalkCompensationRateMegaCps to 0  */
+./vl53/core/vl53l0x_api.c:	VL53L0X_SETPARAMETERFIELD(Dev, XTalkCompensationRateMegaCps, 0);
+./vl53/core/vl53l0x_api.c:		Status = VL53L0X_GetXTalkCompensationRateMegaCps(Dev,
+./vl53/core/vl53l0x_api.c:			&(pDeviceParameters->XTalkCompensationRateMegaCps));
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_GetXTalkCompensationRateMegaCps(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.c:	FixPoint1616_t *pXTalkCompensationRateMegaCps)
+./vl53/core/vl53l0x_api.c:				XTalkCompensationRateMegaCps, TempFix1616);
+./vl53/core/vl53l0x_api.c:			*pXTalkCompensationRateMegaCps = TempFix1616;
+./vl53/core/vl53l0x_api.c:			*pXTalkCompensationRateMegaCps = TempFix1616;
+./vl53/core/vl53l0x_api.c:				XTalkCompensationRateMegaCps, TempFix1616);
+./vl53/core/vl53l0x_api.c:	uint16_t XTalkCompensationRateMegaCps;
+./vl53/core/vl53l0x_api.c:				XTalkCompensationRateMegaCps,
+./vl53/core/vl53l0x_api.c:				XTalkCompensationRateMegaCps);
+./vl53/core/vl53l0x_api.c:					- ((XTalkCompensationRateMegaCps
+./vl53/core/vl53l0x_api.c:						- ((XTalkCompensationRateMegaCps
+./vl53/core/vl53l0x_api.h: * by using @a VL53L0X_SetXTalkCompensationRateMegaCps().
+./vl53/core/vl53l0x_api.h: * using @a VL53L0X_SetXTalkCompensationRateMegaCps().
+./vl53/core/vl53l0x_api.h: * @param   XTalkCompensationRateMegaCps   Compensation rate in
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetXTalkCompensationRateMegaCps(
+./vl53/core/vl53l0x_api.h:	FixPoint1616_t XTalkCompensationRateMegaCps);
+./vl53/core/vl53l0x_api.h: * @param   pXTalkCompensationRateMegaCps  Pointer to Compensation rate
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetXTalkCompensationRateMegaCps(
+./vl53/core/vl53l0x_api.h:	FixPoint1616_t *pXTalkCompensationRateMegaCps);
+./vl53/core/vl53l0x_api.h: * @param   pXTalkCompensationRateMegaCps  Pointer to new
+./vl53/core/vl53l0x_api.h:	FixPoint1616_t *pXTalkCompensationRateMegaCps);
+./vl53/core/vl53l0x_api_calibration.h:		FixPoint1616_t *pXTalkCompensationRateMegaCps);
+./vl53/core/vl53l0x_api_core.c:				XTalkCompensationRateMegaCps,
+./vl53/core/vl53l0x_api_core.c:	VL53L0X_GETPARAMETERFIELD(Dev, XTalkCompensationRateMegaCps,
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t XTalkCompensationRateMegaCps;
+./vl53_st_main.c:    printf("  XTalkCompensationRateMegaCps = 0x%u\r\n",	MyDevice.Data.CurrentParameters.XTalkCompensationRateMegaCps	);
+ RangeOffsetMicroMeters --------------------------------------------------------------------------------
+./bbb:echo " RangeOffsetMicroMeters --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: RangeOffsetMicroMeters --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:			&(pDeviceParameters->RangeOffsetMicroMeters));
+./vl53/core/vl53l0x_def.h:	int32_t RangeOffsetMicroMeters;
+./vl53_st_main.c:    printf("  RangeOffsetMicroMeters = %d\r\n",	MyDevice.Data.CurrentParameters.RangeOffsetMicroMeters	);
+ LimitChecksEnable[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------
+./bbb:echo " LimitChecksEnable[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: LimitChecksEnable[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:				&(pDeviceParameters->LimitChecksEnable[i]));
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksEnable,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksEnable,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksEnable,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksEnable,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksEnable,
+./vl53/core/vl53l0x_api.c:		VL53L0X_GETARRAYPARAMETERFIELD(Dev, LimitChecksEnable,
+./vl53/core/vl53l0x_api.c:	VL53L0X_GETARRAYPARAMETERFIELD(Dev, LimitChecksEnable, LimitCheckId,
+./vl53/core/vl53l0x_api.c:					LimitChecksEnable, LimitCheckId, 0);
+./vl53/core/vl53l0x_api.c:					LimitChecksEnable, LimitCheckId, 1);
+./vl53/core/vl53l0x_def.h:	uint8_t LimitChecksEnable[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS];
+./vl53_st_main.c:    //printf("  LimitChecksEnable[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] = 0x%x\r\n",	MyDevice.Data.CurrentParameters.LimitChecksEnable[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS]	);
+./vl53_st_main.c:    printf("  LimitChecksEnable[] = ");
+./vl53_st_main.c:        printf("0x%02x,",	MyDevice.Data.CurrentParameters.LimitChecksEnable[i]	);
+ LimitChecksStatus[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------
+./bbb:echo " LimitChecksStatus[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: LimitChecksStatus[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_core.c:		VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksStatus,
+./vl53/core/vl53l0x_api_core.c:		VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksStatus,
+./vl53/core/vl53l0x_api_core.c:		VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksStatus,
+./vl53/core/vl53l0x_api_core.c:		VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksStatus,
+./vl53/core/vl53l0x_def.h:	uint8_t LimitChecksStatus[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS];
+./vl53_st_main.c:    //printf("  LimitChecksStatus[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] = 0x%x\r\n",	MyDevice.Data.CurrentParameters.LimitChecksStatus[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS]	);
+./vl53_st_main.c:    printf("  LimitChecksStatus[] = ");
+./vl53_st_main.c:        printf("0x%02x,",	MyDevice.Data.CurrentParameters.LimitChecksStatus[i]	);
+ LimitChecksValue[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------
+./bbb:echo " LimitChecksValue[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: LimitChecksValue[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:				&(pDeviceParameters->LimitChecksValue[i]));
+./vl53/core/vl53l0x_api.c:			VL53L0X_GETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:		VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:			VL53L0X_SETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:		VL53L0X_GETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:		VL53L0X_GETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:		VL53L0X_GETARRAYPARAMETERFIELD(Dev, LimitChecksValue,
+./vl53/core/vl53l0x_api.c:					LimitChecksValue, LimitCheckId,
+./vl53/core/vl53l0x_api.c:					LimitChecksValue, LimitCheckId,
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t LimitChecksValue[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS];
+./vl53_st_main.c:    //printf("  LimitChecksValue[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS] = 0x%u\r\n",	MyDevice.Data.CurrentParameters.LimitChecksValue[VL53L0X_CHECKENABLE_NUMBER_OF_CHECKS]	);
+./vl53_st_main.c:    printf("  LimitChecksValue[] = ");
+./vl53_st_main.c:        printf("0x%u,",	MyDevice.Data.CurrentParameters.LimitChecksValue[i]	);
+ dmax_lut --------------------------------------------------------------------------------
+./bbb:echo " dmax_lut --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: dmax_lut --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.ambRate_mcps[0] = (FixPoint1616_t)0x00000000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.dmax_mm[0]      = (FixPoint1616_t)0x04B00000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.ambRate_mcps[1] = (FixPoint1616_t)0x0000B333;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.dmax_mm[1]      = (FixPoint1616_t)0x044C0000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.ambRate_mcps[2] = (FixPoint1616_t)0x00020000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.dmax_mm[2]      = (FixPoint1616_t)0x03840000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.ambRate_mcps[3] = (FixPoint1616_t)0x0003CCCC;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.dmax_mm[3]      = (FixPoint1616_t)0x02EE0000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.ambRate_mcps[4] = (FixPoint1616_t)0x00074CCC;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.dmax_mm[4]      = (FixPoint1616_t)0x02260000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.ambRate_mcps[5] = (FixPoint1616_t)0x000A0000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.dmax_mm[5]      = (FixPoint1616_t)0x01F40000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.ambRate_mcps[6] = (FixPoint1616_t)0x000F0000;
+./vl53/core/vl53l0x_api.c:        CurrentParameters.dmax_lut.dmax_mm[6]      = (FixPoint1616_t)0x01900000;
+./vl53/core/vl53l0x_api.c:			pDeviceParameters->dmax_lut.ambRate_mcps[i] =
+./vl53/core/vl53l0x_api.c:			   Dev->Data.CurrentParameters.dmax_lut.ambRate_mcps[i];
+./vl53/core/vl53l0x_api.c:			pDeviceParameters->dmax_lut.dmax_mm[i] =
+./vl53/core/vl53l0x_api.c:			   Dev->Data.CurrentParameters.dmax_lut.dmax_mm[i];
+./vl53/core/vl53l0x_api_core.c:VL53L0X_Error get_dmax_lut_points(VL53L0X_DMaxLUT_t data, uint32_t lut_size,
+./vl53/core/vl53l0x_api_core.c:	if (ambRateMeas <= CurrentParameters.dmax_lut.ambRate_mcps[0]) {
+./vl53/core/vl53l0x_api_core.c:		dmax_mm = CurrentParameters.dmax_lut.dmax_mm[0];
+./vl53/core/vl53l0x_api_core.c:		   CurrentParameters.dmax_lut.
+./vl53/core/vl53l0x_api_core.c:		    CurrentParameters.dmax_lut.dmax_mm[VL53L0X_DMAX_LUT_SIZE -
+./vl53/core/vl53l0x_api_core.c:		get_dmax_lut_points(CurrentParameters.dmax_lut,
+./vl53/core/vl53l0x_api_core.c:			dmax_mm = CurrentParameters.dmax_lut.dmax_mm[index0];
+./vl53/core/vl53l0x_api_core.c:			amb0 = CurrentParameters.dmax_lut.ambRate_mcps[index0];
+./vl53/core/vl53l0x_api_core.c:			amb1 = CurrentParameters.dmax_lut.ambRate_mcps[index1];
+./vl53/core/vl53l0x_api_core.c:			dmax0 = CurrentParameters.dmax_lut.dmax_mm[index0];
+./vl53/core/vl53l0x_api_core.c:			dmax1 = CurrentParameters.dmax_lut.dmax_mm[index1];
+./vl53/core/vl53l0x_def.h:	VL53L0X_DMaxLUT_t dmax_lut;
+./vl53_st_main.c:    //printf("  ambRate_mcps = 0x%u\r\n",	MyDevice.Data.CurrentParameters.dmax_lut.ambRate_mcps[VL53L0X_DMAX_LUT_SIZE]	);
+./vl53_st_main.c:        printf("0x%u,", MyDevice.Data.CurrentParameters.dmax_lut.ambRate_mcps[i]	);
+./vl53_st_main.c://    printf("  dmax_mm = 0x%u\r\n",	MyDevice.Data.CurrentParameters.dmax_lut.dmax_mm[VL53L0X_DMAX_LUT_SIZE]	);
+./vl53_st_main.c:        printf("0x%u,", MyDevice.Data.CurrentParameters.dmax_lut.dmax_mm[i]	);
+ WrapAroundCheckEnable --------------------------------------------------------------------------------
+./bbb:echo " WrapAroundCheckEnable --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: WrapAroundCheckEnable --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		Status = VL53L0X_GetWrapAroundCheckEnable(Dev,
+./vl53/core/vl53l0x_api.c:			&(pDeviceParameters->WrapAroundCheckEnable));
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_GetWrapAroundCheckEnable(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.c:	uint8_t *pWrapAroundCheckEnable)
+./vl53/core/vl53l0x_api.c:			*pWrapAroundCheckEnable = 0x01;
+./vl53/core/vl53l0x_api.c:			*pWrapAroundCheckEnable = 0x00;
+./vl53/core/vl53l0x_api.c:		VL53L0X_SETPARAMETERFIELD(Dev, WrapAroundCheckEnable,
+./vl53/core/vl53l0x_api.c:			*pWrapAroundCheckEnable);
+./vl53/core/vl53l0x_api.h: * @param   WrapAroundCheckEnable  Wrap around Check to be set
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetWrapAroundCheckEnable(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:		uint8_t WrapAroundCheckEnable);
+./vl53/core/vl53l0x_api.h: * @param   pWrapAroundCheckEnable  Pointer to the Wrap around Check state
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetWrapAroundCheckEnable(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:		uint8_t *pWrapAroundCheckEnable);
+./vl53/core/vl53l0x_def.h:	uint8_t WrapAroundCheckEnable;
+./vl53_st_main.c:    printf("  WrapAroundCheckEnable = 0x%x\r\n",	MyDevice.Data.CurrentParameters.WrapAroundCheckEnable	);
+ TimeStamp --------------------------------------------------------------------------------
+./bbb:echo " TimeStamp --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: TimeStamp --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		pRangingMeasurementData->TimeStamp = 0; /* Not Implemented */
+./vl53/core/vl53l0x_def.h:	uint32_t TimeStamp;			  /*!< 32-bit time stamp. */
+./vl53_st_main.c:    printf("  TimeStamp = 0x%u\r\n",	MyDevice.Data.LastRangeMeasure.TimeStamp	);
+ MeasurementTimeUsec --------------------------------------------------------------------------------
+./bbb:echo " MeasurementTimeUsec --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: MeasurementTimeUsec --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		pRangingMeasurementData->MeasurementTimeUsec = 0;
+./vl53/core/vl53l0x_api.c:		LastRangeDataBuffer.MeasurementTimeUsec =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->MeasurementTimeUsec;
+./vl53/core/vl53l0x_def.h:	uint32_t MeasurementTimeUsec;
+./vl53_st_main.c:    printf("  MeasurementTimeUsec = 0x%u\r\n",	MyDevice.Data.LastRangeMeasure.MeasurementTimeUsec	);
+ RangeMilliMeter --------------------------------------------------------------------------------
+./bbb:echo " XTalkCompensationRangeMilliMeter --------------------------------------------------------------------------------" >>grep.txt
+./bbb:echo " RangeMilliMeter --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: XTalkCompensationRangeMilliMeter --------------------------------------------------------------------------------
+./grep.txt:./bbb:echo " XTalkCompensationRangeMilliMeter --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt:./grep.txt: XTalkCompensationRangeMilliMeter --------------------------------------------------------------------------------
+./grep.txt:./vl53/core/vl53l0x_def.h:	uint16_t XTalkCompensationRangeMilliMeter;
+./grep.txt:./vl53_st_main.c:    printf("  XTalkCompensationRangeMilliMeter = 0x%x\r\n",	MyDevice.Data.CurrentParameters.XTalkCompensationRangeMilliMeter	);
+./grep.txt: RangeMilliMeter --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	uint16_t XtalkRangeMilliMeter;
+./vl53/core/vl53l0x_api.c:						XtalkRangeMilliMeter = 8888;
+./vl53/core/vl53l0x_api.c:						XtalkRangeMilliMeter = 8888
+./vl53/core/vl53l0x_api.c:					XtalkRangeMilliMeter =
+./vl53/core/vl53l0x_api.c:				tmpuint16 = XtalkRangeMilliMeter;
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeMilliMeter =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeMilliMeter = tmpuint16;
+./vl53/core/vl53l0x_api.c:		LastRangeDataBuffer.RangeMilliMeter =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeMilliMeter;
+./vl53/core/vl53l0x_api_core.c:		deltaT_ps = pRangingMeasurementData->RangeMilliMeter *
+./vl53/core/vl53l0x_def.h:	uint16_t XTalkCompensationRangeMilliMeter;
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:                *(pResults + measurement) = pRangingMeasurementData->RangeMilliMeter;
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:                printf("In loop measurement %d: %d\n", measurement, pRangingMeasurementData->RangeMilliMeter);
+./vl53_st_main.c:        set_MsrData( handle, pRangingMeasurementData->RangeMilliMeter);
+./vl53_st_main.c:        printf("In loop measurement= %d\r\n", pRangingMeasurementData->RangeMilliMeter);
+./vl53_st_main.c:        //printf("In loop measurement %d: %d : %d\r\n", measurement, pRangingMeasurementData->RangeMilliMeter, pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
+./vl53_st_main.c:        set_MsrData( handle, pRangingMeasurementData->RangeMilliMeter);
+./vl53_st_main.c:        printf("002 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);    
+./vl53_st_main.c:        printf("003 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter) ;   
+./vl53_st_main.c:                *(pResults + measurement) = pRangingMeasurementData->RangeMilliMeter;
+./vl53_st_main.c:                printf("In loop measurement %d: %d\r\n", measurement, pRangingMeasurementData->RangeMilliMeter);
+./vl53_st_main.c:                    *(pResults + measurement) = pRangingMeasurementData->RangeMilliMeter;
+./vl53_st_main.c:                    printf("In loop measurement %d: %d\r\n", measurement, pRangingMeasurementData->RangeMilliMeter);
+./vl53_st_main.c:                    //printf("In loop measurement %d: %d : %d\r\n", measurement, pRangingMeasurementData->RangeMilliMeter, pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
+./vl53_st_main.c:                    //printf("measurement %d: %d:%d\r\n", measurement, *(pResults + measurement),pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
+./vl53_st_main.c:printf("001 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);  
+./vl53_st_main.c:printf("002 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);    
+./vl53_st_main.c:printf("003 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter) ;   
+./vl53_st_main.c:    printf("  XTalkCompensationRangeMilliMeter = 0x%x\r\n",	MyDevice.Data.CurrentParameters.XTalkCompensationRangeMilliMeter	);
+./vl53_st_main.c:    printf("  RangeMilliMeter = %d mm\r\n",	MyDevice.Data.LastRangeMeasure.RangeMilliMeter	);
+ RangeDMaxMilliMeter --------------------------------------------------------------------------------
+./bbb:echo " RangeDMaxMilliMeter --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: RangeDMaxMilliMeter --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		LastRangeDataBuffer.RangeDMaxMilliMeter =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeDMaxMilliMeter;
+./vl53/core/vl53l0x_api_core.c:			pRangingMeasurementData->RangeDMaxMilliMeter = Dmax_mm;
+./vl53/core/vl53l0x_def.h:	uint16_t RangeDMaxMilliMeter;
+./vl53_st_main.c:    printf("  RangeDMaxMilliMeter = %d mm\r\n",	MyDevice.Data.LastRangeMeasure.RangeDMaxMilliMeter	);
+ SignalRateRtnMegaCps --------------------------------------------------------------------------------
+./bbb:echo " SignalRateRtnMegaCps --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SignalRateRtnMegaCps --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:				LastRangeDataBuffer.SignalRateRtnMegaCps;
+./vl53/core/vl53l0x_api.c:				LastRangeDataBuffer.SignalRateRtnMegaCps;
+./vl53/core/vl53l0x_api.c:				LastRangeDataBuffer.SignalRateRtnMegaCps;
+./vl53/core/vl53l0x_api.c:				LastRangeDataBuffer.SignalRateRtnMegaCps;
+./vl53/core/vl53l0x_api.c:		pRangingMeasurementData->SignalRateRtnMegaCps = SignalRate;
+./vl53/core/vl53l0x_api.c:		LastRangeDataBuffer.SignalRateRtnMegaCps =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->SignalRateRtnMegaCps;
+./vl53/core/vl53l0x_api_core.c:		pRangingMeasurementData->SignalRateRtnMegaCps;
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t SignalRateRtnMegaCps;
+./vl53_st_main.c:    printf("  SignalRateRtnMegaCps = %d\r\n",	MyDevice.Data.LastRangeMeasure.SignalRateRtnMegaCps	);
+ AmbientRateRtnMegaCps --------------------------------------------------------------------------------
+./bbb:echo " AmbientRateRtnMegaCps --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: AmbientRateRtnMegaCps --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		pRangingMeasurementData->AmbientRateRtnMegaCps =
+./vl53/core/vl53l0x_api.c:		LastRangeDataBuffer.AmbientRateRtnMegaCps =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->AmbientRateRtnMegaCps;
+./vl53/core/vl53l0x_api_core.c:		(pRangingMeasurementData->AmbientRateRtnMegaCps * 1000) >> 16;
+./vl53/core/vl53l0x_api_core.c:				pRangingMeasurementData->AmbientRateRtnMegaCps,
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t AmbientRateRtnMegaCps;
+./vl53_st_main.c:    printf("  AmbientRateRtnMegaCps = %d\r\n",	MyDevice.Data.LastRangeMeasure.AmbientRateRtnMegaCps	);
+ EffectiveSpadRtnCount --------------------------------------------------------------------------------
+./bbb:echo " EffectiveSpadRtnCount --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: EffectiveSpadRtnCount --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	uint16_t EffectiveSpadRtnCount;
+./vl53/core/vl53l0x_api.c:		EffectiveSpadRtnCount = VL53L0X_MAKEUINT16(localBuffer[3],
+./vl53/core/vl53l0x_api.c:		/* EffectiveSpadRtnCount is 8.8 format */
+./vl53/core/vl53l0x_api.c:		pRangingMeasurementData->EffectiveSpadRtnCount =
+./vl53/core/vl53l0x_api.c:			EffectiveSpadRtnCount;
+./vl53/core/vl53l0x_api.c:					* EffectiveSpadRtnCount) >> 8))
+./vl53/core/vl53l0x_api.c:						* EffectiveSpadRtnCount)
+./vl53/core/vl53l0x_api.c:			SignalRate, EffectiveSpadRtnCount,
+./vl53/core/vl53l0x_api.c:		LastRangeDataBuffer.EffectiveSpadRtnCount =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->EffectiveSpadRtnCount;
+./vl53/core/vl53l0x_api_core.c:				pRangingMeasurementData->EffectiveSpadRtnCount *
+./vl53/core/vl53l0x_api_core.c:		uint16_t EffectiveSpadRtnCount,
+./vl53/core/vl53l0x_api_core.c:	 * EffectiveSpadRtnCount has a format 8.8
+./vl53/core/vl53l0x_api_core.c:		if (EffectiveSpadRtnCount == 0) {
+./vl53/core/vl53l0x_api_core.c:				/ EffectiveSpadRtnCount);
+./vl53/core/vl53l0x_api_core.h:		 uint16_t EffectiveSpadRtnCount,
+./vl53/core/vl53l0x_def.h:	uint16_t EffectiveSpadRtnCount;
+./vl53_st_main.c:    printf("  EffectiveSpadRtnCount = %d\r\n",	MyDevice.Data.LastRangeMeasure.EffectiveSpadRtnCount	);
+ ZoneId --------------------------------------------------------------------------------
+./bbb:echo " ZoneId --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: ZoneId --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		pRangingMeasurementData->ZoneId = 0; /* Only one zone */
+./vl53/core/vl53l0x_def.h:	uint8_t ZoneId;
+./vl53_st_main.c:    printf("  ZoneId = 0x%x\r\n",	MyDevice.Data.LastRangeMeasure.ZoneId	);
+ RangeFractionalPart --------------------------------------------------------------------------------
+./bbb:echo " RangeFractionalPart --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: RangeFractionalPart --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeFractionalPart =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeFractionalPart = 0;
+./vl53/core/vl53l0x_api.c:		LastRangeDataBuffer.RangeFractionalPart =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeFractionalPart;
+./vl53/core/vl53l0x_def.h:	uint8_t RangeFractionalPart;
+./vl53_st_main.c:    printf("  RangeFractionalPart = 0x%x\r\n",	MyDevice.Data.LastRangeMeasure.RangeFractionalPart	);
+ RangeStatus --------------------------------------------------------------------------------
+./bbb:echo " RangeStatus --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: RangeStatus --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:VL53L0X_Error VL53L0X_GetRangeStatusString(uint8_t RangeStatus,
+./vl53/core/vl53l0x_api.c:	char *pRangeStatusString)
+./vl53/core/vl53l0x_api.c:	Status = VL53L0X_get_range_status_string(RangeStatus,
+./vl53/core/vl53l0x_api.c:		pRangeStatusString);
+./vl53/core/vl53l0x_api.c:	uint8_t SysRangeStatusRegister;
+./vl53/core/vl53l0x_api.c:		Status = VL53L0X_RdByte(Dev, VL53L0X_REG_RESULT_RANGE_STATUS, &SysRangeStatusRegister);
+./vl53/core/vl53l0x_api.c:			if (SysRangeStatusRegister & 0x01){
+./vl53/core/vl53l0x_api.c:	uint8_t DeviceRangeStatus;
+./vl53/core/vl53l0x_api.c:	uint8_t PalRangeStatus;
+./vl53/core/vl53l0x_api.c:		DeviceRangeStatus = localBuffer[0];
+./vl53/core/vl53l0x_api.c:		 * For a standard definition of RangeStatus, this should
+./vl53/core/vl53l0x_api.c:		Status |= VL53L0X_get_pal_range_status(Dev, DeviceRangeStatus,
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData, &PalRangeStatus);
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeStatus = PalRangeStatus;
+./vl53/core/vl53l0x_api.c:		LastRangeDataBuffer.RangeStatus =
+./vl53/core/vl53l0x_api.c:			pRangingMeasurementData->RangeStatus;
+./vl53/core/vl53l0x_api.h: * @brief Human readable Range Status string for a given RangeStatus
+./vl53/core/vl53l0x_api.h: * @param   RangeStatus         The RangeStatus code as stored on
+./vl53/core/vl53l0x_api.h: * @param   pRangeStatusString  The returned RangeStatus string.
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetRangeStatusString(uint8_t RangeStatus,
+./vl53/core/vl53l0x_api.h:	char *pRangeStatusString);
+./vl53/core/vl53l0x_api_core.c:		if (pRangingMeasurementData->RangeStatus != 0) {
+./vl53/core/vl53l0x_api_core.c:		uint8_t DeviceRangeStatus,
+./vl53/core/vl53l0x_api_core.c:		uint8_t *pPalRangeStatus)
+./vl53/core/vl53l0x_api_core.c:	uint8_t DeviceRangeStatusInternal = 0;
+./vl53/core/vl53l0x_api_core.c:	 * DeviceRangeStatus = 11. This function will replace the value 0 with
+./vl53/core/vl53l0x_api_core.c:	 * the value 11 in the DeviceRangeStatus.
+./vl53/core/vl53l0x_api_core.c:	 * DeviceRangeStatus, this will be added in the PalRangeStatus.
+./vl53/core/vl53l0x_api_core.c:	DeviceRangeStatusInternal = ((DeviceRangeStatus & 0x78) >> 3);
+./vl53/core/vl53l0x_api_core.c:	if (DeviceRangeStatusInternal == 0 ||
+./vl53/core/vl53l0x_api_core.c:		DeviceRangeStatusInternal == 5 ||
+./vl53/core/vl53l0x_api_core.c:		DeviceRangeStatusInternal == 7 ||
+./vl53/core/vl53l0x_api_core.c:		DeviceRangeStatusInternal == 12 ||
+./vl53/core/vl53l0x_api_core.c:		DeviceRangeStatusInternal == 13 ||
+./vl53/core/vl53l0x_api_core.c:		DeviceRangeStatusInternal == 14 ||
+./vl53/core/vl53l0x_api_core.c:		DeviceRangeStatusInternal == 15
+./vl53/core/vl53l0x_api_core.c:	 * value and put the result back into pPalRangeStatus.
+./vl53/core/vl53l0x_api_core.c:	 * with limit value and put the result back into pPalRangeStatus.
+./vl53/core/vl53l0x_api_core.c:	 * with limit value and put the result back into pPalRangeStatus.
+./vl53/core/vl53l0x_api_core.c:			*pPalRangeStatus = 255;	 /* NONE */
+./vl53/core/vl53l0x_api_core.c:		} else if (DeviceRangeStatusInternal == 1 ||
+./vl53/core/vl53l0x_api_core.c:					DeviceRangeStatusInternal == 2 ||
+./vl53/core/vl53l0x_api_core.c:					DeviceRangeStatusInternal == 3) {
+./vl53/core/vl53l0x_api_core.c:			*pPalRangeStatus = 5; /* HW fail */
+./vl53/core/vl53l0x_api_core.c:		} else if (DeviceRangeStatusInternal == 6 ||
+./vl53/core/vl53l0x_api_core.c:					DeviceRangeStatusInternal == 9) {
+./vl53/core/vl53l0x_api_core.c:			*pPalRangeStatus = 4;  /* Phase fail */
+./vl53/core/vl53l0x_api_core.c:		} else if (DeviceRangeStatusInternal == 8 ||
+./vl53/core/vl53l0x_api_core.c:					DeviceRangeStatusInternal == 10 ||
+./vl53/core/vl53l0x_api_core.c:			*pPalRangeStatus = 3;  /* Min range */
+./vl53/core/vl53l0x_api_core.c:		} else if (DeviceRangeStatusInternal == 4 ||
+./vl53/core/vl53l0x_api_core.c:			*pPalRangeStatus = 2;  /* Signal Fail */
+./vl53/core/vl53l0x_api_core.c:			*pPalRangeStatus = 1;  /* Sigma	 Fail */
+./vl53/core/vl53l0x_api_core.c:			*pPalRangeStatus = 0; /* Range Valid */
+./vl53/core/vl53l0x_api_core.c:		if ((DeviceRangeStatusInternal == 4) ||
+./vl53/core/vl53l0x_api_core.h:		 uint8_t DeviceRangeStatus,
+./vl53/core/vl53l0x_api_core.h:		 uint8_t *pPalRangeStatus);
+./vl53/core/vl53l0x_api_strings.c:VL53L0X_Error VL53L0X_get_range_status_string(uint8_t RangeStatus,
+./vl53/core/vl53l0x_api_strings.c:		char *pRangeStatusString)
+./vl53/core/vl53l0x_api_strings.c:	switch (RangeStatus) {
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pRangeStatusString,
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pRangeStatusString,
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pRangeStatusString,
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pRangeStatusString,
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pRangeStatusString,
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pRangeStatusString,
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pRangeStatusString,
+./vl53/core/vl53l0x_api_strings.h:VL53L0X_Error VL53L0X_get_range_status_string(uint8_t RangeStatus,
+./vl53/core/vl53l0x_api_strings.h:		char *pRangeStatusString);
+./vl53/core/vl53l0x_def.h:	uint8_t RangeStatus;
+./vl53/core/vl53l0x_def.h:		 *	See \ref RangeStatusPage
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:    uint8_t RangeStatus;
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:     * New Range Status: data is valid when pRangingMeasurementData->RangeStatus = 0
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:    RangeStatus = pRangingMeasurementData->RangeStatus;
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:    VL53L0X_GetRangeStatusString(RangeStatus, buf);
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:    printf("Range Status: %i : %s\n", RangeStatus, buf);
+./vl53/sample/vl53l0x_SingleRanging_Example.c:    uint8_t RangeStatus;
+./vl53/sample/vl53l0x_SingleRanging_Example.c:     * New Range Status: data is valid when pRangingMeasurementData->RangeStatus = 0
+./vl53/sample/vl53l0x_SingleRanging_Example.c:    RangeStatus = pRangingMeasurementData->RangeStatus;
+./vl53/sample/vl53l0x_SingleRanging_Example.c:    VL53L0X_GetRangeStatusString(RangeStatus, buf);
+./vl53/sample/vl53l0x_SingleRanging_Example.c:    printf("Range Status: %i : %s\n", RangeStatus, buf);
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:    uint8_t RangeStatus;
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:     * New Range Status: data is valid when pRangingMeasurementData->RangeStatus = 0
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:    RangeStatus = pRangingMeasurementData->RangeStatus;
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:    VL53L0X_GetRangeStatusString(RangeStatus, buf);
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:    printf("Range Status: %i : %s\n", RangeStatus, buf);
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:    uint8_t RangeStatus;
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:     * New Range Status: data is valid when pRangingMeasurementData->RangeStatus = 0
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:    RangeStatus = pRangingMeasurementData->RangeStatus;
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:    VL53L0X_GetRangeStatusString(RangeStatus, buf);
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:    printf("Range Status: %i : %s\n", RangeStatus, buf);
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:    uint8_t RangeStatus;
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:     * New Range Status: data is valid when pRangingMeasurementData->RangeStatus = 0
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:    RangeStatus = pRangingMeasurementData->RangeStatus;
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:    VL53L0X_GetRangeStatusString(RangeStatus, buf);
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:    printf("Range Status: %i : %s\n", RangeStatus, buf);
+./vl53_st_main.c:    uint8_t RangeStatus;
+./vl53_st_main.c:     * New Range Status: data is valid when pRangingMeasurementData->RangeStatus = 0
+./vl53_st_main.c:    RangeStatus = pRangingMeasurementData->RangeStatus;
+./vl53_st_main.c:    VL53L0X_GetRangeStatusString(RangeStatus, buf);
+./vl53_st_main.c:    printf("Range Status: %i : %s\r\n", RangeStatus, buf);
+./vl53_st_main.c:    printf("  RangeStatus = 0x%x\r\n",	MyDevice.Data.LastRangeMeasure.RangeStatus	);
+ HistogramData[VL53L0X_HISTOGRAM_BUFFER_SIZE] --------------------------------------------------------------------------------
+./bbb:echo " HistogramData[VL53L0X_HISTOGRAM_BUFFER_SIZE] --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: HistogramData[VL53L0X_HISTOGRAM_BUFFER_SIZE] --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_def.h: * @struct VL53L0X_HistogramData_t
+./vl53/core/vl53l0x_def.h:	uint32_t HistogramData[VL53L0X_HISTOGRAM_BUFFER_SIZE];
+./vl53_st_main.c:    //printf("  HistogramData[VL53L0X_HISTOGRAM_BUFFER_SIZE] = 0x%u\r\n",	MyDevice.Data.LastHistogramMeasure.HistogramData[VL53L0X_HISTOGRAM_BUFFER_SIZE]	);
+./vl53_st_main.c:    printf("  HistogramData[] = ");
+./vl53_st_main.c:        printf("0x%u,", MyDevice.Data.LastHistogramMeasure.HistogramData[i]	);
+ FirstBin --------------------------------------------------------------------------------
+./bbb:echo " FirstBin --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: FirstBin --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_def.h:	uint8_t FirstBin; /*!< First Bin value */
+./vl53_st_main.c:    printf("  FirstBin = 0x%x\r\n",	MyDevice.Data.LastHistogramMeasure.FirstBin	);
+ BufferSize --------------------------------------------------------------------------------
+./bbb:echo " BufferSize --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: BufferSize --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_def.h:	uint8_t BufferSize; /*!< Buffer Size - Set by the user.*/
+./vl53_st_main.c:    printf("  BufferSize = 0x%x\r\n",	MyDevice.Data.LastHistogramMeasure.BufferSize	);
+ NumberOfBins --------------------------------------------------------------------------------
+./bbb:echo " NumberOfBins --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: NumberOfBins --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_def.h:	uint8_t NumberOfBins;
+./vl53_st_main.c:    printf("  NumberOfBins = 0x%x\r\n",	MyDevice.Data.LastHistogramMeasure.NumberOfBins	);
+ ErrorStatus --------------------------------------------------------------------------------
+./bbb:echo " ErrorStatus --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: ErrorStatus --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.h: * @param   pDeviceErrorStatus    Pointer to current error code of the device
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetDeviceErrorStatus(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	VL53L0X_DeviceError * pDeviceErrorStatus);
+./vl53/core/vl53l0x_def.h:	VL53L0X_DeviceError ErrorStatus;
+./vl53_st_main.c:    printf("  ErrorStatus = 0x%x\r\n",	MyDevice.Data.LastHistogramMeasure.ErrorStatus	);
+ OscFrequencyMHz --------------------------------------------------------------------------------
+./bbb:echo " OscFrequencyMHz --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: OscFrequencyMHz --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	VL53L0X_SETDEVICESPECIFICPARAMETER(Dev, OscFrequencyMHz, 618660);
+./vl53/core/vl53l0x_api.c:		VL53L0X_SETDEVICESPECIFICPARAMETER(Dev, OscFrequencyMHz,
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t OscFrequencyMHz; /* Frequency used */
+./vl53_st_main.c:    printf("  OscFrequencyMHz  = 0x%u\r\n",	MyDevice.Data.DeviceSpecificParameters.OscFrequencyMHz 	);
+ LastEncodedTimeout --------------------------------------------------------------------------------
+./bbb:echo " LastEncodedTimeout --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: LastEncodedTimeout --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_core.c:				LastEncodedTimeout,
+./vl53/core/vl53l0x_api_core.c:					LastEncodedTimeout,
+./vl53/core/vl53l0x_def.h:	uint16_t LastEncodedTimeout;
+./vl53_st_main.c:    printf("  LastEncodedTimeout  = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.LastEncodedTimeout 	);
+ Pin0GpioFunctionality --------------------------------------------------------------------------------
+./bbb:echo " Pin0GpioFunctionality --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: Pin0GpioFunctionality --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		Pin0GpioFunctionality);
+./vl53/core/vl53l0x_api.c:		Pin0GpioFunctionality);
+./vl53/core/vl53l0x_api.c:				Pin0GpioFunctionality, Functionality);
+./vl53/core/vl53l0x_def.h:	VL53L0X_GpioFunctionality Pin0GpioFunctionality;
+./vl53_st_main.c:    printf("  Pin0GpioFunctionality = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.Pin0GpioFunctionality	);
+ FinalRangeTimeoutMicroSecs --------------------------------------------------------------------------------
+./bbb:echo " FinalRangeTimeoutMicroSecs --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: FinalRangeTimeoutMicroSecs --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:			FinalRangeTimeoutMicroSecs,
+./vl53/core/vl53l0x_api_core.c:						FinalRangeTimeoutMicroSecs,
+./vl53/core/vl53l0x_api_core.c:			Dev, FinalRangeTimeoutMicroSecs);
+./vl53/core/vl53l0x_def.h:	uint32_t FinalRangeTimeoutMicroSecs;
+./vl53_st_main.c:    printf("  FinalRangeTimeoutMicroSecs = 0x%u\r\n",	MyDevice.Data.DeviceSpecificParameters.FinalRangeTimeoutMicroSecs	);
+ FinalRangeVcselPulsePeriod --------------------------------------------------------------------------------
+./bbb:echo " FinalRangeVcselPulsePeriod --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: FinalRangeVcselPulsePeriod --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:			FinalRangeVcselPulsePeriod,
+./vl53/core/vl53l0x_api_core.c:				FinalRangeVcselPulsePeriod,
+./vl53/core/vl53l0x_api_core.c:			Dev, FinalRangeVcselPulsePeriod);
+./vl53/core/vl53l0x_def.h:	uint8_t FinalRangeVcselPulsePeriod;
+./vl53_st_main.c:    printf("  FinalRangeVcselPulsePeriod = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.FinalRangeVcselPulsePeriod	);
+ PreRangeTimeoutMicroSecs --------------------------------------------------------------------------------
+./bbb:echo " PreRangeTimeoutMicroSecs --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: PreRangeTimeoutMicroSecs --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:			PreRangeTimeoutMicroSecs,
+./vl53/core/vl53l0x_api_core.c:					PreRangeTimeoutMicroSecs,
+./vl53/core/vl53l0x_api_core.c:			Dev, PreRangeTimeoutMicroSecs);
+./vl53/core/vl53l0x_def.h:	uint32_t PreRangeTimeoutMicroSecs;
+./vl53_st_main.c:    printf("  PreRangeTimeoutMicroSecs = 0x%u\r\n",	MyDevice.Data.DeviceSpecificParameters.PreRangeTimeoutMicroSecs	);
+ PreRangeVcselPulsePeriod --------------------------------------------------------------------------------
+./bbb:echo " PreRangeVcselPulsePeriod --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: PreRangeVcselPulsePeriod --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:			PreRangeVcselPulsePeriod,
+./vl53/core/vl53l0x_api_core.c:				PreRangeVcselPulsePeriod,
+./vl53/core/vl53l0x_api_core.c:			Dev, PreRangeVcselPulsePeriod);
+./vl53/core/vl53l0x_def.h:	uint8_t PreRangeVcselPulsePeriod;
+./vl53_st_main.c:    printf("  PreRangeVcselPulsePeriod = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.PreRangeVcselPulsePeriod	);
+ SigmaEstRefArray --------------------------------------------------------------------------------
+./bbb:echo " SigmaEstRefArray --------------------------------------------------------------------------------" >>grep.txt
+./bbb:echo " SigmaEstRefArray --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SigmaEstRefArray --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstRefArray, 100);
+./vl53/core/vl53l0x_api_core.c:			case 0: /* uint16_t SigmaEstRefArray -> 2 bytes */
+./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstRefArray, Temp16);
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstRefArray;
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstRefArray;
+./vl53_st_main.c:    printf("  SigmaEstRefArray = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstRefArray	);
+./vl53_st_main.c:    printf("  SigmaEstRefArray = 0x%x\r\n",	MyDevice.Data.SigmaEstRefArray	);
+ SigmaEstEffPulseWidth --------------------------------------------------------------------------------
+./bbb:echo " SigmaEstEffPulseWidth --------------------------------------------------------------------------------" >>grep.txt
+./bbb:echo " SigmaEstEffPulseWidth --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SigmaEstEffPulseWidth --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstEffPulseWidth, 900);
+./vl53/core/vl53l0x_api_core.c:			case 1: /* uint16_t SigmaEstEffPulseWidth -> 2 bytes */
+./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstEffPulseWidth,
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffPulseWidth;
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffPulseWidth;
+./vl53_st_main.c:    printf("  SigmaEstEffPulseWidth = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstEffPulseWidth	);
+./vl53_st_main.c:    printf("  SigmaEstEffPulseWidth = 0x%x\r\n",	MyDevice.Data.SigmaEstEffPulseWidth	);
+ SigmaEstEffAmbWidth --------------------------------------------------------------------------------
+./bbb:echo " SigmaEstEffAmbWidth --------------------------------------------------------------------------------" >>grep.txt
+./bbb:echo " SigmaEstEffAmbWidth --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SigmaEstEffAmbWidth --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstEffAmbWidth, 500);
+./vl53/core/vl53l0x_api_core.c:			case 2: /* uint16_t SigmaEstEffAmbWidth -> 2 bytes */
+./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstEffAmbWidth, Temp16);
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffAmbWidth;
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffAmbWidth;
+./vl53_st_main.c:    printf("  SigmaEstEffAmbWidth = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstEffAmbWidth	);
+./vl53_st_main.c:    printf("  SigmaEstEffAmbWidth = 0x%x\r\n",	MyDevice.Data.SigmaEstEffAmbWidth	);
+ ReadDataFromDeviceDone --------------------------------------------------------------------------------
+./bbb:echo " ReadDataFromDeviceDone --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: ReadDataFromDeviceDone --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	VL53L0X_SETDEVICESPECIFICPARAMETER(Dev, ReadDataFromDeviceDone, 0);
+./vl53/core/vl53l0x_api_core.c:	uint8_t ReadDataFromDeviceDone;
+./vl53/core/vl53l0x_api_core.c:	ReadDataFromDeviceDone = VL53L0X_GETDEVICESPECIFICPARAMETER(Dev,
+./vl53/core/vl53l0x_api_core.c:			ReadDataFromDeviceDone);
+./vl53/core/vl53l0x_api_core.c:	if (ReadDataFromDeviceDone != 7) {
+./vl53/core/vl53l0x_api_core.c:			((ReadDataFromDeviceDone & 1) == 0)) {
+./vl53/core/vl53l0x_api_core.c:			((ReadDataFromDeviceDone & 2) == 0)) {
+./vl53/core/vl53l0x_api_core.c:			((ReadDataFromDeviceDone & 4) == 0)) {
+./vl53/core/vl53l0x_api_core.c:		(ReadDataFromDeviceDone != 7)) {
+./vl53/core/vl53l0x_api_core.c:			((ReadDataFromDeviceDone & 1) == 0)) {
+./vl53/core/vl53l0x_api_core.c:			((ReadDataFromDeviceDone & 2) == 0)) {
+./vl53/core/vl53l0x_api_core.c:			((ReadDataFromDeviceDone & 4) == 0)) {
+./vl53/core/vl53l0x_api_core.c:		byte = (uint8_t)(ReadDataFromDeviceDone|option);
+./vl53/core/vl53l0x_api_core.c:		VL53L0X_SETDEVICESPECIFICPARAMETER(Dev, ReadDataFromDeviceDone,
+./vl53/core/vl53l0x_def.h:	uint8_t ReadDataFromDeviceDone;
+./vl53_st_main.c:    printf("  ReadDataFromDeviceDone = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.ReadDataFromDeviceDone	);
+ ModuleId --------------------------------------------------------------------------------
+./bbb:echo " ModuleId --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: ModuleId --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_core.c:	uint8_t ModuleId;
+./vl53/core/vl53l0x_api_core.c:			Status |= VL53L0X_RdByte(Dev, 0x90, &ModuleId);
+./vl53/core/vl53l0x_api_core.c:					ModuleId, ModuleId);
+./vl53/core/vl53l0x_api_strings.c:	uint8_t ModuleIdInt;
+./vl53/core/vl53l0x_api_strings.c:		ModuleIdInt = VL53L0X_GETDEVICESPECIFICPARAMETER(Dev, ModuleId);
+./vl53/core/vl53l0x_api_strings.c:	if (ModuleIdInt == 0) {
+./vl53/core/vl53l0x_def.h:	uint8_t ModuleId; /* Module ID */
+./vl53_st_main.c:    printf("  ModuleId = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.ModuleId	);
+ Revision --------------------------------------------------------------------------------
+./bbb:echo " Revision --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: Revision --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.h: * @brief Reads the Product Revision for a for given Device
+./vl53/core/vl53l0x_api.h: * @param   pProductRevisionMajor  Pointer to Product Revision Major
+./vl53/core/vl53l0x_api.h: * @param   pProductRevisionMinor  Pointer to Product Revision Minor
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetProductRevision(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	uint8_t *pProductRevisionMajor, uint8_t *pProductRevisionMinor);
+./vl53/core/vl53l0x_api_core.c:	uint8_t Revision;
+./vl53/core/vl53l0x_api_core.c:			Status |= VL53L0X_RdByte(Dev, 0x90, &Revision);
+./vl53/core/vl53l0x_api_core.c:					Revision, Revision);
+./vl53/core/vl53l0x_api_strings.c:		uint8_t *Revision,
+./vl53/core/vl53l0x_api_strings.c:		*Revision = 0;
+./vl53/core/vl53l0x_api_strings.c:		*Revision = VL53L0X_GETDEVICESPECIFICPARAMETER(Dev, Revision);
+./vl53/core/vl53l0x_api_strings.c:	uint8_t Revision;
+./vl53/core/vl53l0x_api_strings.c:	Status = VL53L0X_check_part_used(Dev, &Revision, pVL53L0X_DeviceInfo);
+./vl53/core/vl53l0x_api_strings.c:		if (Revision == 0) {
+./vl53/core/vl53l0x_api_strings.c:		} else if ((Revision <= 34) && (Revision != 32)) {
+./vl53/core/vl53l0x_api_strings.c:		} else if (Revision < 39) {
+./vl53/core/vl53l0x_api_strings.c:		pVL53L0X_DeviceInfo->ProductRevisionMajor = 1;
+./vl53/core/vl53l0x_api_strings.c:		pVL53L0X_DeviceInfo->ProductRevisionMinor =
+./vl53/core/vl53l0x_def.h:	uint8_t ProductRevisionMajor;
+./vl53/core/vl53l0x_def.h:	uint8_t ProductRevisionMinor;
+./vl53/core/vl53l0x_def.h:	uint8_t Revision; /* test Revision */
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:        printf("ProductRevisionMajor : %d\n", DeviceInfo.ProductRevisionMajor);
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:        printf("ProductRevisionMinor : %d\n", DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:        			DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_SingleRanging_Example.c:            printf("ProductRevisionMajor : %d\n", DeviceInfo.ProductRevisionMajor);
+./vl53/sample/vl53l0x_SingleRanging_Example.c:        printf("ProductRevisionMinor : %d\n", DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_SingleRanging_Example.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53/sample/vl53l0x_SingleRanging_Example.c:                       DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:            printf("ProductRevisionMajor : %d\n", DeviceInfo.ProductRevisionMajor);
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:        printf("ProductRevisionMinor : %d\n", DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:                       DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:            printf("ProductRevisionMajor : %d\n", DeviceInfo.ProductRevisionMajor);
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:        printf("ProductRevisionMinor : %d\n", DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:                       DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:            printf("ProductRevisionMajor : %d\n", DeviceInfo.ProductRevisionMajor);
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:        printf("ProductRevisionMinor : %d\n", DeviceInfo.ProductRevisionMinor);
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:                       DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:        printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+./vl53_st_main.c:        printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53_st_main.c:        			DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+./vl53_st_main.c:            printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53_st_main.c:            printf("Error expected cut 1.1 but found cut %d.%d\r\n\n", DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+./vl53_st_main.c:        printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53_st_main.c:                       DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+./vl53_st_main.c:        printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53_st_main.c:                       DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+./vl53_st_main.c:        printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:        if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53_st_main.c:                       DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+./vl53_st_main.c:            printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:            if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53_st_main.c:            	printf("Error expected cut 1.1 but found cut %d.%d\r\n",DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:            printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+./vl53_st_main.c:            printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:            if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+./vl53_st_main.c:            	printf("Error expected cut 1.1 but found cut %d.%d\r\n",DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+./vl53_st_main.c:    printf("  Revision = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.Revision	);
+ ProductId[VL53L0X_MAX_STRING_LENGTH] --------------------------------------------------------------------------------
+./bbb:echo " ProductId[VL53L0X_MAX_STRING_LENGTH] --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: ProductId[VL53L0X_MAX_STRING_LENGTH] --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_core.c:	char ProductId[19];
+./vl53/core/vl53l0x_api_core.c:	char *ProductId_tmp;
+./vl53/core/vl53l0x_api_core.c:			ProductId[0] = (char)((TmpDWord >> 25) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[1] = (char)((TmpDWord >> 18) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[2] = (char)((TmpDWord >> 11) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[3] = (char)((TmpDWord >> 4) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[4] = (char)(byte +
+./vl53/core/vl53l0x_api_core.c:			ProductId[5] = (char)((TmpDWord >> 22) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[6] = (char)((TmpDWord >> 15) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[7] = (char)((TmpDWord >> 8) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[8] = (char)((TmpDWord >> 1) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[9] = (char)(byte +
+./vl53/core/vl53l0x_api_core.c:			ProductId[10] = (char)((TmpDWord >> 19) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[11] = (char)((TmpDWord >> 12) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[12] = (char)((TmpDWord >> 5) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[13] = (char)(byte +
+./vl53/core/vl53l0x_api_core.c:			ProductId[14] = (char)((TmpDWord >> 23) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[15] = (char)((TmpDWord >> 16) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[16] = (char)((TmpDWord >> 9) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[17] = (char)((TmpDWord >> 2) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:			ProductId[18] = '\0';
+./vl53/core/vl53l0x_api_core.c:			ProductId_tmp = VL53L0X_GETDEVICESPECIFICPARAMETER(Dev,
+./vl53/core/vl53l0x_api_core.c:					ProductId);
+./vl53/core/vl53l0x_api_core.c:			VL53L0X_COPYSTRING(ProductId_tmp, ProductId);
+./vl53/core/vl53l0x_api_strings.c:	char *ProductId_tmp;
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pVL53L0X_DeviceInfo->ProductId, "");
+./vl53/core/vl53l0x_api_strings.c:		ProductId_tmp = VL53L0X_GETDEVICESPECIFICPARAMETER(Dev,
+./vl53/core/vl53l0x_api_strings.c:			ProductId);
+./vl53/core/vl53l0x_api_strings.c:		VL53L0X_COPYSTRING(pVL53L0X_DeviceInfo->ProductId,
+./vl53/core/vl53l0x_api_strings.c:				   ProductId_tmp);
+./vl53/core/vl53l0x_def.h:	char ProductId[VL53L0X_MAX_STRING_LENGTH];
+./vl53/core/vl53l0x_def.h:	char ProductId[VL53L0X_MAX_STRING_LENGTH];
+./vl53/sample/vl53l0x_ContinuousRanging_Example.c:        printf("Device ID : %s\n", DeviceInfo.ProductId);
+./vl53/sample/vl53l0x_SingleRanging_Example.c:            printf("Device ID : %s\n", DeviceInfo.ProductId);
+./vl53/sample/vl53l0x_SingleRanging_High_Accuracy_Example.c:            printf("Device ID : %s\n", DeviceInfo.ProductId);
+./vl53/sample/vl53l0x_SingleRanging_High_Speed_Example.c:            printf("Device ID : %s\n", DeviceInfo.ProductId);
+./vl53/sample/vl53l0x_SingleRanging_Long_Range_Example.c:            printf("Device ID : %s\n", DeviceInfo.ProductId);
+./vl53_st_main.c:        printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+./vl53_st_main.c:            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+./vl53_st_main.c:            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+./vl53_st_main.c:            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+./vl53_st_main.c:            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+./vl53_st_main.c:            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+./vl53_st_main.c:            printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+./vl53_st_main.c:    printf("  ProductId[VL53L0X_MAX_STRING_LENGTH] = %s\r\n",	&MyDevice.Data.DeviceSpecificParameters.ProductId[0]	);
+ ReferenceSpadCount --------------------------------------------------------------------------------
+./bbb:echo " ReferenceSpadCount --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: ReferenceSpadCount --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		ReferenceSpadCount);
+./vl53/core/vl53l0x_api_calibration.c:			ReferenceSpadCount, (uint8_t)(*refSpadCount));
+./vl53/core/vl53l0x_api_calibration.c:			ReferenceSpadCount, (uint8_t)(count));
+./vl53/core/vl53l0x_api_core.c:	uint8_t ReferenceSpadCount = 0;
+./vl53/core/vl53l0x_api_core.c:			ReferenceSpadCount = (uint8_t)((TmpDWord >> 8) & 0x07f);
+./vl53/core/vl53l0x_api_core.c:				ReferenceSpadCount, ReferenceSpadCount);
+./vl53/core/vl53l0x_def.h:	uint8_t ReferenceSpadCount; /* used for ref spad management */
+./vl53_st_main.c:    printf("  ReferenceSpadCount = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.ReferenceSpadCount	);
+ ReferenceSpadType --------------------------------------------------------------------------------
+./bbb:echo " ReferenceSpadType --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: ReferenceSpadType --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		ReferenceSpadType);
+./vl53/core/vl53l0x_api_calibration.c:			ReferenceSpadType, *isApertureSpads);
+./vl53/core/vl53l0x_api_calibration.c:			ReferenceSpadType, isApertureSpads);
+./vl53/core/vl53l0x_api_core.c:	uint8_t ReferenceSpadType = 0;
+./vl53/core/vl53l0x_api_core.c:			ReferenceSpadType  = (uint8_t)((TmpDWord >> 15) & 0x01);
+./vl53/core/vl53l0x_api_core.c:				ReferenceSpadType, ReferenceSpadType);
+./vl53/core/vl53l0x_def.h:	uint8_t ReferenceSpadType;	/* used for ref spad management */
+./vl53_st_main.c:    printf("  ReferenceSpadType = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.ReferenceSpadType	);
+ RefSpadsInitialised --------------------------------------------------------------------------------
+./bbb:echo " RefSpadsInitialised --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: RefSpadsInitialised --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		VL53L0X_SETDEVICESPECIFICPARAMETER(Dev, RefSpadsInitialised, 0);
+./vl53/core/vl53l0x_api_calibration.c:		VL53L0X_SETDEVICESPECIFICPARAMETER(Dev, RefSpadsInitialised, 1);
+./vl53/core/vl53l0x_api_calibration.c:		VL53L0X_SETDEVICESPECIFICPARAMETER(Dev, RefSpadsInitialised, 1);
+./vl53/core/vl53l0x_def.h:	uint8_t RefSpadsInitialised; /* reports if ref spads are initialised. */
+./vl53_st_main.c:    printf("  RefSpadsInitialised = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.RefSpadsInitialised	);
+ PartUIDUpper --------------------------------------------------------------------------------
+./bbb:echo " PartUIDUpper --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: PartUIDUpper --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_core.c:	uint32_t PartUIDUpper = 0;
+./vl53/core/vl53l0x_api_core.c:			Status |= VL53L0X_RdDWord(Dev, 0x90, &PartUIDUpper);
+./vl53/core/vl53l0x_api_core.c:						PartUIDUpper, PartUIDUpper);
+./vl53/core/vl53l0x_def.h:	uint32_t PartUIDUpper; /*!< Unique Part ID Upper */
+./vl53_st_main.c:    printf("  PartUIDUpper = 0x%u\r\n",	MyDevice.Data.DeviceSpecificParameters.PartUIDUpper	);
+ PartUIDLower --------------------------------------------------------------------------------
+./bbb:echo " PartUIDLower --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: PartUIDLower --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_core.c:	uint32_t PartUIDLower = 0;
+./vl53/core/vl53l0x_api_core.c:			Status |= VL53L0X_RdDWord(Dev, 0x90, &PartUIDLower);
+./vl53/core/vl53l0x_api_core.c:						PartUIDLower, PartUIDLower);
+./vl53/core/vl53l0x_def.h:	uint32_t PartUIDLower; /*!< Unique Part ID Lower */
+./vl53_st_main.c:    printf("  PartUIDLower = 0x%u\r\n",	MyDevice.Data.DeviceSpecificParameters.PartUIDLower	);
+ SignalRateMeasFixed400mm --------------------------------------------------------------------------------
+./bbb:echo " SignalRateMeasFixed400mm --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SignalRateMeasFixed400mm --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_core.c:	FixPoint1616_t SignalRateMeasFixed400mmFix = 0;
+./vl53/core/vl53l0x_api_core.c:			SignalRateMeasFixed400mmFix =
+./vl53/core/vl53l0x_api_core.c:				SignalRateMeasFixed400mm,
+./vl53/core/vl53l0x_api_core.c:				SignalRateMeasFixed400mmFix);
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t SignalRateMeasFixed400mm;
+./vl53_st_main.c:    printf("  SignalRateMeasFixed400mm = 0x%u\r\n",	MyDevice.Data.DeviceSpecificParameters.SignalRateMeasFixed400mm	);
+ RefSpadEnables[VL53L0X_REF_SPAD_BUFFER_SIZE] --------------------------------------------------------------------------------
+./bbb:echo " RefSpadEnables[VL53L0X_REF_SPAD_BUFFER_SIZE] --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: RefSpadEnables[VL53L0X_REF_SPAD_BUFFER_SIZE] --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_calibration.c:		Dev->Data.SpadData.RefSpadEnables[index] = 0;
+./vl53/core/vl53l0x_api_calibration.c:					Dev->Data.SpadData.RefSpadEnables,
+./vl53/core/vl53l0x_api_calibration.c:				Dev->Data.SpadData.RefSpadEnables[index] = 0;
+./vl53/core/vl53l0x_api_calibration.c:					Dev->Data.SpadData.RefSpadEnables,
+./vl53/core/vl53l0x_api_calibration.c:		memcpy(lastSpadArray, Dev->Data.SpadData.RefSpadEnables,
+./vl53/core/vl53l0x_api_calibration.c:					Dev->Data.SpadData.RefSpadEnables,
+./vl53/core/vl53l0x_api_calibration.c:					Dev->Data.SpadData.RefSpadEnables);
+./vl53/core/vl53l0x_api_calibration.c:					Dev->Data.SpadData.RefSpadEnables,
+./vl53/core/vl53l0x_api_calibration.c:					Dev->Data.SpadData.RefSpadEnables,
+./vl53/core/vl53l0x_api_calibration.c:		Dev->Data.SpadData.RefSpadEnables[index] = 0;
+./vl53/core/vl53l0x_api_calibration.c:				Dev->Data.SpadData.RefSpadEnables,
+./vl53/core/vl53l0x_def.h:	uint8_t RefSpadEnables[VL53L0X_REF_SPAD_BUFFER_SIZE];
+./vl53_st_main.c://    printf("  RefSpadEnables = 0x%x\r\n",	MyDevice.Data.SpadData.RefSpadEnables[VL53L0X_REF_SPAD_BUFFER_SIZE]	);
+./vl53_st_main.c:    printf("  RefSpadEnables[] = ");
+./vl53_st_main.c:        printf("0x%02x,",	MyDevice.Data.SpadData.RefSpadEnables[i]	);
+ RefGoodSpadMap[VL53L0X_REF_SPAD_BUFFER_SIZE] --------------------------------------------------------------------------------
+./bbb:echo " RefGoodSpadMap[VL53L0X_REF_SPAD_BUFFER_SIZE] --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: RefGoodSpadMap[VL53L0X_REF_SPAD_BUFFER_SIZE] --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api_calibration.c:					Dev->Data.SpadData.RefGoodSpadMap,
+./vl53/core/vl53l0x_api_calibration.c:					Dev->Data.SpadData.RefGoodSpadMap,
+./vl53/core/vl53l0x_api_calibration.c:				Dev->Data.SpadData.RefGoodSpadMap,
+./vl53/core/vl53l0x_api_calibration.c:				Dev->Data.SpadData.RefGoodSpadMap,
+./vl53/core/vl53l0x_api_core.c:	uint8_t NvmRefGoodSpadMap[VL53L0X_REF_SPAD_BUFFER_SIZE];
+./vl53/core/vl53l0x_api_core.c:			NvmRefGoodSpadMap[0] = (uint8_t)((TmpDWord >> 24)
+./vl53/core/vl53l0x_api_core.c:			NvmRefGoodSpadMap[1] = (uint8_t)((TmpDWord >> 16)
+./vl53/core/vl53l0x_api_core.c:			NvmRefGoodSpadMap[2] = (uint8_t)((TmpDWord >> 8)
+./vl53/core/vl53l0x_api_core.c:			NvmRefGoodSpadMap[3] = (uint8_t)(TmpDWord & 0xff);
+./vl53/core/vl53l0x_api_core.c:			NvmRefGoodSpadMap[4] = (uint8_t)((TmpDWord >> 24)
+./vl53/core/vl53l0x_api_core.c:			NvmRefGoodSpadMap[5] = (uint8_t)((TmpDWord >> 16)
+./vl53/core/vl53l0x_api_core.c:				Dev->Data.SpadData.RefGoodSpadMap[i] =
+./vl53/core/vl53l0x_api_core.c:					NvmRefGoodSpadMap[i];
+./vl53/core/vl53l0x_def.h:	uint8_t RefGoodSpadMap[VL53L0X_REF_SPAD_BUFFER_SIZE];
+./vl53_st_main.c:    //    printf("  RefGoodSpadMap = 0x%x\r\n",	MyDevice.Data.SpadData.RefGoodSpadMap[VL53L0X_REF_SPAD_BUFFER_SIZE]	);
+./vl53_st_main.c:    printf("  RefGoodSpadMap[] = ");
+./vl53_st_main.c:        printf("0x%02x,",	MyDevice.Data.SpadData.RefGoodSpadMap[i]	);
+ SequenceConfig --------------------------------------------------------------------------------
+./bbb:echo " SequenceConfig --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SequenceConfig --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		PALDevDataSet(Dev, SequenceConfig, 0xFF);
+./vl53/core/vl53l0x_api.c:			PALDevDataSet(Dev, SequenceConfig, tempbyte);
+./vl53/core/vl53l0x_api.c:	uint8_t SequenceConfig = 0;
+./vl53/core/vl53l0x_api.c:	uint8_t SequenceConfigNew = 0;
+./vl53/core/vl53l0x_api.c:		&SequenceConfig);
+./vl53/core/vl53l0x_api.c:	SequenceConfigNew = SequenceConfig;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew |= 0x10;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew |= 0x28;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew |= 0x04;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew |= 0x40;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew |= 0x80;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew &= 0xef;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew &= 0xd7;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew &= 0xfb;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew &= 0xbf;
+./vl53/core/vl53l0x_api.c:				SequenceConfigNew &= 0x7f;
+./vl53/core/vl53l0x_api.c:	if (SequenceConfigNew != SequenceConfig) {
+./vl53/core/vl53l0x_api.c:			VL53L0X_REG_SYSTEM_SEQUENCE_CONFIG, SequenceConfigNew);
+./vl53/core/vl53l0x_api.c:			PALDevDataSet(Dev, SequenceConfig, SequenceConfigNew);
+./vl53/core/vl53l0x_api.c:	VL53L0X_SequenceStepId SequenceStepId, uint8_t SequenceConfig,
+./vl53/core/vl53l0x_api.c:		*pSequenceStepEnabled = (SequenceConfig & 0x10) >> 4;
+./vl53/core/vl53l0x_api.c:		*pSequenceStepEnabled = (SequenceConfig & 0x08) >> 3;
+./vl53/core/vl53l0x_api.c:		*pSequenceStepEnabled = (SequenceConfig & 0x04) >> 2;
+./vl53/core/vl53l0x_api.c:		*pSequenceStepEnabled = (SequenceConfig & 0x40) >> 6;
+./vl53/core/vl53l0x_api.c:		*pSequenceStepEnabled = (SequenceConfig & 0x80) >> 7;
+./vl53/core/vl53l0x_api.c:	uint8_t SequenceConfig = 0;
+./vl53/core/vl53l0x_api.c:		&SequenceConfig);
+./vl53/core/vl53l0x_api.c:		VL53L0X_SEQUENCESTEP_TCC, SequenceConfig,
+./vl53/core/vl53l0x_api.c:		VL53L0X_SEQUENCESTEP_DSS, SequenceConfig,
+./vl53/core/vl53l0x_api.c:		VL53L0X_SEQUENCESTEP_MSRC, SequenceConfig,
+./vl53/core/vl53l0x_api.c:		VL53L0X_SEQUENCESTEP_PRE_RANGE, SequenceConfig,
+./vl53/core/vl53l0x_api.c:		VL53L0X_SEQUENCESTEP_FINAL_RANGE, SequenceConfig,
+./vl53/core/vl53l0x_api.c:		PALDevDataSet(Dev, SequenceConfig, data);
+./vl53/core/vl53l0x_api_calibration.c:	uint8_t SequenceConfig = 0;
+./vl53/core/vl53l0x_api_calibration.c:	SequenceConfig = PALDevDataGet(Dev, SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:				SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:			PALDevDataSet(Dev, SequenceConfig, SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:	uint8_t SequenceConfig = 0;
+./vl53/core/vl53l0x_api_calibration.c:		SequenceConfig = PALDevDataGet(Dev, SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:				SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:			PALDevDataSet(Dev, SequenceConfig, SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:	uint8_t SequenceConfig = 0;
+./vl53/core/vl53l0x_api_calibration.c:		SequenceConfig = PALDevDataGet(Dev, SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:				SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:			PALDevDataSet(Dev, SequenceConfig, SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:	uint8_t SequenceConfig = 0;
+./vl53/core/vl53l0x_api_calibration.c:	SequenceConfig = PALDevDataGet(Dev, SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:				SequenceConfig);
+./vl53/core/vl53l0x_api_calibration.c:			PALDevDataSet(Dev, SequenceConfig, SequenceConfig);
+./vl53/core/vl53l0x_def.h:	uint8_t SequenceConfig;
+./vl53_st_main.c:    printf("  SequenceConfig = 0x%x\r\n",	MyDevice.Data.SequenceConfig	);
+ RangeFractionalEnable --------------------------------------------------------------------------------
+./bbb:echo " RangeFractionalEnable --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: RangeFractionalEnable --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:			PALDevDataSet(Dev, RangeFractionalEnable, tempbyte);
+./vl53/core/vl53l0x_api.c:	uint8_t RangeFractionalEnable;
+./vl53/core/vl53l0x_api.c:		RangeFractionalEnable = PALDevDataGet(Dev,
+./vl53/core/vl53l0x_api.c:			RangeFractionalEnable);
+./vl53/core/vl53l0x_api.c:					if (RangeFractionalEnable)
+./vl53/core/vl53l0x_api.c:		if (RangeFractionalEnable) {
+./vl53/core/vl53l0x_def.h:	uint8_t RangeFractionalEnable;
+./vl53_st_main.c:    printf("  RangeFractionalEnable = 0x%x\r\n",	MyDevice.Data.RangeFractionalEnable	);
+ PalState --------------------------------------------------------------------------------
+./bbb:echo " PalState --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: PalState --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:		PALDevDataSet(Dev, PalState, VL53L0X_STATE_WAIT_STATICINIT);
+./vl53/core/vl53l0x_api.c:		PALDevDataSet(Dev, PalState, VL53L0X_STATE_IDLE);
+./vl53/core/vl53l0x_api.c:		PALDevDataSet(Dev, PalState, VL53L0X_STATE_IDLE);
+./vl53/core/vl53l0x_api.c:			PALDevDataSet(Dev, PalState, VL53L0X_STATE_RUNNING);
+./vl53/core/vl53l0x_api.c:			PALDevDataSet(Dev, PalState, VL53L0X_STATE_RUNNING);
+./vl53/core/vl53l0x_api.c:		PALDevDataSet(Dev, PalState, VL53L0X_STATE_IDLE);
+./vl53/core/vl53l0x_api.h: * @param   PalStateCode          The State code as stored on @a VL53L0X_State
+./vl53/core/vl53l0x_api.h: * @param   pPalStateString       The State string corresponding to the
+./vl53/core/vl53l0x_api.h: * PalStateCode
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetPalStateString(VL53L0X_State PalStateCode,
+./vl53/core/vl53l0x_api.h:	char *pPalStateString);
+./vl53/core/vl53l0x_api.h: * @param   pPalState             Pointer to current state of the PAL for a
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetPalState(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	VL53L0X_State * pPalState);
+./vl53/core/vl53l0x_api_strings.h:VL53L0X_Error VL53L0X_get_pal_state_string(VL53L0X_State PalStateCode,
+./vl53/core/vl53l0x_api_strings.h:		char *pPalStateString);
+./vl53/core/vl53l0x_def.h:	VL53L0X_State PalState;
+./vl53_st_main.c:    printf("  PalState = 0x%x\r\n",	MyDevice.Data.PalState	);
+ PowerMode --------------------------------------------------------------------------------
+./bbb:echo " PowerMode --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: PowerMode --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.h: * @param   PowerMode             The value of the power mode to set.
+./vl53/core/vl53l0x_api.h: * see ::VL53L0X_PowerModes
+./vl53/core/vl53l0x_api.h: * @return  VL53L0X_ERROR_MODE_NOT_SUPPORTED    This error occurs when PowerMode
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetPowerMode(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	VL53L0X_PowerModes PowerMode);
+./vl53/core/vl53l0x_api.h: * @param   pPowerMode            Pointer to the current value of the power
+./vl53/core/vl53l0x_api.h: * mode. see ::VL53L0X_PowerModes
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetPowerMode(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	VL53L0X_PowerModes * pPowerMode);
+./vl53/core/vl53l0x_def.h:/** @defgroup VL53L0X_define_PowerModes_group List of available Power Modes
+./vl53/core/vl53l0x_def.h:typedef uint8_t VL53L0X_PowerModes;
+./vl53/core/vl53l0x_def.h:#define VL53L0X_POWERMODE_STANDBY_LEVEL1 ((VL53L0X_PowerModes) 0)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_POWERMODE_STANDBY_LEVEL2 ((VL53L0X_PowerModes) 1)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_POWERMODE_IDLE_LEVEL1	((VL53L0X_PowerModes) 2)
+./vl53/core/vl53l0x_def.h:#define VL53L0X_POWERMODE_IDLE_LEVEL2	((VL53L0X_PowerModes) 3)
+./vl53/core/vl53l0x_def.h:/** @} VL53L0X_define_PowerModes_group */
+./vl53/core/vl53l0x_def.h:	VL53L0X_PowerModes PowerMode;
+./vl53_st_main.c:    printf("  PowerMode = 0x%x\r\n",	MyDevice.Data.PowerMode	);
+ SigmaEstRefArray --------------------------------------------------------------------------------
+./bbb:echo " SigmaEstRefArray --------------------------------------------------------------------------------" >>grep.txt
+./bbb:echo " SigmaEstRefArray --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SigmaEstRefArray --------------------------------------------------------------------------------
+./grep.txt:./bbb:echo " SigmaEstRefArray --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt:./bbb:echo " SigmaEstRefArray --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt:./grep.txt: SigmaEstRefArray --------------------------------------------------------------------------------
+./grep.txt:./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstRefArray, 100);
+./grep.txt:./vl53/core/vl53l0x_api_core.c:			case 0: /* uint16_t SigmaEstRefArray -> 2 bytes */
+./grep.txt:./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstRefArray, Temp16);
+./grep.txt:./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstRefArray;
+./grep.txt:./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstRefArray;
+./grep.txt:./vl53_st_main.c:    printf("  SigmaEstRefArray = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstRefArray	);
+./grep.txt:./vl53_st_main.c:    printf("  SigmaEstRefArray = 0x%x\r\n",	MyDevice.Data.SigmaEstRefArray	);
+./grep.txt: SigmaEstRefArray --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstRefArray, 100);
+./vl53/core/vl53l0x_api_core.c:			case 0: /* uint16_t SigmaEstRefArray -> 2 bytes */
+./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstRefArray, Temp16);
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstRefArray;
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstRefArray;
+./vl53_st_main.c:    printf("  SigmaEstRefArray = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstRefArray	);
+./vl53_st_main.c:    printf("  SigmaEstRefArray = 0x%x\r\n",	MyDevice.Data.SigmaEstRefArray	);
+ SigmaEstEffPulseWidth --------------------------------------------------------------------------------
+./bbb:echo " SigmaEstEffPulseWidth --------------------------------------------------------------------------------" >>grep.txt
+./bbb:echo " SigmaEstEffPulseWidth --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SigmaEstEffPulseWidth --------------------------------------------------------------------------------
+./grep.txt:./bbb:echo " SigmaEstEffPulseWidth --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt:./bbb:echo " SigmaEstEffPulseWidth --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt:./grep.txt: SigmaEstEffPulseWidth --------------------------------------------------------------------------------
+./grep.txt:./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstEffPulseWidth, 900);
+./grep.txt:./vl53/core/vl53l0x_api_core.c:			case 1: /* uint16_t SigmaEstEffPulseWidth -> 2 bytes */
+./grep.txt:./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstEffPulseWidth,
+./grep.txt:./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffPulseWidth;
+./grep.txt:./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffPulseWidth;
+./grep.txt:./vl53_st_main.c:    printf("  SigmaEstEffPulseWidth = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstEffPulseWidth	);
+./grep.txt:./vl53_st_main.c:    printf("  SigmaEstEffPulseWidth = 0x%x\r\n",	MyDevice.Data.SigmaEstEffPulseWidth	);
+./grep.txt: SigmaEstEffPulseWidth --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstEffPulseWidth, 900);
+./vl53/core/vl53l0x_api_core.c:			case 1: /* uint16_t SigmaEstEffPulseWidth -> 2 bytes */
+./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstEffPulseWidth,
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffPulseWidth;
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffPulseWidth;
+./vl53_st_main.c:    printf("  SigmaEstEffPulseWidth = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstEffPulseWidth	);
+./vl53_st_main.c:    printf("  SigmaEstEffPulseWidth = 0x%x\r\n",	MyDevice.Data.SigmaEstEffPulseWidth	);
+ SigmaEstEffAmbWidth --------------------------------------------------------------------------------
+./bbb:echo " SigmaEstEffAmbWidth --------------------------------------------------------------------------------" >>grep.txt
+./bbb:echo " SigmaEstEffAmbWidth --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SigmaEstEffAmbWidth --------------------------------------------------------------------------------
+./grep.txt:./bbb:echo " SigmaEstEffAmbWidth --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt:./bbb:echo " SigmaEstEffAmbWidth --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt:./grep.txt: SigmaEstEffAmbWidth --------------------------------------------------------------------------------
+./grep.txt:./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstEffAmbWidth, 500);
+./grep.txt:./vl53/core/vl53l0x_api_core.c:			case 2: /* uint16_t SigmaEstEffAmbWidth -> 2 bytes */
+./grep.txt:./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstEffAmbWidth, Temp16);
+./grep.txt:./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffAmbWidth;
+./grep.txt:./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffAmbWidth;
+./grep.txt:./vl53_st_main.c:    printf("  SigmaEstEffAmbWidth = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstEffAmbWidth	);
+./grep.txt:./vl53_st_main.c:    printf("  SigmaEstEffAmbWidth = 0x%x\r\n",	MyDevice.Data.SigmaEstEffAmbWidth	);
+./grep.txt: SigmaEstEffAmbWidth --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, SigmaEstEffAmbWidth, 500);
+./vl53/core/vl53l0x_api_core.c:			case 2: /* uint16_t SigmaEstEffAmbWidth -> 2 bytes */
+./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, SigmaEstEffAmbWidth, Temp16);
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffAmbWidth;
+./vl53/core/vl53l0x_def.h:	uint16_t SigmaEstEffAmbWidth;
+./vl53_st_main.c:    printf("  SigmaEstEffAmbWidth = 0x%x\r\n",	MyDevice.Data.DeviceSpecificParameters.SigmaEstEffAmbWidth	);
+./vl53_st_main.c:    printf("  SigmaEstEffAmbWidth = 0x%x\r\n",	MyDevice.Data.SigmaEstEffAmbWidth	);
+ StopVariable --------------------------------------------------------------------------------
+./bbb:echo " StopVariable --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: StopVariable --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	uint8_t StopVariable;
+./vl53/core/vl53l0x_api.c:	Status |= VL53L0X_RdByte(Dev, 0x91, &StopVariable);
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, StopVariable, StopVariable);
+./vl53/core/vl53l0x_api.c:	Status = VL53L0X_WrByte(Dev, 0x91, PALDevDataGet(Dev, StopVariable));
+./vl53/core/vl53l0x_api.c:			PALDevDataGet(Dev, StopVariable));
+./vl53/core/vl53l0x_def.h:	uint8_t StopVariable;
+./vl53/core/vl53l0x_def.h:	/*!< StopVariable used during the stop sequence */
+./vl53_st_main.c:    printf("  StopVariable = 0x%x\r\n",	MyDevice.Data.StopVariable	);
+ targetRefRate --------------------------------------------------------------------------------
+./bbb:echo " targetRefRate --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: targetRefRate --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, targetRefRate, 0x0A00); /* 20 MCPS in 9:7 format */
+./vl53/core/vl53l0x_api_calibration.c:	uint16_t targetRefRate = 0x0A00; /* 20 MCPS in 9:7 format */
+./vl53/core/vl53l0x_api_calibration.c:	targetRefRate = PALDevDataGet(Dev, targetRefRate);
+./vl53/core/vl53l0x_api_calibration.c:			(peakSignalRateRef > targetRefRate)) {
+./vl53/core/vl53l0x_api_calibration.c:					(peakSignalRateRef > targetRefRate)) {
+./vl53/core/vl53l0x_api_calibration.c:		(peakSignalRateRef < targetRefRate)) {
+./vl53/core/vl53l0x_api_calibration.c:			targetRefRate);
+./vl53/core/vl53l0x_api_calibration.c:			signalRateDiff = abs(peakSignalRateRef - targetRefRate);
+./vl53/core/vl53l0x_api_calibration.c:			if (peakSignalRateRef > targetRefRate) {
+./vl53/core/vl53l0x_api_core.c:			case 3: /* uint16_t targetRefRate -> 2 bytes */
+./vl53/core/vl53l0x_api_core.c:				PALDevDataSet(Dev, targetRefRate, Temp16);
+./vl53/core/vl53l0x_def.h:	uint16_t targetRefRate;
+./vl53_st_main.c:    printf("  targetRefRate = 0x%x\r\n",	MyDevice.Data.targetRefRate	);
+ SigmaEstimate --------------------------------------------------------------------------------
+./bbb:echo " SigmaEstimate --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SigmaEstimate --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:			*pLimitCheckCurrent = PALDevDataGet(Dev, SigmaEstimate);
+./vl53/core/vl53l0x_api_core.c:	FixPoint1616_t *pSigmaEstimate)
+./vl53/core/vl53l0x_api_core.c:		*pSigmaEstimate = cSigmaEstMax;
+./vl53/core/vl53l0x_api_core.c:		PALDevDataSet(Dev, SigmaEstimate, cSigmaEstMax);
+./vl53/core/vl53l0x_api_core.c:		*pSigmaEstimate = (uint32_t)(sigmaEstimate);
+./vl53/core/vl53l0x_api_core.c:		PALDevDataSet(Dev, SigmaEstimate, *pSigmaEstimate);
+./vl53/core/vl53l0x_api_core.c:	FixPoint1616_t SigmaEstimate;
+./vl53/core/vl53l0x_api_core.c:			&SigmaEstimate);
+./vl53/core/vl53l0x_api_core.c:				(SigmaEstimate > SigmaLimitValue))
+./vl53/core/vl53l0x_api_core.h:		FixPoint1616_t *pSigmaEstimate);
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t SigmaEstimate;
+./vl53_st_main.c:    printf("  SigmaEstimate = 0x%u\r\n",	MyDevice.Data.SigmaEstimate	);
+ SignalEstimate --------------------------------------------------------------------------------
+./bbb:echo " SignalEstimate --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: SignalEstimate --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t SignalEstimate;
+./vl53_st_main.c:    printf("  SignalEstimate = 0x%u\r\n",	MyDevice.Data.SignalEstimate	);
+ LastSignalRefMcps --------------------------------------------------------------------------------
+./bbb:echo " LastSignalRefMcps --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: LastSignalRefMcps --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:				LastSignalRefMcps);
+./vl53/core/vl53l0x_api_core.c:	FixPoint1616_t LastSignalRefMcps;
+./vl53/core/vl53l0x_api_core.c:		/* Read LastSignalRefMcps from device */
+./vl53/core/vl53l0x_api_core.c:		LastSignalRefMcps = VL53L0X_FIXPOINT97TOFIXPOINT1616(tmpWord);
+./vl53/core/vl53l0x_api_core.c:		PALDevDataSet(Dev, LastSignalRefMcps, LastSignalRefMcps);
+./vl53/core/vl53l0x_api_core.c:				(LastSignalRefMcps > SignalRefClipValue)) {
+./vl53/core/vl53l0x_def.h:	FixPoint1616_t LastSignalRefMcps;
+./vl53_st_main.c:    printf("  LastSignalRefMcps = 0x%u\r\n",	MyDevice.Data.LastSignalRefMcps	);
+ *pTuningSettingsPointer --------------------------------------------------------------------------------
+./bbb:echo " *pTuningSettingsPointer --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: *pTuningSettingsPointer --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:				pTuningSettingsPointer);
+./vl53/core/vl53l0x_def.h:	uint8_t *pTuningSettingsPointer;
+./vl53_st_main.c://    printf("  *pTuningSettingsPointer = 0x%x\r\n",	MyDevice.Data.*pTuningSettingsPointer	);
+ UseInternalTuningSettings --------------------------------------------------------------------------------
+./bbb:echo " UseInternalTuningSettings --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: UseInternalTuningSettings --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, UseInternalTuningSettings, 1);
+./vl53/core/vl53l0x_api.c:	uint8_t UseInternalTuningSettings = 0;
+./vl53/core/vl53l0x_api.c:		UseInternalTuningSettings = PALDevDataGet(Dev,
+./vl53/core/vl53l0x_api.c:			UseInternalTuningSettings);
+./vl53/core/vl53l0x_api.c:		if (UseInternalTuningSettings == 0)
+./vl53/core/vl53l0x_api.h: * @param   UseInternalTuningSettings       Use internal tuning settings value.
+./vl53/core/vl53l0x_api.h:	uint8_t *pTuningSettingBuffer, uint8_t UseInternalTuningSettings);
+./vl53/core/vl53l0x_api.h: * @param   pUseInternalTuningSettings Pointer to store Use internal tuning
+./vl53/core/vl53l0x_api.h:	uint8_t **ppTuningSettingBuffer, uint8_t *pUseInternalTuningSettings);
+./vl53/core/vl53l0x_def.h:	uint8_t UseInternalTuningSettings;
+./vl53_st_main.c:    printf("  UseInternalTuningSettings = 0x%x\r\n",	MyDevice.Data.UseInternalTuningSettings	);
+ LinearityCorrectiveGain --------------------------------------------------------------------------------
+./bbb:echo " LinearityCorrectiveGain --------------------------------------------------------------------------------" >>grep.txt
+./grep.txt: LinearityCorrectiveGain --------------------------------------------------------------------------------
+./vl53/core/vl53l0x_api.c:	PALDevDataSet(Dev, LinearityCorrectiveGain, 1000);
+./vl53/core/vl53l0x_api.c:	uint16_t LinearityCorrectiveGain;
+./vl53/core/vl53l0x_api.c:		LinearityCorrectiveGain = PALDevDataGet(Dev,
+./vl53/core/vl53l0x_api.c:			LinearityCorrectiveGain);
+./vl53/core/vl53l0x_api.c:		if (LinearityCorrectiveGain != 1000) {
+./vl53/core/vl53l0x_api.c:			tmpuint16 = (uint16_t)((LinearityCorrectiveGain
+./vl53/core/vl53l0x_api.h: * @param   LinearityCorrectiveGain            Linearity corrective
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_SetLinearityCorrectiveGain(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	int16_t LinearityCorrectiveGain);
+./vl53/core/vl53l0x_api.h: * @param   pLinearityCorrectiveGain           Pointer to the linearity
+./vl53/core/vl53l0x_api.h:VL53L0X_API VL53L0X_Error VL53L0X_GetLinearityCorrectiveGain(VL53L0X_DEV Dev,
+./vl53/core/vl53l0x_api.h:	uint16_t *pLinearityCorrectiveGain);
+./vl53/core/vl53l0x_def.h:	uint16_t LinearityCorrectiveGain;
+./vl53_st_main.c:    printf("  LinearityCorrectiveGain = 0x%x\r\n",	MyDevice.Data.LinearityCorrectiveGain	);

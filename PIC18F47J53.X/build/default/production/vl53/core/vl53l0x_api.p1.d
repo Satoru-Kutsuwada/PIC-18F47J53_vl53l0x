@@ -1,9 +1,5 @@
 build/default/production/vl53/core/vl53l0x_api.p1:  \
 vl53/core/vl53l0x_api.c  \
-system.h  \
-bsp/buttons.h  \
-bsp/leds.h  \
-io_mapping.h  \
 vl53/core/vl53l0x_api.h  \
 vl53/core/vl53l0x_api_strings.h  \
 vl53/core/vl53l0x_def.h  \

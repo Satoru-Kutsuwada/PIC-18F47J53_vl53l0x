@@ -1,117 +1,208 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "240 ./vl53/core\vl53l0x_def.h
-[s S921 `ul -> 7 `i `ul -> 7 `i ]
-[n S921 . ambRate_mcps dmax_mm ]
+[s S922 `ul -> 7 `i `ul -> 7 `i ]
+[n S922 . ambRate_mcps dmax_mm ]
 "249
-[s S922 `uc 1 `uc 1 `ul 1 `ul 1 `uc 1 `us 1 `ul 1 `l 1 `uc -> 6 `i `uc -> 6 `i `ul -> 6 `i `S921 1 `uc 1 ]
-[n S922 . DeviceMode HistogramMode MeasurementTimingBudgetMicroSeconds InterMeasurementPeriodMilliSeconds XTalkCompensationEnable XTalkCompensationRangeMilliMeter XTalkCompensationRateMegaCps RangeOffsetMicroMeters LimitChecksEnable LimitChecksStatus LimitChecksValue dmax_lut WrapAroundCheckEnable ]
+[s S923 `uc 1 `uc 1 `ul 1 `ul 1 `uc 1 `us 1 `ul 1 `l 1 `uc -> 6 `i `uc -> 6 `i `ul -> 6 `i `S922 1 `uc 1 ]
+[n S923 . DeviceMode HistogramMode MeasurementTimingBudgetMicroSeconds InterMeasurementPeriodMilliSeconds XTalkCompensationEnable XTalkCompensationRangeMilliMeter XTalkCompensationRateMegaCps RangeOffsetMicroMeters LimitChecksEnable LimitChecksStatus LimitChecksValue dmax_lut WrapAroundCheckEnable ]
 "322
-[s S923 `ul 1 `ul 1 `us 1 `us 1 `ul 1 `ul 1 `us 1 `uc 1 `uc 1 `uc 1 ]
-[n S923 . TimeStamp MeasurementTimeUsec RangeMilliMeter RangeDMaxMilliMeter SignalRateRtnMegaCps AmbientRateRtnMegaCps EffectiveSpadRtnCount ZoneId RangeFractionalPart RangeStatus ]
+[s S924 `ul 1 `ul 1 `us 1 `us 1 `ul 1 `ul 1 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S924 . TimeStamp MeasurementTimeUsec RangeMilliMeter RangeDMaxMilliMeter SignalRateRtnMegaCps AmbientRateRtnMegaCps EffectiveSpadRtnCount ZoneId RangeFractionalPart RangeStatus ]
 "376
-[s S924 `ul -> 24 `i `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S924 . HistogramData FirstBin BufferSize NumberOfBins ErrorStatus ]
+[s S925 `ul -> 24 `i `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S925 . HistogramData FirstBin BufferSize NumberOfBins ErrorStatus ]
 "407
-[s S926 `ul 1 `us 1 `uc 1 `ul 1 `uc 1 `ul 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 `uc 1 `uc -> 32 `i `uc 1 `uc 1 `uc 1 `ul 1 `ul 1 `ul 1 ]
-[n S926 . OscFrequencyMHz LastEncodedTimeout Pin0GpioFunctionality FinalRangeTimeoutMicroSecs FinalRangeVcselPulsePeriod PreRangeTimeoutMicroSecs PreRangeVcselPulsePeriod SigmaEstRefArray SigmaEstEffPulseWidth SigmaEstEffAmbWidth ReadDataFromDeviceDone ModuleId Revision ProductId ReferenceSpadCount ReferenceSpadType RefSpadsInitialised PartUIDUpper PartUIDLower SignalRateMeasFixed400mm ]
+[s S927 `ul 1 `us 1 `uc 1 `ul 1 `uc 1 `ul 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 `uc 1 `uc -> 32 `i `uc 1 `uc 1 `uc 1 `ul 1 `ul 1 `ul 1 ]
+[n S927 . OscFrequencyMHz LastEncodedTimeout Pin0GpioFunctionality FinalRangeTimeoutMicroSecs FinalRangeVcselPulsePeriod PreRangeTimeoutMicroSecs PreRangeVcselPulsePeriod SigmaEstRefArray SigmaEstEffPulseWidth SigmaEstEffAmbWidth ReadDataFromDeviceDone ModuleId Revision ProductId ReferenceSpadCount ReferenceSpadType RefSpadsInitialised PartUIDUpper PartUIDLower SignalRateMeasFixed400mm ]
 "400
-[s S925 `uc -> 6 `i `uc -> 6 `i ]
-[n S925 . RefSpadEnables RefGoodSpadMap ]
+[s S926 `uc -> 6 `i `uc -> 6 `i ]
+[n S926 . RefSpadEnables RefGoodSpadMap ]
 "461
-[s S927 `l 1 `l 1 `S922 1 `S923 1 `S924 1 `S926 1 `S925 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `ul 1 `ul 1 `ul 1 `*uc 1 `uc 1 `us 1 ]
-[n S927 . Part2PartOffsetNVMMicroMeter Part2PartOffsetAdjustmentNVMMicroMeter CurrentParameters LastRangeMeasure LastHistogramMeasure DeviceSpecificParameters SpadData SequenceConfig RangeFractionalEnable PalState PowerMode SigmaEstRefArray SigmaEstEffPulseWidth SigmaEstEffAmbWidth StopVariable targetRefRate SigmaEstimate SignalEstimate LastSignalRefMcps pTuningSettingsPointer UseInternalTuningSettings LinearityCorrectiveGain ]
+[s S928 `l 1 `l 1 `S923 1 `S924 1 `S925 1 `S927 1 `S926 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `us 1 `ul 1 `ul 1 `ul 1 `*uc 1 `uc 1 `us 1 ]
+[n S928 . Part2PartOffsetNVMMicroMeter Part2PartOffsetAdjustmentNVMMicroMeter CurrentParameters LastRangeMeasure LastHistogramMeasure DeviceSpecificParameters SpadData SequenceConfig RangeFractionalEnable PalState PowerMode SigmaEstRefArray SigmaEstEffPulseWidth SigmaEstEffAmbWidth StopVariable targetRefRate SigmaEstimate SignalEstimate LastSignalRefMcps pTuningSettingsPointer UseInternalTuningSettings LinearityCorrectiveGain ]
 "58 ./vl53/platform\vl53l0x_platform.h
 [; ;./vl53/platform\vl53l0x_platform.h: 58: typedef struct {
-[s S930 `S927 1 `uc 1 ]
-[n S930 . Data I2cDevAddr ]
-"167 ./vl53/core\vl53l0x_api.h
-[; ;./vl53/core\vl53l0x_api.h: 167:             VL53L0X_Error VL53L0X_GetPalErrorString(VL53L0X_Error PalErrorCode,
-[v _VL53L0X_GetPalErrorString `(c ~T0 @X0 0 ef2`c`*uc ]
+[s S931 `S928 1 `uc 1 ]
+[n S931 . Data I2cDevAddr ]
+"100 ./vl53/core\vl53l0x_def.h
+[s S920 `ul 1 `uc 1 `uc 1 `uc 1 ]
+[n S920 . revision major minor build ]
+"110
+[s S921 `uc -> 32 `i `uc -> 32 `i `uc -> 32 `i `uc 1 `uc 1 `uc 1 ]
+[n S921 . Name Type ProductId ProductType ProductRevisionMajor ProductRevisionMinor ]
+"82 vl53_st_main.c
+[; ;vl53_st_main.c: 82: VL53_MAIN_STRUCT vl53handle;
+[c E7145 0 1 2 3 4 5 6 .. ]
+[n E7145 . VL53_STATE_STOP VL53_STATE_MESURRING_INIT VL53_STATE_INIT_ERROR VL53_STATE_MESURRING_CONTI VL53_STATE_MESURRING_SINGL VL53_STATE_MESURWE_ERROR VL53_STATE_MAX  ]
+[c E7154 0 1 2 3 4 5 6 7 8 .. ]
+[n E7154 . VL53_COM_NON VL53_COM_STOP VL53_COM_MESURRING_CONTI VL53_COM_MESURRING_SINGL VL53_COM_MESURRING_SINGL_HA VL53_COM_MESURRING_SINGL_HS VL53_COM_MESURRING_SINGL_LR VL53_COM_MESURRING_DATA VL53_COM_MAX  ]
+"338 ./system.h
+[; ;./system.h: 338: typedef struct{
+[s S919 `E7145 1 `E7154 1 `us -> 16 `i `uc 1 `uc 1 ]
+[n S919 . state command mesur_data msr_wpt msr_rpt ]
+[v F7980 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"51 vl53_st_main.c
+[; ;vl53_st_main.c: 51: void VL53_nop( VL53_MAIN_STRUCT *handle );
+[v _VL53_nop `(v ~T0 @X0 0 ef1`*S919 ]
+[v F7982 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F7986 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F7990 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F7994 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F7998 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"48
+[; ;vl53_st_main.c: 48: void VL53_Stop( VL53_MAIN_STRUCT *handle );
+[v _VL53_Stop `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8002 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"49
+[; ;vl53_st_main.c: 49: void VL53_StopConti( VL53_MAIN_STRUCT *handle );
+[v _VL53_StopConti `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8006 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"50
+[; ;vl53_st_main.c: 50: void VL53_StopSingle( VL53_MAIN_STRUCT *handle );
+[v _VL53_StopSingle `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8010 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"52
+[; ;vl53_st_main.c: 52: void VL53_StartConti( VL53_MAIN_STRUCT *handle );
+[v _VL53_StartConti `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8014 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"53
+[; ;vl53_st_main.c: 53: void VL53_MsrConti( VL53_MAIN_STRUCT *handle );
+[v _VL53_MsrConti `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8018 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8022 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8026 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"56
+[; ;vl53_st_main.c: 56: void VL53_StartSingle( VL53_MAIN_STRUCT *handle );
+[v _VL53_StartSingle `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8030 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"55
+[; ;vl53_st_main.c: 55: void VL53_MsrSingle( VL53_MAIN_STRUCT *handle );
+[v _VL53_MsrSingle `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8034 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8038 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8042 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"57
+[; ;vl53_st_main.c: 57: void VL53_StartSingleHA( VL53_MAIN_STRUCT *handle );
+[v _VL53_StartSingleHA `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8046 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8050 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8054 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8058 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"58
+[; ;vl53_st_main.c: 58: void VL53_StartSingleHS( VL53_MAIN_STRUCT *handle );
+[v _VL53_StartSingleHS `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8062 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8066 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8070 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8074 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"59
+[; ;vl53_st_main.c: 59: void VL53_StartSingleLR( VL53_MAIN_STRUCT *handle );
+[v _VL53_StartSingleLR `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8078 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8082 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8086 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8090 `(Cv ~T0 @X0 0 tf1`*S919 ]
+"60
+[; ;vl53_st_main.c: 60: void VL53_DataReq( VL53_MAIN_STRUCT *handle );
+[v _VL53_DataReq `(v ~T0 @X0 0 ef1`*S919 ]
+[v F8094 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8098 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8102 `(Cv ~T0 @X0 0 tf1`*S919 ]
+[v F8106 `(Cv ~T0 @X0 0 tf1`*S919 ]
 "107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"140 ./vl53/core\vl53l0x_api.h
-[; ;./vl53/core\vl53l0x_api.h: 140:             VL53L0X_Error VL53L0X_GetRangeStatusString(uint8_t RangeStatus,
-[v _VL53L0X_GetRangeStatusString `(c ~T0 @X0 0 ef2`uc`*uc ]
-"100 ./vl53/core\vl53l0x_def.h
-[s S919 `ul 1 `uc 1 `uc 1 `uc 1 ]
-[n S919 . revision major minor build ]
-"70 ./vl53/core\vl53l0x_api.h
-[; ;./vl53/core\vl53l0x_api.h: 70:             VL53L0X_Error VL53L0X_GetVersion(VL53L0X_Version_t *pVersion);
-[v _VL53L0X_GetVersion `(c ~T0 @X0 0 ef1`*S919 ]
-"405
-[; ;./vl53/core\vl53l0x_api.h: 405:             VL53L0X_Error VL53L0X_DataInit(VL53L0X_DEV Dev);
-[v _VL53L0X_DataInit `(c ~T0 @X0 0 ef1`*S930 ]
-"1721
-[; ;./vl53/core\vl53l0x_api.h: 1721:             VL53L0X_Error VL53L0X_GetStopCompletedStatus(VL53L0X_DEV Dev,
-[v _VL53L0X_GetStopCompletedStatus `(c ~T0 @X0 0 ef2`*S930`*ul ]
+"1402 ./vl53/core\vl53l0x_api.h
+[; ;./vl53/core\vl53l0x_api.h: 1402:             VL53L0X_Error VL53L0X_StopMeasurement(VL53L0X_DEV Dev);
+[v _VL53L0X_StopMeasurement `(c ~T0 @X0 0 ef1`*S931 ]
+"65 vl53_st_main.c
+[; ;vl53_st_main.c: 65: VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) ;
+[v _WaitStopCompleted `(c ~T0 @X0 0 ef1`*S931 ]
+"1740 ./vl53/core\vl53l0x_api.h
+[; ;./vl53/core\vl53l0x_api.h: 1740:             VL53L0X_Error VL53L0X_ClearInterruptMask(VL53L0X_DEV Dev,
+[v _VL53L0X_ClearInterruptMask `(c ~T0 @X0 0 ef2`*S931`ul ]
+"228 vl53_st_main.c
+[; ;vl53_st_main.c: 228:     vl53l0x_Racing_init( RASING_MODE_CONTINUE );
+[c E7137 0 1 2 3 4 5 .. ]
+[n E7137 . RASING_MODE_SINGLE RASING_MODE_SINGLE_HA RASING_MODE_SINGLE_HS RASING_MODE_SINGLE_LR RASING_MODE_CONTINUE RASING_MODE_MAX  ]
+"67
+[; ;vl53_st_main.c: 67: void vl53l0x_Racing_init(RASING_MODE sel);
+[v _vl53l0x_Racing_init `(v ~T0 @X0 0 ef1`E7137 ]
+"66
+[; ;vl53_st_main.c: 66: VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) ;
+[v _WaitMeasurementDataReady `(c ~T0 @X0 0 ef1`*S931 ]
+"1475 ./vl53/core\vl53l0x_api.h
+[; ;./vl53/core\vl53l0x_api.h: 1475:             VL53L0X_Error VL53L0X_GetRangingMeasurementData(VL53L0X_DEV Dev,
+[v _VL53L0X_GetRangingMeasurementData `(c ~T0 @X0 0 ef2`*S931`*S924 ]
+"54 vl53_st_main.c
+[; ;vl53_st_main.c: 54: void set_MsrData(VL53_MAIN_STRUCT *handle,uint16_t dt);
+[v _set_MsrData `(v ~T0 @X0 0 ef2`*S919`us ]
 "230 ./vl53/platform\vl53l0x_platform.h
 [; ;./vl53/platform\vl53l0x_platform.h: 230: VL53L0X_Error VL53L0X_PollingDelay(VL53L0X_DEV Dev);
-[v _VL53L0X_PollingDelay `(c ~T0 @X0 0 ef1`*S930 ]
+[v _VL53L0X_PollingDelay `(c ~T0 @X0 0 ef1`*S931 ]
+"1519 ./vl53/core\vl53l0x_api.h
+[; ;./vl53/core\vl53l0x_api.h: 1519:             VL53L0X_Error VL53L0X_PerformSingleRangingMeasurement(
+[v _VL53L0X_PerformSingleRangingMeasurement `(c ~T0 @X0 0 ef2`*S931`*S924 ]
+"62 vl53_st_main.c
+[; ;vl53_st_main.c: 62: void print_pal_error(VL53L0X_Error Status);
+[v _print_pal_error `(v ~T0 @X0 0 ef1`c ]
+"63
+[; ;vl53_st_main.c: 63: void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementData);
+[v _print_range_status `(v ~T0 @X0 0 ef1`*S924 ]
+"1186 ./vl53/core\vl53l0x_api.h
+[; ;./vl53/core\vl53l0x_api.h: 1186:             VL53L0X_Error VL53L0X_GetLimitCheckCurrent(VL53L0X_DEV Dev,
+[v _VL53L0X_GetLimitCheckCurrent `(c ~T0 @X0 0 ef3`*S931`us`*ul ]
+"167
+[; ;./vl53/core\vl53l0x_api.h: 167:             VL53L0X_Error VL53L0X_GetPalErrorString(VL53L0X_Error PalErrorCode,
+[v _VL53L0X_GetPalErrorString `(c ~T0 @X0 0 ef2`c`*uc ]
+"140
+[; ;./vl53/core\vl53l0x_api.h: 140:             VL53L0X_Error VL53L0X_GetRangeStatusString(uint8_t RangeStatus,
+[v _VL53L0X_GetRangeStatusString `(c ~T0 @X0 0 ef2`uc`*uc ]
+"1721
+[; ;./vl53/core\vl53l0x_api.h: 1721:             VL53L0X_Error VL53L0X_GetStopCompletedStatus(VL53L0X_DEV Dev,
+[v _VL53L0X_GetStopCompletedStatus `(c ~T0 @X0 0 ef2`*S931`*ul ]
 "50 ./system.h
 [; ;./system.h: 50: void vl53_LogDisp(char *string,int8_t status);
 [v _vl53_LogDisp `(v ~T0 @X0 0 ef2`*uc`c ]
 "1423 ./vl53/core\vl53l0x_api.h
 [; ;./vl53/core\vl53l0x_api.h: 1423:             VL53L0X_Error VL53L0X_GetMeasurementDataReady(VL53L0X_DEV Dev,
-[v _VL53L0X_GetMeasurementDataReady `(c ~T0 @X0 0 ef2`*S930`*uc ]
-"1691 vl53_st_main.c
-[; ;vl53_st_main.c: 1691: VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
-[c E7137 0 1 2 3 4 5 .. ]
-[n E7137 . RASING_MODE_SINGLE RASING_MODE_SINGLE_HA RASING_MODE_SINGLE_HS RASING_MODE_SINGLE_LR RASING_MODE_CONTINUE RASING_MODE_MAX  ]
-"459 ./vl53/core\vl53l0x_api.h
+[v _VL53L0X_GetMeasurementDataReady `(c ~T0 @X0 0 ef2`*S931`*uc ]
+"70
+[; ;./vl53/core\vl53l0x_api.h: 70:             VL53L0X_Error VL53L0X_GetVersion(VL53L0X_Version_t *pVersion);
+[v _VL53L0X_GetVersion `(c ~T0 @X0 0 ef1`*S920 ]
+"405
+[; ;./vl53/core\vl53l0x_api.h: 405:             VL53L0X_Error VL53L0X_DataInit(VL53L0X_DEV Dev);
+[v _VL53L0X_DataInit `(c ~T0 @X0 0 ef1`*S931 ]
+"113
+[; ;./vl53/core\vl53l0x_api.h: 113:             VL53L0X_Error VL53L0X_GetDeviceInfo(VL53L0X_DEV Dev,
+[v _VL53L0X_GetDeviceInfo `(c ~T0 @X0 0 ef2`*S931`*S921 ]
+"459
 [; ;./vl53/core\vl53l0x_api.h: 459:             VL53L0X_Error VL53L0X_StaticInit(VL53L0X_DEV Dev);
-[v _VL53L0X_StaticInit `(c ~T0 @X0 0 ef1`*S930 ]
+[v _VL53L0X_StaticInit `(c ~T0 @X0 0 ef1`*S931 ]
 "1269
 [; ;./vl53/core\vl53l0x_api.h: 1269:             VL53L0X_Error VL53L0X_PerformRefCalibration(VL53L0X_DEV Dev,
-[v _VL53L0X_PerformRefCalibration `(c ~T0 @X0 0 ef3`*S930`*uc`*uc ]
+[v _VL53L0X_PerformRefCalibration `(c ~T0 @X0 0 ef3`*S931`*uc`*uc ]
 "1869
 [; ;./vl53/core\vl53l0x_api.h: 1869:             VL53L0X_Error VL53L0X_PerformRefSpadManagement(VL53L0X_DEV Dev,
-[v _VL53L0X_PerformRefSpadManagement `(c ~T0 @X0 0 ef3`*S930`*ul`*uc ]
+[v _VL53L0X_PerformRefSpadManagement `(c ~T0 @X0 0 ef3`*S931`*ul`*uc ]
 "549
 [; ;./vl53/core\vl53l0x_api.h: 549:             VL53L0X_Error VL53L0X_SetDeviceMode(VL53L0X_DEV Dev,
-[v _VL53L0X_SetDeviceMode `(c ~T0 @X0 0 ef2`*S930`uc ]
+[v _VL53L0X_SetDeviceMode `(c ~T0 @X0 0 ef2`*S931`uc ]
 "1385
 [; ;./vl53/core\vl53l0x_api.h: 1385:             VL53L0X_Error VL53L0X_StartMeasurement(VL53L0X_DEV Dev);
-[v _VL53L0X_StartMeasurement `(c ~T0 @X0 0 ef1`*S930 ]
-"42 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h: 42: void *malloc (size_t);
-[v _malloc `(*v ~T0 @X0 0 ef1`ui ]
-"1475 ./vl53/core\vl53l0x_api.h
-[; ;./vl53/core\vl53l0x_api.h: 1475:             VL53L0X_Error VL53L0X_GetRangingMeasurementData(VL53L0X_DEV Dev,
-[v _VL53L0X_GetRangingMeasurementData `(c ~T0 @X0 0 ef2`*S930`*S923 ]
-"1740
-[; ;./vl53/core\vl53l0x_api.h: 1740:             VL53L0X_Error VL53L0X_ClearInterruptMask(VL53L0X_DEV Dev,
-[v _VL53L0X_ClearInterruptMask `(c ~T0 @X0 0 ef2`*S930`ul ]
-"45 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h: 45: void free (void *);
-[v _free `(v ~T0 @X0 0 ef1`*v ]
-"1402 ./vl53/core\vl53l0x_api.h
-[; ;./vl53/core\vl53l0x_api.h: 1402:             VL53L0X_Error VL53L0X_StopMeasurement(VL53L0X_DEV Dev);
-[v _VL53L0X_StopMeasurement `(c ~T0 @X0 0 ef1`*S930 ]
+[v _VL53L0X_StartMeasurement `(c ~T0 @X0 0 ef1`*S931 ]
 "1091
 [; ;./vl53/core\vl53l0x_api.h: 1091:             VL53L0X_Error VL53L0X_SetLimitCheckEnable(VL53L0X_DEV Dev,
-[v _VL53L0X_SetLimitCheckEnable `(c ~T0 @X0 0 ef3`*S930`us`uc ]
+[v _VL53L0X_SetLimitCheckEnable `(c ~T0 @X0 0 ef3`*S931`us`uc ]
 "1139
 [; ;./vl53/core\vl53l0x_api.h: 1139:             VL53L0X_Error VL53L0X_SetLimitCheckValue(VL53L0X_DEV Dev,
-[v _VL53L0X_SetLimitCheckValue `(c ~T0 @X0 0 ef3`*S930`us`ul ]
+[v _VL53L0X_SetLimitCheckValue `(c ~T0 @X0 0 ef3`*S931`us`ul ]
 "679
 [; ;./vl53/core\vl53l0x_api.h: 679:             VL53L0X_Error VL53L0X_SetMeasurementTimingBudgetMicroSeconds(
-[v _VL53L0X_SetMeasurementTimingBudgetMicroSeconds `(c ~T0 @X0 0 ef2`*S930`ul ]
+[v _VL53L0X_SetMeasurementTimingBudgetMicroSeconds `(c ~T0 @X0 0 ef2`*S931`ul ]
 "739
 [; ;./vl53/core\vl53l0x_api.h: 739:             VL53L0X_Error VL53L0X_SetVcselPulsePeriod(VL53L0X_DEV Dev,
-[v _VL53L0X_SetVcselPulsePeriod `(c ~T0 @X0 0 ef3`*S930`uc`uc ]
-"1519
-[; ;./vl53/core\vl53l0x_api.h: 1519:             VL53L0X_Error VL53L0X_PerformSingleRangingMeasurement(
-[v _VL53L0X_PerformSingleRangingMeasurement `(c ~T0 @X0 0 ef2`*S930`*S923 ]
-"1186
-[; ;./vl53/core\vl53l0x_api.h: 1186:             VL53L0X_Error VL53L0X_GetLimitCheckCurrent(VL53L0X_DEV Dev,
-[v _VL53L0X_GetLimitCheckCurrent `(c ~T0 @X0 0 ef3`*S930`us`*ul ]
-"110 ./vl53/core\vl53l0x_def.h
-[s S920 `uc -> 32 `i `uc -> 32 `i `uc -> 32 `i `uc 1 `uc 1 `uc 1 ]
-[n S920 . Name Type ProductId ProductType ProductRevisionMajor ProductRevisionMinor ]
-"113 ./vl53/core\vl53l0x_api.h
-[; ;./vl53/core\vl53l0x_api.h: 113:             VL53L0X_Error VL53L0X_GetDeviceInfo(VL53L0X_DEV Dev,
-[v _VL53L0X_GetDeviceInfo `(c ~T0 @X0 0 ef2`*S930`*S920 ]
+[v _VL53L0X_SetVcselPulsePeriod `(c ~T0 @X0 0 ef3`*S931`uc`uc ]
 "55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f47j53.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f47j53.h: 55: __asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
@@ -1394,1851 +1485,2366 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"52 vl53_st_main.c
-[; ;vl53_st_main.c: 52: VL53L0X_Dev_t MyDevice;
-[v _MyDevice `S930 ~T0 @X0 1 e ]
-"57
-[; ;vl53_st_main.c: 57: void print_pal_error(VL53L0X_Error Status){
-[v _print_pal_error `(v ~T0 @X0 1 ef1`c ]
-{
-[e :U _print_pal_error ]
-[v _Status `c ~T0 @X0 1 r1 ]
-[f ]
-"58
-[; ;vl53_st_main.c: 58:     char buf[32];
-[v _buf `uc ~T0 @X0 -> 32 `i a ]
-"59
-[; ;vl53_st_main.c: 59:     VL53L0X_GetPalErrorString(Status, buf);
-[e ( _VL53L0X_GetPalErrorString (2 , _Status &U _buf ]
-"60
-[; ;vl53_st_main.c: 60:     printf("API Status: %i : %s\r\n", Status, buf);
-[e ( _printf , , (. :s 1C -> _Status `i &U _buf ]
-"61
-[; ;vl53_st_main.c: 61: }
-[e :UE 931 ]
-}
-"66
-[; ;vl53_st_main.c: 66: void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementData)
-[v _print_range_status `(v ~T0 @X0 1 ef1`*S923 ]
-"67
-[; ;vl53_st_main.c: 67: {
-{
-[e :U _print_range_status ]
-"66
-[; ;vl53_st_main.c: 66: void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementData)
-[v _pRangingMeasurementData `*S923 ~T0 @X0 1 r1 ]
-"67
-[; ;vl53_st_main.c: 67: {
-[f ]
-"68
-[; ;vl53_st_main.c: 68:     char buf[32];
-[v _buf `uc ~T0 @X0 -> 32 `i a ]
-"69
-[; ;vl53_st_main.c: 69:     uint8_t RangeStatus;
-[v _RangeStatus `uc ~T0 @X0 1 a ]
+"72 vl53_st_main.c
+[; ;vl53_st_main.c: 72: VL53L0X_Dev_t MyDevice;
+[v _MyDevice `S931 ~T0 @X0 1 e ]
+"73
+[; ;vl53_st_main.c: 73: VL53L0X_RangingMeasurementData_t RangingMeasurementData;
+[v _RangingMeasurementData `S924 ~T0 @X0 1 e ]
+"74
+[; ;vl53_st_main.c: 74: VL53L0X_Version_t Version;
+[v _Version `S920 ~T0 @X0 1 e ]
 "75
-[; ;vl53_st_main.c: 75:     RangeStatus = pRangingMeasurementData->RangeStatus;
-[e = _RangeStatus . *U _pRangingMeasurementData 9 ]
-"77
-[; ;vl53_st_main.c: 77:     VL53L0X_GetRangeStatusString(RangeStatus, buf);
-[e ( _VL53L0X_GetRangeStatusString (2 , _RangeStatus &U _buf ]
-"78
-[; ;vl53_st_main.c: 78:     printf("Range Status: %i : %s\r\n", RangeStatus, buf);
-[e ( _printf , , (. :s 2C -> _RangeStatus `i &U _buf ]
-"80
-[; ;vl53_st_main.c: 80: }
+[; ;vl53_st_main.c: 75: VL53L0X_DeviceInfo_t DeviceInfo;
+[v _DeviceInfo `S921 ~T0 @X0 1 e ]
+"82
+[; ;vl53_st_main.c: 82: VL53_MAIN_STRUCT vl53handle;
+[v _vl53handle `S919 ~T0 @X0 1 e ]
+"83
+[; ;vl53_st_main.c: 83: VL53_MAIN_STRUCT Prevl53handle;
+[v _Prevl53handle `S919 ~T0 @X0 1 e ]
+[v F7979 `*F7980 ~T0 @X0 -> 6 `i t ]
+"88
+[; ;vl53_st_main.c: 88: const void (*vl53_func_table[VL53_COM_MAX][VL53_STATE_MAX])( VL53_MAIN_STRUCT *handle )={
+[v _vl53_func_table `F7979 ~T0 @X0 -> 8 `i e ]
+[i _vl53_func_table
+:U ..
+:U ..
+-> &U _VL53_nop `*F7982
+-> &U _VL53_nop `*F7986
+-> &U _VL53_nop `*F7990
+-> &U _VL53_nop `*F7994
+..
+:U ..
+-> &U _VL53_nop `*F7998
+-> &U _VL53_Stop `*F8002
+-> &U _VL53_StopConti `*F8006
+-> &U _VL53_StopSingle `*F8010
+..
+:U ..
+-> &U _VL53_StartConti `*F8014
+-> &U _VL53_MsrConti `*F8018
+-> &U _VL53_MsrConti `*F8022
+-> &U _VL53_nop `*F8026
+..
+:U ..
+-> &U _VL53_StartSingle `*F8030
+-> &U _VL53_MsrSingle `*F8034
+-> &U _VL53_MsrSingle `*F8038
+-> &U _VL53_nop `*F8042
+..
+:U ..
+-> &U _VL53_StartSingleHA `*F8046
+-> &U _VL53_MsrSingle `*F8050
+-> &U _VL53_MsrSingle `*F8054
+-> &U _VL53_nop `*F8058
+..
+:U ..
+-> &U _VL53_StartSingleHS `*F8062
+-> &U _VL53_MsrSingle `*F8066
+-> &U _VL53_MsrSingle `*F8070
+-> &U _VL53_nop `*F8074
+..
+:U ..
+-> &U _VL53_StartSingleLR `*F8078
+-> &U _VL53_MsrSingle `*F8082
+-> &U _VL53_MsrSingle `*F8086
+-> &U _VL53_nop `*F8090
+..
+:U ..
+-> &U _VL53_DataReq `*F8094
+-> &U _VL53_DataReq `*F8098
+-> &U _VL53_DataReq `*F8102
+-> &U _VL53_DataReq `*F8106
+..
+..
+]
+"106
+[; ;vl53_st_main.c: 106: void vl53_task_init(void)
+[v _vl53_task_init `(v ~T0 @X0 1 ef ]
+"107
+[; ;vl53_st_main.c: 107: {
+{
+[e :U _vl53_task_init ]
+[f ]
+"108
+[; ;vl53_st_main.c: 108:     vl53handle.state = VL53_STATE_STOP;
+[e = . _vl53handle 0 . `E7145 0 ]
+"109
+[; ;vl53_st_main.c: 109:     vl53handle.command = VL53_COM_NON;
+[e = . _vl53handle 1 . `E7154 0 ]
+"110
+[; ;vl53_st_main.c: 110:     vl53handle.msr_rpt = 0;
+[e = . _vl53handle 4 -> -> 0 `i `uc ]
+"111
+[; ;vl53_st_main.c: 111:     vl53handle.msr_wpt = 0;
+[e = . _vl53handle 3 -> -> 0 `i `uc ]
+"113
+[; ;vl53_st_main.c: 113:     Prevl53handle = vl53handle;
+[e = _Prevl53handle _vl53handle ]
+"114
+[; ;vl53_st_main.c: 114: }
 [e :UE 932 ]
 }
-"97
-[; ;vl53_st_main.c: 97: void VL53_init(void)
-[v _VL53_init `(v ~T0 @X0 1 ef ]
-"98
-[; ;vl53_st_main.c: 98: {
+"120
+[; ;vl53_st_main.c: 120: void vl53_main_task(void)
+[v _vl53_main_task `(v ~T0 @X0 1 ef ]
+"121
+[; ;vl53_st_main.c: 121: {
 {
-[e :U _VL53_init ]
+[e :U _vl53_main_task ]
 [f ]
-"101
-[; ;vl53_st_main.c: 101:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
+"122
+[; ;vl53_st_main.c: 122:     uint8_t state;
+[v _state `uc ~T0 @X0 1 a ]
+"123
+[; ;vl53_st_main.c: 123:     uint8_t command;
+[v _command `uc ~T0 @X0 1 a ]
+"125
+[; ;vl53_st_main.c: 125:     state = vl53handle.state;
+[e = _state -> . _vl53handle 0 `uc ]
+"126
+[; ;vl53_st_main.c: 126:     command = vl53handle.command;
+[e = _command -> . _vl53handle 1 `uc ]
+"128
+[; ;vl53_st_main.c: 128:     (*vl53_func_table[command][state])( &vl53handle );
+[e ( *U *U + &U *U + &U _vl53_func_table * -> _command `ux -> * -> # *U &U *U &U _vl53_func_table `ui -> -> 6 `i `ui `ux * -> _state `ux -> -> # *U &U *U + &U _vl53_func_table * -> _command `ux -> * -> # *U &U *U &U _vl53_func_table `ui -> -> 6 `i `ui `ux `ui `ux (1 &U _vl53handle ]
+"131
+[; ;vl53_st_main.c: 131: }
+[e :UE 933 ]
+}
+"136
+[; ;vl53_st_main.c: 136: void VL53_Stop( VL53_MAIN_STRUCT *handle )
+[v _VL53_Stop `(v ~T0 @X0 1 ef1`*S919 ]
+"137
+[; ;vl53_st_main.c: 137: {
+{
+[e :U _VL53_Stop ]
+"136
+[; ;vl53_st_main.c: 136: void VL53_Stop( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"137
+[; ;vl53_st_main.c: 137: {
+[f ]
+"138
+[; ;vl53_st_main.c: 138:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 935  ]
+{
+"139
+[; ;vl53_st_main.c: 139:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"140
+[; ;vl53_st_main.c: 140:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"141
+[; ;vl53_st_main.c: 141:         printf("★VL53_Stop(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 1C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"142
+[; ;vl53_st_main.c: 142:     }
+}
+[e :U 935 ]
+"143
+[; ;vl53_st_main.c: 143: }
+[e :UE 934 ]
+}
+"148
+[; ;vl53_st_main.c: 148: void VL53_StopConti( VL53_MAIN_STRUCT *handle )
+[v _VL53_StopConti `(v ~T0 @X0 1 ef1`*S919 ]
+"149
+[; ;vl53_st_main.c: 149: {
+{
+[e :U _VL53_StopConti ]
+"148
+[; ;vl53_st_main.c: 148: void VL53_StopConti( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"149
+[; ;vl53_st_main.c: 149: {
+[f ]
+"150
+[; ;vl53_st_main.c: 150:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
 [v _Status `c ~T0 @X0 1 a ]
 [e = _Status -> -> 0 `i `c ]
-"102
-[; ;vl53_st_main.c: 102:     VL53L0X_Dev_t *pMyDevice = &MyDevice;
-[v _pMyDevice `*S930 ~T0 @X0 1 a ]
+"151
+[; ;vl53_st_main.c: 151:     VL53L0X_Dev_t *pMyDevice = &MyDevice;
+[v _pMyDevice `*S931 ~T0 @X0 1 a ]
 [e = _pMyDevice &U _MyDevice ]
-"103
-[; ;vl53_st_main.c: 103:     VL53L0X_Version_t Version;
-[v _Version `S919 ~T0 @X0 1 a ]
-"104
-[; ;vl53_st_main.c: 104:     VL53L0X_Version_t *pVersion = &Version;
-[v _pVersion `*S919 ~T0 @X0 1 a ]
-[e = _pVersion &U _Version ]
-"107
-[; ;vl53_st_main.c: 107:     int32_t status_int;
-[v _status_int `l ~T0 @X0 1 a ]
-"109
-[; ;vl53_st_main.c: 109:     int NecleoComStatus = 0;
-[v _NecleoComStatus `i ~T0 @X0 1 a ]
-[e = _NecleoComStatus -> 0 `i ]
-"110
-[; ;vl53_st_main.c: 110:     int NecleoAutoCom = 1;
-[v _NecleoAutoCom `i ~T0 @X0 1 a ]
-[e = _NecleoAutoCom -> 1 `i ]
-"129
-[; ;vl53_st_main.c: 129:     printf ("VL53L0X PAL Continuous Ranging example\r\n");
-[e ( _printf :s 3C ]
-"154
-[; ;vl53_st_main.c: 154:     pMyDevice->I2cDevAddr = 0x52;
-[e = . *U _pMyDevice 1 -> -> 82 `i `uc ]
-"178
-[; ;vl53_st_main.c: 178:     if(Status == ((VL53L0X_Error) 0))
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 934  ]
-"179
-[; ;vl53_st_main.c: 179:     {
+"153
+[; ;vl53_st_main.c: 153:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 937  ]
 {
-"180
-[; ;vl53_st_main.c: 180:         status_int = VL53L0X_GetVersion(pVersion);
-[e = _status_int -> ( _VL53L0X_GetVersion (1 _pVersion `l ]
-"181
-[; ;vl53_st_main.c: 181:         if (status_int != 0)
-[e $ ! != _status_int -> -> 0 `i `l 935  ]
+"154
+[; ;vl53_st_main.c: 154:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"155
+[; ;vl53_st_main.c: 155:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"156
+[; ;vl53_st_main.c: 156:         printf("★VL53_StopConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 2C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"157
+[; ;vl53_st_main.c: 157:     }
+}
+[e :U 937 ]
+"158
+[; ;vl53_st_main.c: 158:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 938  ]
+{
+"167
+[; ;vl53_st_main.c: 167:         printf ("Call of VL53L0X_StopMeasurement\r\n");
+[e ( _printf :s 3C ]
+"168
+[; ;vl53_st_main.c: 168:         Status = VL53L0X_StopMeasurement(pMyDevice);
+[e = _Status ( _VL53L0X_StopMeasurement (1 _pMyDevice ]
+"169
+[; ;vl53_st_main.c: 169:     }
+}
+[e :U 938 ]
+"171
+[; ;vl53_st_main.c: 171:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 939  ]
+{
+"172
+[; ;vl53_st_main.c: 172:         printf ("Wait Stop to be competed\r\n");
+[e ( _printf :s 4C ]
+"173
+[; ;vl53_st_main.c: 173:         Status = WaitStopCompleted(pMyDevice);
+[e = _Status ( _WaitStopCompleted (1 _pMyDevice ]
+"174
+[; ;vl53_st_main.c: 174:     }
+}
+[e :U 939 ]
+"176
+[; ;vl53_st_main.c: 176:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 940  ]
+{
 "182
-[; ;vl53_st_main.c: 182:             Status = ((VL53L0X_Error) - 20);
-[e = _Status -> -U -> 20 `i `c ]
-[e :U 935 ]
+[; ;vl53_st_main.c: 182:         Status = VL53L0X_ClearInterruptMask(pMyDevice,0x04);
+[e = _Status ( _VL53L0X_ClearInterruptMask (2 , _pMyDevice -> -> -> 4 `i `l `ul ]
 "183
 [; ;vl53_st_main.c: 183:     }
 }
-[e :U 934 ]
-"204
-[; ;vl53_st_main.c: 204:     if(Status == ((VL53L0X_Error) 0))
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 936  ]
-"205
-[; ;vl53_st_main.c: 205:     {
-{
-"206
-[; ;vl53_st_main.c: 206:         printf ("Call of VL53L0X_DataInit\r\n");
-[e ( _printf :s 4C ]
-"207
-[; ;vl53_st_main.c: 207:         Status = VL53L0X_DataInit(&MyDevice);
-[e = _Status ( _VL53L0X_DataInit (1 &U _MyDevice ]
-"208
-[; ;vl53_st_main.c: 208:         print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"209
-[; ;vl53_st_main.c: 209:     }
+[e :U 940 ]
+"185
+[; ;vl53_st_main.c: 185:     vl53handle.state = VL53_STATE_STOP;
+[e = . _vl53handle 0 . `E7145 0 ]
+"186
+[; ;vl53_st_main.c: 186:     vl53handle.command = VL53_COM_NON;
+[e = . _vl53handle 1 . `E7154 0 ]
+"187
+[; ;vl53_st_main.c: 187: }
+[e :UE 936 ]
 }
-[e :U 936 ]
-"213
-[; ;vl53_st_main.c: 213: }
-[e :UE 933 ]
-}
-"215
-[; ;vl53_st_main.c: 215: VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev) {
-[v _WaitStopCompleted `(c ~T0 @X0 1 ef1`*S930 ]
+"192
+[; ;vl53_st_main.c: 192: void VL53_StopSingle( VL53_MAIN_STRUCT *handle )
+[v _VL53_StopSingle `(v ~T0 @X0 1 ef1`*S919 ]
+"193
+[; ;vl53_st_main.c: 193: {
 {
-[e :U _WaitStopCompleted ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[e :U _VL53_StopSingle ]
+"192
+[; ;vl53_st_main.c: 192: void VL53_StopSingle( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"193
+[; ;vl53_st_main.c: 193: {
 [f ]
-"216
-[; ;vl53_st_main.c: 216:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
-[v _Status `c ~T0 @X0 1 a ]
-[e = _Status -> -> 0 `i `c ]
-"217
-[; ;vl53_st_main.c: 217:     uint32_t StopCompleted=0;
-[v _StopCompleted `ul ~T0 @X0 1 a ]
-[e = _StopCompleted -> -> -> 0 `i `l `ul ]
-"218
-[; ;vl53_st_main.c: 218:     uint32_t LoopNb;
-[v _LoopNb `ul ~T0 @X0 1 a ]
-"222
-[; ;vl53_st_main.c: 222:     if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 938  ]
+"194
+[; ;vl53_st_main.c: 194:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 942  ]
 {
-"223
-[; ;vl53_st_main.c: 223:         LoopNb = 0;
-[e = _LoopNb -> -> -> 0 `i `l `ul ]
-"224
-[; ;vl53_st_main.c: 224:         do {
-[e :U 941 ]
-{
-"225
-[; ;vl53_st_main.c: 225:             Status = VL53L0X_GetStopCompletedStatus(Dev, &StopCompleted);
-[e = _Status ( _VL53L0X_GetStopCompletedStatus (2 , _Dev &U _StopCompleted ]
-"226
-[; ;vl53_st_main.c: 226:             if ((StopCompleted == 0x00) || Status != ((VL53L0X_Error) 0)) {
-[e $ ! || == _StopCompleted -> -> -> 0 `i `l `ul != -> _Status `i -> -> -> 0 `i `c `i 942  ]
-{
-"227
-[; ;vl53_st_main.c: 227:                 break;
-[e $U 940  ]
-"228
-[; ;vl53_st_main.c: 228:             }
+"195
+[; ;vl53_st_main.c: 195:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"196
+[; ;vl53_st_main.c: 196:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"197
+[; ;vl53_st_main.c: 197:         printf("★VL53_StopSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 5C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"198
+[; ;vl53_st_main.c: 198:     }
 }
 [e :U 942 ]
-"229
-[; ;vl53_st_main.c: 229:             LoopNb = LoopNb + 1;
-[e = _LoopNb + _LoopNb -> -> -> 1 `i `l `ul ]
-"230
-[; ;vl53_st_main.c: 230:             VL53L0X_PollingDelay(Dev);
-[e ( _VL53L0X_PollingDelay (1 _Dev ]
-"231
-[; ;vl53_st_main.c: 231:         } while (LoopNb < 2000);
+"199
+[; ;vl53_st_main.c: 199:     vl53handle.state = VL53_STATE_STOP;
+[e = . _vl53handle 0 . `E7145 0 ]
+"200
+[; ;vl53_st_main.c: 200:     vl53handle.command = VL53_COM_NON;
+[e = . _vl53handle 1 . `E7154 0 ]
+"201
+[; ;vl53_st_main.c: 201: }
+[e :UE 941 ]
 }
-[e $ < _LoopNb -> -> -> 2000 `i `l `ul 941  ]
-[e :U 940 ]
-"233
-[; ;vl53_st_main.c: 233:         if (LoopNb >= 2000) {
-[e $ ! >= _LoopNb -> -> -> 2000 `i `l `ul 943  ]
+"205
+[; ;vl53_st_main.c: 205: void VL53_nop( VL53_MAIN_STRUCT *handle )
+[v _VL53_nop `(v ~T0 @X0 1 ef1`*S919 ]
+"206
+[; ;vl53_st_main.c: 206: {
 {
-"234
-[; ;vl53_st_main.c: 234:             Status = ((VL53L0X_Error) - 7);
-[e = _Status -> -U -> 7 `i `c ]
-"235
-[; ;vl53_st_main.c: 235:         }
-}
-[e :U 943 ]
-"237
-[; ;vl53_st_main.c: 237:     }
-}
-[e :U 938 ]
-"239
-[; ;vl53_st_main.c: 239:     return Status;
-[e ) _Status ]
-[e $UE 937  ]
-"240
-[; ;vl53_st_main.c: 240: }
-[e :UE 937 ]
-}
-"243
-[; ;vl53_st_main.c: 243: VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev) {
-[v _WaitMeasurementDataReady `(c ~T0 @X0 1 ef1`*S930 ]
-{
-[e :U _WaitMeasurementDataReady ]
-[v _Dev `*S930 ~T0 @X0 1 r1 ]
+[e :U _VL53_nop ]
+"205
+[; ;vl53_st_main.c: 205: void VL53_nop( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"206
+[; ;vl53_st_main.c: 206: {
 [f ]
-"244
-[; ;vl53_st_main.c: 244:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
+"207
+[; ;vl53_st_main.c: 207:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 944  ]
+{
+"208
+[; ;vl53_st_main.c: 208:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"209
+[; ;vl53_st_main.c: 209:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"210
+[; ;vl53_st_main.c: 210:         printf("★VL53_nop(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 6C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"211
+[; ;vl53_st_main.c: 211:     }
+}
+[e :U 944 ]
+"212
+[; ;vl53_st_main.c: 212:     vl53handle.state = VL53_STATE_STOP;
+[e = . _vl53handle 0 . `E7145 0 ]
+"213
+[; ;vl53_st_main.c: 213:     vl53handle.command = VL53_COM_NON;
+[e = . _vl53handle 1 . `E7154 0 ]
+"214
+[; ;vl53_st_main.c: 214: }
+[e :UE 943 ]
+}
+"219
+[; ;vl53_st_main.c: 219: void VL53_StartConti( VL53_MAIN_STRUCT *handle )
+[v _VL53_StartConti `(v ~T0 @X0 1 ef1`*S919 ]
+"220
+[; ;vl53_st_main.c: 220: {
+{
+[e :U _VL53_StartConti ]
+"219
+[; ;vl53_st_main.c: 219: void VL53_StartConti( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"220
+[; ;vl53_st_main.c: 220: {
+[f ]
+"221
+[; ;vl53_st_main.c: 221:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 946  ]
+{
+"222
+[; ;vl53_st_main.c: 222:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"223
+[; ;vl53_st_main.c: 223:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"224
+[; ;vl53_st_main.c: 224:         printf("★VL53_StartConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 7C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"225
+[; ;vl53_st_main.c: 225:     }
+}
+[e :U 946 ]
+"226
+[; ;vl53_st_main.c: 226:     handle->msr_wpt = 0;
+[e = . *U _handle 3 -> -> 0 `i `uc ]
+"227
+[; ;vl53_st_main.c: 227:     handle->msr_rpt = 0;
+[e = . *U _handle 4 -> -> 0 `i `uc ]
+"228
+[; ;vl53_st_main.c: 228:     vl53l0x_Racing_init( RASING_MODE_CONTINUE );
+[e ( _vl53l0x_Racing_init (1 . `E7137 4 ]
+"229
+[; ;vl53_st_main.c: 229: }
+[e :UE 945 ]
+}
+"234
+[; ;vl53_st_main.c: 234: void VL53_MsrConti( VL53_MAIN_STRUCT *handle )
+[v _VL53_MsrConti `(v ~T0 @X0 1 ef1`*S919 ]
+"235
+[; ;vl53_st_main.c: 235: {
+{
+[e :U _VL53_MsrConti ]
+"234
+[; ;vl53_st_main.c: 234: void VL53_MsrConti( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"235
+[; ;vl53_st_main.c: 235: {
+[f ]
+"236
+[; ;vl53_st_main.c: 236:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
 [v _Status `c ~T0 @X0 1 a ]
 [e = _Status -> -> 0 `i `c ]
+"237
+[; ;vl53_st_main.c: 237:     VL53L0X_RangingMeasurementData_t *pRangingMeasurementData = &RangingMeasurementData;
+[v _pRangingMeasurementData `*S924 ~T0 @X0 1 a ]
+[e = _pRangingMeasurementData &U _RangingMeasurementData ]
+"238
+[; ;vl53_st_main.c: 238:     VL53L0X_Dev_t *pMyDevice = &MyDevice;
+[v _pMyDevice `*S931 ~T0 @X0 1 a ]
+[e = _pMyDevice &U _MyDevice ]
+"241
+[; ;vl53_st_main.c: 241:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 948  ]
+{
+"242
+[; ;vl53_st_main.c: 242:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"243
+[; ;vl53_st_main.c: 243:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"244
+[; ;vl53_st_main.c: 244:         printf("★VL53_MsrConti(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 8C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
 "245
-[; ;vl53_st_main.c: 245:     uint8_t NewDatReady=0;
-[v _NewDatReady `uc ~T0 @X0 1 a ]
-[e = _NewDatReady -> -> 0 `i `uc ]
-"246
-[; ;vl53_st_main.c: 246:     uint32_t LoopNb;
-[v _LoopNb `ul ~T0 @X0 1 a ]
-"248
-[; ;vl53_st_main.c: 248:     vl53_LogDisp("WaitMeasurementDataReady() START", Status);
-[e ( _vl53_LogDisp (2 , :s 5C _Status ]
-"251
-[; ;vl53_st_main.c: 251:     if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 945  ]
-{
-"252
-[; ;vl53_st_main.c: 252:         LoopNb = 0;
-[e = _LoopNb -> -> -> 0 `i `l `ul ]
-"253
-[; ;vl53_st_main.c: 253:         do {
+[; ;vl53_st_main.c: 245:     }
+}
 [e :U 948 ]
+"248
+[; ;vl53_st_main.c: 248:     Status = WaitMeasurementDataReady(pMyDevice);
+[e = _Status ( _WaitMeasurementDataReady (1 _pMyDevice ]
+"250
+[; ;vl53_st_main.c: 250:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 949  ]
 {
+"262
+[; ;vl53_st_main.c: 262:         Status = VL53L0X_GetRangingMeasurementData(pMyDevice, pRangingMeasurementData);
+[e = _Status ( _VL53L0X_GetRangingMeasurementData (2 , _pMyDevice _pRangingMeasurementData ]
+"264
+[; ;vl53_st_main.c: 264:         set_MsrData( handle, pRangingMeasurementData->RangeMilliMeter);
+[e ( _set_MsrData (2 , _handle . *U _pRangingMeasurementData 2 ]
+"266
+[; ;vl53_st_main.c: 266:         printf("In loop measurement= %d\r\n", pRangingMeasurementData->RangeMilliMeter);
+[e ( _printf , (. :s 9C -> . *U _pRangingMeasurementData 2 `ui ]
 "274
-[; ;vl53_st_main.c: 274:             Status = VL53L0X_GetMeasurementDataReady(Dev, &NewDatReady);
-[e = _Status ( _VL53L0X_GetMeasurementDataReady (2 , _Dev &U _NewDatReady ]
+[; ;vl53_st_main.c: 274:         VL53L0X_ClearInterruptMask(pMyDevice, 0x04);
+[e ( _VL53L0X_ClearInterruptMask (2 , _pMyDevice -> -> -> 4 `i `l `ul ]
 "275
-[; ;vl53_st_main.c: 275:             if ((NewDatReady == 0x01) || Status != ((VL53L0X_Error) 0)) {
-[e $ ! || == -> _NewDatReady `i -> 1 `i != -> _Status `i -> -> -> 0 `i `c `i 949  ]
-{
+[; ;vl53_st_main.c: 275:         VL53L0X_PollingDelay(pMyDevice);
+[e ( _VL53L0X_PollingDelay (1 _pMyDevice ]
 "276
-[; ;vl53_st_main.c: 276:                 break;
-[e $U 947  ]
-"277
-[; ;vl53_st_main.c: 277:             }
+[; ;vl53_st_main.c: 276:     }
 }
 [e :U 949 ]
 "278
-[; ;vl53_st_main.c: 278:             LoopNb = LoopNb + 1;
-[e = _LoopNb + _LoopNb -> -> -> 1 `i `l `ul ]
+[; ;vl53_st_main.c: 278:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 950  ]
+{
 "279
-[; ;vl53_st_main.c: 279:             VL53L0X_PollingDelay(Dev);
-[e ( _VL53L0X_PollingDelay (1 _Dev ]
+[; ;vl53_st_main.c: 279:        vl53handle.state = VL53_COM_MESURRING_CONTI;
+[e = . _vl53handle 0 . `E7154 2 ]
 "280
-[; ;vl53_st_main.c: 280:         } while (LoopNb < 2000);
+[; ;vl53_st_main.c: 280:     }
 }
-[e $ < _LoopNb -> -> -> 2000 `i `l `ul 948  ]
-[e :U 947 ]
-"282
-[; ;vl53_st_main.c: 282:         if (LoopNb >= 2000) {
-[e $ ! >= _LoopNb -> -> -> 2000 `i `l `ul 950  ]
-{
-"283
-[; ;vl53_st_main.c: 283:             Status = ((VL53L0X_Error) - 7);
-[e = _Status -> -U -> 7 `i `c ]
-"284
-[; ;vl53_st_main.c: 284:         }
-}
+[e $U 951  ]
+"281
+[; ;vl53_st_main.c: 281:     else{
 [e :U 950 ]
+{
+"282
+[; ;vl53_st_main.c: 282:         vl53handle.state = VL53_COM_MESURRING_CONTI;
+[e = . _vl53handle 0 . `E7154 2 ]
+"283
+[; ;vl53_st_main.c: 283:         vl53handle.command = VL53_COM_STOP;
+[e = . _vl53handle 1 . `E7154 1 ]
+"284
+[; ;vl53_st_main.c: 284:     }
+}
+[e :U 951 ]
 "285
-[; ;vl53_st_main.c: 285:     }
-}
-[e :U 945 ]
-"287
-[; ;vl53_st_main.c: 287:     vl53_LogDisp("WaitMeasurementDataReady() END", Status);
-[e ( _vl53_LogDisp (2 , :s 6C _Status ]
-"288
-[; ;vl53_st_main.c: 288:     return Status;
-[e ) _Status ]
-[e $UE 944  ]
-"289
-[; ;vl53_st_main.c: 289: }
-[e :UE 944 ]
+[; ;vl53_st_main.c: 285: }
+[e :UE 947 ]
 }
 "291
-[; ;vl53_st_main.c: 291: void vl53_LogDisp(char *string,int8_t status)
-[v _vl53_LogDisp `(v ~T0 @X0 1 ef2`*uc`c ]
+[; ;vl53_st_main.c: 291: void set_MsrData(VL53_MAIN_STRUCT *handle,uint16_t dt)
+[v _set_MsrData `(v ~T0 @X0 1 ef2`*S919`us ]
 "292
 [; ;vl53_st_main.c: 292: {
 {
-[e :U _vl53_LogDisp ]
+[e :U _set_MsrData ]
 "291
-[; ;vl53_st_main.c: 291: void vl53_LogDisp(char *string,int8_t status)
-[v _string `*uc ~T0 @X0 1 r1 ]
-[v _status `c ~T0 @X0 1 r2 ]
+[; ;vl53_st_main.c: 291: void set_MsrData(VL53_MAIN_STRUCT *handle,uint16_t dt)
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+[v _dt `us ~T0 @X0 1 r2 ]
 "292
 [; ;vl53_st_main.c: 292: {
 [f ]
+"293
+[; ;vl53_st_main.c: 293:         handle->mesur_data[handle->msr_wpt] = dt;
+[e = *U + &U . *U _handle 2 * -> . *U _handle 3 `ux -> -> # *U &U . *U _handle 2 `ui `ux _dt ]
+"294
+[; ;vl53_st_main.c: 294:         handle->msr_wpt++;
+[e ++ . *U _handle 3 -> -> 1 `i `uc ]
+"295
+[; ;vl53_st_main.c: 295:         if( handle->msr_wpt++ > 16 ){
+[e $ ! > -> ++ . *U _handle 3 -> -> 1 `i `uc `i -> 16 `i 953  ]
+{
 "296
-[; ;vl53_st_main.c: 296: }
-[e :UE 951 ]
-}
-"1691
-[; ;vl53_st_main.c: 1691: VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
-[v _SK_RangingTest `(c ~T0 @X0 1 ef2`*S930`E7137 ]
-"1692
-[; ;vl53_st_main.c: 1692: {
+[; ;vl53_st_main.c: 296:             handle->msr_wpt = 0;
+[e = . *U _handle 3 -> -> 0 `i `uc ]
+"297
+[; ;vl53_st_main.c: 297:             if( handle->msr_wpt == handle->msr_rpt ){
+[e $ ! == -> . *U _handle 3 `i -> . *U _handle 4 `i 954  ]
 {
-[e :U _SK_RangingTest ]
-"1691
-[; ;vl53_st_main.c: 1691: VL53L0X_Error SK_RangingTest(VL53L0X_Dev_t *pMyDevice, RASING_MODE sel)
-[v _pMyDevice `*S930 ~T0 @X0 1 r1 ]
-[v _sel `E7137 ~T0 @X0 1 r2 ]
-"1692
-[; ;vl53_st_main.c: 1692: {
-[f ]
-"1693
-[; ;vl53_st_main.c: 1693:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
-[v _Status `c ~T0 @X0 1 a ]
-[e = _Status -> -> 0 `i `c ]
-"1694
-[; ;vl53_st_main.c: 1694:     VL53L0X_RangingMeasurementData_t RangingMeasurementData;
-[v _RangingMeasurementData `S923 ~T0 @X0 1 a ]
-"1695
-[; ;vl53_st_main.c: 1695:     VL53L0X_RangingMeasurementData_t *pRangingMeasurementData = &RangingMeasurementData;
-[v _pRangingMeasurementData `*S923 ~T0 @X0 1 a ]
-[e = _pRangingMeasurementData &U _RangingMeasurementData ]
-"1696
-[; ;vl53_st_main.c: 1696:     int i;
-[v _i `i ~T0 @X0 1 a ]
-"1697
-[; ;vl53_st_main.c: 1697:     int max;
-[v _max `i ~T0 @X0 1 a ]
-"1698
-[; ;vl53_st_main.c: 1698:     FixPoint1616_t LimitCheckCurrent;
-[v _LimitCheckCurrent `ul ~T0 @X0 1 a ]
-"1700
-[; ;vl53_st_main.c: 1700:     uint32_t refSpadCount;
-[v _refSpadCount `ul ~T0 @X0 1 a ]
-"1701
-[; ;vl53_st_main.c: 1701:     uint8_t isApertureSpads;
-[v _isApertureSpads `uc ~T0 @X0 1 a ]
-"1702
-[; ;vl53_st_main.c: 1702:     uint8_t VhvSettings;
-[v _VhvSettings `uc ~T0 @X0 1 a ]
-"1703
-[; ;vl53_st_main.c: 1703:     uint8_t PhaseCal;
-[v _PhaseCal `uc ~T0 @X0 1 a ]
-"1711
-[; ;vl53_st_main.c: 1711:     if(Status == ((VL53L0X_Error) 0))
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 953  ]
-"1712
-[; ;vl53_st_main.c: 1712:     {
+"298
+[; ;vl53_st_main.c: 298:                 handle->msr_rpt++;
+[e ++ . *U _handle 4 -> -> 1 `i `uc ]
+"299
+[; ;vl53_st_main.c: 299:                 if( handle->msr_rpt++ > 16 ){
+[e $ ! > -> ++ . *U _handle 4 -> -> 1 `i `uc `i -> 16 `i 955  ]
 {
-"1713
-[; ;vl53_st_main.c: 1713:         printf ("Call of VL53L0X_StaticInit\r\n");
-[e ( _printf :s 7C ]
-"1714
-[; ;vl53_st_main.c: 1714:         Status = VL53L0X_StaticInit(pMyDevice);
-[e = _Status ( _VL53L0X_StaticInit (1 _pMyDevice ]
-"1715
-[; ;vl53_st_main.c: 1715:         print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"1716
-[; ;vl53_st_main.c: 1716:     }
-}
-[e :U 953 ]
-"1719
-[; ;vl53_st_main.c: 1719:     if(Status == ((VL53L0X_Error) 0))
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 954  ]
-"1720
-[; ;vl53_st_main.c: 1720:     {
-{
-"1721
-[; ;vl53_st_main.c: 1721:         printf ("Call of VL53L0X_PerformRefCalibration\r\n");
-[e ( _printf :s 8C ]
-"1722
-[; ;vl53_st_main.c: 1722:         Status = VL53L0X_PerformRefCalibration(pMyDevice, &VhvSettings, &PhaseCal);
-[e = _Status ( _VL53L0X_PerformRefCalibration (3 , , _pMyDevice &U _VhvSettings &U _PhaseCal ]
-"1723
-[; ;vl53_st_main.c: 1723:         print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"1724
-[; ;vl53_st_main.c: 1724:     }
-}
-[e :U 954 ]
-"1726
-[; ;vl53_st_main.c: 1726:     if(Status == ((VL53L0X_Error) 0))
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 955  ]
-"1727
-[; ;vl53_st_main.c: 1727:     {
-{
-"1728
-[; ;vl53_st_main.c: 1728:         printf ("Call of VL53L0X_PerformRefSpadManagement\r\n");
-[e ( _printf :s 9C ]
-"1729
-[; ;vl53_st_main.c: 1729:         Status = VL53L0X_PerformRefSpadManagement(pMyDevice, &refSpadCount, &isApertureSpads);
-[e = _Status ( _VL53L0X_PerformRefSpadManagement (3 , , _pMyDevice &U _refSpadCount &U _isApertureSpads ]
-"1731
-[; ;vl53_st_main.c: 1731:         print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"1732
-[; ;vl53_st_main.c: 1732:     }
+"300
+[; ;vl53_st_main.c: 300:                     handle->msr_rpt = 0;
+[e = . *U _handle 4 -> -> 0 `i `uc ]
+"301
+[; ;vl53_st_main.c: 301:                 }
 }
 [e :U 955 ]
-"1734
-[; ;vl53_st_main.c: 1734:     if(Status == ((VL53L0X_Error) 0))
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 956  ]
-"1735
-[; ;vl53_st_main.c: 1735:     {
-{
-"1736
-[; ;vl53_st_main.c: 1736:         printf ("Call of VL53L0X_SetDeviceMode\r\n");
-[e ( _printf :s 10C ]
-"1737
-[; ;vl53_st_main.c: 1737:         if(sel == RASING_MODE_CONTINUE ){
-[e $ ! == -> _sel `ui -> . `E7137 4 `ui 957  ]
-{
-"1738
-[; ;vl53_st_main.c: 1738:             Status = VL53L0X_SetDeviceMode(pMyDevice, ((VL53L0X_DeviceModes) 1));
-[e = _Status ( _VL53L0X_SetDeviceMode (2 , _pMyDevice -> -> 1 `i `uc ]
-"1739
-[; ;vl53_st_main.c: 1739:         }
+"302
+[; ;vl53_st_main.c: 302:             }
 }
-[e $U 958  ]
-"1740
-[; ;vl53_st_main.c: 1740:         else{
-[e :U 957 ]
-{
-"1741
-[; ;vl53_st_main.c: 1741:             Status = VL53L0X_SetDeviceMode(pMyDevice, ((VL53L0X_DeviceModes) 0));
-[e = _Status ( _VL53L0X_SetDeviceMode (2 , _pMyDevice -> -> 0 `i `uc ]
-"1742
-[; ;vl53_st_main.c: 1742:         }
+[e :U 954 ]
+"303
+[; ;vl53_st_main.c: 303:         }
 }
-[e :U 958 ]
-"1744
-[; ;vl53_st_main.c: 1744:         print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"1745
-[; ;vl53_st_main.c: 1745:     }
-}
-[e :U 956 ]
-"1759
-[; ;vl53_st_main.c: 1759:     if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 959  ]
-{
-"1760
-[; ;vl53_st_main.c: 1760:         if(sel == RASING_MODE_SINGLE_LR){
-[e $ ! == -> _sel `ui -> . `E7137 3 `ui 960  ]
-{
-"1762
-[; ;vl53_st_main.c: 1762:         }
-}
-[e :U 960 ]
-"1763
-[; ;vl53_st_main.c: 1763:     }
-}
-[e :U 959 ]
-"1766
-[; ;vl53_st_main.c: 1766:     if(sel == RASING_MODE_CONTINUE ){
-[e $ ! == -> _sel `ui -> . `E7137 4 `ui 961  ]
-{
-"1767
-[; ;vl53_st_main.c: 1767:         if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 962  ]
-{
-"1775
-[; ;vl53_st_main.c: 1775:             printf ("Call of VL53L0X_StartMeasurement\r\n");
-[e ( _printf :s 11C ]
-"1776
-[; ;vl53_st_main.c: 1776:             Status = VL53L0X_StartMeasurement(pMyDevice);
-[e = _Status ( _VL53L0X_StartMeasurement (1 _pMyDevice ]
-"1777
-[; ;vl53_st_main.c: 1777:             print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"1778
-[; ;vl53_st_main.c: 1778:         }
-}
-[e :U 962 ]
-"1780
-[; ;vl53_st_main.c: 1780:         if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 963  ]
-{
-"1781
-[; ;vl53_st_main.c: 1781:             uint32_t measurement;
-[v _measurement `ul ~T0 @X0 1 a ]
-"1782
-[; ;vl53_st_main.c: 1782:             uint32_t no_of_measurements = 32;
-[v _no_of_measurements `ul ~T0 @X0 1 a ]
-[e = _no_of_measurements -> -> -> 32 `i `l `ul ]
-"1784
-[; ;vl53_st_main.c: 1784:             uint16_t* pResults = (uint16_t*)malloc(sizeof(uint16_t) * no_of_measurements);
-[v _pResults `*us ~T0 @X0 1 a ]
-[e = _pResults -> ( _malloc (1 -> * -> -> # `us `ui `ul _no_of_measurements `ui `*us ]
-"1786
-[; ;vl53_st_main.c: 1786:             for(measurement=0; measurement<no_of_measurements; measurement++){
-{
-[e = _measurement -> -> -> 0 `i `l `ul ]
-[e $U 967  ]
-[e :U 964 ]
-{
-"1788
-[; ;vl53_st_main.c: 1788:                 Status = WaitMeasurementDataReady(pMyDevice);
-[e = _Status ( _WaitMeasurementDataReady (1 _pMyDevice ]
-"1790
-[; ;vl53_st_main.c: 1790:                 if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 968  ]
-{
-"1802
-[; ;vl53_st_main.c: 1802:                     Status = VL53L0X_GetRangingMeasurementData(pMyDevice, pRangingMeasurementData);
-[e = _Status ( _VL53L0X_GetRangingMeasurementData (2 , _pMyDevice _pRangingMeasurementData ]
-"1804
-[; ;vl53_st_main.c: 1804:                     *(pResults + measurement) = pRangingMeasurementData->RangeMilliMeter;
-[e = *U + _pResults * -> _measurement `ux -> -> # *U _pResults `ui `ux . *U _pRangingMeasurementData 2 ]
-"1805
-[; ;vl53_st_main.c: 1805:                     printf("In loop measurement %d: %d\r\n", measurement, pRangingMeasurementData->RangeMilliMeter);
-[e ( _printf , , (. :s 12C _measurement -> . *U _pRangingMeasurementData 2 `ui ]
-"1813
-[; ;vl53_st_main.c: 1813:                     VL53L0X_ClearInterruptMask(pMyDevice, 0x04);
-[e ( _VL53L0X_ClearInterruptMask (2 , _pMyDevice -> -> -> 4 `i `l `ul ]
-"1814
-[; ;vl53_st_main.c: 1814:                     VL53L0X_PollingDelay(pMyDevice);
-[e ( _VL53L0X_PollingDelay (1 _pMyDevice ]
-"1815
-[; ;vl53_st_main.c: 1815:                 }
-}
-[e $U 969  ]
-"1816
-[; ;vl53_st_main.c: 1816:                 else {
-[e :U 968 ]
-{
-"1817
-[; ;vl53_st_main.c: 1817:                     break;
-[e $U 965  ]
-"1818
-[; ;vl53_st_main.c: 1818:                 }
-}
-[e :U 969 ]
-"1819
-[; ;vl53_st_main.c: 1819:             }
-}
-[e ++ _measurement -> -> -> 1 `i `l `ul ]
-[e :U 967 ]
-[e $ < _measurement _no_of_measurements 964  ]
-[e :U 965 ]
-}
-"1821
-[; ;vl53_st_main.c: 1821:             if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 970  ]
-{
-"1822
-[; ;vl53_st_main.c: 1822:                 for(measurement=0; measurement<no_of_measurements; measurement++){
-{
-[e = _measurement -> -> -> 0 `i `l `ul ]
-[e $U 974  ]
-[e :U 971 ]
-{
-"1823
-[; ;vl53_st_main.c: 1823:                     printf("measurement %d: %d\r\n", measurement, *(pResults + measurement));
-[e ( _printf , , (. :s 13C _measurement -> *U + _pResults * -> _measurement `ux -> -> # *U _pResults `ui `ux `ui ]
-"1825
-[; ;vl53_st_main.c: 1825:                 }
-}
-[e ++ _measurement -> -> -> 1 `i `l `ul ]
-[e :U 974 ]
-[e $ < _measurement _no_of_measurements 971  ]
-[e :U 972 ]
-}
-"1826
-[; ;vl53_st_main.c: 1826:             }
-}
-[e :U 970 ]
-"1828
-[; ;vl53_st_main.c: 1828:             free(pResults);
-[e ( _free (1 -> _pResults `*v ]
-"1829
-[; ;vl53_st_main.c: 1829:         }
-}
-[e :U 963 ]
-"1831
-[; ;vl53_st_main.c: 1831:         if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 975  ]
-{
-"1840
-[; ;vl53_st_main.c: 1840:             printf ("Call of VL53L0X_StopMeasurement\r\n");
-[e ( _printf :s 14C ]
-"1841
-[; ;vl53_st_main.c: 1841:             Status = VL53L0X_StopMeasurement(pMyDevice);
-[e = _Status ( _VL53L0X_StopMeasurement (1 _pMyDevice ]
-"1842
-[; ;vl53_st_main.c: 1842:         }
-}
-[e :U 975 ]
-"1844
-[; ;vl53_st_main.c: 1844:         if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 976  ]
-{
-"1845
-[; ;vl53_st_main.c: 1845:             printf ("Wait Stop to be competed\r\n");
-[e ( _printf :s 15C ]
-"1846
-[; ;vl53_st_main.c: 1846:             Status = WaitStopCompleted(pMyDevice);
-[e = _Status ( _WaitStopCompleted (1 _pMyDevice ]
-"1847
-[; ;vl53_st_main.c: 1847:         }
-}
-[e :U 976 ]
-"1849
-[; ;vl53_st_main.c: 1849:         if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 977  ]
-{
-"1855
-[; ;vl53_st_main.c: 1855:             Status = VL53L0X_ClearInterruptMask(pMyDevice,0x04);
-[e = _Status ( _VL53L0X_ClearInterruptMask (2 , _pMyDevice -> -> -> 4 `i `l `ul ]
-"1856
-[; ;vl53_st_main.c: 1856:         }
-}
-[e :U 977 ]
-"1857
-[; ;vl53_st_main.c: 1857:     }
-}
-[e $U 978  ]
-"1858
-[; ;vl53_st_main.c: 1858:     else{
-[e :U 961 ]
-{
-"1868
-[; ;vl53_st_main.c: 1868:         if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 979  ]
-{
-"1869
-[; ;vl53_st_main.c: 1869:             Status = VL53L0X_SetLimitCheckEnable(pMyDevice, 0, 1);
-[e = _Status ( _VL53L0X_SetLimitCheckEnable (3 , , _pMyDevice -> -> 0 `i `us -> -> 1 `i `uc ]
-"1870
-[; ;vl53_st_main.c: 1870:         }
-}
-[e :U 979 ]
-"1872
-[; ;vl53_st_main.c: 1872:         if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 980  ]
-{
-"1873
-[; ;vl53_st_main.c: 1873:             Status = VL53L0X_SetLimitCheckEnable(pMyDevice, 1, 1);
-[e = _Status ( _VL53L0X_SetLimitCheckEnable (3 , , _pMyDevice -> -> 1 `i `us -> -> 1 `i `uc ]
-"1874
-[; ;vl53_st_main.c: 1874:         }
-}
-[e :U 980 ]
-"1876
-[; ;vl53_st_main.c: 1876:         if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 981  ]
-{
-"1877
-[; ;vl53_st_main.c: 1877:             if(sel == RASING_MODE_SINGLE){
-[e $ ! == -> _sel `ui -> . `E7137 0 `ui 982  ]
-{
-"1878
-[; ;vl53_st_main.c: 1878:                 Status = VL53L0X_SetLimitCheckEnable(pMyDevice, 3, 1);
-[e = _Status ( _VL53L0X_SetLimitCheckEnable (3 , , _pMyDevice -> -> 3 `i `us -> -> 1 `i `uc ]
-"1879
-[; ;vl53_st_main.c: 1879:             }
-}
-[e :U 982 ]
-"1880
-[; ;vl53_st_main.c: 1880:         }
-}
-[e :U 981 ]
-"1889
-[; ;vl53_st_main.c: 1889:         switch(sel){
-[e $U 984  ]
-{
-"1890
-[; ;vl53_st_main.c: 1890:         case RASING_MODE_SINGLE:
-[e :U 985 ]
-"1891
-[; ;vl53_st_main.c: 1891:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 986  ]
-{
-"1892
-[; ;vl53_st_main.c: 1892:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 3, (FixPoint1616_t)(1.5*0.023*65536));
-[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 3 `i `us -> * * .1.5 .0.023 -> -> 65536 `l `d `ul ]
-"1893
-[; ;vl53_st_main.c: 1893:             }
-}
-[e :U 986 ]
-"1894
-[; ;vl53_st_main.c: 1894:              break;
-[e $U 983  ]
-"1895
-[; ;vl53_st_main.c: 1895:         case RASING_MODE_SINGLE_HA:
-[e :U 987 ]
-"1896
-[; ;vl53_st_main.c: 1896:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 988  ]
-{
-"1897
-[; ;vl53_st_main.c: 1897:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 1, (FixPoint1616_t)(0.25*65536));
-[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 1 `i `us -> * .0.25 -> -> 65536 `l `d `ul ]
-"1898
-[; ;vl53_st_main.c: 1898:             }
-}
-[e :U 988 ]
-"1899
-[; ;vl53_st_main.c: 1899:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 989  ]
-{
-"1900
-[; ;vl53_st_main.c: 1900:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 0, (FixPoint1616_t)(18*65536));
-[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 0 `i `us -> * -> -> 18 `i `l -> 65536 `l `ul ]
-"1901
-[; ;vl53_st_main.c: 1901:             }
-}
-[e :U 989 ]
-"1902
-[; ;vl53_st_main.c: 1902:             break;
-[e $U 983  ]
-"1903
-[; ;vl53_st_main.c: 1903:         case RASING_MODE_SINGLE_HS:
-[e :U 990 ]
-"1904
-[; ;vl53_st_main.c: 1904:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 991  ]
-{
-"1905
-[; ;vl53_st_main.c: 1905:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 1, (FixPoint1616_t)(0.25*65536));
-[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 1 `i `us -> * .0.25 -> -> 65536 `l `d `ul ]
-"1906
-[; ;vl53_st_main.c: 1906:             }
-}
-[e :U 991 ]
-"1907
-[; ;vl53_st_main.c: 1907:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 992  ]
-{
-"1908
-[; ;vl53_st_main.c: 1908:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 0, (FixPoint1616_t)(32*65536));
-[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 0 `i `us -> * -> -> 32 `i `l -> 65536 `l `ul ]
-"1909
-[; ;vl53_st_main.c: 1909:             }
-}
-[e :U 992 ]
-"1911
-[; ;vl53_st_main.c: 1911:             break;
-[e $U 983  ]
-"1912
-[; ;vl53_st_main.c: 1912:         case RASING_MODE_SINGLE_LR:
-[e :U 993 ]
-"1913
-[; ;vl53_st_main.c: 1913:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 994  ]
-{
-"1914
-[; ;vl53_st_main.c: 1914:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 1, (FixPoint1616_t)(0.1*65536));
-[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 1 `i `us -> * .0.1 -> -> 65536 `l `d `ul ]
-"1915
-[; ;vl53_st_main.c: 1915:             }
-}
-[e :U 994 ]
-"1916
-[; ;vl53_st_main.c: 1916:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 995  ]
-{
-"1917
-[; ;vl53_st_main.c: 1917:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 0, (FixPoint1616_t)(60*65536));
-[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 0 `i `us -> * -> -> 60 `i `l -> 65536 `l `ul ]
-"1918
-[; ;vl53_st_main.c: 1918:             }
-}
-[e :U 995 ]
-"1920
-[; ;vl53_st_main.c: 1920:             break;
-[e $U 983  ]
-"1921
-[; ;vl53_st_main.c: 1921:         default:
-[e :U 996 ]
-"1922
-[; ;vl53_st_main.c: 1922:             break;
-[e $U 983  ]
-"1923
-[; ;vl53_st_main.c: 1923:         }
-}
-[e $U 983  ]
-[e :U 984 ]
-[e [\ -> _sel `ui , $ -> . `E7137 0 `ui 985
- , $ -> . `E7137 1 `ui 987
- , $ -> . `E7137 2 `ui 990
- , $ -> . `E7137 3 `ui 993
- 996 ]
-[e :U 983 ]
-"1932
-[; ;vl53_st_main.c: 1932:         switch(sel){
-[e $U 998  ]
-{
-"1933
-[; ;vl53_st_main.c: 1933:         case RASING_MODE_SINGLE:
-[e :U 999 ]
-"1934
-[; ;vl53_st_main.c: 1934:              break;
-[e $U 997  ]
-"1935
-[; ;vl53_st_main.c: 1935:         case RASING_MODE_SINGLE_HA:
-[e :U 1000 ]
-"1936
-[; ;vl53_st_main.c: 1936:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1001  ]
-{
-"1937
-[; ;vl53_st_main.c: 1937:                 Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 200000);
-[e = _Status ( _VL53L0X_SetMeasurementTimingBudgetMicroSeconds (2 , _pMyDevice -> -> 200000 `l `ul ]
-"1938
-[; ;vl53_st_main.c: 1938:             }
-}
-[e :U 1001 ]
-"1939
-[; ;vl53_st_main.c: 1939:             break;
-[e $U 997  ]
-"1940
-[; ;vl53_st_main.c: 1940:         case RASING_MODE_SINGLE_HS:
-[e :U 1002 ]
-"1941
-[; ;vl53_st_main.c: 1941:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1003  ]
-{
-"1942
-[; ;vl53_st_main.c: 1942:                 Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 30000);
-[e = _Status ( _VL53L0X_SetMeasurementTimingBudgetMicroSeconds (2 , _pMyDevice -> -> -> 30000 `i `l `ul ]
-"1943
-[; ;vl53_st_main.c: 1943:             }
-}
-[e :U 1003 ]
-"1944
-[; ;vl53_st_main.c: 1944:             break;
-[e $U 997  ]
-"1945
-[; ;vl53_st_main.c: 1945:        case RASING_MODE_SINGLE_LR:
-[e :U 1004 ]
-"1946
-[; ;vl53_st_main.c: 1946:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1005  ]
-{
-"1947
-[; ;vl53_st_main.c: 1947:                 Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 33000);
-[e = _Status ( _VL53L0X_SetMeasurementTimingBudgetMicroSeconds (2 , _pMyDevice -> -> 33000 `l `ul ]
-"1948
-[; ;vl53_st_main.c: 1948:             }
-}
-[e :U 1005 ]
-"1949
-[; ;vl53_st_main.c: 1949:             break;
-[e $U 997  ]
-"1950
-[; ;vl53_st_main.c: 1950:         default:
-[e :U 1006 ]
-"1951
-[; ;vl53_st_main.c: 1951:             break;
-[e $U 997  ]
-"1952
-[; ;vl53_st_main.c: 1952:         }
-}
-[e $U 997  ]
-[e :U 998 ]
-[e [\ -> _sel `ui , $ -> . `E7137 0 `ui 999
- , $ -> . `E7137 1 `ui 1000
- , $ -> . `E7137 2 `ui 1002
- , $ -> . `E7137 3 `ui 1004
- 1006 ]
-[e :U 997 ]
-"1960
-[; ;vl53_st_main.c: 1960:         switch(sel){
-[e $U 1008  ]
-{
-"1961
-[; ;vl53_st_main.c: 1961:         case RASING_MODE_SINGLE:
-[e :U 1009 ]
-"1962
-[; ;vl53_st_main.c: 1962:              break;
-[e $U 1007  ]
-"1963
-[; ;vl53_st_main.c: 1963:         case RASING_MODE_SINGLE_HA:
-[e :U 1010 ]
-"1964
-[; ;vl53_st_main.c: 1964:             break;
-[e $U 1007  ]
-"1965
-[; ;vl53_st_main.c: 1965:         case RASING_MODE_SINGLE_HS:
-[e :U 1011 ]
-"1966
-[; ;vl53_st_main.c: 1966:             break;
-[e $U 1007  ]
-"1967
-[; ;vl53_st_main.c: 1967:        case RASING_MODE_SINGLE_LR:
-[e :U 1012 ]
-"1968
-[; ;vl53_st_main.c: 1968:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1013  ]
-{
-"1969
-[; ;vl53_st_main.c: 1969:                 Status = VL53L0X_SetVcselPulsePeriod(pMyDevice, ((VL53L0X_VcselPeriod) 0), 18);
-[e = _Status ( _VL53L0X_SetVcselPulsePeriod (3 , , _pMyDevice -> -> 0 `i `uc -> -> 18 `i `uc ]
-"1970
-[; ;vl53_st_main.c: 1970:             }
-}
-[e :U 1013 ]
-"1971
-[; ;vl53_st_main.c: 1971:             if (Status == ((VL53L0X_Error) 0)) {
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1014  ]
-{
-"1972
-[; ;vl53_st_main.c: 1972:                 Status = VL53L0X_SetVcselPulsePeriod(pMyDevice, ((VL53L0X_VcselPeriod) 1), 14);
-[e = _Status ( _VL53L0X_SetVcselPulsePeriod (3 , , _pMyDevice -> -> 1 `i `uc -> -> 14 `i `uc ]
-"1973
-[; ;vl53_st_main.c: 1973:             }
-}
-[e :U 1014 ]
-"1974
-[; ;vl53_st_main.c: 1974:             break;
-[e $U 1007  ]
-"1975
-[; ;vl53_st_main.c: 1975:         default:
-[e :U 1015 ]
-"1976
-[; ;vl53_st_main.c: 1976:             break;
-[e $U 1007  ]
-"1977
-[; ;vl53_st_main.c: 1977:         }
-}
-[e $U 1007  ]
-[e :U 1008 ]
-[e [\ -> _sel `ui , $ -> . `E7137 0 `ui 1009
- , $ -> . `E7137 1 `ui 1010
- , $ -> . `E7137 2 `ui 1011
- , $ -> . `E7137 3 `ui 1012
- 1015 ]
-[e :U 1007 ]
-"1979
-[; ;vl53_st_main.c: 1979:         if(sel==RASING_MODE_SINGLE_LR){
-[e $ ! == -> _sel `ui -> . `E7137 3 `ui 1016  ]
-{
-"1980
-[; ;vl53_st_main.c: 1980:             max = 50;
-[e = _max -> 50 `i ]
-"1981
-[; ;vl53_st_main.c: 1981:         }
-}
-[e $U 1017  ]
-"1982
-[; ;vl53_st_main.c: 1982:         else{
-[e :U 1016 ]
-{
-"1983
-[; ;vl53_st_main.c: 1983:             max = 10;
-[e = _max -> 10 `i ]
-"1984
-[; ;vl53_st_main.c: 1984:         }
-}
-[e :U 1017 ]
-"1985
-[; ;vl53_st_main.c: 1985: printf("001 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
-[e ( _printf , , (. :s 16C -> . _RangingMeasurementData 2 `ui -> . . . *U _pMyDevice 0 3 2 `ui ]
-"1987
-[; ;vl53_st_main.c: 1987:         if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1018  ]
-{
-"1988
-[; ;vl53_st_main.c: 1988:             for( i=0; i<max; i++ ){
-{
-[e = _i -> 0 `i ]
-[e $U 1022  ]
-[e :U 1019 ]
-{
-"2006
-[; ;vl53_st_main.c: 2006:                 printf ("Call of VL53L0X_PerformSingleRangingMeasurement\r\n");
-[e ( _printf :s 17C ]
-"2007
-[; ;vl53_st_main.c: 2007:                 Status = VL53L0X_PerformSingleRangingMeasurement(pMyDevice, &RangingMeasurementData);
-[e = _Status ( _VL53L0X_PerformSingleRangingMeasurement (2 , _pMyDevice &U _RangingMeasurementData ]
-"2008
-[; ;vl53_st_main.c: 2008: printf("002 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
-[e ( _printf , , (. :s 18C -> . _RangingMeasurementData 2 `ui -> . . . *U _pMyDevice 0 3 2 `ui ]
-"2010
-[; ;vl53_st_main.c: 2010:                 print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"2011
-[; ;vl53_st_main.c: 2011:                 print_range_status(&RangingMeasurementData);
-[e ( _print_range_status (1 &U _RangingMeasurementData ]
-"2023
-[; ;vl53_st_main.c: 2023:                 switch(sel){
-[e $U 1024  ]
-{
-"2024
-[; ;vl53_st_main.c: 2024:                 case RASING_MODE_SINGLE:
-[e :U 1025 ]
-"2025
-[; ;vl53_st_main.c: 2025:                 case RASING_MODE_SINGLE_HA:
-[e :U 1026 ]
-"2026
-[; ;vl53_st_main.c: 2026:                 case RASING_MODE_SINGLE_HS:
-[e :U 1027 ]
-"2027
-[; ;vl53_st_main.c: 2027:                     VL53L0X_GetLimitCheckCurrent(pMyDevice, 3, &LimitCheckCurrent);
-[e ( _VL53L0X_GetLimitCheckCurrent (3 , , _pMyDevice -> -> 3 `i `us &U _LimitCheckCurrent ]
-"2028
-[; ;vl53_st_main.c: 2028:                     printf("RANGE IGNORE THRESHOLD: %f\r\n", (float)LimitCheckCurrent/65536.0);
-[e ( _printf , (. :s 19C / -> -> _LimitCheckCurrent `f `d .65536.0 ]
-"2029
-[; ;vl53_st_main.c: 2029:                     break;
-[e $U 1023  ]
-"2030
-[; ;vl53_st_main.c: 2030:                case RASING_MODE_SINGLE_LR:
-[e :U 1028 ]
-"2031
-[; ;vl53_st_main.c: 2031:                 default:
-[e :U 1029 ]
-"2032
-[; ;vl53_st_main.c: 2032:                     break;
-[e $U 1023  ]
-"2033
-[; ;vl53_st_main.c: 2033:                 }
-}
-[e $U 1023  ]
-[e :U 1024 ]
-[e [\ -> _sel `ui , $ -> . `E7137 0 `ui 1025
- , $ -> . `E7137 1 `ui 1026
- , $ -> . `E7137 2 `ui 1027
- , $ -> . `E7137 3 `ui 1028
- 1029 ]
-[e :U 1023 ]
-"2034
-[; ;vl53_st_main.c: 2034: printf("003 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter) ;
-[e ( _printf , , (. :s 20C -> . _RangingMeasurementData 2 `ui -> . . . *U _pMyDevice 0 3 2 `ui ]
-"2037
-[; ;vl53_st_main.c: 2037:                 if (Status != ((VL53L0X_Error) 0)){
-[e $ ! != -> _Status `i -> -> -> 0 `i `c `i 1030  ]
-{
-"2038
-[; ;vl53_st_main.c: 2038:                     break;
-[e $U 1020  ]
-"2039
-[; ;vl53_st_main.c: 2039:                 }
-}
-[e :U 1030 ]
-"2041
-[; ;vl53_st_main.c: 2041:                 printf("Measured distance: %i\r\n", RangingMeasurementData.RangeMilliMeter);
-[e ( _printf , (. :s 21C -> . _RangingMeasurementData 2 `ui ]
-"2042
-[; ;vl53_st_main.c: 2042:             }
-}
-[e ++ _i -> 1 `i ]
-[e :U 1022 ]
-[e $ < _i _max 1019  ]
-[e :U 1020 ]
-}
-"2044
-[; ;vl53_st_main.c: 2044:         }
-}
-[e :U 1018 ]
-"2045
-[; ;vl53_st_main.c: 2045:     }
-}
-[e :U 978 ]
-"2048
-[; ;vl53_st_main.c: 2048:     return Status;
-[e ) _Status ]
-[e $UE 952  ]
-"2050
-[; ;vl53_st_main.c: 2050: }
+[e :U 953 ]
+"305
+[; ;vl53_st_main.c: 305: }
 [e :UE 952 ]
 }
-"2060
-[; ;vl53_st_main.c: 2060: void vl53l0x_Racing_test(RASING_MODE sel)
-[v _vl53l0x_Racing_test `(v ~T0 @X0 1 ef1`E7137 ]
-"2061
-[; ;vl53_st_main.c: 2061: {
+"309
+[; ;vl53_st_main.c: 309: void VL53_MsrSingle( VL53_MAIN_STRUCT *handle )
+[v _VL53_MsrSingle `(v ~T0 @X0 1 ef1`*S919 ]
+"310
+[; ;vl53_st_main.c: 310: {
 {
-[e :U _vl53l0x_Racing_test ]
-"2060
-[; ;vl53_st_main.c: 2060: void vl53l0x_Racing_test(RASING_MODE sel)
-[v _sel `E7137 ~T0 @X0 1 r1 ]
-"2061
-[; ;vl53_st_main.c: 2061: {
+[e :U _VL53_MsrSingle ]
+"309
+[; ;vl53_st_main.c: 309: void VL53_MsrSingle( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"310
+[; ;vl53_st_main.c: 310: {
 [f ]
-"2062
-[; ;vl53_st_main.c: 2062:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
+"312
+[; ;vl53_st_main.c: 312:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
 [v _Status `c ~T0 @X0 1 a ]
 [e = _Status -> -> 0 `i `c ]
-"2064
-[; ;vl53_st_main.c: 2064:     VL53L0X_Dev_t *pMyDevice = &MyDevice;
-[v _pMyDevice `*S930 ~T0 @X0 1 a ]
+"313
+[; ;vl53_st_main.c: 313:     VL53L0X_RangingMeasurementData_t *pRangingMeasurementData = &RangingMeasurementData;
+[v _pRangingMeasurementData `*S924 ~T0 @X0 1 a ]
+[e = _pRangingMeasurementData &U _RangingMeasurementData ]
+"314
+[; ;vl53_st_main.c: 314:     VL53L0X_Dev_t *pMyDevice = &MyDevice;
+[v _pMyDevice `*S931 ~T0 @X0 1 a ]
 [e = _pMyDevice &U _MyDevice ]
-"2065
-[; ;vl53_st_main.c: 2065:     VL53L0X_Version_t Version;
-[v _Version `S919 ~T0 @X0 1 a ]
-"2066
-[; ;vl53_st_main.c: 2066:     VL53L0X_Version_t *pVersion = &Version;
-[v _pVersion `*S919 ~T0 @X0 1 a ]
+"315
+[; ;vl53_st_main.c: 315:     FixPoint1616_t LimitCheckCurrent;
+[v _LimitCheckCurrent `ul ~T0 @X0 1 a ]
+"318
+[; ;vl53_st_main.c: 318:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 957  ]
+{
+"319
+[; ;vl53_st_main.c: 319:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"320
+[; ;vl53_st_main.c: 320:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"321
+[; ;vl53_st_main.c: 321:         printf("★VL53_MsrSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 10C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"322
+[; ;vl53_st_main.c: 322:     }
+}
+[e :U 957 ]
+"340
+[; ;vl53_st_main.c: 340:         printf ("Call of VL53L0X_PerformSingleRangingMeasurement\r\n");
+[e ( _printf :s 11C ]
+"341
+[; ;vl53_st_main.c: 341:         Status = VL53L0X_PerformSingleRangingMeasurement(pMyDevice, &RangingMeasurementData);
+[e = _Status ( _VL53L0X_PerformSingleRangingMeasurement (2 , _pMyDevice &U _RangingMeasurementData ]
+"343
+[; ;vl53_st_main.c: 343:         set_MsrData( handle, pRangingMeasurementData->RangeMilliMeter);
+[e ( _set_MsrData (2 , _handle . *U _pRangingMeasurementData 2 ]
+"345
+[; ;vl53_st_main.c: 345:         printf("002 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter);
+[e ( _printf , , (. :s 12C -> . _RangingMeasurementData 2 `ui -> . . . *U _pMyDevice 0 3 2 `ui ]
+"347
+[; ;vl53_st_main.c: 347:         print_pal_error(Status);
+[e ( _print_pal_error (1 _Status ]
+"348
+[; ;vl53_st_main.c: 348:         print_range_status(&RangingMeasurementData);
+[e ( _print_range_status (1 &U _RangingMeasurementData ]
+"361
+[; ;vl53_st_main.c: 361:         switch(handle->command){
+[e $U 959  ]
+{
+"362
+[; ;vl53_st_main.c: 362:         case VL53_COM_MESURRING_SINGL:
+[e :U 960 ]
+"363
+[; ;vl53_st_main.c: 363:         case VL53_COM_MESURRING_SINGL_HA:
+[e :U 961 ]
+"364
+[; ;vl53_st_main.c: 364:         case VL53_COM_MESURRING_SINGL_HS:
+[e :U 962 ]
+"365
+[; ;vl53_st_main.c: 365:             VL53L0X_GetLimitCheckCurrent(pMyDevice, 3, &LimitCheckCurrent);
+[e ( _VL53L0X_GetLimitCheckCurrent (3 , , _pMyDevice -> -> 3 `i `us &U _LimitCheckCurrent ]
+"366
+[; ;vl53_st_main.c: 366:             printf("RANGE IGNORE THRESHOLD: %f\r\n", (float)LimitCheckCurrent/65536.0);
+[e ( _printf , (. :s 13C / -> -> _LimitCheckCurrent `f `d .65536.0 ]
+"367
+[; ;vl53_st_main.c: 367:             break;
+[e $U 958  ]
+"368
+[; ;vl53_st_main.c: 368:         case VL53_COM_MESURRING_SINGL_LR:
+[e :U 963 ]
+"369
+[; ;vl53_st_main.c: 369:         case VL53_COM_MESURRING_CONTI:
+[e :U 964 ]
+"370
+[; ;vl53_st_main.c: 370:         default:
+[e :U 965 ]
+"371
+[; ;vl53_st_main.c: 371:             break;
+[e $U 958  ]
+"372
+[; ;vl53_st_main.c: 372:         }
+}
+[e $U 958  ]
+[e :U 959 ]
+[e [\ -> . *U _handle 1 `ui , $ -> . `E7154 3 `ui 960
+ , $ -> . `E7154 4 `ui 961
+ , $ -> . `E7154 5 `ui 962
+ , $ -> . `E7154 6 `ui 963
+ , $ -> . `E7154 2 `ui 964
+ 965 ]
+[e :U 958 ]
+"374
+[; ;vl53_st_main.c: 374:         printf("003 RangeMilliMeter,=%d(%d)\r\n",RangingMeasurementData.RangeMilliMeter,pMyDevice->Data.LastRangeMeasure.RangeMilliMeter) ;
+[e ( _printf , , (. :s 14C -> . _RangingMeasurementData 2 `ui -> . . . *U _pMyDevice 0 3 2 `ui ]
+"375
+[; ;vl53_st_main.c: 375:         printf("Measured distance: %i\r\n", RangingMeasurementData.RangeMilliMeter);
+[e ( _printf , (. :s 15C -> . _RangingMeasurementData 2 `ui ]
+"377
+[; ;vl53_st_main.c: 377:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 966  ]
+{
+"378
+[; ;vl53_st_main.c: 378:        vl53handle.state = VL53_STATE_MESURRING_SINGL;
+[e = . _vl53handle 0 . `E7145 4 ]
+"379
+[; ;vl53_st_main.c: 379:     }
+}
+[e $U 967  ]
+"380
+[; ;vl53_st_main.c: 380:     else{
+[e :U 966 ]
+{
+"381
+[; ;vl53_st_main.c: 381:         vl53handle.state = VL53_STATE_MESURRING_SINGL;
+[e = . _vl53handle 0 . `E7145 4 ]
+"382
+[; ;vl53_st_main.c: 382:         vl53handle.command = VL53_COM_STOP;
+[e = . _vl53handle 1 . `E7154 1 ]
+"383
+[; ;vl53_st_main.c: 383:     }
+}
+[e :U 967 ]
+"384
+[; ;vl53_st_main.c: 384: }
+[e :UE 956 ]
+}
+"388
+[; ;vl53_st_main.c: 388: void VL53_StartSingle( VL53_MAIN_STRUCT *handle )
+[v _VL53_StartSingle `(v ~T0 @X0 1 ef1`*S919 ]
+"389
+[; ;vl53_st_main.c: 389: {
+{
+[e :U _VL53_StartSingle ]
+"388
+[; ;vl53_st_main.c: 388: void VL53_StartSingle( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"389
+[; ;vl53_st_main.c: 389: {
+[f ]
+"390
+[; ;vl53_st_main.c: 390:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 969  ]
+{
+"391
+[; ;vl53_st_main.c: 391:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"392
+[; ;vl53_st_main.c: 392:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"393
+[; ;vl53_st_main.c: 393:         printf("★VL53_StartSingle(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 16C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"394
+[; ;vl53_st_main.c: 394:     }
+}
+[e :U 969 ]
+"395
+[; ;vl53_st_main.c: 395:     handle->msr_wpt = 0;
+[e = . *U _handle 3 -> -> 0 `i `uc ]
+"396
+[; ;vl53_st_main.c: 396:     handle->msr_rpt = 0;
+[e = . *U _handle 4 -> -> 0 `i `uc ]
+"397
+[; ;vl53_st_main.c: 397:     vl53l0x_Racing_init( RASING_MODE_SINGLE );
+[e ( _vl53l0x_Racing_init (1 . `E7137 0 ]
+"398
+[; ;vl53_st_main.c: 398: }
+[e :UE 968 ]
+}
+"403
+[; ;vl53_st_main.c: 403: void VL53_StartSingleHA( VL53_MAIN_STRUCT *handle )
+[v _VL53_StartSingleHA `(v ~T0 @X0 1 ef1`*S919 ]
+"404
+[; ;vl53_st_main.c: 404: {
+{
+[e :U _VL53_StartSingleHA ]
+"403
+[; ;vl53_st_main.c: 403: void VL53_StartSingleHA( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"404
+[; ;vl53_st_main.c: 404: {
+[f ]
+"405
+[; ;vl53_st_main.c: 405:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 971  ]
+{
+"406
+[; ;vl53_st_main.c: 406:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"407
+[; ;vl53_st_main.c: 407:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"408
+[; ;vl53_st_main.c: 408:         printf("★VL53_StartSingleHA(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 17C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"409
+[; ;vl53_st_main.c: 409:     }
+}
+[e :U 971 ]
+"410
+[; ;vl53_st_main.c: 410:     handle->msr_wpt = 0;
+[e = . *U _handle 3 -> -> 0 `i `uc ]
+"411
+[; ;vl53_st_main.c: 411:     handle->msr_rpt = 0;
+[e = . *U _handle 4 -> -> 0 `i `uc ]
+"412
+[; ;vl53_st_main.c: 412:     vl53l0x_Racing_init( RASING_MODE_SINGLE_HA );
+[e ( _vl53l0x_Racing_init (1 . `E7137 1 ]
+"413
+[; ;vl53_st_main.c: 413: }
+[e :UE 970 ]
+}
+"418
+[; ;vl53_st_main.c: 418: void VL53_StartSingleHS( VL53_MAIN_STRUCT *handle )
+[v _VL53_StartSingleHS `(v ~T0 @X0 1 ef1`*S919 ]
+"419
+[; ;vl53_st_main.c: 419: {
+{
+[e :U _VL53_StartSingleHS ]
+"418
+[; ;vl53_st_main.c: 418: void VL53_StartSingleHS( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"419
+[; ;vl53_st_main.c: 419: {
+[f ]
+"420
+[; ;vl53_st_main.c: 420:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 973  ]
+{
+"421
+[; ;vl53_st_main.c: 421:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"422
+[; ;vl53_st_main.c: 422:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"423
+[; ;vl53_st_main.c: 423:         printf("★VL53_StartSingleHS(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 18C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"424
+[; ;vl53_st_main.c: 424:     }
+}
+[e :U 973 ]
+"425
+[; ;vl53_st_main.c: 425:     handle->msr_wpt = 0;
+[e = . *U _handle 3 -> -> 0 `i `uc ]
+"426
+[; ;vl53_st_main.c: 426:     handle->msr_rpt = 0;
+[e = . *U _handle 4 -> -> 0 `i `uc ]
+"427
+[; ;vl53_st_main.c: 427:     vl53l0x_Racing_init( RASING_MODE_SINGLE_HS );
+[e ( _vl53l0x_Racing_init (1 . `E7137 2 ]
+"428
+[; ;vl53_st_main.c: 428: }
+[e :UE 972 ]
+}
+"432
+[; ;vl53_st_main.c: 432: void VL53_StartSingleLR( VL53_MAIN_STRUCT *handle )
+[v _VL53_StartSingleLR `(v ~T0 @X0 1 ef1`*S919 ]
+"433
+[; ;vl53_st_main.c: 433: {
+{
+[e :U _VL53_StartSingleLR ]
+"432
+[; ;vl53_st_main.c: 432: void VL53_StartSingleLR( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"433
+[; ;vl53_st_main.c: 433: {
+[f ]
+"434
+[; ;vl53_st_main.c: 434:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 975  ]
+{
+"435
+[; ;vl53_st_main.c: 435:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"436
+[; ;vl53_st_main.c: 436:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"437
+[; ;vl53_st_main.c: 437:         printf("★VL53_StartSingleLR(S=%d,E=%d)\r\n",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 19C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"438
+[; ;vl53_st_main.c: 438:     }
+}
+[e :U 975 ]
+"439
+[; ;vl53_st_main.c: 439:     handle->msr_wpt = 0;
+[e = . *U _handle 3 -> -> 0 `i `uc ]
+"440
+[; ;vl53_st_main.c: 440:     handle->msr_rpt = 0;
+[e = . *U _handle 4 -> -> 0 `i `uc ]
+"441
+[; ;vl53_st_main.c: 441:     vl53l0x_Racing_init( RASING_MODE_SINGLE_LR );
+[e ( _vl53l0x_Racing_init (1 . `E7137 3 ]
+"442
+[; ;vl53_st_main.c: 442: }
+[e :UE 974 ]
+}
+"447
+[; ;vl53_st_main.c: 447: void VL53_DataReq( VL53_MAIN_STRUCT *handle )
+[v _VL53_DataReq `(v ~T0 @X0 1 ef1`*S919 ]
+"448
+[; ;vl53_st_main.c: 448: {
+{
+[e :U _VL53_DataReq ]
+"447
+[; ;vl53_st_main.c: 447: void VL53_DataReq( VL53_MAIN_STRUCT *handle )
+[v _handle `*S919 ~T0 @X0 1 r1 ]
+"448
+[; ;vl53_st_main.c: 448: {
+[f ]
+"449
+[; ;vl53_st_main.c: 449:     if( Prevl53handle.command != vl53handle.command || Prevl53handle.state != vl53handle.state ){
+[e $ ! || != -> . _Prevl53handle 1 `ui -> . _vl53handle 1 `ui != -> . _Prevl53handle 0 `ui -> . _vl53handle 0 `ui 977  ]
+{
+"450
+[; ;vl53_st_main.c: 450:         Prevl53handle.command = vl53handle.command;
+[e = . _Prevl53handle 1 . _vl53handle 1 ]
+"451
+[; ;vl53_st_main.c: 451:         Prevl53handle.state = vl53handle.state;
+[e = . _Prevl53handle 0 . _vl53handle 0 ]
+"452
+[; ;vl53_st_main.c: 452:         printf("VL53_DataReq(S=%d,E=%d)",vl53handle.state, vl53handle.command);
+[e ( _printf , , (. :s 20C -> . _vl53handle 0 `ui -> . _vl53handle 1 `ui ]
+"453
+[; ;vl53_st_main.c: 453:     }
+}
+[e :U 977 ]
+"454
+[; ;vl53_st_main.c: 454: }
+[e :UE 976 ]
+}
+"460
+[; ;vl53_st_main.c: 460: void print_pal_error(VL53L0X_Error Status)
+[v _print_pal_error `(v ~T0 @X0 1 ef1`c ]
+"461
+[; ;vl53_st_main.c: 461: {
+{
+[e :U _print_pal_error ]
+"460
+[; ;vl53_st_main.c: 460: void print_pal_error(VL53L0X_Error Status)
+[v _Status `c ~T0 @X0 1 r1 ]
+"461
+[; ;vl53_st_main.c: 461: {
+[f ]
+"462
+[; ;vl53_st_main.c: 462:     char buf[32];
+[v _buf `uc ~T0 @X0 -> 32 `i a ]
+"463
+[; ;vl53_st_main.c: 463:     VL53L0X_GetPalErrorString(Status, buf);
+[e ( _VL53L0X_GetPalErrorString (2 , _Status &U _buf ]
+"464
+[; ;vl53_st_main.c: 464:     printf("API Status: %i : %s\r\n", Status, buf);
+[e ( _printf , , (. :s 21C -> _Status `i &U _buf ]
+"465
+[; ;vl53_st_main.c: 465: }
+[e :UE 978 ]
+}
+"469
+[; ;vl53_st_main.c: 469: void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementData)
+[v _print_range_status `(v ~T0 @X0 1 ef1`*S924 ]
+"470
+[; ;vl53_st_main.c: 470: {
+{
+[e :U _print_range_status ]
+"469
+[; ;vl53_st_main.c: 469: void print_range_status(VL53L0X_RangingMeasurementData_t* pRangingMeasurementData)
+[v _pRangingMeasurementData `*S924 ~T0 @X0 1 r1 ]
+"470
+[; ;vl53_st_main.c: 470: {
+[f ]
+"471
+[; ;vl53_st_main.c: 471:     char buf[32];
+[v _buf `uc ~T0 @X0 -> 32 `i a ]
+"472
+[; ;vl53_st_main.c: 472:     uint8_t RangeStatus;
+[v _RangeStatus `uc ~T0 @X0 1 a ]
+"478
+[; ;vl53_st_main.c: 478:     RangeStatus = pRangingMeasurementData->RangeStatus;
+[e = _RangeStatus . *U _pRangingMeasurementData 9 ]
+"480
+[; ;vl53_st_main.c: 480:     VL53L0X_GetRangeStatusString(RangeStatus, buf);
+[e ( _VL53L0X_GetRangeStatusString (2 , _RangeStatus &U _buf ]
+"481
+[; ;vl53_st_main.c: 481:     printf("Range Status: %i : %s\r\n", RangeStatus, buf);
+[e ( _printf , , (. :s 22C -> _RangeStatus `i &U _buf ]
+"483
+[; ;vl53_st_main.c: 483: }
+[e :UE 979 ]
+}
+"620
+[; ;vl53_st_main.c: 620: VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev)
+[v _WaitStopCompleted `(c ~T0 @X0 1 ef1`*S931 ]
+"621
+[; ;vl53_st_main.c: 621: {
+{
+[e :U _WaitStopCompleted ]
+"620
+[; ;vl53_st_main.c: 620: VL53L0X_Error WaitStopCompleted(VL53L0X_DEV Dev)
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
+"621
+[; ;vl53_st_main.c: 621: {
+[f ]
+"622
+[; ;vl53_st_main.c: 622:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
+[v _Status `c ~T0 @X0 1 a ]
+[e = _Status -> -> 0 `i `c ]
+"623
+[; ;vl53_st_main.c: 623:     uint32_t StopCompleted=0;
+[v _StopCompleted `ul ~T0 @X0 1 a ]
+[e = _StopCompleted -> -> -> 0 `i `l `ul ]
+"624
+[; ;vl53_st_main.c: 624:     uint32_t LoopNb;
+[v _LoopNb `ul ~T0 @X0 1 a ]
+"628
+[; ;vl53_st_main.c: 628:     if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 981  ]
+{
+"629
+[; ;vl53_st_main.c: 629:         LoopNb = 0;
+[e = _LoopNb -> -> -> 0 `i `l `ul ]
+"630
+[; ;vl53_st_main.c: 630:         do {
+[e :U 984 ]
+{
+"631
+[; ;vl53_st_main.c: 631:             Status = VL53L0X_GetStopCompletedStatus(Dev, &StopCompleted);
+[e = _Status ( _VL53L0X_GetStopCompletedStatus (2 , _Dev &U _StopCompleted ]
+"632
+[; ;vl53_st_main.c: 632:             if ((StopCompleted == 0x00) || Status != ((VL53L0X_Error) 0)) {
+[e $ ! || == _StopCompleted -> -> -> 0 `i `l `ul != -> _Status `i -> -> -> 0 `i `c `i 985  ]
+{
+"633
+[; ;vl53_st_main.c: 633:                 break;
+[e $U 983  ]
+"634
+[; ;vl53_st_main.c: 634:             }
+}
+[e :U 985 ]
+"635
+[; ;vl53_st_main.c: 635:             LoopNb = LoopNb + 1;
+[e = _LoopNb + _LoopNb -> -> -> 1 `i `l `ul ]
+"636
+[; ;vl53_st_main.c: 636:             VL53L0X_PollingDelay(Dev);
+[e ( _VL53L0X_PollingDelay (1 _Dev ]
+"637
+[; ;vl53_st_main.c: 637:         } while (LoopNb < 2000);
+}
+[e $ < _LoopNb -> -> -> 2000 `i `l `ul 984  ]
+[e :U 983 ]
+"639
+[; ;vl53_st_main.c: 639:         if (LoopNb >= 2000) {
+[e $ ! >= _LoopNb -> -> -> 2000 `i `l `ul 986  ]
+{
+"640
+[; ;vl53_st_main.c: 640:             Status = ((VL53L0X_Error) - 7);
+[e = _Status -> -U -> 7 `i `c ]
+"641
+[; ;vl53_st_main.c: 641:         }
+}
+[e :U 986 ]
+"643
+[; ;vl53_st_main.c: 643:     }
+}
+[e :U 981 ]
+"645
+[; ;vl53_st_main.c: 645:     return Status;
+[e ) _Status ]
+[e $UE 980  ]
+"646
+[; ;vl53_st_main.c: 646: }
+[e :UE 980 ]
+}
+"649
+[; ;vl53_st_main.c: 649: VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev)
+[v _WaitMeasurementDataReady `(c ~T0 @X0 1 ef1`*S931 ]
+"650
+[; ;vl53_st_main.c: 650: {
+{
+[e :U _WaitMeasurementDataReady ]
+"649
+[; ;vl53_st_main.c: 649: VL53L0X_Error WaitMeasurementDataReady(VL53L0X_DEV Dev)
+[v _Dev `*S931 ~T0 @X0 1 r1 ]
+"650
+[; ;vl53_st_main.c: 650: {
+[f ]
+"651
+[; ;vl53_st_main.c: 651:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
+[v _Status `c ~T0 @X0 1 a ]
+[e = _Status -> -> 0 `i `c ]
+"652
+[; ;vl53_st_main.c: 652:     uint8_t NewDatReady=0;
+[v _NewDatReady `uc ~T0 @X0 1 a ]
+[e = _NewDatReady -> -> 0 `i `uc ]
+"653
+[; ;vl53_st_main.c: 653:     uint32_t LoopNb;
+[v _LoopNb `ul ~T0 @X0 1 a ]
+"655
+[; ;vl53_st_main.c: 655:     vl53_LogDisp("WaitMeasurementDataReady() START", Status);
+[e ( _vl53_LogDisp (2 , :s 23C _Status ]
+"658
+[; ;vl53_st_main.c: 658:     if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 988  ]
+{
+"659
+[; ;vl53_st_main.c: 659:         LoopNb = 0;
+[e = _LoopNb -> -> -> 0 `i `l `ul ]
+"660
+[; ;vl53_st_main.c: 660:         do {
+[e :U 991 ]
+{
+"681
+[; ;vl53_st_main.c: 681:             Status = VL53L0X_GetMeasurementDataReady(Dev, &NewDatReady);
+[e = _Status ( _VL53L0X_GetMeasurementDataReady (2 , _Dev &U _NewDatReady ]
+"682
+[; ;vl53_st_main.c: 682:             if ((NewDatReady == 0x01) || Status != ((VL53L0X_Error) 0)) {
+[e $ ! || == -> _NewDatReady `i -> 1 `i != -> _Status `i -> -> -> 0 `i `c `i 992  ]
+{
+"683
+[; ;vl53_st_main.c: 683:                 break;
+[e $U 990  ]
+"684
+[; ;vl53_st_main.c: 684:             }
+}
+[e :U 992 ]
+"685
+[; ;vl53_st_main.c: 685:             LoopNb = LoopNb + 1;
+[e = _LoopNb + _LoopNb -> -> -> 1 `i `l `ul ]
+"686
+[; ;vl53_st_main.c: 686:             VL53L0X_PollingDelay(Dev);
+[e ( _VL53L0X_PollingDelay (1 _Dev ]
+"687
+[; ;vl53_st_main.c: 687:         } while (LoopNb < 2000);
+}
+[e $ < _LoopNb -> -> -> 2000 `i `l `ul 991  ]
+[e :U 990 ]
+"689
+[; ;vl53_st_main.c: 689:         if (LoopNb >= 2000) {
+[e $ ! >= _LoopNb -> -> -> 2000 `i `l `ul 993  ]
+{
+"690
+[; ;vl53_st_main.c: 690:             Status = ((VL53L0X_Error) - 7);
+[e = _Status -> -U -> 7 `i `c ]
+"691
+[; ;vl53_st_main.c: 691:         }
+}
+[e :U 993 ]
+"692
+[; ;vl53_st_main.c: 692:     }
+}
+[e :U 988 ]
+"694
+[; ;vl53_st_main.c: 694:     vl53_LogDisp("WaitMeasurementDataReady() END", Status);
+[e ( _vl53_LogDisp (2 , :s 24C _Status ]
+"695
+[; ;vl53_st_main.c: 695:     return Status;
+[e ) _Status ]
+[e $UE 987  ]
+"696
+[; ;vl53_st_main.c: 696: }
+[e :UE 987 ]
+}
+"698
+[; ;vl53_st_main.c: 698: void vl53_LogDisp(char *string,int8_t status)
+[v _vl53_LogDisp `(v ~T0 @X0 1 ef2`*uc`c ]
+"699
+[; ;vl53_st_main.c: 699: {
+{
+[e :U _vl53_LogDisp ]
+"698
+[; ;vl53_st_main.c: 698: void vl53_LogDisp(char *string,int8_t status)
+[v _string `*uc ~T0 @X0 1 r1 ]
+[v _status `c ~T0 @X0 1 r2 ]
+"699
+[; ;vl53_st_main.c: 699: {
+[f ]
+"703
+[; ;vl53_st_main.c: 703: }
+[e :UE 994 ]
+}
+"2576
+[; ;vl53_st_main.c: 2576: void vl53l0x_Racing_init(RASING_MODE sel)
+[v _vl53l0x_Racing_init `(v ~T0 @X0 1 ef1`E7137 ]
+"2577
+[; ;vl53_st_main.c: 2577: {
+{
+[e :U _vl53l0x_Racing_init ]
+"2576
+[; ;vl53_st_main.c: 2576: void vl53l0x_Racing_init(RASING_MODE sel)
+[v _sel `E7137 ~T0 @X0 1 r1 ]
+"2577
+[; ;vl53_st_main.c: 2577: {
+[f ]
+"2578
+[; ;vl53_st_main.c: 2578:     VL53L0X_Error Status = ((VL53L0X_Error) 0);
+[v _Status `c ~T0 @X0 1 a ]
+[e = _Status -> -> 0 `i `c ]
+"2579
+[; ;vl53_st_main.c: 2579:     VL53L0X_Dev_t *pMyDevice = &MyDevice;
+[v _pMyDevice `*S931 ~T0 @X0 1 a ]
+[e = _pMyDevice &U _MyDevice ]
+"2580
+[; ;vl53_st_main.c: 2580:     VL53L0X_Version_t *pVersion = &Version;
+[v _pVersion `*S920 ~T0 @X0 1 a ]
 [e = _pVersion &U _Version ]
-"2067
-[; ;vl53_st_main.c: 2067:     VL53L0X_DeviceInfo_t DeviceInfo;
-[v _DeviceInfo `S920 ~T0 @X0 1 a ]
-"2069
-[; ;vl53_st_main.c: 2069:     int32_t status_int;
+"2582
+[; ;vl53_st_main.c: 2582:     int32_t status_int;
 [v _status_int `l ~T0 @X0 1 a ]
-"2070
-[; ;vl53_st_main.c: 2070:     int32_t init_done = 0;
+"2583
+[; ;vl53_st_main.c: 2583:     int32_t init_done = 0;
 [v _init_done `l ~T0 @X0 1 a ]
 [e = _init_done -> -> 0 `i `l ]
-"2071
-[; ;vl53_st_main.c: 2071:     int NecleoComStatus = 0;
+"2584
+[; ;vl53_st_main.c: 2584:     int NecleoComStatus = 0;
 [v _NecleoComStatus `i ~T0 @X0 1 a ]
 [e = _NecleoComStatus -> 0 `i ]
-"2072
-[; ;vl53_st_main.c: 2072:     int NecleoAutoCom = 1;
+"2585
+[; ;vl53_st_main.c: 2585:     int NecleoAutoCom = 1;
 [v _NecleoAutoCom `i ~T0 @X0 1 a ]
 [e = _NecleoAutoCom -> 1 `i ]
-"2075
-[; ;vl53_st_main.c: 2075:     if(sel == RASING_MODE_CONTINUE){
-[e $ ! == -> _sel `ui -> . `E7137 4 `ui 1032  ]
+"2586
+[; ;vl53_st_main.c: 2586:     uint8_t VhvSettings;
+[v _VhvSettings `uc ~T0 @X0 1 a ]
+"2587
+[; ;vl53_st_main.c: 2587:     uint8_t PhaseCal;
+[v _PhaseCal `uc ~T0 @X0 1 a ]
+"2588
+[; ;vl53_st_main.c: 2588:     uint32_t refSpadCount;
+[v _refSpadCount `ul ~T0 @X0 1 a ]
+"2589
+[; ;vl53_st_main.c: 2589:     uint8_t isApertureSpads;
+[v _isApertureSpads `uc ~T0 @X0 1 a ]
+"2591
+[; ;vl53_st_main.c: 2591:     if(sel == RASING_MODE_CONTINUE){
+[e $ ! == -> _sel `ui -> . `E7137 4 `ui 996  ]
 {
-"2076
-[; ;vl53_st_main.c: 2076:         printf ("VL53L0X PAL Continuous Ranging example\r\n");
-[e ( _printf :s 22C ]
-"2077
-[; ;vl53_st_main.c: 2077:     }
+"2592
+[; ;vl53_st_main.c: 2592:         printf ("VL53L0X PAL Continuous Ranging example\r\n");
+[e ( _printf :s 25C ]
+"2593
+[; ;vl53_st_main.c: 2593:     }
 }
-[e $U 1033  ]
-"2078
-[; ;vl53_st_main.c: 2078:     else{
-[e :U 1032 ]
+[e $U 997  ]
+"2594
+[; ;vl53_st_main.c: 2594:     else{
+[e :U 996 ]
 {
-"2079
-[; ;vl53_st_main.c: 2079:         printf ("VL53L0X API Simple Ranging example\r\n\n");
-[e ( _printf :s 23C ]
-"2080
-[; ;vl53_st_main.c: 2080:     }
+"2595
+[; ;vl53_st_main.c: 2595:         printf ("VL53L0X API Simple Ranging example\r\n\n");
+[e ( _printf :s 26C ]
+"2596
+[; ;vl53_st_main.c: 2596:     }
+}
+[e :U 997 ]
+"2598
+[; ;vl53_st_main.c: 2598:     pMyDevice->I2cDevAddr = 0x52;
+[e = . *U _pMyDevice 1 -> -> 82 `i `uc ]
+"2604
+[; ;vl53_st_main.c: 2604:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 998  ]
+{
+"2605
+[; ;vl53_st_main.c: 2605:         status_int = VL53L0X_GetVersion(pVersion);
+[e = _status_int -> ( _VL53L0X_GetVersion (1 _pVersion `l ]
+"2606
+[; ;vl53_st_main.c: 2606:         if (status_int != 0){
+[e $ ! != _status_int -> -> 0 `i `l 999  ]
+{
+"2607
+[; ;vl53_st_main.c: 2607:             Status = ((VL53L0X_Error) - 20);
+[e = _Status -> -U -> 20 `i `c ]
+"2608
+[; ;vl53_st_main.c: 2608:         }
+}
+[e $U 1000  ]
+"2609
+[; ;vl53_st_main.c: 2609:         else{
+[e :U 999 ]
+{
+"2611
+[; ;vl53_st_main.c: 2611:             if( pVersion->major != 1 ||
+[e $ ! || || != -> . *U _pVersion 1 `i -> 1 `i != -> . *U _pVersion 2 `i -> 0 `i != -> . *U _pVersion 3 `i -> 4 `i 1001  ]
+"2614
+[; ;vl53_st_main.c: 2614:             {
+{
+"2615
+[; ;vl53_st_main.c: 2615:                 printf("VL53L0X API Version Error: Your firmware has %d.%d.%d (revision %d). This example requires %d.%d.%d.\n",
+[e ( _printf , , , , , , , (. :s 27C -> . *U _pVersion 1 `i -> . *U _pVersion 2 `i -> . *U _pVersion 3 `i . *U _pVersion 0 -> 1 `i -> 0 `i -> 4 `i ]
+"2618
+[; ;vl53_st_main.c: 2618:             }
+}
+[e :U 1001 ]
+"2619
+[; ;vl53_st_main.c: 2619:         }
+}
+[e :U 1000 ]
+"2620
+[; ;vl53_st_main.c: 2620:     }
+}
+[e :U 998 ]
+"2637
+[; ;vl53_st_main.c: 2637:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1002  ]
+{
+"2638
+[; ;vl53_st_main.c: 2638:         printf ("Call of VL53L0X_DataInit\r\n");
+[e ( _printf :s 28C ]
+"2639
+[; ;vl53_st_main.c: 2639:         Status = VL53L0X_DataInit(&MyDevice);
+[e = _Status ( _VL53L0X_DataInit (1 &U _MyDevice ]
+"2640
+[; ;vl53_st_main.c: 2640:         print_pal_error(Status);
+[e ( _print_pal_error (1 _Status ]
+"2641
+[; ;vl53_st_main.c: 2641:     }
+}
+[e :U 1002 ]
+"2643
+[; ;vl53_st_main.c: 2643:     if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1003  ]
+{
+"2644
+[; ;vl53_st_main.c: 2644:         Status = VL53L0X_GetDeviceInfo(&MyDevice, &DeviceInfo);
+[e = _Status ( _VL53L0X_GetDeviceInfo (2 , &U _MyDevice &U _DeviceInfo ]
+"2646
+[; ;vl53_st_main.c: 2646:         if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1004  ]
+{
+"2647
+[; ;vl53_st_main.c: 2647:             printf("VL53L0X_GetDeviceInfo:\r\n");
+[e ( _printf :s 29C ]
+"2648
+[; ;vl53_st_main.c: 2648:             printf("Device Name : %s\r\n", DeviceInfo.Name);
+[e ( _printf , (. :s 30C &U . _DeviceInfo 0 ]
+"2649
+[; ;vl53_st_main.c: 2649:             printf("Device Type : %s\r\n", DeviceInfo.Type);
+[e ( _printf , (. :s 31C &U . _DeviceInfo 1 ]
+"2650
+[; ;vl53_st_main.c: 2650:             printf("Device ID : %s\r\n", DeviceInfo.ProductId);
+[e ( _printf , (. :s 32C &U . _DeviceInfo 2 ]
+"2651
+[; ;vl53_st_main.c: 2651:             printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
+[e ( _printf , (. :s 33C -> . _DeviceInfo 4 `i ]
+"2652
+[; ;vl53_st_main.c: 2652:             printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
+[e ( _printf , (. :s 34C -> . _DeviceInfo 5 `i ]
+"2654
+[; ;vl53_st_main.c: 2654:             if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
+[e $ ! && != -> . _DeviceInfo 5 `i -> 1 `i != -> . _DeviceInfo 5 `i -> 1 `i 1005  ]
+{
+"2655
+[; ;vl53_st_main.c: 2655:              printf("Error expected cut 1.1 but found cut %d.%d\r\n",DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
+[e ( _printf , , (. :s 35C -> . _DeviceInfo 4 `i -> . _DeviceInfo 5 `i ]
+"2656
+[; ;vl53_st_main.c: 2656:                 Status = ((VL53L0X_Error) - 5);
+[e = _Status -> -U -> 5 `i `c ]
+"2657
+[; ;vl53_st_main.c: 2657:             }
+}
+[e :U 1005 ]
+"2658
+[; ;vl53_st_main.c: 2658:         }
+}
+[e :U 1004 ]
+"2659
+[; ;vl53_st_main.c: 2659:         print_pal_error(Status);
+[e ( _print_pal_error (1 _Status ]
+"2660
+[; ;vl53_st_main.c: 2660:     }
+}
+[e :U 1003 ]
+"2670
+[; ;vl53_st_main.c: 2670:     if(Status == ((VL53L0X_Error) 0))
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1006  ]
+"2671
+[; ;vl53_st_main.c: 2671:     {
+{
+"2672
+[; ;vl53_st_main.c: 2672:         printf ("Call of VL53L0X_StaticInit\r\n");
+[e ( _printf :s 36C ]
+"2673
+[; ;vl53_st_main.c: 2673:         Status = VL53L0X_StaticInit(pMyDevice);
+[e = _Status ( _VL53L0X_StaticInit (1 _pMyDevice ]
+"2674
+[; ;vl53_st_main.c: 2674:         print_pal_error(Status);
+[e ( _print_pal_error (1 _Status ]
+"2675
+[; ;vl53_st_main.c: 2675:     }
+}
+[e :U 1006 ]
+"2678
+[; ;vl53_st_main.c: 2678:     if(Status == ((VL53L0X_Error) 0))
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1007  ]
+"2679
+[; ;vl53_st_main.c: 2679:     {
+{
+"2680
+[; ;vl53_st_main.c: 2680:         printf ("Call of VL53L0X_PerformRefCalibration\r\n");
+[e ( _printf :s 37C ]
+"2681
+[; ;vl53_st_main.c: 2681:         Status = VL53L0X_PerformRefCalibration(pMyDevice, &VhvSettings, &PhaseCal);
+[e = _Status ( _VL53L0X_PerformRefCalibration (3 , , _pMyDevice &U _VhvSettings &U _PhaseCal ]
+"2682
+[; ;vl53_st_main.c: 2682:         print_pal_error(Status);
+[e ( _print_pal_error (1 _Status ]
+"2683
+[; ;vl53_st_main.c: 2683:     }
+}
+[e :U 1007 ]
+"2685
+[; ;vl53_st_main.c: 2685:     if(Status == ((VL53L0X_Error) 0))
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1008  ]
+"2686
+[; ;vl53_st_main.c: 2686:     {
+{
+"2687
+[; ;vl53_st_main.c: 2687:         printf ("Call of VL53L0X_PerformRefSpadManagement\r\n");
+[e ( _printf :s 38C ]
+"2688
+[; ;vl53_st_main.c: 2688:         Status = VL53L0X_PerformRefSpadManagement(pMyDevice, &refSpadCount, &isApertureSpads);
+[e = _Status ( _VL53L0X_PerformRefSpadManagement (3 , , _pMyDevice &U _refSpadCount &U _isApertureSpads ]
+"2690
+[; ;vl53_st_main.c: 2690:         print_pal_error(Status);
+[e ( _print_pal_error (1 _Status ]
+"2691
+[; ;vl53_st_main.c: 2691:     }
+}
+[e :U 1008 ]
+"2693
+[; ;vl53_st_main.c: 2693:     if(Status == ((VL53L0X_Error) 0))
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1009  ]
+"2694
+[; ;vl53_st_main.c: 2694:     {
+{
+"2695
+[; ;vl53_st_main.c: 2695:         printf ("Call of VL53L0X_SetDeviceMode\r\n");
+[e ( _printf :s 39C ]
+"2696
+[; ;vl53_st_main.c: 2696:         if(sel == RASING_MODE_CONTINUE ){
+[e $ ! == -> _sel `ui -> . `E7137 4 `ui 1010  ]
+{
+"2697
+[; ;vl53_st_main.c: 2697:             Status = VL53L0X_SetDeviceMode(pMyDevice, ((VL53L0X_DeviceModes) 1));
+[e = _Status ( _VL53L0X_SetDeviceMode (2 , _pMyDevice -> -> 1 `i `uc ]
+"2698
+[; ;vl53_st_main.c: 2698:         }
+}
+[e $U 1011  ]
+"2699
+[; ;vl53_st_main.c: 2699:         else{
+[e :U 1010 ]
+{
+"2700
+[; ;vl53_st_main.c: 2700:             Status = VL53L0X_SetDeviceMode(pMyDevice, ((VL53L0X_DeviceModes) 0));
+[e = _Status ( _VL53L0X_SetDeviceMode (2 , _pMyDevice -> -> 0 `i `uc ]
+"2701
+[; ;vl53_st_main.c: 2701:         }
+}
+[e :U 1011 ]
+"2703
+[; ;vl53_st_main.c: 2703:         print_pal_error(Status);
+[e ( _print_pal_error (1 _Status ]
+"2704
+[; ;vl53_st_main.c: 2704:     }
+}
+[e :U 1009 ]
+"2718
+[; ;vl53_st_main.c: 2718:     if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1012  ]
+{
+"2719
+[; ;vl53_st_main.c: 2719:         if(sel == RASING_MODE_SINGLE_LR){
+[e $ ! == -> _sel `ui -> . `E7137 3 `ui 1013  ]
+{
+"2721
+[; ;vl53_st_main.c: 2721:         }
+}
+[e :U 1013 ]
+"2722
+[; ;vl53_st_main.c: 2722:     }
+}
+[e :U 1012 ]
+"2725
+[; ;vl53_st_main.c: 2725:     if(sel == RASING_MODE_CONTINUE ){
+[e $ ! == -> _sel `ui -> . `E7137 4 `ui 1014  ]
+{
+"2726
+[; ;vl53_st_main.c: 2726:         if(Status == ((VL53L0X_Error) 0)){
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1015  ]
+{
+"2734
+[; ;vl53_st_main.c: 2734:             printf ("Call of VL53L0X_StartMeasurement\r\n");
+[e ( _printf :s 40C ]
+"2735
+[; ;vl53_st_main.c: 2735:             Status = VL53L0X_StartMeasurement(pMyDevice);
+[e = _Status ( _VL53L0X_StartMeasurement (1 _pMyDevice ]
+"2737
+[; ;vl53_st_main.c: 2737:         }
+}
+[e :U 1015 ]
+"2738
+[; ;vl53_st_main.c: 2738:     }
+}
+[e $U 1016  ]
+"2739
+[; ;vl53_st_main.c: 2739:     else{
+[e :U 1014 ]
+{
+"2749
+[; ;vl53_st_main.c: 2749:         if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1017  ]
+{
+"2750
+[; ;vl53_st_main.c: 2750:             Status = VL53L0X_SetLimitCheckEnable(pMyDevice, 0, 1);
+[e = _Status ( _VL53L0X_SetLimitCheckEnable (3 , , _pMyDevice -> -> 0 `i `us -> -> 1 `i `uc ]
+"2751
+[; ;vl53_st_main.c: 2751:         }
+}
+[e :U 1017 ]
+"2753
+[; ;vl53_st_main.c: 2753:         if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1018  ]
+{
+"2754
+[; ;vl53_st_main.c: 2754:             Status = VL53L0X_SetLimitCheckEnable(pMyDevice, 1, 1);
+[e = _Status ( _VL53L0X_SetLimitCheckEnable (3 , , _pMyDevice -> -> 1 `i `us -> -> 1 `i `uc ]
+"2755
+[; ;vl53_st_main.c: 2755:         }
+}
+[e :U 1018 ]
+"2757
+[; ;vl53_st_main.c: 2757:         if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1019  ]
+{
+"2758
+[; ;vl53_st_main.c: 2758:             if(sel == RASING_MODE_SINGLE){
+[e $ ! == -> _sel `ui -> . `E7137 0 `ui 1020  ]
+{
+"2759
+[; ;vl53_st_main.c: 2759:                 Status = VL53L0X_SetLimitCheckEnable(pMyDevice, 3, 1);
+[e = _Status ( _VL53L0X_SetLimitCheckEnable (3 , , _pMyDevice -> -> 3 `i `us -> -> 1 `i `uc ]
+"2760
+[; ;vl53_st_main.c: 2760:             }
+}
+[e :U 1020 ]
+"2761
+[; ;vl53_st_main.c: 2761:         }
+}
+[e :U 1019 ]
+"2770
+[; ;vl53_st_main.c: 2770:         switch(sel){
+[e $U 1022  ]
+{
+"2771
+[; ;vl53_st_main.c: 2771:         case RASING_MODE_SINGLE:
+[e :U 1023 ]
+"2772
+[; ;vl53_st_main.c: 2772:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1024  ]
+{
+"2773
+[; ;vl53_st_main.c: 2773:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 3, (FixPoint1616_t)(1.5*0.023*65536));
+[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 3 `i `us -> * * .1.5 .0.023 -> -> 65536 `l `d `ul ]
+"2774
+[; ;vl53_st_main.c: 2774:             }
+}
+[e :U 1024 ]
+"2775
+[; ;vl53_st_main.c: 2775:              break;
+[e $U 1021  ]
+"2776
+[; ;vl53_st_main.c: 2776:         case RASING_MODE_SINGLE_HA:
+[e :U 1025 ]
+"2777
+[; ;vl53_st_main.c: 2777:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1026  ]
+{
+"2778
+[; ;vl53_st_main.c: 2778:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 1, (FixPoint1616_t)(0.25*65536));
+[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 1 `i `us -> * .0.25 -> -> 65536 `l `d `ul ]
+"2779
+[; ;vl53_st_main.c: 2779:             }
+}
+[e :U 1026 ]
+"2780
+[; ;vl53_st_main.c: 2780:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1027  ]
+{
+"2781
+[; ;vl53_st_main.c: 2781:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 0, (FixPoint1616_t)(18*65536));
+[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 0 `i `us -> * -> -> 18 `i `l -> 65536 `l `ul ]
+"2782
+[; ;vl53_st_main.c: 2782:             }
+}
+[e :U 1027 ]
+"2783
+[; ;vl53_st_main.c: 2783:             break;
+[e $U 1021  ]
+"2784
+[; ;vl53_st_main.c: 2784:         case RASING_MODE_SINGLE_HS:
+[e :U 1028 ]
+"2785
+[; ;vl53_st_main.c: 2785:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1029  ]
+{
+"2786
+[; ;vl53_st_main.c: 2786:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 1, (FixPoint1616_t)(0.25*65536));
+[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 1 `i `us -> * .0.25 -> -> 65536 `l `d `ul ]
+"2787
+[; ;vl53_st_main.c: 2787:             }
+}
+[e :U 1029 ]
+"2788
+[; ;vl53_st_main.c: 2788:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1030  ]
+{
+"2789
+[; ;vl53_st_main.c: 2789:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 0, (FixPoint1616_t)(32*65536));
+[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 0 `i `us -> * -> -> 32 `i `l -> 65536 `l `ul ]
+"2790
+[; ;vl53_st_main.c: 2790:             }
+}
+[e :U 1030 ]
+"2792
+[; ;vl53_st_main.c: 2792:             break;
+[e $U 1021  ]
+"2793
+[; ;vl53_st_main.c: 2793:         case RASING_MODE_SINGLE_LR:
+[e :U 1031 ]
+"2794
+[; ;vl53_st_main.c: 2794:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1032  ]
+{
+"2795
+[; ;vl53_st_main.c: 2795:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 1, (FixPoint1616_t)(0.1*65536));
+[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 1 `i `us -> * .0.1 -> -> 65536 `l `d `ul ]
+"2796
+[; ;vl53_st_main.c: 2796:             }
+}
+[e :U 1032 ]
+"2797
+[; ;vl53_st_main.c: 2797:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1033  ]
+{
+"2798
+[; ;vl53_st_main.c: 2798:                 Status = VL53L0X_SetLimitCheckValue(pMyDevice, 0, (FixPoint1616_t)(60*65536));
+[e = _Status ( _VL53L0X_SetLimitCheckValue (3 , , _pMyDevice -> -> 0 `i `us -> * -> -> 60 `i `l -> 65536 `l `ul ]
+"2799
+[; ;vl53_st_main.c: 2799:             }
 }
 [e :U 1033 ]
-"2082
-[; ;vl53_st_main.c: 2082:     pMyDevice->I2cDevAddr = 0x52;
-[e = . *U _pMyDevice 1 -> -> 82 `i `uc ]
-"2088
-[; ;vl53_st_main.c: 2088:     if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1034  ]
-{
-"2089
-[; ;vl53_st_main.c: 2089:         status_int = VL53L0X_GetVersion(pVersion);
-[e = _status_int -> ( _VL53L0X_GetVersion (1 _pVersion `l ]
-"2090
-[; ;vl53_st_main.c: 2090:         if (status_int != 0){
-[e $ ! != _status_int -> -> 0 `i `l 1035  ]
-{
-"2091
-[; ;vl53_st_main.c: 2091:             Status = ((VL53L0X_Error) - 20);
-[e = _Status -> -U -> 20 `i `c ]
-"2092
-[; ;vl53_st_main.c: 2092:         }
-}
-[e $U 1036  ]
-"2093
-[; ;vl53_st_main.c: 2093:         else{
-[e :U 1035 ]
-{
-"2095
-[; ;vl53_st_main.c: 2095:             if( pVersion->major != 1 ||
-[e $ ! || || != -> . *U _pVersion 1 `i -> 1 `i != -> . *U _pVersion 2 `i -> 0 `i != -> . *U _pVersion 3 `i -> 4 `i 1037  ]
-"2098
-[; ;vl53_st_main.c: 2098:             {
-{
-"2099
-[; ;vl53_st_main.c: 2099:                 printf("VL53L0X API Version Error: Your firmware has %d.%d.%d (revision %d). This example requires %d.%d.%d.\n",
-[e ( _printf , , , , , , , (. :s 24C -> . *U _pVersion 1 `i -> . *U _pVersion 2 `i -> . *U _pVersion 3 `i . *U _pVersion 0 -> 1 `i -> 0 `i -> 4 `i ]
-"2102
-[; ;vl53_st_main.c: 2102:             }
-}
-[e :U 1037 ]
-"2103
-[; ;vl53_st_main.c: 2103:         }
-}
-[e :U 1036 ]
-"2104
-[; ;vl53_st_main.c: 2104:     }
-}
+"2801
+[; ;vl53_st_main.c: 2801:             break;
+[e $U 1021  ]
+"2802
+[; ;vl53_st_main.c: 2802:         default:
 [e :U 1034 ]
-"2121
-[; ;vl53_st_main.c: 2121:     if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1038  ]
-{
-"2122
-[; ;vl53_st_main.c: 2122:         printf ("Call of VL53L0X_DataInit\r\n");
-[e ( _printf :s 25C ]
-"2123
-[; ;vl53_st_main.c: 2123:         Status = VL53L0X_DataInit(&MyDevice);
-[e = _Status ( _VL53L0X_DataInit (1 &U _MyDevice ]
-"2124
-[; ;vl53_st_main.c: 2124:         print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"2125
-[; ;vl53_st_main.c: 2125:     }
+"2803
+[; ;vl53_st_main.c: 2803:             break;
+[e $U 1021  ]
+"2804
+[; ;vl53_st_main.c: 2804:         }
 }
+[e $U 1021  ]
+[e :U 1022 ]
+[e [\ -> _sel `ui , $ -> . `E7137 0 `ui 1023
+ , $ -> . `E7137 1 `ui 1025
+ , $ -> . `E7137 2 `ui 1028
+ , $ -> . `E7137 3 `ui 1031
+ 1034 ]
+[e :U 1021 ]
+"2813
+[; ;vl53_st_main.c: 2813:         switch(sel){
+[e $U 1036  ]
+{
+"2814
+[; ;vl53_st_main.c: 2814:         case RASING_MODE_SINGLE:
+[e :U 1037 ]
+"2815
+[; ;vl53_st_main.c: 2815:              break;
+[e $U 1035  ]
+"2816
+[; ;vl53_st_main.c: 2816:         case RASING_MODE_SINGLE_HA:
 [e :U 1038 ]
-"2127
-[; ;vl53_st_main.c: 2127:     if(Status == ((VL53L0X_Error) 0)){
+"2817
+[; ;vl53_st_main.c: 2817:             if (Status == ((VL53L0X_Error) 0)) {
 [e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1039  ]
 {
-"2128
-[; ;vl53_st_main.c: 2128:         Status = VL53L0X_GetDeviceInfo(&MyDevice, &DeviceInfo);
-[e = _Status ( _VL53L0X_GetDeviceInfo (2 , &U _MyDevice &U _DeviceInfo ]
-"2130
-[; ;vl53_st_main.c: 2130:         if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1040  ]
-{
-"2131
-[; ;vl53_st_main.c: 2131:             printf("VL53L0X_GetDeviceInfo:\r\n");
-[e ( _printf :s 26C ]
-"2132
-[; ;vl53_st_main.c: 2132:             printf("Device Name : %s\r\n", DeviceInfo.Name);
-[e ( _printf , (. :s 27C &U . _DeviceInfo 0 ]
-"2133
-[; ;vl53_st_main.c: 2133:             printf("Device Type : %s\r\n", DeviceInfo.Type);
-[e ( _printf , (. :s 28C &U . _DeviceInfo 1 ]
-"2134
-[; ;vl53_st_main.c: 2134:             printf("Device ID : %s\r\n", DeviceInfo.ProductId);
-[e ( _printf , (. :s 29C &U . _DeviceInfo 2 ]
-"2135
-[; ;vl53_st_main.c: 2135:             printf("ProductRevisionMajor : %d\r\n", DeviceInfo.ProductRevisionMajor);
-[e ( _printf , (. :s 30C -> . _DeviceInfo 4 `i ]
-"2136
-[; ;vl53_st_main.c: 2136:             printf("ProductRevisionMinor : %d\r\n", DeviceInfo.ProductRevisionMinor);
-[e ( _printf , (. :s 31C -> . _DeviceInfo 5 `i ]
-"2138
-[; ;vl53_st_main.c: 2138:             if ((DeviceInfo.ProductRevisionMinor != 1) && (DeviceInfo.ProductRevisionMinor != 1)) {
-[e $ ! && != -> . _DeviceInfo 5 `i -> 1 `i != -> . _DeviceInfo 5 `i -> 1 `i 1041  ]
-{
-"2139
-[; ;vl53_st_main.c: 2139:              printf("Error expected cut 1.1 but found cut %d.%d\r\n",DeviceInfo.ProductRevisionMajor, DeviceInfo.ProductRevisionMinor);
-[e ( _printf , , (. :s 32C -> . _DeviceInfo 4 `i -> . _DeviceInfo 5 `i ]
-"2140
-[; ;vl53_st_main.c: 2140:                 Status = ((VL53L0X_Error) - 5);
-[e = _Status -> -U -> 5 `i `c ]
-"2141
-[; ;vl53_st_main.c: 2141:             }
-}
-[e :U 1041 ]
-"2142
-[; ;vl53_st_main.c: 2142:         }
-}
-[e :U 1040 ]
-"2143
-[; ;vl53_st_main.c: 2143:         print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"2144
-[; ;vl53_st_main.c: 2144:     }
+"2818
+[; ;vl53_st_main.c: 2818:                 Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 200000);
+[e = _Status ( _VL53L0X_SetMeasurementTimingBudgetMicroSeconds (2 , _pMyDevice -> -> 200000 `l `ul ]
+"2819
+[; ;vl53_st_main.c: 2819:             }
 }
 [e :U 1039 ]
-"2146
-[; ;vl53_st_main.c: 2146:     if(Status == ((VL53L0X_Error) 0)){
-[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1042  ]
+"2820
+[; ;vl53_st_main.c: 2820:             break;
+[e $U 1035  ]
+"2821
+[; ;vl53_st_main.c: 2821:         case RASING_MODE_SINGLE_HS:
+[e :U 1040 ]
+"2822
+[; ;vl53_st_main.c: 2822:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1041  ]
 {
-"2147
-[; ;vl53_st_main.c: 2147:         Status = SK_RangingTest( pMyDevice,sel);
-[e = _Status ( _SK_RangingTest (2 , _pMyDevice _sel ]
-"2148
-[; ;vl53_st_main.c: 2148:     }
+"2823
+[; ;vl53_st_main.c: 2823:                 Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 30000);
+[e = _Status ( _VL53L0X_SetMeasurementTimingBudgetMicroSeconds (2 , _pMyDevice -> -> -> 30000 `i `l `ul ]
+"2824
+[; ;vl53_st_main.c: 2824:             }
 }
+[e :U 1041 ]
+"2825
+[; ;vl53_st_main.c: 2825:             break;
+[e $U 1035  ]
+"2826
+[; ;vl53_st_main.c: 2826:        case RASING_MODE_SINGLE_LR:
 [e :U 1042 ]
-"2150
-[; ;vl53_st_main.c: 2150:     print_pal_error(Status);
-[e ( _print_pal_error (1 _Status ]
-"2151
-[; ;vl53_st_main.c: 2151: }
-[e :UE 1031 ]
+"2827
+[; ;vl53_st_main.c: 2827:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1043  ]
+{
+"2828
+[; ;vl53_st_main.c: 2828:                 Status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(pMyDevice, 33000);
+[e = _Status ( _VL53L0X_SetMeasurementTimingBudgetMicroSeconds (2 , _pMyDevice -> -> 33000 `l `ul ]
+"2829
+[; ;vl53_st_main.c: 2829:             }
 }
-"2156
-[; ;vl53_st_main.c: 2156: void vl53data_disp(void)
+[e :U 1043 ]
+"2830
+[; ;vl53_st_main.c: 2830:             break;
+[e $U 1035  ]
+"2831
+[; ;vl53_st_main.c: 2831:         default:
+[e :U 1044 ]
+"2832
+[; ;vl53_st_main.c: 2832:             break;
+[e $U 1035  ]
+"2833
+[; ;vl53_st_main.c: 2833:         }
+}
+[e $U 1035  ]
+[e :U 1036 ]
+[e [\ -> _sel `ui , $ -> . `E7137 0 `ui 1037
+ , $ -> . `E7137 1 `ui 1038
+ , $ -> . `E7137 2 `ui 1040
+ , $ -> . `E7137 3 `ui 1042
+ 1044 ]
+[e :U 1035 ]
+"2841
+[; ;vl53_st_main.c: 2841:         switch(sel){
+[e $U 1046  ]
+{
+"2842
+[; ;vl53_st_main.c: 2842:         case RASING_MODE_SINGLE:
+[e :U 1047 ]
+"2843
+[; ;vl53_st_main.c: 2843:              break;
+[e $U 1045  ]
+"2844
+[; ;vl53_st_main.c: 2844:         case RASING_MODE_SINGLE_HA:
+[e :U 1048 ]
+"2845
+[; ;vl53_st_main.c: 2845:             break;
+[e $U 1045  ]
+"2846
+[; ;vl53_st_main.c: 2846:         case RASING_MODE_SINGLE_HS:
+[e :U 1049 ]
+"2847
+[; ;vl53_st_main.c: 2847:             break;
+[e $U 1045  ]
+"2848
+[; ;vl53_st_main.c: 2848:        case RASING_MODE_SINGLE_LR:
+[e :U 1050 ]
+"2849
+[; ;vl53_st_main.c: 2849:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1051  ]
+{
+"2850
+[; ;vl53_st_main.c: 2850:                 Status = VL53L0X_SetVcselPulsePeriod(pMyDevice, ((VL53L0X_VcselPeriod) 0), 18);
+[e = _Status ( _VL53L0X_SetVcselPulsePeriod (3 , , _pMyDevice -> -> 0 `i `uc -> -> 18 `i `uc ]
+"2851
+[; ;vl53_st_main.c: 2851:             }
+}
+[e :U 1051 ]
+"2852
+[; ;vl53_st_main.c: 2852:             if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1052  ]
+{
+"2853
+[; ;vl53_st_main.c: 2853:                 Status = VL53L0X_SetVcselPulsePeriod(pMyDevice, ((VL53L0X_VcselPeriod) 1), 14);
+[e = _Status ( _VL53L0X_SetVcselPulsePeriod (3 , , _pMyDevice -> -> 1 `i `uc -> -> 14 `i `uc ]
+"2854
+[; ;vl53_st_main.c: 2854:             }
+}
+[e :U 1052 ]
+"2855
+[; ;vl53_st_main.c: 2855:             break;
+[e $U 1045  ]
+"2856
+[; ;vl53_st_main.c: 2856:         default:
+[e :U 1053 ]
+"2857
+[; ;vl53_st_main.c: 2857:             break;
+[e $U 1045  ]
+"2858
+[; ;vl53_st_main.c: 2858:         }
+}
+[e $U 1045  ]
+[e :U 1046 ]
+[e [\ -> _sel `ui , $ -> . `E7137 0 `ui 1047
+ , $ -> . `E7137 1 `ui 1048
+ , $ -> . `E7137 2 `ui 1049
+ , $ -> . `E7137 3 `ui 1050
+ 1053 ]
+[e :U 1045 ]
+"2860
+[; ;vl53_st_main.c: 2860:     }
+}
+[e :U 1016 ]
+"2862
+[; ;vl53_st_main.c: 2862:     if (Status == ((VL53L0X_Error) 0)) {
+[e $ ! == -> _Status `i -> -> -> 0 `i `c `i 1054  ]
+{
+"2863
+[; ;vl53_st_main.c: 2863:         vl53handle.state = VL53_STATE_MESURRING_INIT;
+[e = . _vl53handle 0 . `E7145 1 ]
+"2864
+[; ;vl53_st_main.c: 2864:     }
+}
+[e $U 1055  ]
+"2865
+[; ;vl53_st_main.c: 2865:     else{
+[e :U 1054 ]
+{
+"2866
+[; ;vl53_st_main.c: 2866:         vl53handle.state = VL53_STATE_INIT_ERROR;
+[e = . _vl53handle 0 . `E7145 2 ]
+"2867
+[; ;vl53_st_main.c: 2867:     }
+}
+[e :U 1055 ]
+"2871
+[; ;vl53_st_main.c: 2871:     print_pal_error(Status);
+[e ( _print_pal_error (1 _Status ]
+"2872
+[; ;vl53_st_main.c: 2872: }
+[e :UE 995 ]
+}
+"2876
+[; ;vl53_st_main.c: 2876: void vl53data_disp(void)
 [v _vl53data_disp `(v ~T0 @X0 1 ef ]
-"2157
-[; ;vl53_st_main.c: 2157: {
+"2877
+[; ;vl53_st_main.c: 2877: {
 {
 [e :U _vl53data_disp ]
 [f ]
-"2158
-[; ;vl53_st_main.c: 2158:     int i;
+"2878
+[; ;vl53_st_main.c: 2878:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"2160
-[; ;vl53_st_main.c: 2160:     printf("Part2PartOffsetNVMMicroMeter = %d\r\n", MyDevice.Data.Part2PartOffsetNVMMicroMeter );
-[e ( _printf , (. :s 33C . . _MyDevice 0 0 ]
-"2161
-[; ;vl53_st_main.c: 2161:     printf("Part2PartOffsetAdjustmentNVMMicroMeter = %d\r\n", MyDevice.Data.Part2PartOffsetAdjustmentNVMMicroMeter );
-[e ( _printf , (. :s 34C . . _MyDevice 0 1 ]
-"2162
-[; ;vl53_st_main.c: 2162:     printf("VL53L0X_DeviceParameters_t\r\n");
-[e ( _printf :s 35C ]
-"2163
-[; ;vl53_st_main.c: 2163:     printf("  DeviceMode = 0x%x\r\n", MyDevice.Data.CurrentParameters.DeviceMode );
-[e ( _printf , (. :s 36C -> . . . _MyDevice 0 2 0 `i ]
-"2164
-[; ;vl53_st_main.c: 2164:     printf("  HistogramMode = 0x%x\r\n", MyDevice.Data.CurrentParameters.HistogramMode );
-[e ( _printf , (. :s 37C -> . . . _MyDevice 0 2 1 `i ]
-"2165
-[; ;vl53_st_main.c: 2165:     printf("  MeasurementTimingBudgetMicroSeconds = 0x%u\r\n", MyDevice.Data.CurrentParameters.MeasurementTimingBudgetMicroSeconds );
-[e ( _printf , (. :s 38C . . . _MyDevice 0 2 2 ]
-"2166
-[; ;vl53_st_main.c: 2166:     printf("  InterMeasurementPeriodMilliSeconds = 0x%u\r\n", MyDevice.Data.CurrentParameters.InterMeasurementPeriodMilliSeconds );
-[e ( _printf , (. :s 39C . . . _MyDevice 0 2 3 ]
-"2167
-[; ;vl53_st_main.c: 2167:     printf("  XTalkCompensationEnable = 0x%x\r\n", MyDevice.Data.CurrentParameters.XTalkCompensationEnable );
-[e ( _printf , (. :s 40C -> . . . _MyDevice 0 2 4 `i ]
-"2168
-[; ;vl53_st_main.c: 2168:     printf("  XTalkCompensationRangeMilliMeter = 0x%x\r\n", MyDevice.Data.CurrentParameters.XTalkCompensationRangeMilliMeter );
-[e ( _printf , (. :s 41C -> . . . _MyDevice 0 2 5 `ui ]
-"2169
-[; ;vl53_st_main.c: 2169:     printf("  XTalkCompensationRateMegaCps = 0x%u\r\n", MyDevice.Data.CurrentParameters.XTalkCompensationRateMegaCps );
-[e ( _printf , (. :s 42C . . . _MyDevice 0 2 6 ]
-"2170
-[; ;vl53_st_main.c: 2170:     printf("  RangeOffsetMicroMeters = %d\r\n", MyDevice.Data.CurrentParameters.RangeOffsetMicroMeters );
-[e ( _printf , (. :s 43C . . . _MyDevice 0 2 7 ]
-"2173
-[; ;vl53_st_main.c: 2173:     printf("  LimitChecksEnable[] = ");
-[e ( _printf :s 44C ]
-"2174
-[; ;vl53_st_main.c: 2174:     for(i=0; i<6; i++){
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 1044  ]
-[e $U 1045  ]
-[e :U 1044 ]
-{
-"2175
-[; ;vl53_st_main.c: 2175:         printf("0x%02x,", MyDevice.Data.CurrentParameters.LimitChecksEnable[i] );
-[e ( _printf , (. :s 45C -> *U + &U . . . _MyDevice 0 2 8 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 2 8 `ui `ux `i ]
-"2176
-[; ;vl53_st_main.c: 2176:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 1044  ]
-[e :U 1045 ]
-}
-"2177
-[; ;vl53_st_main.c: 2177:     printf("\r\n");
-[e ( _printf :s 46C ]
-"2181
-[; ;vl53_st_main.c: 2181:     printf("  LimitChecksStatus[] = ");
-[e ( _printf :s 47C ]
-"2182
-[; ;vl53_st_main.c: 2182:     for(i=0; i<6; i++){
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 1047  ]
-[e $U 1048  ]
-[e :U 1047 ]
-{
-"2183
-[; ;vl53_st_main.c: 2183:         printf("0x%02x,", MyDevice.Data.CurrentParameters.LimitChecksStatus[i] );
-[e ( _printf , (. :s 48C -> *U + &U . . . _MyDevice 0 2 9 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 2 9 `ui `ux `i ]
-"2184
-[; ;vl53_st_main.c: 2184:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 1047  ]
-[e :U 1048 ]
-}
-"2185
-[; ;vl53_st_main.c: 2185:     printf("\r\n");
-[e ( _printf :s 49C ]
-"2188
-[; ;vl53_st_main.c: 2188:     printf("  LimitChecksValue[] = ");
-[e ( _printf :s 50C ]
-"2189
-[; ;vl53_st_main.c: 2189:     for(i=0; i<6; i++){
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 1050  ]
-[e $U 1051  ]
-[e :U 1050 ]
-{
-"2190
-[; ;vl53_st_main.c: 2190:         printf("0x%u,", MyDevice.Data.CurrentParameters.LimitChecksValue[i] );
-[e ( _printf , (. :s 51C *U + &U . . . _MyDevice 0 2 10 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 2 10 `ui `ux ]
-"2191
-[; ;vl53_st_main.c: 2191:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 1050  ]
-[e :U 1051 ]
-}
-"2192
-[; ;vl53_st_main.c: 2192:     printf("\r\n");
+"2880
+[; ;vl53_st_main.c: 2880:     printf("Part2PartOffsetNVMMicroMeter = %d\r\n", MyDevice.Data.Part2PartOffsetNVMMicroMeter );
+[e ( _printf , (. :s 41C . . _MyDevice 0 0 ]
+"2881
+[; ;vl53_st_main.c: 2881:     printf("Part2PartOffsetAdjustmentNVMMicroMeter = %d\r\n", MyDevice.Data.Part2PartOffsetAdjustmentNVMMicroMeter );
+[e ( _printf , (. :s 42C . . _MyDevice 0 1 ]
+"2882
+[; ;vl53_st_main.c: 2882:     printf("VL53L0X_DeviceParameters_t\r\n");
+[e ( _printf :s 43C ]
+"2883
+[; ;vl53_st_main.c: 2883:     printf("  DeviceMode = 0x%x\r\n", MyDevice.Data.CurrentParameters.DeviceMode );
+[e ( _printf , (. :s 44C -> . . . _MyDevice 0 2 0 `i ]
+"2884
+[; ;vl53_st_main.c: 2884:     printf("  HistogramMode = 0x%x\r\n", MyDevice.Data.CurrentParameters.HistogramMode );
+[e ( _printf , (. :s 45C -> . . . _MyDevice 0 2 1 `i ]
+"2885
+[; ;vl53_st_main.c: 2885:     printf("  MeasurementTimingBudgetMicroSeconds = 0x%u\r\n", MyDevice.Data.CurrentParameters.MeasurementTimingBudgetMicroSeconds );
+[e ( _printf , (. :s 46C . . . _MyDevice 0 2 2 ]
+"2886
+[; ;vl53_st_main.c: 2886:     printf("  InterMeasurementPeriodMilliSeconds = 0x%u\r\n", MyDevice.Data.CurrentParameters.InterMeasurementPeriodMilliSeconds );
+[e ( _printf , (. :s 47C . . . _MyDevice 0 2 3 ]
+"2887
+[; ;vl53_st_main.c: 2887:     printf("  XTalkCompensationEnable = 0x%x\r\n", MyDevice.Data.CurrentParameters.XTalkCompensationEnable );
+[e ( _printf , (. :s 48C -> . . . _MyDevice 0 2 4 `i ]
+"2888
+[; ;vl53_st_main.c: 2888:     printf("  XTalkCompensationRangeMilliMeter = 0x%x\r\n", MyDevice.Data.CurrentParameters.XTalkCompensationRangeMilliMeter );
+[e ( _printf , (. :s 49C -> . . . _MyDevice 0 2 5 `ui ]
+"2889
+[; ;vl53_st_main.c: 2889:     printf("  XTalkCompensationRateMegaCps = 0x%u\r\n", MyDevice.Data.CurrentParameters.XTalkCompensationRateMegaCps );
+[e ( _printf , (. :s 50C . . . _MyDevice 0 2 6 ]
+"2890
+[; ;vl53_st_main.c: 2890:     printf("  RangeOffsetMicroMeters = %d\r\n", MyDevice.Data.CurrentParameters.RangeOffsetMicroMeters );
+[e ( _printf , (. :s 51C . . . _MyDevice 0 2 7 ]
+"2893
+[; ;vl53_st_main.c: 2893:     printf("  LimitChecksEnable[] = ");
 [e ( _printf :s 52C ]
-"2196
-[; ;vl53_st_main.c: 2196:     printf("  ambRate_mcps[] = ");
-[e ( _printf :s 53C ]
-"2197
-[; ;vl53_st_main.c: 2197:     for(i=0; i<7; i++){
+"2894
+[; ;vl53_st_main.c: 2894:     for(i=0; i<6; i++){
 {
 [e = _i -> 0 `i ]
-[e $ < _i -> 7 `i 1053  ]
-[e $U 1054  ]
-[e :U 1053 ]
-{
-"2198
-[; ;vl53_st_main.c: 2198:         printf("0x%u,", MyDevice.Data.CurrentParameters.dmax_lut.ambRate_mcps[i] );
-[e ( _printf , (. :s 54C *U + &U . . . . _MyDevice 0 2 11 0 * -> -> _i `ui `ux -> -> # *U &U . . . . _MyDevice 0 2 11 0 `ui `ux ]
-"2199
-[; ;vl53_st_main.c: 2199:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 7 `i 1053  ]
-[e :U 1054 ]
-}
-"2200
-[; ;vl53_st_main.c: 2200:     printf("\r\n");
-[e ( _printf :s 55C ]
-"2203
-[; ;vl53_st_main.c: 2203:     printf("  dmax_mm[] = ");
-[e ( _printf :s 56C ]
-"2204
-[; ;vl53_st_main.c: 2204:     for(i=0; i<7; i++){
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 7 `i 1056  ]
-[e $U 1057  ]
-[e :U 1056 ]
-{
-"2205
-[; ;vl53_st_main.c: 2205:         printf("0x%u,", MyDevice.Data.CurrentParameters.dmax_lut.dmax_mm[i] );
-[e ( _printf , (. :s 57C *U + &U . . . . _MyDevice 0 2 11 1 * -> -> _i `ui `ux -> -> # *U &U . . . . _MyDevice 0 2 11 1 `ui `ux ]
-"2206
-[; ;vl53_st_main.c: 2206:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 7 `i 1056  ]
+[e $ < _i -> 6 `i 1057  ]
+[e $U 1058  ]
 [e :U 1057 ]
-}
-"2207
-[; ;vl53_st_main.c: 2207:     printf("\r\n");
-[e ( _printf :s 58C ]
-"2209
-[; ;vl53_st_main.c: 2209:     printf("  WrapAroundCheckEnable = 0x%x\r\n", MyDevice.Data.CurrentParameters.WrapAroundCheckEnable );
-[e ( _printf , (. :s 59C -> . . . _MyDevice 0 2 12 `i ]
-"2210
-[; ;vl53_st_main.c: 2210:     printf("VL53L0X_RangingMeasurementData_t\r\n");
-[e ( _printf :s 60C ]
-"2211
-[; ;vl53_st_main.c: 2211:     printf("  TimeStamp = 0x%u\r\n", MyDevice.Data.LastRangeMeasure.TimeStamp );
-[e ( _printf , (. :s 61C . . . _MyDevice 0 3 0 ]
-"2212
-[; ;vl53_st_main.c: 2212:     printf("  MeasurementTimeUsec = 0x%u\r\n", MyDevice.Data.LastRangeMeasure.MeasurementTimeUsec );
-[e ( _printf , (. :s 62C . . . _MyDevice 0 3 1 ]
-"2213
-[; ;vl53_st_main.c: 2213:     printf("  RangeMilliMeter = %d mm\r\n", MyDevice.Data.LastRangeMeasure.RangeMilliMeter );
-[e ( _printf , (. :s 63C -> . . . _MyDevice 0 3 2 `ui ]
-"2214
-[; ;vl53_st_main.c: 2214:     printf("  RangeDMaxMilliMeter = %d mm\r\n", MyDevice.Data.LastRangeMeasure.RangeDMaxMilliMeter );
-[e ( _printf , (. :s 64C -> . . . _MyDevice 0 3 3 `ui ]
-"2215
-[; ;vl53_st_main.c: 2215:     printf("  SignalRateRtnMegaCps = %d\r\n", MyDevice.Data.LastRangeMeasure.SignalRateRtnMegaCps );
-[e ( _printf , (. :s 65C . . . _MyDevice 0 3 4 ]
-"2216
-[; ;vl53_st_main.c: 2216:     printf("  AmbientRateRtnMegaCps = %d\r\n", MyDevice.Data.LastRangeMeasure.AmbientRateRtnMegaCps );
-[e ( _printf , (. :s 66C . . . _MyDevice 0 3 5 ]
-"2217
-[; ;vl53_st_main.c: 2217:     printf("  EffectiveSpadRtnCount = %d\r\n", MyDevice.Data.LastRangeMeasure.EffectiveSpadRtnCount );
-[e ( _printf , (. :s 67C -> . . . _MyDevice 0 3 6 `ui ]
-"2218
-[; ;vl53_st_main.c: 2218:     printf("  ZoneId = 0x%x\r\n", MyDevice.Data.LastRangeMeasure.ZoneId );
-[e ( _printf , (. :s 68C -> . . . _MyDevice 0 3 7 `i ]
-"2219
-[; ;vl53_st_main.c: 2219:     printf("  RangeFractionalPart = 0x%x\r\n", MyDevice.Data.LastRangeMeasure.RangeFractionalPart );
-[e ( _printf , (. :s 69C -> . . . _MyDevice 0 3 8 `i ]
-"2220
-[; ;vl53_st_main.c: 2220:     printf("  RangeStatus = 0x%x\r\n", MyDevice.Data.LastRangeMeasure.RangeStatus );
-[e ( _printf , (. :s 70C -> . . . _MyDevice 0 3 9 `i ]
-"2222
-[; ;vl53_st_main.c: 2222:     printf("VL53L0X_HistogramMeasurementData_t\r\n");
-[e ( _printf :s 71C ]
-"2224
-[; ;vl53_st_main.c: 2224:     printf("  HistogramData[] = ");
-[e ( _printf :s 72C ]
-"2225
-[; ;vl53_st_main.c: 2225:     for(i=0; i<24; i++){
 {
-[e = _i -> 0 `i ]
-[e $ < _i -> 24 `i 1059  ]
-[e $U 1060  ]
-[e :U 1059 ]
-{
-"2226
-[; ;vl53_st_main.c: 2226:         printf("0x%u,", MyDevice.Data.LastHistogramMeasure.HistogramData[i] );
-[e ( _printf , (. :s 73C *U + &U . . . _MyDevice 0 4 0 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 4 0 `ui `ux ]
-"2227
-[; ;vl53_st_main.c: 2227:         switch(i){
-[e $U 1063  ]
-{
-"2228
-[; ;vl53_st_main.c: 2228:             case 7:
-[e :U 1064 ]
-"2229
-[; ;vl53_st_main.c: 2229:             case 15:
-[e :U 1065 ]
-"2230
-[; ;vl53_st_main.c: 2230:             case 23:
-[e :U 1066 ]
-"2231
-[; ;vl53_st_main.c: 2231:                 printf("\r\n");
-[e ( _printf :s 74C ]
-"2232
-[; ;vl53_st_main.c: 2232:                 printf("                  = ");
-[e ( _printf :s 75C ]
-"2233
-[; ;vl53_st_main.c: 2233:                 break;
-[e $U 1062  ]
-"2234
-[; ;vl53_st_main.c: 2234:         }
-}
-[e $U 1062  ]
-[e :U 1063 ]
-[e [\ _i , $ -> 7 `i 1064
- , $ -> 15 `i 1065
- , $ -> 23 `i 1066
- 1062 ]
-[e :U 1062 ]
-"2235
-[; ;vl53_st_main.c: 2235:     }
+"2895
+[; ;vl53_st_main.c: 2895:         printf("0x%02x,", MyDevice.Data.CurrentParameters.LimitChecksEnable[i] );
+[e ( _printf , (. :s 53C -> *U + &U . . . _MyDevice 0 2 8 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 2 8 `ui `ux `i ]
+"2896
+[; ;vl53_st_main.c: 2896:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 24 `i 1059  ]
+[e $ < _i -> 6 `i 1057  ]
+[e :U 1058 ]
+}
+"2897
+[; ;vl53_st_main.c: 2897:     printf("\r\n");
+[e ( _printf :s 54C ]
+"2901
+[; ;vl53_st_main.c: 2901:     printf("  LimitChecksStatus[] = ");
+[e ( _printf :s 55C ]
+"2902
+[; ;vl53_st_main.c: 2902:     for(i=0; i<6; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 6 `i 1060  ]
+[e $U 1061  ]
 [e :U 1060 ]
+{
+"2903
+[; ;vl53_st_main.c: 2903:         printf("0x%02x,", MyDevice.Data.CurrentParameters.LimitChecksStatus[i] );
+[e ( _printf , (. :s 56C -> *U + &U . . . _MyDevice 0 2 9 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 2 9 `ui `ux `i ]
+"2904
+[; ;vl53_st_main.c: 2904:     }
 }
-"2236
-[; ;vl53_st_main.c: 2236:     printf("\r\n");
-[e ( _printf :s 76C ]
-"2240
-[; ;vl53_st_main.c: 2240:     printf("  FirstBin = 0x%x\r\n", MyDevice.Data.LastHistogramMeasure.FirstBin );
-[e ( _printf , (. :s 77C -> . . . _MyDevice 0 4 1 `i ]
-"2241
-[; ;vl53_st_main.c: 2241:     printf("  BufferSize = 0x%x\r\n", MyDevice.Data.LastHistogramMeasure.BufferSize );
-[e ( _printf , (. :s 78C -> . . . _MyDevice 0 4 2 `i ]
-"2242
-[; ;vl53_st_main.c: 2242:     printf("  NumberOfBins = 0x%x\r\n", MyDevice.Data.LastHistogramMeasure.NumberOfBins );
-[e ( _printf , (. :s 79C -> . . . _MyDevice 0 4 3 `i ]
-"2243
-[; ;vl53_st_main.c: 2243:     printf("  ErrorStatus = 0x%x\r\n", MyDevice.Data.LastHistogramMeasure.ErrorStatus );
-[e ( _printf , (. :s 80C -> . . . _MyDevice 0 4 4 `i ]
-"2245
-[; ;vl53_st_main.c: 2245:     printf("VL53L0X_DeviceSpecificParameters_t\r\n");
-[e ( _printf :s 81C ]
-"2246
-[; ;vl53_st_main.c: 2246:     printf("  OscFrequencyMHz  = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.OscFrequencyMHz );
-[e ( _printf , (. :s 82C . . . _MyDevice 0 5 0 ]
-"2247
-[; ;vl53_st_main.c: 2247:     printf("  LastEncodedTimeout  = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.LastEncodedTimeout );
-[e ( _printf , (. :s 83C -> . . . _MyDevice 0 5 1 `ui ]
-"2248
-[; ;vl53_st_main.c: 2248:     printf("  Pin0GpioFunctionality = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.Pin0GpioFunctionality );
-[e ( _printf , (. :s 84C -> . . . _MyDevice 0 5 2 `i ]
-"2249
-[; ;vl53_st_main.c: 2249:     printf("  FinalRangeTimeoutMicroSecs = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.FinalRangeTimeoutMicroSecs );
-[e ( _printf , (. :s 85C . . . _MyDevice 0 5 3 ]
-"2250
-[; ;vl53_st_main.c: 2250:     printf("  FinalRangeVcselPulsePeriod = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.FinalRangeVcselPulsePeriod );
-[e ( _printf , (. :s 86C -> . . . _MyDevice 0 5 4 `i ]
-"2251
-[; ;vl53_st_main.c: 2251:     printf("  PreRangeTimeoutMicroSecs = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.PreRangeTimeoutMicroSecs );
-[e ( _printf , (. :s 87C . . . _MyDevice 0 5 5 ]
-"2252
-[; ;vl53_st_main.c: 2252:     printf("  PreRangeVcselPulsePeriod = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.PreRangeVcselPulsePeriod );
-[e ( _printf , (. :s 88C -> . . . _MyDevice 0 5 6 `i ]
-"2253
-[; ;vl53_st_main.c: 2253:     printf("  SigmaEstRefArray = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.SigmaEstRefArray );
-[e ( _printf , (. :s 89C -> . . . _MyDevice 0 5 7 `ui ]
-"2254
-[; ;vl53_st_main.c: 2254:     printf("  SigmaEstEffPulseWidth = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.SigmaEstEffPulseWidth );
-[e ( _printf , (. :s 90C -> . . . _MyDevice 0 5 8 `ui ]
-"2255
-[; ;vl53_st_main.c: 2255:     printf("  SigmaEstEffAmbWidth = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.SigmaEstEffAmbWidth );
-[e ( _printf , (. :s 91C -> . . . _MyDevice 0 5 9 `ui ]
-"2256
-[; ;vl53_st_main.c: 2256:     printf("  ReadDataFromDeviceDone = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.ReadDataFromDeviceDone );
-[e ( _printf , (. :s 92C -> . . . _MyDevice 0 5 10 `i ]
-"2257
-[; ;vl53_st_main.c: 2257:     printf("  ModuleId = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.ModuleId );
-[e ( _printf , (. :s 93C -> . . . _MyDevice 0 5 11 `i ]
-"2258
-[; ;vl53_st_main.c: 2258:     printf("  Revision = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.Revision );
-[e ( _printf , (. :s 94C -> . . . _MyDevice 0 5 12 `i ]
-"2259
-[; ;vl53_st_main.c: 2259:     printf("  ProductId[VL53L0X_MAX_STRING_LENGTH] = %s\r\n", &MyDevice.Data.DeviceSpecificParameters.ProductId[0] );
-[e ( _printf , (. :s 95C &U *U + &U . . . _MyDevice 0 5 13 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . . _MyDevice 0 5 13 `ui `ux ]
-"2260
-[; ;vl53_st_main.c: 2260:     printf("  ReferenceSpadCount = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.ReferenceSpadCount );
-[e ( _printf , (. :s 96C -> . . . _MyDevice 0 5 14 `i ]
-"2261
-[; ;vl53_st_main.c: 2261:     printf("  ReferenceSpadType = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.ReferenceSpadType );
-[e ( _printf , (. :s 97C -> . . . _MyDevice 0 5 15 `i ]
-"2262
-[; ;vl53_st_main.c: 2262:     printf("  RefSpadsInitialised = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.RefSpadsInitialised );
-[e ( _printf , (. :s 98C -> . . . _MyDevice 0 5 16 `i ]
-"2263
-[; ;vl53_st_main.c: 2263:     printf("  PartUIDUpper = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.PartUIDUpper );
-[e ( _printf , (. :s 99C . . . _MyDevice 0 5 17 ]
-"2264
-[; ;vl53_st_main.c: 2264:     printf("  PartUIDLower = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.PartUIDLower );
-[e ( _printf , (. :s 100C . . . _MyDevice 0 5 18 ]
-"2265
-[; ;vl53_st_main.c: 2265:     printf("  SignalRateMeasFixed400mm = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.SignalRateMeasFixed400mm );
-[e ( _printf , (. :s 101C . . . _MyDevice 0 5 19 ]
-"2267
-[; ;vl53_st_main.c: 2267:     printf("VL53L0X_SpadData_t\r\n");
-[e ( _printf :s 102C ]
-"2269
-[; ;vl53_st_main.c: 2269:     printf("  RefSpadEnables[] = ");
-[e ( _printf :s 103C ]
-"2270
-[; ;vl53_st_main.c: 2270:     for(i=0; i<6; i++){
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 6 `i 1060  ]
+[e :U 1061 ]
+}
+"2905
+[; ;vl53_st_main.c: 2905:     printf("\r\n");
+[e ( _printf :s 57C ]
+"2908
+[; ;vl53_st_main.c: 2908:     printf("  LimitChecksValue[] = ");
+[e ( _printf :s 58C ]
+"2909
+[; ;vl53_st_main.c: 2909:     for(i=0; i<6; i++){
 {
 [e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 1067  ]
-[e $U 1068  ]
+[e $ < _i -> 6 `i 1063  ]
+[e $U 1064  ]
+[e :U 1063 ]
+{
+"2910
+[; ;vl53_st_main.c: 2910:         printf("0x%u,", MyDevice.Data.CurrentParameters.LimitChecksValue[i] );
+[e ( _printf , (. :s 59C *U + &U . . . _MyDevice 0 2 10 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 2 10 `ui `ux ]
+"2911
+[; ;vl53_st_main.c: 2911:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 6 `i 1063  ]
+[e :U 1064 ]
+}
+"2912
+[; ;vl53_st_main.c: 2912:     printf("\r\n");
+[e ( _printf :s 60C ]
+"2916
+[; ;vl53_st_main.c: 2916:     printf("  ambRate_mcps[] = ");
+[e ( _printf :s 61C ]
+"2917
+[; ;vl53_st_main.c: 2917:     for(i=0; i<7; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 7 `i 1066  ]
+[e $U 1067  ]
+[e :U 1066 ]
+{
+"2918
+[; ;vl53_st_main.c: 2918:         printf("0x%u,", MyDevice.Data.CurrentParameters.dmax_lut.ambRate_mcps[i] );
+[e ( _printf , (. :s 62C *U + &U . . . . _MyDevice 0 2 11 0 * -> -> _i `ui `ux -> -> # *U &U . . . . _MyDevice 0 2 11 0 `ui `ux ]
+"2919
+[; ;vl53_st_main.c: 2919:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 7 `i 1066  ]
 [e :U 1067 ]
-{
-"2271
-[; ;vl53_st_main.c: 2271:         printf("0x%02x,", MyDevice.Data.SpadData.RefSpadEnables[i] );
-[e ( _printf , (. :s 104C -> *U + &U . . . _MyDevice 0 6 0 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 6 0 `ui `ux `i ]
-"2272
-[; ;vl53_st_main.c: 2272:     }
 }
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 1067  ]
-[e :U 1068 ]
-}
-"2273
-[; ;vl53_st_main.c: 2273:     printf("\r\n");
-[e ( _printf :s 105C ]
-"2277
-[; ;vl53_st_main.c: 2277:     printf("  RefGoodSpadMap[] = ");
-[e ( _printf :s 106C ]
-"2278
-[; ;vl53_st_main.c: 2278:     for(i=0; i<6; i++){
+"2920
+[; ;vl53_st_main.c: 2920:     printf("\r\n");
+[e ( _printf :s 63C ]
+"2923
+[; ;vl53_st_main.c: 2923:     printf("  dmax_mm[] = ");
+[e ( _printf :s 64C ]
+"2924
+[; ;vl53_st_main.c: 2924:     for(i=0; i<7; i++){
 {
 [e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 1070  ]
-[e $U 1071  ]
-[e :U 1070 ]
+[e $ < _i -> 7 `i 1069  ]
+[e $U 1070  ]
+[e :U 1069 ]
 {
-"2279
-[; ;vl53_st_main.c: 2279:         printf("0x%02x,", MyDevice.Data.SpadData.RefGoodSpadMap[i] );
-[e ( _printf , (. :s 107C -> *U + &U . . . _MyDevice 0 6 1 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 6 1 `ui `ux `i ]
-"2280
-[; ;vl53_st_main.c: 2280:     }
+"2925
+[; ;vl53_st_main.c: 2925:         printf("0x%u,", MyDevice.Data.CurrentParameters.dmax_lut.dmax_mm[i] );
+[e ( _printf , (. :s 65C *U + &U . . . . _MyDevice 0 2 11 1 * -> -> _i `ui `ux -> -> # *U &U . . . . _MyDevice 0 2 11 1 `ui `ux ]
+"2926
+[; ;vl53_st_main.c: 2926:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 1070  ]
-[e :U 1071 ]
+[e $ < _i -> 7 `i 1069  ]
+[e :U 1070 ]
 }
-"2281
-[; ;vl53_st_main.c: 2281:     printf("\r\n");
-[e ( _printf :s 108C ]
-"2284
-[; ;vl53_st_main.c: 2284:     printf("ETC.\r\n");
-[e ( _printf :s 109C ]
-"2285
-[; ;vl53_st_main.c: 2285:     printf("  SequenceConfig = 0x%x\r\n", MyDevice.Data.SequenceConfig );
-[e ( _printf , (. :s 110C -> . . _MyDevice 0 7 `i ]
-"2286
-[; ;vl53_st_main.c: 2286:     printf("  RangeFractionalEnable = 0x%x\r\n", MyDevice.Data.RangeFractionalEnable );
-[e ( _printf , (. :s 111C -> . . _MyDevice 0 8 `i ]
-"2287
-[; ;vl53_st_main.c: 2287:     printf("  PalState = 0x%x\r\n", MyDevice.Data.PalState );
-[e ( _printf , (. :s 112C -> . . _MyDevice 0 9 `i ]
-"2288
-[; ;vl53_st_main.c: 2288:     printf("  PowerMode = 0x%x\r\n", MyDevice.Data.PowerMode );
-[e ( _printf , (. :s 113C -> . . _MyDevice 0 10 `i ]
-"2289
-[; ;vl53_st_main.c: 2289:     printf("  SigmaEstRefArray = 0x%x\r\n", MyDevice.Data.SigmaEstRefArray );
-[e ( _printf , (. :s 114C -> . . _MyDevice 0 11 `ui ]
-"2290
-[; ;vl53_st_main.c: 2290:     printf("  SigmaEstEffPulseWidth = 0x%x\r\n", MyDevice.Data.SigmaEstEffPulseWidth );
-[e ( _printf , (. :s 115C -> . . _MyDevice 0 12 `ui ]
-"2291
-[; ;vl53_st_main.c: 2291:     printf("  SigmaEstEffAmbWidth = 0x%x\r\n", MyDevice.Data.SigmaEstEffAmbWidth );
-[e ( _printf , (. :s 116C -> . . _MyDevice 0 13 `ui ]
-"2292
-[; ;vl53_st_main.c: 2292:     printf("  StopVariable = 0x%x\r\n", MyDevice.Data.StopVariable );
-[e ( _printf , (. :s 117C -> . . _MyDevice 0 14 `i ]
-"2293
-[; ;vl53_st_main.c: 2293:     printf("  targetRefRate = 0x%x\r\n", MyDevice.Data.targetRefRate );
-[e ( _printf , (. :s 118C -> . . _MyDevice 0 15 `ui ]
-"2294
-[; ;vl53_st_main.c: 2294:     printf("  SigmaEstimate = 0x%u\r\n", MyDevice.Data.SigmaEstimate );
-[e ( _printf , (. :s 119C . . _MyDevice 0 16 ]
-"2295
-[; ;vl53_st_main.c: 2295:     printf("  SignalEstimate = 0x%u\r\n", MyDevice.Data.SignalEstimate );
-[e ( _printf , (. :s 120C . . _MyDevice 0 17 ]
-"2296
-[; ;vl53_st_main.c: 2296:     printf("  LastSignalRefMcps = 0x%u\r\n", MyDevice.Data.LastSignalRefMcps );
-[e ( _printf , (. :s 121C . . _MyDevice 0 18 ]
-"2298
-[; ;vl53_st_main.c: 2298:     printf("  UseInternalTuningSettings = 0x%x\r\n", MyDevice.Data.UseInternalTuningSettings );
-[e ( _printf , (. :s 122C -> . . _MyDevice 0 20 `i ]
-"2299
-[; ;vl53_st_main.c: 2299:     printf("  LinearityCorrectiveGain = 0x%x\r\n", MyDevice.Data.LinearityCorrectiveGain );
-[e ( _printf , (. :s 123C -> . . _MyDevice 0 21 `ui ]
-"2301
-[; ;vl53_st_main.c: 2301:     printf("  I2cDevAddr = 0x%x\r\n", MyDevice.I2cDevAddr );
-[e ( _printf , (. :s 124C -> . _MyDevice 1 `i ]
-"2302
-[; ;vl53_st_main.c: 2302: }
-[e :UE 1043 ]
+"2927
+[; ;vl53_st_main.c: 2927:     printf("\r\n");
+[e ( _printf :s 66C ]
+"2929
+[; ;vl53_st_main.c: 2929:     printf("  WrapAroundCheckEnable = 0x%x\r\n", MyDevice.Data.CurrentParameters.WrapAroundCheckEnable );
+[e ( _printf , (. :s 67C -> . . . _MyDevice 0 2 12 `i ]
+"2930
+[; ;vl53_st_main.c: 2930:     printf("VL53L0X_RangingMeasurementData_t\r\n");
+[e ( _printf :s 68C ]
+"2931
+[; ;vl53_st_main.c: 2931:     printf("  TimeStamp = 0x%u\r\n", MyDevice.Data.LastRangeMeasure.TimeStamp );
+[e ( _printf , (. :s 69C . . . _MyDevice 0 3 0 ]
+"2932
+[; ;vl53_st_main.c: 2932:     printf("  MeasurementTimeUsec = 0x%u\r\n", MyDevice.Data.LastRangeMeasure.MeasurementTimeUsec );
+[e ( _printf , (. :s 70C . . . _MyDevice 0 3 1 ]
+"2933
+[; ;vl53_st_main.c: 2933:     printf("  RangeMilliMeter = %d mm\r\n", MyDevice.Data.LastRangeMeasure.RangeMilliMeter );
+[e ( _printf , (. :s 71C -> . . . _MyDevice 0 3 2 `ui ]
+"2934
+[; ;vl53_st_main.c: 2934:     printf("  RangeDMaxMilliMeter = %d mm\r\n", MyDevice.Data.LastRangeMeasure.RangeDMaxMilliMeter );
+[e ( _printf , (. :s 72C -> . . . _MyDevice 0 3 3 `ui ]
+"2935
+[; ;vl53_st_main.c: 2935:     printf("  SignalRateRtnMegaCps = %d\r\n", MyDevice.Data.LastRangeMeasure.SignalRateRtnMegaCps );
+[e ( _printf , (. :s 73C . . . _MyDevice 0 3 4 ]
+"2936
+[; ;vl53_st_main.c: 2936:     printf("  AmbientRateRtnMegaCps = %d\r\n", MyDevice.Data.LastRangeMeasure.AmbientRateRtnMegaCps );
+[e ( _printf , (. :s 74C . . . _MyDevice 0 3 5 ]
+"2937
+[; ;vl53_st_main.c: 2937:     printf("  EffectiveSpadRtnCount = %d\r\n", MyDevice.Data.LastRangeMeasure.EffectiveSpadRtnCount );
+[e ( _printf , (. :s 75C -> . . . _MyDevice 0 3 6 `ui ]
+"2938
+[; ;vl53_st_main.c: 2938:     printf("  ZoneId = 0x%x\r\n", MyDevice.Data.LastRangeMeasure.ZoneId );
+[e ( _printf , (. :s 76C -> . . . _MyDevice 0 3 7 `i ]
+"2939
+[; ;vl53_st_main.c: 2939:     printf("  RangeFractionalPart = 0x%x\r\n", MyDevice.Data.LastRangeMeasure.RangeFractionalPart );
+[e ( _printf , (. :s 77C -> . . . _MyDevice 0 3 8 `i ]
+"2940
+[; ;vl53_st_main.c: 2940:     printf("  RangeStatus = 0x%x\r\n", MyDevice.Data.LastRangeMeasure.RangeStatus );
+[e ( _printf , (. :s 78C -> . . . _MyDevice 0 3 9 `i ]
+"2942
+[; ;vl53_st_main.c: 2942:     printf("VL53L0X_HistogramMeasurementData_t\r\n");
+[e ( _printf :s 79C ]
+"2944
+[; ;vl53_st_main.c: 2944:     printf("  HistogramData[] = ");
+[e ( _printf :s 80C ]
+"2945
+[; ;vl53_st_main.c: 2945:     for(i=0; i<24; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 24 `i 1072  ]
+[e $U 1073  ]
+[e :U 1072 ]
+{
+"2946
+[; ;vl53_st_main.c: 2946:         printf("0x%u,", MyDevice.Data.LastHistogramMeasure.HistogramData[i] );
+[e ( _printf , (. :s 81C *U + &U . . . _MyDevice 0 4 0 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 4 0 `ui `ux ]
+"2947
+[; ;vl53_st_main.c: 2947:         switch(i){
+[e $U 1076  ]
+{
+"2948
+[; ;vl53_st_main.c: 2948:             case 7:
+[e :U 1077 ]
+"2949
+[; ;vl53_st_main.c: 2949:             case 15:
+[e :U 1078 ]
+"2950
+[; ;vl53_st_main.c: 2950:             case 23:
+[e :U 1079 ]
+"2951
+[; ;vl53_st_main.c: 2951:                 printf("\r\n");
+[e ( _printf :s 82C ]
+"2952
+[; ;vl53_st_main.c: 2952:                 printf("                  = ");
+[e ( _printf :s 83C ]
+"2953
+[; ;vl53_st_main.c: 2953:                 break;
+[e $U 1075  ]
+"2954
+[; ;vl53_st_main.c: 2954:         }
+}
+[e $U 1075  ]
+[e :U 1076 ]
+[e [\ _i , $ -> 7 `i 1077
+ , $ -> 15 `i 1078
+ , $ -> 23 `i 1079
+ 1075 ]
+[e :U 1075 ]
+"2955
+[; ;vl53_st_main.c: 2955:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 24 `i 1072  ]
+[e :U 1073 ]
+}
+"2956
+[; ;vl53_st_main.c: 2956:     printf("\r\n");
+[e ( _printf :s 84C ]
+"2960
+[; ;vl53_st_main.c: 2960:     printf("  FirstBin = 0x%x\r\n", MyDevice.Data.LastHistogramMeasure.FirstBin );
+[e ( _printf , (. :s 85C -> . . . _MyDevice 0 4 1 `i ]
+"2961
+[; ;vl53_st_main.c: 2961:     printf("  BufferSize = 0x%x\r\n", MyDevice.Data.LastHistogramMeasure.BufferSize );
+[e ( _printf , (. :s 86C -> . . . _MyDevice 0 4 2 `i ]
+"2962
+[; ;vl53_st_main.c: 2962:     printf("  NumberOfBins = 0x%x\r\n", MyDevice.Data.LastHistogramMeasure.NumberOfBins );
+[e ( _printf , (. :s 87C -> . . . _MyDevice 0 4 3 `i ]
+"2963
+[; ;vl53_st_main.c: 2963:     printf("  ErrorStatus = 0x%x\r\n", MyDevice.Data.LastHistogramMeasure.ErrorStatus );
+[e ( _printf , (. :s 88C -> . . . _MyDevice 0 4 4 `i ]
+"2965
+[; ;vl53_st_main.c: 2965:     printf("VL53L0X_DeviceSpecificParameters_t\r\n");
+[e ( _printf :s 89C ]
+"2966
+[; ;vl53_st_main.c: 2966:     printf("  OscFrequencyMHz  = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.OscFrequencyMHz );
+[e ( _printf , (. :s 90C . . . _MyDevice 0 5 0 ]
+"2967
+[; ;vl53_st_main.c: 2967:     printf("  LastEncodedTimeout  = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.LastEncodedTimeout );
+[e ( _printf , (. :s 91C -> . . . _MyDevice 0 5 1 `ui ]
+"2968
+[; ;vl53_st_main.c: 2968:     printf("  Pin0GpioFunctionality = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.Pin0GpioFunctionality );
+[e ( _printf , (. :s 92C -> . . . _MyDevice 0 5 2 `i ]
+"2969
+[; ;vl53_st_main.c: 2969:     printf("  FinalRangeTimeoutMicroSecs = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.FinalRangeTimeoutMicroSecs );
+[e ( _printf , (. :s 93C . . . _MyDevice 0 5 3 ]
+"2970
+[; ;vl53_st_main.c: 2970:     printf("  FinalRangeVcselPulsePeriod = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.FinalRangeVcselPulsePeriod );
+[e ( _printf , (. :s 94C -> . . . _MyDevice 0 5 4 `i ]
+"2971
+[; ;vl53_st_main.c: 2971:     printf("  PreRangeTimeoutMicroSecs = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.PreRangeTimeoutMicroSecs );
+[e ( _printf , (. :s 95C . . . _MyDevice 0 5 5 ]
+"2972
+[; ;vl53_st_main.c: 2972:     printf("  PreRangeVcselPulsePeriod = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.PreRangeVcselPulsePeriod );
+[e ( _printf , (. :s 96C -> . . . _MyDevice 0 5 6 `i ]
+"2973
+[; ;vl53_st_main.c: 2973:     printf("  SigmaEstRefArray = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.SigmaEstRefArray );
+[e ( _printf , (. :s 97C -> . . . _MyDevice 0 5 7 `ui ]
+"2974
+[; ;vl53_st_main.c: 2974:     printf("  SigmaEstEffPulseWidth = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.SigmaEstEffPulseWidth );
+[e ( _printf , (. :s 98C -> . . . _MyDevice 0 5 8 `ui ]
+"2975
+[; ;vl53_st_main.c: 2975:     printf("  SigmaEstEffAmbWidth = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.SigmaEstEffAmbWidth );
+[e ( _printf , (. :s 99C -> . . . _MyDevice 0 5 9 `ui ]
+"2976
+[; ;vl53_st_main.c: 2976:     printf("  ReadDataFromDeviceDone = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.ReadDataFromDeviceDone );
+[e ( _printf , (. :s 100C -> . . . _MyDevice 0 5 10 `i ]
+"2977
+[; ;vl53_st_main.c: 2977:     printf("  ModuleId = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.ModuleId );
+[e ( _printf , (. :s 101C -> . . . _MyDevice 0 5 11 `i ]
+"2978
+[; ;vl53_st_main.c: 2978:     printf("  Revision = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.Revision );
+[e ( _printf , (. :s 102C -> . . . _MyDevice 0 5 12 `i ]
+"2979
+[; ;vl53_st_main.c: 2979:     printf("  ProductId[VL53L0X_MAX_STRING_LENGTH] = %s\r\n", &MyDevice.Data.DeviceSpecificParameters.ProductId[0] );
+[e ( _printf , (. :s 103C &U *U + &U . . . _MyDevice 0 5 13 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . . _MyDevice 0 5 13 `ui `ux ]
+"2980
+[; ;vl53_st_main.c: 2980:     printf("  ReferenceSpadCount = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.ReferenceSpadCount );
+[e ( _printf , (. :s 104C -> . . . _MyDevice 0 5 14 `i ]
+"2981
+[; ;vl53_st_main.c: 2981:     printf("  ReferenceSpadType = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.ReferenceSpadType );
+[e ( _printf , (. :s 105C -> . . . _MyDevice 0 5 15 `i ]
+"2982
+[; ;vl53_st_main.c: 2982:     printf("  RefSpadsInitialised = 0x%x\r\n", MyDevice.Data.DeviceSpecificParameters.RefSpadsInitialised );
+[e ( _printf , (. :s 106C -> . . . _MyDevice 0 5 16 `i ]
+"2983
+[; ;vl53_st_main.c: 2983:     printf("  PartUIDUpper = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.PartUIDUpper );
+[e ( _printf , (. :s 107C . . . _MyDevice 0 5 17 ]
+"2984
+[; ;vl53_st_main.c: 2984:     printf("  PartUIDLower = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.PartUIDLower );
+[e ( _printf , (. :s 108C . . . _MyDevice 0 5 18 ]
+"2985
+[; ;vl53_st_main.c: 2985:     printf("  SignalRateMeasFixed400mm = 0x%u\r\n", MyDevice.Data.DeviceSpecificParameters.SignalRateMeasFixed400mm );
+[e ( _printf , (. :s 109C . . . _MyDevice 0 5 19 ]
+"2987
+[; ;vl53_st_main.c: 2987:     printf("VL53L0X_SpadData_t\r\n");
+[e ( _printf :s 110C ]
+"2989
+[; ;vl53_st_main.c: 2989:     printf("  RefSpadEnables[] = ");
+[e ( _printf :s 111C ]
+"2990
+[; ;vl53_st_main.c: 2990:     for(i=0; i<6; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 6 `i 1080  ]
+[e $U 1081  ]
+[e :U 1080 ]
+{
+"2991
+[; ;vl53_st_main.c: 2991:         printf("0x%02x,", MyDevice.Data.SpadData.RefSpadEnables[i] );
+[e ( _printf , (. :s 112C -> *U + &U . . . _MyDevice 0 6 0 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 6 0 `ui `ux `i ]
+"2992
+[; ;vl53_st_main.c: 2992:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 6 `i 1080  ]
+[e :U 1081 ]
+}
+"2993
+[; ;vl53_st_main.c: 2993:     printf("\r\n");
+[e ( _printf :s 113C ]
+"2997
+[; ;vl53_st_main.c: 2997:     printf("  RefGoodSpadMap[] = ");
+[e ( _printf :s 114C ]
+"2998
+[; ;vl53_st_main.c: 2998:     for(i=0; i<6; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 6 `i 1083  ]
+[e $U 1084  ]
+[e :U 1083 ]
+{
+"2999
+[; ;vl53_st_main.c: 2999:         printf("0x%02x,", MyDevice.Data.SpadData.RefGoodSpadMap[i] );
+[e ( _printf , (. :s 115C -> *U + &U . . . _MyDevice 0 6 1 * -> -> _i `ui `ux -> -> # *U &U . . . _MyDevice 0 6 1 `ui `ux `i ]
+"3000
+[; ;vl53_st_main.c: 3000:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 6 `i 1083  ]
+[e :U 1084 ]
+}
+"3001
+[; ;vl53_st_main.c: 3001:     printf("\r\n");
+[e ( _printf :s 116C ]
+"3004
+[; ;vl53_st_main.c: 3004:     printf("ETC.\r\n");
+[e ( _printf :s 117C ]
+"3005
+[; ;vl53_st_main.c: 3005:     printf("  SequenceConfig = 0x%x\r\n", MyDevice.Data.SequenceConfig );
+[e ( _printf , (. :s 118C -> . . _MyDevice 0 7 `i ]
+"3006
+[; ;vl53_st_main.c: 3006:     printf("  RangeFractionalEnable = 0x%x\r\n", MyDevice.Data.RangeFractionalEnable );
+[e ( _printf , (. :s 119C -> . . _MyDevice 0 8 `i ]
+"3007
+[; ;vl53_st_main.c: 3007:     printf("  PalState = 0x%x\r\n", MyDevice.Data.PalState );
+[e ( _printf , (. :s 120C -> . . _MyDevice 0 9 `i ]
+"3008
+[; ;vl53_st_main.c: 3008:     printf("  PowerMode = 0x%x\r\n", MyDevice.Data.PowerMode );
+[e ( _printf , (. :s 121C -> . . _MyDevice 0 10 `i ]
+"3009
+[; ;vl53_st_main.c: 3009:     printf("  SigmaEstRefArray = 0x%x\r\n", MyDevice.Data.SigmaEstRefArray );
+[e ( _printf , (. :s 122C -> . . _MyDevice 0 11 `ui ]
+"3010
+[; ;vl53_st_main.c: 3010:     printf("  SigmaEstEffPulseWidth = 0x%x\r\n", MyDevice.Data.SigmaEstEffPulseWidth );
+[e ( _printf , (. :s 123C -> . . _MyDevice 0 12 `ui ]
+"3011
+[; ;vl53_st_main.c: 3011:     printf("  SigmaEstEffAmbWidth = 0x%x\r\n", MyDevice.Data.SigmaEstEffAmbWidth );
+[e ( _printf , (. :s 124C -> . . _MyDevice 0 13 `ui ]
+"3012
+[; ;vl53_st_main.c: 3012:     printf("  StopVariable = 0x%x\r\n", MyDevice.Data.StopVariable );
+[e ( _printf , (. :s 125C -> . . _MyDevice 0 14 `i ]
+"3013
+[; ;vl53_st_main.c: 3013:     printf("  targetRefRate = 0x%x\r\n", MyDevice.Data.targetRefRate );
+[e ( _printf , (. :s 126C -> . . _MyDevice 0 15 `ui ]
+"3014
+[; ;vl53_st_main.c: 3014:     printf("  SigmaEstimate = 0x%u\r\n", MyDevice.Data.SigmaEstimate );
+[e ( _printf , (. :s 127C . . _MyDevice 0 16 ]
+"3015
+[; ;vl53_st_main.c: 3015:     printf("  SignalEstimate = 0x%u\r\n", MyDevice.Data.SignalEstimate );
+[e ( _printf , (. :s 128C . . _MyDevice 0 17 ]
+"3016
+[; ;vl53_st_main.c: 3016:     printf("  LastSignalRefMcps = 0x%u\r\n", MyDevice.Data.LastSignalRefMcps );
+[e ( _printf , (. :s 129C . . _MyDevice 0 18 ]
+"3018
+[; ;vl53_st_main.c: 3018:     printf("  UseInternalTuningSettings = 0x%x\r\n", MyDevice.Data.UseInternalTuningSettings );
+[e ( _printf , (. :s 130C -> . . _MyDevice 0 20 `i ]
+"3019
+[; ;vl53_st_main.c: 3019:     printf("  LinearityCorrectiveGain = 0x%x\r\n", MyDevice.Data.LinearityCorrectiveGain );
+[e ( _printf , (. :s 131C -> . . _MyDevice 0 21 `ui ]
+"3021
+[; ;vl53_st_main.c: 3021:     printf("  I2cDevAddr = 0x%x\r\n", MyDevice.I2cDevAddr );
+[e ( _printf , (. :s 132C -> . _MyDevice 1 `i ]
+"3022
+[; ;vl53_st_main.c: 3022: }
+[e :UE 1056 ]
 }
 [p f _printf 12887172 ]
-[a 5C 87 97 105 116 77 101 97 115 117 114 101 109 101 110 116 68 97 116 97 82 101 97 100 121 40 41 32 83 84 65 82 84 0 ]
-[a 6C 87 97 105 116 77 101 97 115 117 114 101 109 101 110 116 68 97 116 97 82 101 97 100 121 40 41 32 69 78 68 0 ]
-[a 45C 48 120 37 48 50 120 44 0 ]
-[a 48C 48 120 37 48 50 120 44 0 ]
-[a 104C 48 120 37 48 50 120 44 0 ]
-[a 107C 48 120 37 48 50 120 44 0 ]
-[a 51C 48 120 37 117 44 0 ]
-[a 54C 48 120 37 117 44 0 ]
-[a 57C 48 120 37 117 44 0 ]
-[a 73C 48 120 37 117 44 0 ]
-[a 47C 32 32 76 105 109 105 116 67 104 101 99 107 115 83 116 97 116 117 115 91 93 32 61 32 0 ]
-[a 53C 32 32 97 109 98 82 97 116 101 95 109 99 112 115 91 93 32 61 32 0 ]
-[a 103C 32 32 82 101 102 83 112 97 100 69 110 97 98 108 101 115 91 93 32 61 32 0 ]
-[a 106C 32 32 82 101 102 71 111 111 100 83 112 97 100 77 97 112 91 93 32 61 32 0 ]
-[a 56C 32 32 100 109 97 120 95 109 109 91 93 32 61 32 0 ]
-[a 50C 32 32 76 105 109 105 116 67 104 101 99 107 115 86 97 108 117 101 91 93 32 61 32 0 ]
-[a 44C 32 32 76 105 109 105 116 67 104 101 99 107 115 69 110 97 98 108 101 91 93 32 61 32 0 ]
-[a 72C 32 32 72 105 115 116 111 103 114 97 109 68 97 116 97 91 93 32 61 32 0 ]
-[a 75C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 61 32 0 ]
-[a 24C 86 76 53 51 76 48 88 32 65 80 73 32 86 101 114 115 105 111 110 32 69 114 114 111 114 58 32 89 111 117 114 32 102 105 114 109 119 97 114 101 32 104 97 115 32 37 100 46 37 100 46 37 100 32 40 114 101 118 105 115 105 111 110 32 37 100 41 46 32 84 104 105 115 32 101 120 97 109 112 108 101 32 114 101 113 117 105 114 101 115 32 37 100 46 37 100 46 37 100 46 10 0 ]
-[a 84C 32 32 80 105 110 48 71 112 105 111 70 117 110 99 116 105 111 110 97 108 105 116 121 32 61 32 48 120 37 120 13 10 0 ]
-[a 89C 32 32 83 105 103 109 97 69 115 116 82 101 102 65 114 114 97 121 32 61 32 48 120 37 120 13 10 0 ]
-[a 114C 32 32 83 105 103 109 97 69 115 116 82 101 102 65 114 114 97 121 32 61 32 48 120 37 120 13 10 0 ]
-[a 69C 32 32 82 97 110 103 101 70 114 97 99 116 105 111 110 97 108 80 97 114 116 32 61 32 48 120 37 120 13 10 0 ]
-[a 96C 32 32 82 101 102 101 114 101 110 99 101 83 112 97 100 67 111 117 110 116 32 61 32 48 120 37 120 13 10 0 ]
-[a 80C 32 32 69 114 114 111 114 83 116 97 116 117 115 32 61 32 48 120 37 120 13 10 0 ]
-[a 70C 32 32 82 97 110 103 101 83 116 97 116 117 115 32 61 32 48 120 37 120 13 10 0 ]
-[a 79C 32 32 78 117 109 98 101 114 79 102 66 105 110 115 32 61 32 48 120 37 120 13 10 0 ]
-[a 122C 32 32 85 115 101 73 110 116 101 114 110 97 108 84 117 110 105 110 103 83 101 116 116 105 110 103 115 32 61 32 48 120 37 120 13 10 0 ]
-[a 41C 32 32 88 84 97 108 107 67 111 109 112 101 110 115 97 116 105 111 110 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 32 61 32 48 120 37 120 13 10 0 ]
-[a 124C 32 32 73 50 99 68 101 118 65 100 100 114 32 61 32 48 120 37 120 13 10 0 ]
-[a 94C 32 32 82 101 118 105 115 105 111 110 32 61 32 48 120 37 120 13 10 0 ]
-[a 123C 32 32 76 105 110 101 97 114 105 116 121 67 111 114 114 101 99 116 105 118 101 71 97 105 110 32 61 32 48 120 37 120 13 10 0 ]
-[a 77C 32 32 70 105 114 115 116 66 105 110 32 61 32 48 120 37 120 13 10 0 ]
-[a 90C 32 32 83 105 103 109 97 69 115 116 69 102 102 80 117 108 115 101 87 105 100 116 104 32 61 32 48 120 37 120 13 10 0 ]
-[a 115C 32 32 83 105 103 109 97 69 115 116 69 102 102 80 117 108 115 101 87 105 100 116 104 32 61 32 48 120 37 120 13 10 0 ]
-[a 91C 32 32 83 105 103 109 97 69 115 116 69 102 102 65 109 98 87 105 100 116 104 32 61 32 48 120 37 120 13 10 0 ]
-[a 116C 32 32 83 105 103 109 97 69 115 116 69 102 102 65 109 98 87 105 100 116 104 32 61 32 48 120 37 120 13 10 0 ]
-[a 110C 32 32 83 101 113 117 101 110 99 101 67 111 110 102 105 103 32 61 32 48 120 37 120 13 10 0 ]
-[a 78C 32 32 66 117 102 102 101 114 83 105 122 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 112C 32 32 80 97 108 83 116 97 116 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 118C 32 32 116 97 114 103 101 116 82 101 102 82 97 116 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 97C 32 32 82 101 102 101 114 101 110 99 101 83 112 97 100 84 121 112 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 92C 32 32 82 101 97 100 68 97 116 97 70 114 111 109 68 101 118 105 99 101 68 111 110 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 40C 32 32 88 84 97 108 107 67 111 109 112 101 110 115 97 116 105 111 110 69 110 97 98 108 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 111C 32 32 82 97 110 103 101 70 114 97 99 116 105 111 110 97 108 69 110 97 98 108 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 59C 32 32 87 114 97 112 65 114 111 117 110 100 67 104 101 99 107 69 110 97 98 108 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 117C 32 32 83 116 111 112 86 97 114 105 97 98 108 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 113C 32 32 80 111 119 101 114 77 111 100 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 37C 32 32 72 105 115 116 111 103 114 97 109 77 111 100 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 36C 32 32 68 101 118 105 99 101 77 111 100 101 32 61 32 48 120 37 120 13 10 0 ]
-[a 86C 32 32 70 105 110 97 108 82 97 110 103 101 86 99 115 101 108 80 117 108 115 101 80 101 114 105 111 100 32 61 32 48 120 37 120 13 10 0 ]
-[a 88C 32 32 80 114 101 82 97 110 103 101 86 99 115 101 108 80 117 108 115 101 80 101 114 105 111 100 32 61 32 48 120 37 120 13 10 0 ]
-[a 98C 32 32 82 101 102 83 112 97 100 115 73 110 105 116 105 97 108 105 115 101 100 32 61 32 48 120 37 120 13 10 0 ]
-[a 68C 32 32 90 111 110 101 73 100 32 61 32 48 120 37 120 13 10 0 ]
-[a 93C 32 32 77 111 100 117 108 101 73 100 32 61 32 48 120 37 120 13 10 0 ]
-[a 83C 32 32 76 97 115 116 69 110 99 111 100 101 100 84 105 109 101 111 117 116 32 32 61 32 48 120 37 120 13 10 0 ]
-[a 121C 32 32 76 97 115 116 83 105 103 110 97 108 82 101 102 77 99 112 115 32 61 32 48 120 37 117 13 10 0 ]
-[a 42C 32 32 88 84 97 108 107 67 111 109 112 101 110 115 97 116 105 111 110 82 97 116 101 77 101 103 97 67 112 115 32 61 32 48 120 37 117 13 10 0 ]
-[a 38C 32 32 77 101 97 115 117 114 101 109 101 110 116 84 105 109 105 110 103 66 117 100 103 101 116 77 105 99 114 111 83 101 99 111 110 100 115 32 61 32 48 120 37 117 13 10 0 ]
-[a 39C 32 32 73 110 116 101 114 77 101 97 115 117 114 101 109 101 110 116 80 101 114 105 111 100 77 105 108 108 105 83 101 99 111 110 100 115 32 61 32 48 120 37 117 13 10 0 ]
-[a 85C 32 32 70 105 110 97 108 82 97 110 103 101 84 105 109 101 111 117 116 77 105 99 114 111 83 101 99 115 32 61 32 48 120 37 117 13 10 0 ]
-[a 87C 32 32 80 114 101 82 97 110 103 101 84 105 109 101 111 117 116 77 105 99 114 111 83 101 99 115 32 61 32 48 120 37 117 13 10 0 ]
-[a 100C 32 32 80 97 114 116 85 73 68 76 111 119 101 114 32 61 32 48 120 37 117 13 10 0 ]
-[a 99C 32 32 80 97 114 116 85 73 68 85 112 112 101 114 32 61 32 48 120 37 117 13 10 0 ]
-[a 61C 32 32 84 105 109 101 83 116 97 109 112 32 61 32 48 120 37 117 13 10 0 ]
-[a 101C 32 32 83 105 103 110 97 108 82 97 116 101 77 101 97 115 70 105 120 101 100 52 48 48 109 109 32 61 32 48 120 37 117 13 10 0 ]
-[a 120C 32 32 83 105 103 110 97 108 69 115 116 105 109 97 116 101 32 61 32 48 120 37 117 13 10 0 ]
-[a 119C 32 32 83 105 103 109 97 69 115 116 105 109 97 116 101 32 61 32 48 120 37 117 13 10 0 ]
-[a 62C 32 32 77 101 97 115 117 114 101 109 101 110 116 84 105 109 101 85 115 101 99 32 61 32 48 120 37 117 13 10 0 ]
-[a 82C 32 32 79 115 99 70 114 101 113 117 101 110 99 121 77 72 122 32 32 61 32 48 120 37 117 13 10 0 ]
-[a 11C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 83 116 97 114 116 77 101 97 115 117 114 101 109 101 110 116 13 10 0 ]
-[a 14C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 83 116 111 112 77 101 97 115 117 114 101 109 101 110 116 13 10 0 ]
-[a 17C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 80 101 114 102 111 114 109 83 105 110 103 108 101 82 97 110 103 105 110 103 77 101 97 115 117 114 101 109 101 110 116 13 10 0 ]
-[a 9C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 80 101 114 102 111 114 109 82 101 102 83 112 97 100 77 97 110 97 103 101 109 101 110 116 13 10 0 ]
-[a 7C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 83 116 97 116 105 99 73 110 105 116 13 10 0 ]
-[a 4C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 68 97 116 97 73 110 105 116 13 10 0 ]
-[a 25C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 68 97 116 97 73 110 105 116 13 10 0 ]
-[a 35C 86 76 53 51 76 48 88 95 68 101 118 105 99 101 80 97 114 97 109 101 116 101 114 115 95 116 13 10 0 ]
-[a 81C 86 76 53 51 76 48 88 95 68 101 118 105 99 101 83 112 101 99 105 102 105 99 80 97 114 97 109 101 116 101 114 115 95 116 13 10 0 ]
-[a 71C 86 76 53 51 76 48 88 95 72 105 115 116 111 103 114 97 109 77 101 97 115 117 114 101 109 101 110 116 68 97 116 97 95 116 13 10 0 ]
-[a 60C 86 76 53 51 76 48 88 95 82 97 110 103 105 110 103 77 101 97 115 117 114 101 109 101 110 116 68 97 116 97 95 116 13 10 0 ]
-[a 102C 86 76 53 51 76 48 88 95 83 112 97 100 68 97 116 97 95 116 13 10 0 ]
-[a 95C 32 32 80 114 111 100 117 99 116 73 100 91 86 76 53 51 76 48 88 95 77 65 88 95 83 84 82 73 78 71 95 76 69 78 71 84 72 93 32 61 32 37 115 13 10 0 ]
-[a 2C 82 97 110 103 101 32 83 116 97 116 117 115 58 32 37 105 32 58 32 37 115 13 10 0 ]
-[a 1C 65 80 73 32 83 116 97 116 117 115 58 32 37 105 32 58 32 37 115 13 10 0 ]
-[a 28C 68 101 118 105 99 101 32 84 121 112 101 32 58 32 37 115 13 10 0 ]
-[a 27C 68 101 118 105 99 101 32 78 97 109 101 32 58 32 37 115 13 10 0 ]
-[a 29C 68 101 118 105 99 101 32 73 68 32 58 32 37 115 13 10 0 ]
-[a 8C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 80 101 114 102 111 114 109 82 101 102 67 97 108 105 98 114 97 116 105 111 110 13 10 0 ]
-[a 64C 32 32 82 97 110 103 101 68 77 97 120 77 105 108 108 105 77 101 116 101 114 32 61 32 37 100 32 109 109 13 10 0 ]
-[a 63C 32 32 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 32 61 32 37 100 32 109 109 13 10 0 ]
-[a 21C 77 101 97 115 117 114 101 100 32 100 105 115 116 97 110 99 101 58 32 37 105 13 10 0 ]
-[a 19C 82 65 78 71 69 32 73 71 78 79 82 69 32 84 72 82 69 83 72 79 76 68 58 32 37 102 13 10 0 ]
-[a 3C 86 76 53 51 76 48 88 32 80 65 76 32 67 111 110 116 105 110 117 111 117 115 32 82 97 110 103 105 110 103 32 101 120 97 109 112 108 101 13 10 0 ]
-[a 22C 86 76 53 51 76 48 88 32 80 65 76 32 67 111 110 116 105 110 117 111 117 115 32 82 97 110 103 105 110 103 32 101 120 97 109 112 108 101 13 10 0 ]
-[a 10C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 83 101 116 68 101 118 105 99 101 77 111 100 101 13 10 0 ]
-[a 15C 87 97 105 116 32 83 116 111 112 32 116 111 32 98 101 32 99 111 109 112 101 116 101 100 13 10 0 ]
-[a 32C 69 114 114 111 114 32 101 120 112 101 99 116 101 100 32 99 117 116 32 49 46 49 32 98 117 116 32 102 111 117 110 100 32 99 117 116 32 37 100 46 37 100 13 10 0 ]
-[a 67C 32 32 69 102 102 101 99 116 105 118 101 83 112 97 100 82 116 110 67 111 117 110 116 32 61 32 37 100 13 10 0 ]
-[a 43C 32 32 82 97 110 103 101 79 102 102 115 101 116 77 105 99 114 111 77 101 116 101 114 115 32 61 32 37 100 13 10 0 ]
-[a 66C 32 32 65 109 98 105 101 110 116 82 97 116 101 82 116 110 77 101 103 97 67 112 115 32 61 32 37 100 13 10 0 ]
-[a 65C 32 32 83 105 103 110 97 108 82 97 116 101 82 116 110 77 101 103 97 67 112 115 32 61 32 37 100 13 10 0 ]
-[a 34C 80 97 114 116 50 80 97 114 116 79 102 102 115 101 116 65 100 106 117 115 116 109 101 110 116 78 86 77 77 105 99 114 111 77 101 116 101 114 32 61 32 37 100 13 10 0 ]
-[a 33C 80 97 114 116 50 80 97 114 116 79 102 102 115 101 116 78 86 77 77 105 99 114 111 77 101 116 101 114 32 61 32 37 100 13 10 0 ]
-[a 12C 73 110 32 108 111 111 112 32 109 101 97 115 117 114 101 109 101 110 116 32 37 100 58 32 37 100 13 10 0 ]
-[a 13C 109 101 97 115 117 114 101 109 101 110 116 32 37 100 58 32 37 100 13 10 0 ]
-[a 31C 80 114 111 100 117 99 116 82 101 118 105 115 105 111 110 77 105 110 111 114 32 58 32 37 100 13 10 0 ]
-[a 30C 80 114 111 100 117 99 116 82 101 118 105 115 105 111 110 77 97 106 111 114 32 58 32 37 100 13 10 0 ]
-[a 26C 86 76 53 51 76 48 88 95 71 101 116 68 101 118 105 99 101 73 110 102 111 58 13 10 0 ]
-[a 109C 69 84 67 46 13 10 0 ]
-[a 20C 48 48 51 32 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 44 61 37 100 40 37 100 41 13 10 0 ]
-[a 18C 48 48 50 32 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 44 61 37 100 40 37 100 41 13 10 0 ]
-[a 16C 48 48 49 32 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 44 61 37 100 40 37 100 41 13 10 0 ]
-[a 46C 13 10 0 ]
-[a 49C 13 10 0 ]
-[a 52C 13 10 0 ]
-[a 55C 13 10 0 ]
-[a 58C 13 10 0 ]
-[a 74C 13 10 0 ]
-[a 76C 13 10 0 ]
-[a 105C 13 10 0 ]
-[a 108C 13 10 0 ]
-[a 23C 86 76 53 51 76 48 88 32 65 80 73 32 83 105 109 112 108 101 32 82 97 110 103 105 110 103 32 101 120 97 109 112 108 101 13 10 10 0 ]
+[a 23C 87 97 105 116 77 101 97 115 117 114 101 109 101 110 116 68 97 116 97 82 101 97 100 121 40 41 32 83 84 65 82 84 0 ]
+[a 24C 87 97 105 116 77 101 97 115 117 114 101 109 101 110 116 68 97 116 97 82 101 97 100 121 40 41 32 69 78 68 0 ]
+[a 53C 48 120 37 48 50 120 44 0 ]
+[a 56C 48 120 37 48 50 120 44 0 ]
+[a 112C 48 120 37 48 50 120 44 0 ]
+[a 115C 48 120 37 48 50 120 44 0 ]
+[a 59C 48 120 37 117 44 0 ]
+[a 62C 48 120 37 117 44 0 ]
+[a 65C 48 120 37 117 44 0 ]
+[a 81C 48 120 37 117 44 0 ]
+[a 20C 86 76 53 51 95 68 97 116 97 82 101 113 40 83 61 37 100 44 69 61 37 100 41 0 ]
+[a 55C 32 32 76 105 109 105 116 67 104 101 99 107 115 83 116 97 116 117 115 91 93 32 61 32 0 ]
+[a 61C 32 32 97 109 98 82 97 116 101 95 109 99 112 115 91 93 32 61 32 0 ]
+[a 111C 32 32 82 101 102 83 112 97 100 69 110 97 98 108 101 115 91 93 32 61 32 0 ]
+[a 114C 32 32 82 101 102 71 111 111 100 83 112 97 100 77 97 112 91 93 32 61 32 0 ]
+[a 64C 32 32 100 109 97 120 95 109 109 91 93 32 61 32 0 ]
+[a 58C 32 32 76 105 109 105 116 67 104 101 99 107 115 86 97 108 117 101 91 93 32 61 32 0 ]
+[a 52C 32 32 76 105 109 105 116 67 104 101 99 107 115 69 110 97 98 108 101 91 93 32 61 32 0 ]
+[a 80C 32 32 72 105 115 116 111 103 114 97 109 68 97 116 97 91 93 32 61 32 0 ]
+[a 83C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 61 32 0 ]
+[a 27C 86 76 53 51 76 48 88 32 65 80 73 32 86 101 114 115 105 111 110 32 69 114 114 111 114 58 32 89 111 117 114 32 102 105 114 109 119 97 114 101 32 104 97 115 32 37 100 46 37 100 46 37 100 32 40 114 101 118 105 115 105 111 110 32 37 100 41 46 32 84 104 105 115 32 101 120 97 109 112 108 101 32 114 101 113 117 105 114 101 115 32 37 100 46 37 100 46 37 100 46 10 0 ]
+[a 92C 32 32 80 105 110 48 71 112 105 111 70 117 110 99 116 105 111 110 97 108 105 116 121 32 61 32 48 120 37 120 13 10 0 ]
+[a 97C 32 32 83 105 103 109 97 69 115 116 82 101 102 65 114 114 97 121 32 61 32 48 120 37 120 13 10 0 ]
+[a 122C 32 32 83 105 103 109 97 69 115 116 82 101 102 65 114 114 97 121 32 61 32 48 120 37 120 13 10 0 ]
+[a 77C 32 32 82 97 110 103 101 70 114 97 99 116 105 111 110 97 108 80 97 114 116 32 61 32 48 120 37 120 13 10 0 ]
+[a 104C 32 32 82 101 102 101 114 101 110 99 101 83 112 97 100 67 111 117 110 116 32 61 32 48 120 37 120 13 10 0 ]
+[a 88C 32 32 69 114 114 111 114 83 116 97 116 117 115 32 61 32 48 120 37 120 13 10 0 ]
+[a 78C 32 32 82 97 110 103 101 83 116 97 116 117 115 32 61 32 48 120 37 120 13 10 0 ]
+[a 87C 32 32 78 117 109 98 101 114 79 102 66 105 110 115 32 61 32 48 120 37 120 13 10 0 ]
+[a 130C 32 32 85 115 101 73 110 116 101 114 110 97 108 84 117 110 105 110 103 83 101 116 116 105 110 103 115 32 61 32 48 120 37 120 13 10 0 ]
+[a 49C 32 32 88 84 97 108 107 67 111 109 112 101 110 115 97 116 105 111 110 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 32 61 32 48 120 37 120 13 10 0 ]
+[a 132C 32 32 73 50 99 68 101 118 65 100 100 114 32 61 32 48 120 37 120 13 10 0 ]
+[a 102C 32 32 82 101 118 105 115 105 111 110 32 61 32 48 120 37 120 13 10 0 ]
+[a 131C 32 32 76 105 110 101 97 114 105 116 121 67 111 114 114 101 99 116 105 118 101 71 97 105 110 32 61 32 48 120 37 120 13 10 0 ]
+[a 85C 32 32 70 105 114 115 116 66 105 110 32 61 32 48 120 37 120 13 10 0 ]
+[a 98C 32 32 83 105 103 109 97 69 115 116 69 102 102 80 117 108 115 101 87 105 100 116 104 32 61 32 48 120 37 120 13 10 0 ]
+[a 123C 32 32 83 105 103 109 97 69 115 116 69 102 102 80 117 108 115 101 87 105 100 116 104 32 61 32 48 120 37 120 13 10 0 ]
+[a 99C 32 32 83 105 103 109 97 69 115 116 69 102 102 65 109 98 87 105 100 116 104 32 61 32 48 120 37 120 13 10 0 ]
+[a 124C 32 32 83 105 103 109 97 69 115 116 69 102 102 65 109 98 87 105 100 116 104 32 61 32 48 120 37 120 13 10 0 ]
+[a 118C 32 32 83 101 113 117 101 110 99 101 67 111 110 102 105 103 32 61 32 48 120 37 120 13 10 0 ]
+[a 86C 32 32 66 117 102 102 101 114 83 105 122 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 120C 32 32 80 97 108 83 116 97 116 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 126C 32 32 116 97 114 103 101 116 82 101 102 82 97 116 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 105C 32 32 82 101 102 101 114 101 110 99 101 83 112 97 100 84 121 112 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 100C 32 32 82 101 97 100 68 97 116 97 70 114 111 109 68 101 118 105 99 101 68 111 110 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 48C 32 32 88 84 97 108 107 67 111 109 112 101 110 115 97 116 105 111 110 69 110 97 98 108 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 119C 32 32 82 97 110 103 101 70 114 97 99 116 105 111 110 97 108 69 110 97 98 108 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 67C 32 32 87 114 97 112 65 114 111 117 110 100 67 104 101 99 107 69 110 97 98 108 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 125C 32 32 83 116 111 112 86 97 114 105 97 98 108 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 121C 32 32 80 111 119 101 114 77 111 100 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 45C 32 32 72 105 115 116 111 103 114 97 109 77 111 100 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 44C 32 32 68 101 118 105 99 101 77 111 100 101 32 61 32 48 120 37 120 13 10 0 ]
+[a 94C 32 32 70 105 110 97 108 82 97 110 103 101 86 99 115 101 108 80 117 108 115 101 80 101 114 105 111 100 32 61 32 48 120 37 120 13 10 0 ]
+[a 96C 32 32 80 114 101 82 97 110 103 101 86 99 115 101 108 80 117 108 115 101 80 101 114 105 111 100 32 61 32 48 120 37 120 13 10 0 ]
+[a 106C 32 32 82 101 102 83 112 97 100 115 73 110 105 116 105 97 108 105 115 101 100 32 61 32 48 120 37 120 13 10 0 ]
+[a 76C 32 32 90 111 110 101 73 100 32 61 32 48 120 37 120 13 10 0 ]
+[a 101C 32 32 77 111 100 117 108 101 73 100 32 61 32 48 120 37 120 13 10 0 ]
+[a 91C 32 32 76 97 115 116 69 110 99 111 100 101 100 84 105 109 101 111 117 116 32 32 61 32 48 120 37 120 13 10 0 ]
+[a 129C 32 32 76 97 115 116 83 105 103 110 97 108 82 101 102 77 99 112 115 32 61 32 48 120 37 117 13 10 0 ]
+[a 50C 32 32 88 84 97 108 107 67 111 109 112 101 110 115 97 116 105 111 110 82 97 116 101 77 101 103 97 67 112 115 32 61 32 48 120 37 117 13 10 0 ]
+[a 46C 32 32 77 101 97 115 117 114 101 109 101 110 116 84 105 109 105 110 103 66 117 100 103 101 116 77 105 99 114 111 83 101 99 111 110 100 115 32 61 32 48 120 37 117 13 10 0 ]
+[a 47C 32 32 73 110 116 101 114 77 101 97 115 117 114 101 109 101 110 116 80 101 114 105 111 100 77 105 108 108 105 83 101 99 111 110 100 115 32 61 32 48 120 37 117 13 10 0 ]
+[a 93C 32 32 70 105 110 97 108 82 97 110 103 101 84 105 109 101 111 117 116 77 105 99 114 111 83 101 99 115 32 61 32 48 120 37 117 13 10 0 ]
+[a 95C 32 32 80 114 101 82 97 110 103 101 84 105 109 101 111 117 116 77 105 99 114 111 83 101 99 115 32 61 32 48 120 37 117 13 10 0 ]
+[a 108C 32 32 80 97 114 116 85 73 68 76 111 119 101 114 32 61 32 48 120 37 117 13 10 0 ]
+[a 107C 32 32 80 97 114 116 85 73 68 85 112 112 101 114 32 61 32 48 120 37 117 13 10 0 ]
+[a 69C 32 32 84 105 109 101 83 116 97 109 112 32 61 32 48 120 37 117 13 10 0 ]
+[a 109C 32 32 83 105 103 110 97 108 82 97 116 101 77 101 97 115 70 105 120 101 100 52 48 48 109 109 32 61 32 48 120 37 117 13 10 0 ]
+[a 128C 32 32 83 105 103 110 97 108 69 115 116 105 109 97 116 101 32 61 32 48 120 37 117 13 10 0 ]
+[a 127C 32 32 83 105 103 109 97 69 115 116 105 109 97 116 101 32 61 32 48 120 37 117 13 10 0 ]
+[a 70C 32 32 77 101 97 115 117 114 101 109 101 110 116 84 105 109 101 85 115 101 99 32 61 32 48 120 37 117 13 10 0 ]
+[a 90C 32 32 79 115 99 70 114 101 113 117 101 110 99 121 77 72 122 32 32 61 32 48 120 37 117 13 10 0 ]
+[a 40C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 83 116 97 114 116 77 101 97 115 117 114 101 109 101 110 116 13 10 0 ]
+[a 3C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 83 116 111 112 77 101 97 115 117 114 101 109 101 110 116 13 10 0 ]
+[a 11C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 80 101 114 102 111 114 109 83 105 110 103 108 101 82 97 110 103 105 110 103 77 101 97 115 117 114 101 109 101 110 116 13 10 0 ]
+[a 38C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 80 101 114 102 111 114 109 82 101 102 83 112 97 100 77 97 110 97 103 101 109 101 110 116 13 10 0 ]
+[a 36C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 83 116 97 116 105 99 73 110 105 116 13 10 0 ]
+[a 28C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 68 97 116 97 73 110 105 116 13 10 0 ]
+[a 43C 86 76 53 51 76 48 88 95 68 101 118 105 99 101 80 97 114 97 109 101 116 101 114 115 95 116 13 10 0 ]
+[a 89C 86 76 53 51 76 48 88 95 68 101 118 105 99 101 83 112 101 99 105 102 105 99 80 97 114 97 109 101 116 101 114 115 95 116 13 10 0 ]
+[a 79C 86 76 53 51 76 48 88 95 72 105 115 116 111 103 114 97 109 77 101 97 115 117 114 101 109 101 110 116 68 97 116 97 95 116 13 10 0 ]
+[a 68C 86 76 53 51 76 48 88 95 82 97 110 103 105 110 103 77 101 97 115 117 114 101 109 101 110 116 68 97 116 97 95 116 13 10 0 ]
+[a 110C 86 76 53 51 76 48 88 95 83 112 97 100 68 97 116 97 95 116 13 10 0 ]
+[a 103C 32 32 80 114 111 100 117 99 116 73 100 91 86 76 53 51 76 48 88 95 77 65 88 95 83 84 82 73 78 71 95 76 69 78 71 84 72 93 32 61 32 37 115 13 10 0 ]
+[a 22C 82 97 110 103 101 32 83 116 97 116 117 115 58 32 37 105 32 58 32 37 115 13 10 0 ]
+[a 21C 65 80 73 32 83 116 97 116 117 115 58 32 37 105 32 58 32 37 115 13 10 0 ]
+[a 31C 68 101 118 105 99 101 32 84 121 112 101 32 58 32 37 115 13 10 0 ]
+[a 30C 68 101 118 105 99 101 32 78 97 109 101 32 58 32 37 115 13 10 0 ]
+[a 32C 68 101 118 105 99 101 32 73 68 32 58 32 37 115 13 10 0 ]
+[a 37C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 80 101 114 102 111 114 109 82 101 102 67 97 108 105 98 114 97 116 105 111 110 13 10 0 ]
+[a 72C 32 32 82 97 110 103 101 68 77 97 120 77 105 108 108 105 77 101 116 101 114 32 61 32 37 100 32 109 109 13 10 0 ]
+[a 71C 32 32 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 32 61 32 37 100 32 109 109 13 10 0 ]
+[a 15C 77 101 97 115 117 114 101 100 32 100 105 115 116 97 110 99 101 58 32 37 105 13 10 0 ]
+[a 13C 82 65 78 71 69 32 73 71 78 79 82 69 32 84 72 82 69 83 72 79 76 68 58 32 37 102 13 10 0 ]
+[a 25C 86 76 53 51 76 48 88 32 80 65 76 32 67 111 110 116 105 110 117 111 117 115 32 82 97 110 103 105 110 103 32 101 120 97 109 112 108 101 13 10 0 ]
+[a 39C 67 97 108 108 32 111 102 32 86 76 53 51 76 48 88 95 83 101 116 68 101 118 105 99 101 77 111 100 101 13 10 0 ]
+[a 4C 87 97 105 116 32 83 116 111 112 32 116 111 32 98 101 32 99 111 109 112 101 116 101 100 13 10 0 ]
+[a 35C 69 114 114 111 114 32 101 120 112 101 99 116 101 100 32 99 117 116 32 49 46 49 32 98 117 116 32 102 111 117 110 100 32 99 117 116 32 37 100 46 37 100 13 10 0 ]
+[a 9C 73 110 32 108 111 111 112 32 109 101 97 115 117 114 101 109 101 110 116 61 32 37 100 13 10 0 ]
+[a 75C 32 32 69 102 102 101 99 116 105 118 101 83 112 97 100 82 116 110 67 111 117 110 116 32 61 32 37 100 13 10 0 ]
+[a 51C 32 32 82 97 110 103 101 79 102 102 115 101 116 77 105 99 114 111 77 101 116 101 114 115 32 61 32 37 100 13 10 0 ]
+[a 74C 32 32 65 109 98 105 101 110 116 82 97 116 101 82 116 110 77 101 103 97 67 112 115 32 61 32 37 100 13 10 0 ]
+[a 73C 32 32 83 105 103 110 97 108 82 97 116 101 82 116 110 77 101 103 97 67 112 115 32 61 32 37 100 13 10 0 ]
+[a 42C 80 97 114 116 50 80 97 114 116 79 102 102 115 101 116 65 100 106 117 115 116 109 101 110 116 78 86 77 77 105 99 114 111 77 101 116 101 114 32 61 32 37 100 13 10 0 ]
+[a 41C 80 97 114 116 50 80 97 114 116 79 102 102 115 101 116 78 86 77 77 105 99 114 111 77 101 116 101 114 32 61 32 37 100 13 10 0 ]
+[a 34C 80 114 111 100 117 99 116 82 101 118 105 115 105 111 110 77 105 110 111 114 32 58 32 37 100 13 10 0 ]
+[a 33C 80 114 111 100 117 99 116 82 101 118 105 115 105 111 110 77 97 106 111 114 32 58 32 37 100 13 10 0 ]
+[a 29C 86 76 53 51 76 48 88 95 71 101 116 68 101 118 105 99 101 73 110 102 111 58 13 10 0 ]
+[a 117C 69 84 67 46 13 10 0 ]
+[a 1C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 83 116 111 112 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 6C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 110 111 112 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 7C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 83 116 97 114 116 67 111 110 116 105 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 8C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 77 115 114 67 111 110 116 105 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 2C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 83 116 111 112 67 111 110 116 105 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 16C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 83 116 97 114 116 83 105 110 103 108 101 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 10C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 77 115 114 83 105 110 103 108 101 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 5C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 83 116 111 112 83 105 110 103 108 101 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 18C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 83 116 97 114 116 83 105 110 103 108 101 72 83 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 19C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 83 116 97 114 116 83 105 110 103 108 101 76 82 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 17C 18446744073709551586 18446744073709551512 18446744073709551493 86 76 53 51 95 83 116 97 114 116 83 105 110 103 108 101 72 65 40 83 61 37 100 44 69 61 37 100 41 13 10 0 ]
+[a 14C 48 48 51 32 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 44 61 37 100 40 37 100 41 13 10 0 ]
+[a 12C 48 48 50 32 82 97 110 103 101 77 105 108 108 105 77 101 116 101 114 44 61 37 100 40 37 100 41 13 10 0 ]
+[a 54C 13 10 0 ]
+[a 57C 13 10 0 ]
+[a 60C 13 10 0 ]
+[a 63C 13 10 0 ]
+[a 66C 13 10 0 ]
+[a 82C 13 10 0 ]
+[a 84C 13 10 0 ]
+[a 113C 13 10 0 ]
+[a 116C 13 10 0 ]
+[a 26C 86 76 53 51 76 48 88 32 65 80 73 32 83 105 109 112 108 101 32 82 97 110 103 105 110 103 32 101 120 97 109 112 108 101 13 10 10 0 ]

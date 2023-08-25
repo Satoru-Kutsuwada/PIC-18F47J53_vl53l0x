@@ -11837,7 +11837,43 @@ typedef enum{
 
     RASING_MODE_MAX
 }RASING_MODE;
-# 316 "./system.h"
+# 311 "./system.h"
+typedef enum{
+    VL53_STATE_STOP = 0,
+    VL53_STATE_MESURRING_INIT,
+    VL53_STATE_INIT_ERROR,
+    VL53_STATE_MESURRING_CONTI,
+    VL53_STATE_MESURRING_SINGL,
+    VL53_STATE_MESURWE_ERROR,
+
+    VL53_STATE_MAX
+}VL53_STATE;
+
+typedef enum{
+
+    VL53_COM_NON = 0,
+    VL53_COM_STOP,
+    VL53_COM_MESURRING_CONTI,
+    VL53_COM_MESURRING_SINGL,
+    VL53_COM_MESURRING_SINGL_HA,
+    VL53_COM_MESURRING_SINGL_HS,
+    VL53_COM_MESURRING_SINGL_LR,
+    VL53_COM_MESURRING_DATA,
+
+
+    VL53_COM_MAX
+} VL53_COMMAND;
+
+
+typedef struct{
+    VL53_STATE state;
+    VL53_COMMAND command;
+    uint16_t mesur_data[16];
+    uint8_t msr_wpt;
+    uint8_t msr_rpt;
+
+}VL53_MAIN_STRUCT;
+# 358 "./system.h"
 void SYSTEM_Initialize( SYSTEM_STATE state );
 
 uint16_t Get_Timer(int sel);
@@ -12031,7 +12067,7 @@ uint8_t i2c_CheckIdleWait(uint8_t mask)
     index = Set_Timer(100);
     while ((SSP2STAT & mask) || (SSP2CON2 & 0x1F)){
         if( Get_Timer(index) == 0 ){
-            SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): CheckIdle",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
             i2c_data.error = I2C_ERR_STAT_TIMEOUT;
             status = 0x01;
             break;
@@ -12058,7 +12094,7 @@ uint8_t i2c_start(void)
     status = i2c_CheckIdleWait(0x05);
 
     if( status == 0x00 ){
-        SetLogDataM( LOG_DISP_I2C, "START",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
 
 
         PIR3bits.SSP2IF = 0;
@@ -12069,19 +12105,19 @@ uint8_t i2c_start(void)
         index = Set_Timer(100);
         while( PIR3bits.SSP2IF == 0 ){
             if(bcl_error_chk){
-                SetLogDataM( LOG_DISP_I2C, "ERR(BCL): START",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 i2c_data.error = I2C_ERR_STAT_BCL;
                 status = 0x01;
             }
             if(SSP2CON1bits.WCOL){
-                SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): START",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 SSP2CON1bits.WCOL = 0;
                 i2c_data.error = I2C_ERR_STAT_WCOL;
                 status = 0x01;
                 break ;
             }
             if( Get_Timer(index) == 0 ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): START",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 i2c_data.error = I2C_ERR_STAT_TIMEOUT;
                 status = 0x01;
                 break ;
@@ -12108,7 +12144,7 @@ uint8_t i2c_stop(void)
     status = i2c_CheckIdleWait(0x05);
 
     if( status == 0x00 ){
-        SetLogDataM( LOG_DISP_I2C, "STOP",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
 
         PIR3bits.SSP2IF = 0;
         PIR3bits.BCL2IF = 0;
@@ -12119,19 +12155,19 @@ uint8_t i2c_stop(void)
         while(PIR3bits.SSP2IF == 0 )
         {
             if(bcl_error_chk){
-                SetLogDataM( LOG_DISP_I2C, "ERR(BCL): STOP",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 i2c_data.error = I2C_ERR_STAT_BCL;
                 status = 0x01;
             }
             if(SSP2CON1bits.WCOL){
-                SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): STOP",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 SSP2CON1bits.WCOL = 0;
                 i2c_data.error = I2C_ERR_STAT_WCOL;
                 status = 0x01;
                 break;
             }
             if( Get_Timer(index) == 0 ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): STOP",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 i2c_data.error = I2C_ERR_STAT_TIMEOUT;
                 status = 0x01;
                 break;
@@ -12159,7 +12195,7 @@ uint8_t i2c_write( uint8_t dt )
 
     if( status == 0x00 ){
         if( i2c_data.status < I2C_STAT_MAX ){
-            SetLogDataM( LOG_DISP_I2C, &i2c_list[i2c_data.status].string[0],SSP2STAT,SSP2CON1,SSP2CON2,dt);
+
         }
         else{
             printf("ERROR STATUS = %d\r\n",i2c_data.status);
@@ -12172,19 +12208,19 @@ uint8_t i2c_write( uint8_t dt )
         index = Set_Timer(100);
         while( PIR3bits.SSP2IF == 0 ) {
             if(bcl_error_chk){
-                SetLogDataM( LOG_DISP_I2C, "ERR(BCL): WRITE",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 i2c_data.error = I2C_ERR_STAT_BCL;
                 status = 0x01;
             }
             if(SSP2CON1bits.WCOL){
-                SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): WRITE",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 SSP2CON1bits.WCOL = 0;
                 i2c_data.error = I2C_ERR_STAT_WCOL;
                 status = 0x01;
                 break;
             }
             if( Get_Timer(index) == 0 ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): WRITE",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 i2c_data.error = I2C_ERR_STAT_TIMEOUT;
                 status = 0x01;
                 break;
@@ -12194,12 +12230,12 @@ uint8_t i2c_write( uint8_t dt )
 
         if( status == 0x00 ){
             if( SSP2CON2bits.ACKSTAT ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(NACK): WRITE",SSP2STAT,SSP2CON1,SSP2CON2,dt);
+
                 i2c_data.error = I2C_ERR_STAT_NACK;
                 status = 0x01;
             }
             else{
-                SetLogDataM( LOG_DISP_I2C, "WRITE ACK",SSP2STAT,SSP2CON1,SSP2CON2,dt);
+
             }
         }
     }
@@ -12221,7 +12257,7 @@ uint8_t i2c_read( uint8_t acknNak, uint8_t *dt )
     status = i2c_CheckIdleWait(0x05);
 
     if( status == 0x00 ){
-        SetLogDataM( LOG_DISP_I2C, "READ START",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
 
         PIR3bits.SSP2IF = 0;
         PIR3bits.BCL2IF = 0;
@@ -12231,19 +12267,19 @@ uint8_t i2c_read( uint8_t acknNak, uint8_t *dt )
         index = Set_Timer(100);
         while(PIR3bits.SSP2IF == 0 ){
             if(bcl_error_chk){
-                SetLogDataM( LOG_DISP_I2C, "ERR(BCL): READ",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 i2c_data.error = I2C_ERR_STAT_BCL;
                 status = 0x01;
             }
             if(SSP2CON1bits.WCOL){
-                SetLogDataM( LOG_DISP_I2C, "ERR(WCOL): READ",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 SSP2CON1bits.WCOL = 0;
                 i2c_data.error = I2C_ERR_STAT_WCOL;
                 status = 0x01;
                 break;
             }
             if( Get_Timer(index) == 0 ){
-                SetLogDataM( LOG_DISP_I2C, "ERR(TOUT): READ",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 i2c_data.error = I2C_ERR_STAT_TIMEOUT;
                 status = 0x01;
                 break;
@@ -12261,7 +12297,7 @@ uint8_t i2c_read( uint8_t acknNak, uint8_t *dt )
             SSP2CON2bits.ACKDT = acknNak ;
             SSP2CON2bits.ACKEN = 1 ;
         }
-        SetLogDataM( LOG_DISP_I2C, "READ END",SSP2STAT,SSP2CON1,SSP2CON2,*dt);
+
     }
 
     return status;
@@ -12395,7 +12431,7 @@ int32_t i2c_readMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
             if( status == 0x00 ){
                 if( i2c_data.status == I2C_STAT_END ){
 
-                    SetLogDataM( LOG_DISP_NO_DATA, "I2C END",0,0,0,0);
+
 
 
                     for( i=0; i<i2c_data.count ; i++ ){
@@ -12439,10 +12475,10 @@ int32_t i2c_readMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
                     PIE3bits.SSP2IE = 0;
                     PIE3bits.BCL2IE = 1;
 
-                    SetLogDataM( LOG_DISP_I2C, "RESTART",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 }
                 else{
-                    SetLogDataM( LOG_DISP_I2C, "ERROR_END",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 }
             }
         }
@@ -12588,7 +12624,7 @@ int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
             if( status == 0x00 ){
                 if( i2c_data.status == I2C_STAT_END ){
 
-                    SetLogDataM( LOG_DISP_NO_DATA, "I2C END",0,0,0,0);
+
                     break;
                 }
             }
@@ -12626,10 +12662,10 @@ int32_t i2c_writeMulti(uint8_t address,uint8_t reg, uint8_t *dst, uint8_t count)
                     PIE3bits.SSP2IE = 0;
                     PIE3bits.BCL2IE = 1;
 
-                    SetLogDataM( LOG_DISP_I2C, "RESTART",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 }
                 else{
-                    SetLogDataM( LOG_DISP_I2C, "ERROR_END",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
                 }
             }
         }
@@ -12643,7 +12679,7 @@ void interrupt_i2c_bcl(void)
 
 
 
-        SetLogData( LOG_DISP_I2C, "ISR COLLISION ERR",SSP2STAT,SSP2CON1,SSP2CON2,0);
+
 
         PIE3bits.SSP2IE = 0;
         PIE3bits.BCL2IE = 0;
